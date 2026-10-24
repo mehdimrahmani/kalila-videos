@@ -1,0 +1,7 @@
+{
+  "episodes": [
+    {"n": 0, "title": "What is Kalila & Dimna?", "video": "ep00/ep00.mp4", "scheduled": "2026-10-31T16:30:00+03:30", "metricool_uuid": "-213479767005704751"},
+    {"n": 1, "title": "The Lion and the Hare", "video": "ep01/ep01.mp4", "scheduled": "2026-11-07T16:30:00+03:30"}
+  ],
+  "next_episode": 2
+}

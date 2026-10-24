@@ -235,3 +235,66 @@ def build_tree_set(seed=5):
         if rng.random() < 0.55: p.line(M, [(fx - 3, fy), (fx, fy - 7), (fx + 3, fy)], "#5f7a3a", 1.2)
         else: flower(p, M, fx, fy, ["#c8423a", "#fff7ea", "#3d6db5", "#d96f9a"][rng.integers(4)])
     return img
+
+# ------------------------------------------------------------------ forest friends (Episode 1+)
+JACKALS["fox"] = dict(body="#c9552b", dark="#3a2216", belly="#fbf1e2", ear="#2b1a10", scale=0.82,
+                      tail_tip="#fbf1e2", brow=0.4, lid=0.15)
+
+def draw_deer(p, M, po):
+    """doe, facing right, feet at origin. po: t, walk, amp, neck (deg, + = down to drink), mouth, blink"""
+    t = po['t']; ph = po.get('walk', 0); amp = po.get('amp', 0)
+    body, dark, belly = "#c98e55", "#9a6a3c", "#f6e8d0"
+    Mb = M @ T(0, -po.get('hop', 0))
+    def leg(jx, ang, col):
+        Ml = Mb @ T(jx, -112) @ R(ang)
+        p.poly(Ml, [(-6, 0), (6, 0), (4, 110), (-4, 110)], col)
+        p.poly(Ml, [(-5, 104), (6, 104), (6, 114), (-6, 114)], "#3b2a1a", outline=None)
+    leg(-40, amp * math.sin(ph), dark); leg(42, -amp * math.sin(ph), dark)
+    p.poly(Mb @ T(-62, -138) @ R(-30 + 10 * math.sin(t * 5)), ell(-8, 0, 12, 7, 16), "white")   # tail
+    p.poly(Mb, ell(0, -128, 66, 30, 44), body)
+    p.poly(Mb, ell(6, -112, 44, 10, 28, 0, 180), belly, outline=None)
+    for sx, sy in ((-30, -140), (-12, -146), (8, -142), (-22, -128), (20, -134)):
+        p.poly(Mb, ell(sx, sy, 3.5, 3, 10), "#fbf1e2", outline=None)
+    leg(-52, -amp * math.sin(ph), body); leg(30, amp * math.sin(ph), body)
+    Mn = Mb @ T(46, -140) @ R(po.get('neck', 0))
+    p.poly(Mn, [(-15, 8), (15, 8), (22, -62), (0, -66)], body)
+    Mh = Mn @ T(14, -70) @ R(-po.get('neck', 0) * 0.3) @ S(1.55)
+    p.poly(Mh @ T(-6, -10) @ R(-40), ell(0, -14, 7, 16, 18), body)
+    p.poly(Mh @ T(-2, -12) @ R(-15), ell(0, -14, 7, 16, 18), body)
+    p.poly(Mh @ T(-2, -12) @ R(-15), ell(0, -13, 3.5, 11, 14), "#e7a6a0", outline=None)
+    m = po.get('mouth', 0)
+    p.poly(Mh, [(-10, -8), (10, -12), (36, 2 + 2 * m), (30, 10 + 4 * m), (0, 10)], body)
+    p.poly(Mh, ell(34, 3, 4.5, 4, 12), (40, 26, 12), outline=None)
+    bl = po.get('blink', 0)
+    p.poly(Mh, ell(6, -2, 6, 6 * max(0.15, 1 - bl), 16), (40, 26, 12), outline=None)
+    if bl < 0.5: p.poly(Mh, ell(7.5, -4, 2, 2, 8), "white", outline=None)
+
+def draw_tortoise(p, M, po):
+    """old tortoise elder with a Persian-tile shell, facing right, feet at origin"""
+    t = po['t']; ph = po.get('walk', 0); amp = po.get('amp', 0)
+    skin, sdark = "#8fae6a", "#5f7a3a"
+    for jx, s_ in ((-40, 1), (34, -1)):
+        p.poly(M @ T(jx + 6 * math.sin(ph) * s_ * (amp > 0), -14), ell(0, 0, 13, 16, 18), sdark)
+    # head + neck
+    nod = po.get('head', 0) + 2 * math.sin(t * 1.2)
+    Mh = M @ T(62, -44) @ R(nod) @ S(1.35)
+    p.poly(Mh, [(-20, 6), (-20, -14), (8, -18), (8, 6)], skin)
+    p.poly(Mh, ell(18, -16, 22, 18, 30), skin)
+    m = po.get('mouth', 0)
+    p.poly(Mh, [(6, -4), (36, -8), (36, -4 + 8 * m), (8, 0 + 6 * m)], "#5f3a2a" if m > 0.1 else skin, w=2)
+    # beard
+    bw = 3 * math.sin(t * 2)
+    p.poly(Mh, [(12, 0), (32, -2), (31, 10), (26 + bw * 0.3, 24), (22, 30 + bw), (17, 22), (13, 10)], "#f4f1e8", w=1.5)
+    bl = po.get('blink', 0)
+    p.poly(Mh, ell(22, -22, 5, 5 * max(0.2, 1 - bl), 14), "white", w=1.5)
+    if bl < 0.5: p.poly(Mh, ell(23.5, -21, 2.5, 2.5, 10), (40, 26, 12), outline=None)
+    p.line(Mh, [(14, -30), (30, -29)], "#f4f1e8", 3)      # white eyebrow
+    # shell (dome with tile pattern)
+    p.poly(M, ell(0, -34, 70, 46, 48, 180, 360) + [(70, -28), (-70, -28)], "#2f6f6a")
+    p.poly(M, [(-74, -24), (74, -24), (70, -16), (-70, -16)], "#d4a63c", w=2)
+    for k in range(-2, 3):
+        cx = k * 26; cy = -48 + 8 * abs(k)
+        p.poly(M, khatam(cx, cy, 11), "#d4a63c", outline="#8a6418", w=1)
+        p.poly(M, ell(cx, cy, 3, 3, 8), "#f4e6c4", outline=None)
+    for jx, s_ in ((-26, -1), (48, 1)):
+        p.poly(M @ T(jx + 6 * math.sin(ph) * s_ * (amp > 0), -10), ell(0, 0, 13, 16, 18), skin)
