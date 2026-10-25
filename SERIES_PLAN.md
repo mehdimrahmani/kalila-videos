@@ -29,4 +29,14 @@ Release: every Saturday 16:30 Asia/Tehran (09:00 US Eastern in summer time).
 | 11 | The Lion and the Ox (Shanzabeh) | شیر و گاو | Beware of gossip (Dimna learns a lesson) |
 | 12 | The Ascetic and the Mongoose | زاهد و راسو | Don't act in haste |
 
+## Growth features (every episode from Ep 2 on)
+- **Persian word of the day**: in the hosts' closing, Dimna teaches ONE Persian word from the story ("In Persian, lion is *shir*!"). Show it on screen in a gold card: the Persian word in Persian script (Pillow has raqm, so Persian text renders correctly; use a font with Persian glyphs, e.g. install fonts-vazirmatn or fonts-noto via pip/apt if available, else DejaVu Sans), the transliteration and the English meaning. Kalila repeats it once. Keep it 8-10 s.
+- **Bilingual title**: `<English story> | <Persian story> | Kalila & Dimna Ep N` (<= 70 chars). Description: English hook first, then one Persian line: "قصه‌ی «...» از کلیله و دمنه، به زبان انگلیسی با انیمیشن و موسیقی سنتور؛ برای بچه‌های ایرانی در سراسر دنیا و همه‌ی بچه‌هایی که قصه دوست دارند." Tags include the Persian story name, «کلیله و دمنه», «قصه کودکانه». Last hashtag `#کلیله_و_دمنه`.
+- **Persian subtitles**: write `epNN/epNN.fa.srt` (same timings as the .en.srt, natural spoken Persian for kids). Captions are uploaded in YouTube Studio by hand when Mehdi has internet; Metricool can't upload them.
+- **Two Shorts per episode** with `pipeline/make_short.py SRC START DUR "Title" "Story" OUT` (20-45 s each, vertical 1080x1920, saved in `shorts/`): Short A = a teaser that stops on a cliffhanger, published the Thursday BEFORE the episode; Short B = the best moment, published the Tuesday AFTER the episode. Both 16:30 Asia/Tehran, YouTube type "short", madeForKids true, title "<hook> | <Persian story> #Shorts".
+
+## Special episodes
+- **Yalda (Shab-e Yalda) — publish Saturday 2026-12-19**: Kalila & Dimna sit by a korsi with pomegranates, watermelon and a book of Hafez; they explain Yalda simply (the longest night; families stay up together, eat fruit and tell stories) and then tell that week's story. Persian word: «یلدا» (yalda) / «انار» (anar = pomegranate). Title should include "Yalda Night Special | شب یلدا".
+- **Nowruz — publish Saturday 2027-03-13**: Haft-sin table, spring, goldfish; Persian word «نوروز» (Nowruz = new day).
+
 Retell each tale in a child-safe way (no gore; villains fall/flee/learn).
