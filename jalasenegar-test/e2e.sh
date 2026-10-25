@@ -28,20 +28,24 @@ for i in $(seq 1 150); do
 done
 adb shell ls -l $D/models > $O/models.txt
 adb exec-out screencap -p > $O/2-models-done.png
-# create a session with the test recording
-adb shell mkdir -p $D/sessions/t1
-adb push jalasenegar-test/meeting.wav $D/sessions/t1/audio.wav
+# create a session with the test recording (written as the app's own user so the app can read it)
 echo '{"id":"t1","title":"جلسهٔ آزمایشی طرح سامان","createdAt":1761370200000,"durationSec":42,"numSpeakersHint":0,"minutes":"","place":"","segments":[],"speakerNames":{}}' > /tmp/s.json
-adb push /tmp/s.json $D/sessions/t1/session.json
+adb push jalasenegar-test/meeting.wav /data/local/tmp/meeting.wav
+adb push /tmp/s.json /data/local/tmp/s.json
+adb shell chmod 644 /data/local/tmp/meeting.wav /data/local/tmp/s.json
+adb shell "run-as $P sh -c 'mkdir -p $D/sessions/t1 && cp /data/local/tmp/meeting.wav $D/sessions/t1/audio.wav && cp /data/local/tmp/s.json $D/sessions/t1/session.json && ls -l $D/sessions/t1'" > $O/session-setup.txt 2>&1
 adb shell am start -n $P/.ui.SessionActivity --es id t1 --ez auto true
-for i in $(seq 1 90); do adb shell cat $D/sessions/t1/session.json | grep -q '"t":' && break; sleep 10; done
+for i in $(seq 1 90); do adb shell run-as $P cat $D/sessions/t1/session.json | grep -q '"t":' && break; sleep 10; done
 sleep 5; adb exec-out screencap -p > $O/3-transcribed.png
 adb shell am start -n $P/.ui.SessionActivity --es id t1
 sleep 4
 tapid btnMinutes
-for i in $(seq 1 120); do adb shell cat $D/sessions/t1/session.json | grep -q '"minutes": "#' && break; sleep 10; done
+for i in $(seq 1 120); do adb shell run-as $P cat $D/sessions/t1/session.json | grep -q '"minutes": "#' && break; sleep 10; done
 sleep 5; adb exec-out screencap -p > $O/4-minutes.png
-adb pull $D/sessions/t1 $O/session >/dev/null 2>&1
+mkdir -p $O/session; for f in session.json; do adb shell run-as $P cat $D/sessions/t1/$f > $O/session/$f; done
+adb shell run-as $P ls -l $D/sessions/t1 > $O/session/ls.txt 2>&1
+adb exec-out run-as $P sh -c "cat $D/sessions/t1/*صورتجلسه.docx" > $O/session/minutes.docx 2>/dev/null
+adb exec-out run-as $P sh -c "cat $D/sessions/t1/*متن.docx" > $O/session/transcript.docx 2>/dev/null
 adb logcat -d > $O/logcat-full.txt
 adb logcat -d -b crash > $O/crash.txt
 exit 0
