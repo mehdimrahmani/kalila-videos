@@ -13,9 +13,16 @@
       "video": "ep01/ep01.mp4",
       "scheduled": "2026-10-31T16:30:00+03:30",
       "metricool_uuid": "-7529138903036966637"
+    },
+    {
+      "n": 2,
+      "title": "The Monkey and the Tortoise",
+      "video": "ep02/ep02.mp4",
+      "scheduled": "2026-11-07T16:30:00+03:30",
+      "metricool_uuid": "3075612165973885282"
     }
   ],
-  "next_episode": 2,
+  "next_episode": 3,
   "schedule_rule": "Each weekly run builds episode `next_episode` and schedules it for the Saturday 13-14 days ahead, 16:30 Asia/Tehran.",
   "shorts": [
     {
@@ -32,6 +39,16 @@
       "file": "shorts/short03_well.mp4",
       "scheduled": "2026-11-03T16:30:00+03:30",
       "metricool_uuid": "7449785397363688129"
+    },
+    {
+      "file": "shorts/short04_monkey_ride.mp4",
+      "scheduled": "2026-11-05T16:30:00+03:30",
+      "metricool_uuid": "1246397637691133069"
+    },
+    {
+      "file": "shorts/short05_monkey_trick.mp4",
+      "scheduled": "2026-11-10T16:30:00+03:30",
+      "metricool_uuid": "-331876290136356387"
     }
   ]
 }
