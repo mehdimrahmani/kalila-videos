@@ -10,7 +10,7 @@ permissions:
 jobs:
   emulator:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
         with: { sparse-checkout: jalasenegar-test }
@@ -25,9 +25,12 @@ jobs:
           arch: x86_64
           target: default
           disable-animations: true
+          ram-size: 6144M
+          disk-size: 14G
+          cores: 4
           emulator-boot-timeout: 900
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
-          script: bash jalasenegar-test/smoke.sh > /tmp/smoke-run.log 2>&1 || true
+          emulator-options: -memory 6144 -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          script: bash jalasenegar-test/e2e.sh > /tmp/smoke-run.log 2>&1 || true
       - name: Publish results
         if: always()
         run: |
