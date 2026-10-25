@@ -373,7 +373,7 @@ def init_assets():
                        for _ in range(40)]
 
 # ------------------------------------------------------------------ VOICE-OVER (Kokoro neural TTS)
-TTS_DIR = os.path.join(HERE, "tts")
+TTS_DIR = os.path.join(HERE, "pilot_tts") if os.path.isdir(os.path.join(HERE, "pilot_tts")) else os.path.join(HERE, "tts")
 HARE_PITCH = 1.12            # hare lines are pitched up -> small, cute voice
 LION_PITCH = 0.86            # lion lines are pitched down -> big, deep voice
 VO = [  # (clip, start second, subtitle text)
