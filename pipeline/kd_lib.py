@@ -270,9 +270,12 @@ def draw_deer(p, M, po):
     if bl < 0.5: p.poly(Mh, ell(7.5, -4, 2, 2, 8), "white", outline=None)
 
 def draw_tortoise(p, M, po):
-    """old tortoise elder with a Persian-tile shell, facing right, feet at origin"""
+    """tortoise with a Persian-tile shell, facing right, feet at origin.
+    Defaults = the old elder of Ep 1. Options: beard, shell, band, flower (colour), sick (head cloth), lash, peek"""
     t = po['t']; ph = po.get('walk', 0); amp = po.get('amp', 0)
-    skin, sdark = "#8fae6a", "#5f7a3a"
+    skin, sdark = po.get('skin', "#8fae6a"), po.get('skin_dark', "#5f7a3a")
+    shell, band = po.get('shell', "#2f6f6a"), po.get('band', "#d4a63c")
+    beard = po.get('beard', True)
     for jx, s_ in ((-40, 1), (34, -1)):
         p.poly(M @ T(jx + 6 * math.sin(ph) * s_ * (amp > 0), -14), ell(0, 0, 13, 16, 18), sdark)
     # head + neck
@@ -282,19 +285,137 @@ def draw_tortoise(p, M, po):
     p.poly(Mh, ell(18, -16, 22, 18, 30), skin)
     m = po.get('mouth', 0)
     p.poly(Mh, [(6, -4), (36, -8), (36, -4 + 8 * m), (8, 0 + 6 * m)], "#5f3a2a" if m > 0.1 else skin, w=2)
-    # beard
-    bw = 3 * math.sin(t * 2)
-    p.poly(Mh, [(12, 0), (32, -2), (31, 10), (26 + bw * 0.3, 24), (22, 30 + bw), (17, 22), (13, 10)], "#f4f1e8", w=1.5)
+    if beard:
+        bw = 3 * math.sin(t * 2)
+        p.poly(Mh, [(12, 0), (32, -2), (31, 10), (26 + bw * 0.3, 24), (22, 30 + bw), (17, 22), (13, 10)], "#f4f1e8", w=1.5)
+    else:
+        p.poly(Mh, ell(30, -9, 3.5, 2.5, 10), "#e98a8a", outline=None)          # rosy cheek
     bl = po.get('blink', 0)
-    p.poly(Mh, ell(22, -22, 5, 5 * max(0.2, 1 - bl), 14), "white", w=1.5)
-    if bl < 0.5: p.poly(Mh, ell(23.5, -21, 2.5, 2.5, 10), (40, 26, 12), outline=None)
-    p.line(Mh, [(14, -30), (30, -29)], "#f4f1e8", 3)      # white eyebrow
+    p.poly(Mh, ell(22, -22, 5.5, 5.5 * max(0.2, 1 - bl), 14), "white", w=1.5)
+    if bl < 0.5:
+        p.poly(Mh, ell(23.5 + po.get('look', 0), -21, 2.7, 2.7, 10), (40, 26, 12), outline=None)
+        p.poly(Mh, ell(24.5 + po.get('look', 0), -22.5, 0.9, 0.9, 6), "white", outline=None)
+    if po.get('lash'):
+        for k in range(3):
+            p.line(Mh, [(19 + 3 * k, -27), (17 + 4 * k, -31)], (40, 26, 12), 1.2)
+    if beard:
+        p.line(Mh, [(14, -30), (30, -29)], "#f4f1e8", 3)      # white eyebrow
+    else:
+        p.line(Mh, [(16, -30 - 2 * po.get('sad', 0)), (28, -29 + 2 * po.get('sad', 0))], (40, 26, 12), 1.8)
+    if po.get('sick'):
+        p.poly(Mh, [(2, -34), (34, -38), (35, -31), (3, -27)], "#fbf7ee", w=1.5)
+        p.poly(Mh, [(3, -31), (-8, -24), (-6, -20), (4, -27)], "#fbf7ee", w=1.2)
+    if po.get('flower'):
+        flower(p, Mh, 8, -36, po['flower']); flower(p, Mh, 14, -38, po['flower'])
     # shell (dome with tile pattern)
-    p.poly(M, ell(0, -34, 70, 46, 48, 180, 360) + [(70, -28), (-70, -28)], "#2f6f6a")
-    p.poly(M, [(-74, -24), (74, -24), (70, -16), (-70, -16)], "#d4a63c", w=2)
+    p.poly(M, ell(0, -34, 70, 46, 48, 180, 360) + [(70, -28), (-70, -28)], shell)
+    p.poly(M, [(-74, -24), (74, -24), (70, -16), (-70, -16)], band, w=2)
     for k in range(-2, 3):
         cx = k * 26; cy = -48 + 8 * abs(k)
-        p.poly(M, khatam(cx, cy, 11), "#d4a63c", outline="#8a6418", w=1)
+        p.poly(M, khatam(cx, cy, 11), band, outline="#8a6418", w=1)
         p.poly(M, ell(cx, cy, 3, 3, 8), "#f4e6c4", outline=None)
     for jx, s_ in ((-26, -1), (48, 1)):
         p.poly(M @ T(jx + 6 * math.sin(ph) * s_ * (amp > 0), -10), ell(0, 0, 13, 16, 18), skin)
+
+# ------------------------------------------------------------------ sea friends (Episode 2+)
+MK = dict(fur="#8a5a33", dark="#5e3a1f", face="#f0d2a8", ear="#d99a8a", grey="#e9e2d2")
+
+def draw_monkey(p, M, po):
+    """old monkey (ex-king, little crown), facing right, origin at the feet (standing) or seat (sit=1).
+    po: t, mouth, blink, look, sit (0..1), hop, arm (near arm deg, 0 = down, -150 = up/forward),
+        arm2 (far arm), head (deg), walk, amp, crown (bool)"""
+    t = po['t']; m = po.get('mouth', 0); sit = po.get('sit', 0)
+    ph = po.get('walk', 0); amp = po.get('amp', 0)
+    Mb = M @ T(0, -po.get('hop', 0))
+    br = 1 + 0.025 * math.sin(t * 2.6)
+    Mu = Mb @ T(0, -38 * (1 - sit)) @ S(1, br)          # upper body (hips at origin)
+    # tail (behind everything)
+    pts = []; x, y = -24.0, -14.0; ang = math.radians(200)
+    for i in range(17):
+        ang += 0.19 + 0.05 * math.sin(t * 2.2 - i * 0.4)
+        x += 7.5 * math.cos(ang); y += 7.5 * math.sin(ang); pts.append((x, y))
+    p.line(Mu, [(-20, -14)] + pts, OUT, 9); p.line(Mu, [(-20, -14)] + pts, MK['fur'], 5)
+    # far arm
+    Ma2 = Mu @ T(4, -66) @ R(po.get('arm2', 8) + 4 * math.sin(t * 1.7))
+    p.poly(Ma2, [(-5, 0), (5, 0), (4, 46), (-4, 46)], MK['dark']); p.poly(Ma2, ell(0, 49, 7, 6, 14), MK['dark'])
+    # legs
+    if sit > 0.5:
+        p.poly(Mu, ell(14, -8, 21, 10, 24), MK['dark'])
+        p.poly(Mu, ell(16, -6, 21, 10, 24), MK['fur'])
+        p.poly(Mu, ell(34, -2, 9, 5, 14), MK['face'])
+    else:
+        for jx, sgn, col in ((-8, 1, MK['dark']), (8, -1, MK['fur'])):
+            Ml = Mb @ T(jx, -40) @ R(amp * math.sin(ph) * sgn)
+            p.poly(Ml, [(-6, 0), (6, 0), (5, 38), (-5, 38)], col)
+            p.poly(Ml, ell(5, 39, 10, 4.5, 14), MK['face'])
+    # body
+    p.poly(Mu, ell(0, -42, 30, 40, 36), MK['fur'])
+    p.poly(Mu, ell(7, -38, 17, 25, 28), MK['face'], outline=None)
+    # head
+    Mh = Mu @ T(8, -86) @ R(po.get('head', 0) + 3 * math.sin(t * 1.4))
+    p.poly(Mh, ell(24, -28, 9, 10, 16), MK['dark'])                      # far ear
+    p.poly(Mh, ell(0, -26, 28, 27, 36), MK['fur'])
+    p.poly(Mh, ell(-23, -26, 11, 12, 18), MK['fur'])                     # near ear
+    p.poly(Mh, ell(-23, -26, 6, 7, 14), MK['ear'], outline=None)
+    p.poly(Mh, ell(9, -31, 19, 15, 30), MK['face'], w=1.5)               # face mask
+    p.poly(Mh, ell(13, -15, 16, 12, 28), MK['face'], w=1.5)              # muzzle
+    p.poly(Mh, ell(9, -26, 17, 9, 24), MK['face'], outline=None)         # join mask + muzzle
+    bl = po.get('blink', 0); ey = max(0.12, 1 - bl); lx = po.get('look', 0)
+    for ex in (3, 18):
+        p.poly(Mh, ell(ex, -32, 6, 7.5 * ey, 16), "white", w=1.2)
+        if ey > 0.3:
+            p.poly(Mh, ell(ex + 1.5 + 1.5 * lx, -31.5, 3.4, 4.2 * ey, 12), JD, outline=None)
+            p.poly(Mh, ell(ex + 2.6 + 1.5 * lx, -33.5, 1.2, 1.2, 8), "white", outline=None)
+    p.line(Mh, [(-4, -43), (9, -41)], MK['grey'], 3.2)                    # old grey brows
+    p.line(Mh, [(13, -41), (25, -43)], MK['grey'], 3.2)
+    p.poly(Mh, ell(14, -21, 1.6, 1.3, 8), JD, outline=None)
+    p.poly(Mh, ell(19, -21, 1.6, 1.3, 8), JD, outline=None)
+    p.poly(Mh, ell(26, -18, 4, 2.6, 10), "#ec9b8e", outline=None)        # blush
+    if m > 0.08:
+        p.poly(Mh, ell(15, -11, 6 + 2 * m, 1.8 + 5 * m, 16), "#7a1c14", w=1.5)
+    else:
+        p.line(Mh, [(8, -12), (15, -9), (22, -12)], JD, 1.6)
+    if po.get('crown', True):
+        Mc = Mh @ T(-4, -50) @ R(-14)
+        p.poly(Mc, [(-12, 0), (12, 0), (14, -14), (7, -6), (0, -17), (-7, -6), (-14, -14)], "#e2b64a", w=1.5)
+        p.poly(Mc, ell(0, -4, 2.2, 2.2, 8), "#c8423a", outline=None)
+    # near arm (in front)
+    Ma = Mu @ T(10, -64) @ R(po.get('arm', 6) + 3 * math.sin(t * 1.9))
+    p.poly(Ma, [(-6, 0), (6, 0), (5, 48), (-5, 48)], MK['fur'])
+    p.poly(Ma, ell(0, 51, 8, 7, 14), MK['face'])
+    if po.get('fig'):                                                       # holding a fig
+        p.poly(Ma, ell(0, 60, 7, 8, 14), "#7a3b6e", w=1.5)
+
+def fig(p, M, x, y, r=7):
+    p.poly(M, ell(x, y, r, r * 1.15, 14), "#7a3b6e", outline="#3f1d3a", w=1.5)
+    p.line(M, [(x, y - r * 1.1), (x + 2, y - r * 1.6)], "#4e6b2a", 2)
+
+def fig_tree(p, M, x, base, rng):
+    """big fig tree with a long branch to the right (seat at x+130, base-196)"""
+    trunk = [(x - 30, base), (x + 34, base), (x + 20, base - 120), (x + 60, base - 210), (x + 44, base - 218),
+             (x + 8, base - 150), (x - 10, base - 236), (x - 26, base - 232), (x - 14, base - 140), (x - 70, base - 200),
+             (x - 82, base - 192), (x - 24, base - 110)]
+    p.poly(M, trunk, "#6b4226", w=3)
+    for k in range(5):
+        yy = base - 20 - k * 22
+        p.line(M, [(x - 14, yy), (x + 2, yy - 8), (x + 16, yy - 2)], "#4e2f18", 1.5)
+    blobs = [(-150, -260, 72), (-60, -310, 88), (50, -320, 84), (150, -280, 70), (-110, -215, 55),
+             (0, -250, 72), (200, -330, 50)]
+    for cx, cy, r in blobs:
+        p.poly(M, ell(x + cx, base + cy, r + 4, r * 0.82 + 4, 40), "#2f5a2c", outline=None)
+    for cx, cy, r in blobs:
+        p.poly(M, ell(x + cx, base + cy, r, r * 0.82, 40), "#5a8a45", outline=None)
+    for _ in range(40):                                  # big fig leaves
+        a = rng.uniform(0, 2 * math.pi); r = rng.uniform(0, 1) ** 0.6 * 170
+        lx, ly = x + 20 + r * math.cos(a) * 1.2, base - 280 + r * 0.5 * math.sin(a)
+        p.poly(M @ T(lx, ly) @ R(rng.uniform(0, 360)), [(0, -9), (6, -3), (9, 4), (0, 9), (-9, 4), (-6, -3)],
+               "#74a456", outline="#3e6533", w=1)
+    for _ in range(26):
+        a = rng.uniform(0, 2 * math.pi); r = rng.uniform(0, 1) ** 0.6 * 160
+        fig(p, M, x + 20 + r * math.cos(a) * 1.2, base - 270 + r * 0.5 * math.sin(a), 6)
+    # the monkey's branch
+    p.poly(M, [(x + 10, base - 176), (x + 120, base - 194), (x + 200, base - 210), (x + 206, base - 202),
+               (x + 120, base - 182), (x + 14, base - 158)], "#6b4226", w=2.5)
+    p.poly(M, [(x + 196, base - 208), (x + 222, base - 230), (x + 226, base - 224), (x + 204, base - 203)], "#6b4226", w=2)
+    p.poly(M @ T(x + 226, base - 232) @ R(30), [(0, -9), (6, -3), (9, 4), (0, 9), (-9, 4), (-6, -3)], "#74a456",
+           outline="#3e6533", w=1)
