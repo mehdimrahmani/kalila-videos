@@ -16,5 +16,22 @@
     }
   ],
   "next_episode": 2,
-  "schedule_rule": "Each weekly run builds episode `next_episode` and schedules it for the Saturday 13-14 days ahead, 16:30 Asia/Tehran."
+  "schedule_rule": "Each weekly run builds episode `next_episode` and schedules it for the Saturday 13-14 days ahead, 16:30 Asia/Tehran.",
+  "shorts": [
+    {
+      "file": "shorts/short01_meet.mp4",
+      "scheduled": "2026-10-27T16:30:00+03:30",
+      "metricool_uuid": "-1657991749581648980"
+    },
+    {
+      "file": "shorts/short02_hare_idea.mp4",
+      "scheduled": "2026-10-29T16:30:00+03:30",
+      "metricool_uuid": "5304387586209366946"
+    },
+    {
+      "file": "shorts/short03_well.mp4",
+      "scheduled": "2026-11-03T16:30:00+03:30",
+      "metricool_uuid": "7449785397363688129"
+    }
+  ]
 }
