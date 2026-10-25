@@ -1,0 +1,40 @@
+# Runs the Jalasenegar test APK on an Android emulator and saves screenshots + logcat.
+name: Jalasenegar emulator test
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths: [ 'jalasenegar-test/**', '.github/workflows/jalasenegar-test.yml' ]
+permissions:
+  contents: write
+jobs:
+  emulator:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: jalasenegar-test }
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm
+          mkdir -p /tmp/smoke
+      - uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 31
+          arch: x86_64
+          target: default
+          disable-animations: true
+          emulator-boot-timeout: 900
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          script: bash jalasenegar-test/smoke.sh > /tmp/smoke-run.log 2>&1 || true
+      - name: Publish results
+        if: always()
+        run: |
+          mkdir -p out && cp -r /tmp/smoke/* out/ 2>/dev/null || true
+          cp /tmp/smoke-run.log out/ 2>/dev/null || true
+          date > out/run.txt
+          cd out && git init -q -b jalasenegar-test-results
+          git config user.name build-bot; git config user.email build-bot@users.noreply.github.com
+          git add -A; git commit -q -m "results ${{ github.run_number }}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" jalasenegar-test-results
