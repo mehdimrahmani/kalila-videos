@@ -1,0 +1,51 @@
+# Prepares model files for the Jalasenegar Android app and publishes them as a release.
+name: Jalasenegar models
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths: [ '.github/workflows/jalasenegar-models.yml', 'jalasenegar-models/**' ]
+
+permissions:
+  contents: write
+
+jobs:
+  models:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      TAG: jalasenegar-models-v1
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: jalasenegar-models }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Free disk
+        run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL; df -h /
+      - name: Install
+        run: |
+          pip install -q --index-url https://download.pytorch.org/whl/cpu torch
+          pip install -q openai-whisper transformers huggingface_hub safetensors onnx onnxruntime onnxscript
+      - name: Persian Whisper
+        run: |
+          mkdir -p out
+          curl -sSL -o export-onnx.py https://raw.githubusercontent.com/k2-fsa/sherpa-onnx/v2.0.0/scripts/whisper/export-onnx.py
+          python jalasenegar-models/convert_persian_whisper.py --hf-model vhdm/whisper-large-fa-v1 --out out --export-script export-onnx.py 2>&1 | grep -v -i warn | tail -20
+          ls -la out
+      - name: Diarization models
+        run: |
+          curl -sSL -o seg.tar.bz2 https://github.com/k2-fsa/sherpa-onnx/releases/download/speaker-segmentation-models/sherpa-onnx-pyannote-segmentation-3-0.tar.bz2
+          tar xjf seg.tar.bz2 sherpa-onnx-pyannote-segmentation-3-0/model.onnx
+          cp sherpa-onnx-pyannote-segmentation-3-0/model.onnx out/segmentation.onnx
+          curl -sSL -o out/speaker-embedding.onnx https://github.com/k2-fsa/sherpa-onnx/releases/download/speaker-recongition-models/3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k.onnx
+      - name: Language model (Gemma)
+        continue-on-error: true
+        run: python jalasenegar-models/get_llm.py out
+      - name: Split + manifest
+        run: python jalasenegar-models/make_manifest.py out dist
+      - name: Publish release
+        run: |
+          gh release delete "$TAG" -y --cleanup-tag 2>/dev/null || true
+          gh release create "$TAG" -t "Jalasenegar models v1" -n "Model files downloaded by the Jalasenegar app (Whisper fa: vhdm/whisper-large-fa-v1, pyannote segmentation 3.0, 3D-Speaker ERes2Net, Gemma under Gemma Terms of Use)." dist/*
