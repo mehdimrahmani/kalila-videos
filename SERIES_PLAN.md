@@ -40,3 +40,12 @@ Release: every Saturday 16:30 Asia/Tehran (09:00 US Eastern in summer time).
 - **Nowruz — publish Saturday 2027-03-13**: Haft-sin table, spring, goldfish; Persian word «نوروز» (Nowruz = new day).
 
 Retell each tale in a child-safe way (no gore; villains fall/flee/learn).
+
+## Roadmap (agreed with Mehdi, 2026-10-25)
+Strategy: start simple and slowly raise the depth, so children's understanding and interest grow with the channel.
+1. **Kalila & Dimna** (Ep 1-12, this table) — short animal fables, one clear moral.
+2. **One Thousand and One Nights** (هزار و یک شب) — child-safe picks only: Aladdin, Ali Baba, Sindbad, etc.
+3. **Shahnameh** (شاهنامه) — heavily child-safe retellings: Zal and the Simorgh, Rostam's Seven Labours (no violence), Kaveh the Blacksmith. The Nowruz special (Jamshid and the first Nowruz) is the first taste of it.
+4. **Masnavi** (مثنوی) — its short, funny tales: the Merchant and the Parrot, the Elephant in the Dark, the Mouse and the Camel.
+- Kalila & Dimna stay the hosts of every series ("Kalila & Dimna present: ...") so the channel brand stays the same.
+- Before switching series (around Ep 8-10), check YouTube data in Metricool (retention, subscribers per episode) and decide the switch date from the data.
