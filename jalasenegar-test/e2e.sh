@@ -29,13 +29,11 @@ done
 adb shell ls -l $D/models > $O/models.txt
 adb exec-out screencap -p > $O/2-models-done.png
 # import the test recording the way a user would: share it to the app
-adb push jalasenegar-test/meeting.wav /sdcard/Download/meeting.wav
-adb shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/Download/meeting.wav
-sleep 5
-MID=$(adb shell content query --uri content://media/external/file --projection _id --where "_display_name=\'meeting.wav\'" | grep -o '_id=[0-9]*' | head -1 | cut -d= -f2)
-echo "media id: $MID" > $O/session-setup.txt
-adb shell am start -a android.intent.action.SEND -t audio/wav --grant-read-uri-permission \
-  --eu android.intent.extra.STREAM content://media/external/file/$MID -n $P/.ui.MainActivity >> $O/session-setup.txt 2>&1
+# (a messenger app would grant access to its file; here the file is placed in the app's own folder)
+adb shell mkdir -p $D/test
+adb push jalasenegar-test/meeting.wav $D/test/meeting.wav
+adb shell am start -a android.intent.action.SEND -t audio/wav \
+  --eu android.intent.extra.STREAM file://$D/test/meeting.wav -n $P/.ui.MainActivity > $O/session-setup.txt 2>&1
 for i in $(seq 1 90); do adb shell "cat $D/sessions/*/session.json" 2>/dev/null | grep -q '"t":' && break; sleep 10; done
 sleep 5; adb exec-out screencap -p > $O/3-transcribed.png
 sleep 2
