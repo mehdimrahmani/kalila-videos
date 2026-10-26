@@ -1,0 +1,1 @@
+Starting: Intent { act=android.intent.action.SEND typ=audio/wav cmp=ir.jalasenegar/.ui.MainActivity (has extras) }

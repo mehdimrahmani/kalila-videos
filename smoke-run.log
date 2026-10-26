@@ -1,0 +1,213 @@
++ O=/tmp/smoke
++ mkdir -p /tmp/smoke
++ P=ir.jalasenegar
++ D=/sdcard/Android/data/ir.jalasenegar/files
++ M=https://github.com/mehdimrahmani/kalila-videos/releases/download/jalasenegar-models-v1
++ mkdir -p /tmp/models
++ for f in whisper-encoder.onnx whisper-decoder.onnx whisper-tokens.txt segmentation.onnx speaker-embedding.onnx
++ curl -sSfL -o /tmp/models/whisper-encoder.onnx https://github.com/mehdimrahmani/kalila-videos/releases/download/jalasenegar-models-v1/whisper-encoder.onnx
++ for f in whisper-encoder.onnx whisper-decoder.onnx whisper-tokens.txt segmentation.onnx speaker-embedding.onnx
++ curl -sSfL -o /tmp/models/whisper-decoder.onnx https://github.com/mehdimrahmani/kalila-videos/releases/download/jalasenegar-models-v1/whisper-decoder.onnx
++ for f in whisper-encoder.onnx whisper-decoder.onnx whisper-tokens.txt segmentation.onnx speaker-embedding.onnx
++ curl -sSfL -o /tmp/models/whisper-tokens.txt https://github.com/mehdimrahmani/kalila-videos/releases/download/jalasenegar-models-v1/whisper-tokens.txt
++ for f in whisper-encoder.onnx whisper-decoder.onnx whisper-tokens.txt segmentation.onnx speaker-embedding.onnx
++ curl -sSfL -o /tmp/models/segmentation.onnx https://github.com/mehdimrahmani/kalila-videos/releases/download/jalasenegar-models-v1/segmentation.onnx
++ for f in whisper-encoder.onnx whisper-decoder.onnx whisper-tokens.txt segmentation.onnx speaker-embedding.onnx
++ curl -sSfL -o /tmp/models/speaker-embedding.onnx https://github.com/mehdimrahmani/kalila-videos/releases/download/jalasenegar-models-v1/speaker-embedding.onnx
++ adb install -r -g jalasenegar-test/app.apk
++ adb shell pm grant ir.jalasenegar android.permission.POST_NOTIFICATIONS
+
+Exception occurred while executing 'grant':
+java.lang.IllegalArgumentException: Unknown permission: android.permission.POST_NOTIFICATIONS
+	at com.android.server.pm.permission.PermissionManagerService.grantRuntimePermissionInternal(PermissionManagerService.java:1478)
+	at com.android.server.pm.permission.PermissionManagerService.grantRuntimePermission(PermissionManagerService.java:1436)
+	at android.permission.PermissionManager.grantRuntimePermission(PermissionManager.java:380)
+	at com.android.server.pm.PackageManagerShellCommand.runGrantRevokePermission(PackageManagerShellCommand.java:2384)
+	at com.android.server.pm.PackageManagerShellCommand.onCommand(PackageManagerShellCommand.java:260)
+	at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+	at android.os.ShellCommand.exec(ShellCommand.java:38)
+	at com.android.server.pm.PackageManagerService.onShellCommand(PackageManagerService.java:24627)
+	at android.os.Binder.shellCommand(Binder.java:950)
+	at android.os.Binder.onTransact(Binder.java:834)
+	at android.content.pm.IPackageManager$Stub.onTransact(IPackageManager.java:4818)
+	at com.android.server.pm.PackageManagerService.onTransact(PackageManagerService.java:8506)
+	at android.os.Binder.execTransactInternal(Binder.java:1184)
+	at android.os.Binder.execTransact(Binder.java:1143)
++ adb shell am start -W -n ir.jalasenegar/.ui.MainActivity
+Starting: Intent { cmp=ir.jalasenegar/.ui.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: ir.jalasenegar/.ui.MainActivity
+TotalTime: 912
+WaitTime: 913
+Complete
++ sleep 5
++ adb exec-out screencap -p
++ adb shell mkdir -p /sdcard/Android/data/ir.jalasenegar/files/models /sdcard/Android/data/ir.jalasenegar/files/test
++ for f in /tmp/models/*
++ adb push /tmp/models/segmentation.onnx /sdcard/Android/data/ir.jalasenegar/files/models/
+/tmp/models/segmentation.onnx: 1 file pushed, 0 skipped. 102.2 MB/s (5992913 bytes in 0.056s)
++ for f in /tmp/models/*
++ adb push /tmp/models/speaker-embedding.onnx /sdcard/Android/data/ir.jalasenegar/files/models/
+/tmp/models/speaker-embedding.onnx: 1 file pushed, 0 skipped. 235.6 MB/s (39593761 bytes in 0.160s)
++ for f in /tmp/models/*
++ adb push /tmp/models/whisper-decoder.onnx /sdcard/Android/data/ir.jalasenegar/files/models/
+/tmp/models/whisper-decoder.onnx: 1 file pushed, 0 skipped. 233.9 MB/s (361070805 bytes in 1.472s)
++ for f in /tmp/models/*
++ adb push /tmp/models/whisper-encoder.onnx /sdcard/Android/data/ir.jalasenegar/files/models/
+/tmp/models/whisper-encoder.onnx: 1 file pushed, 0 skipped. 248.8 MB/s (674622347 bytes in 2.586s)
++ for f in /tmp/models/*
++ adb push /tmp/models/whisper-tokens.txt /sdcard/Android/data/ir.jalasenegar/files/models/
+/tmp/models/whisper-tokens.txt: 1 file pushed, 0 skipped. 149.3 MB/s (816730 bytes in 0.005s)
++ adb shell ls -l /sdcard/Android/data/ir.jalasenegar/files/models
++ adb logcat -c
++ adb push jalasenegar-test/meeting.wav /sdcard/Android/data/ir.jalasenegar/files/test/meeting.wav
+jalasenegar-test/meeting.wav: 1 file pushed, 0 skipped. 6.9 MB/s (1344888 bytes in 0.185s)
++ adb shell am start -a android.intent.action.SEND -t audio/wav --eu android.intent.extra.STREAM file:///sdcard/Android/data/ir.jalasenegar/files/test/meeting.wav -n ir.jalasenegar/.ui.MainActivity
++ sleep 15
++ adb exec-out screencap -p
++ tapre '^۳ نفر$'
++ dump
++ adb shell uiautomator dump /sdcard/ui.xml
++ adb pull /sdcard/ui.xml /tmp/smoke/ui.xml
+++ python3 - '^۳ نفر$'
++ local 'B=160 305'
++ '[' -n '160 305' ']'
++ adb shell input tap 160 305
++ echo 'tap '\''^۳ نفر$'\'' -> 160 305'
+tap '^۳ نفر$' -> 160 305
+++ seq 1 90
++ for i in $(seq 1 90)
++ adb shell 'cat /sdcard/Android/data/ir.jalasenegar/files/sessions/*/session.json'
++ grep -q '"t":'
++ sleep 10
++ for i in $(seq 1 90)
++ adb shell 'cat /sdcard/Android/data/ir.jalasenegar/files/sessions/*/session.json'
++ grep -q '"t":'
++ sleep 10
++ for i in $(seq 1 90)
++ adb shell 'cat /sdcard/Android/data/ir.jalasenegar/files/sessions/*/session.json'
++ grep -q '"t":'
++ sleep 10
++ for i in $(seq 1 90)
++ adb shell 'cat /sdcard/Android/data/ir.jalasenegar/files/sessions/*/session.json'
++ grep -q '"t":'
++ sleep 10
++ for i in $(seq 1 90)
++ adb shell 'cat /sdcard/Android/data/ir.jalasenegar/files/sessions/*/session.json'
++ grep -q '"t":'
++ sleep 10
++ for i in $(seq 1 90)
++ grep -q '"t":'
++ adb shell 'cat /sdcard/Android/data/ir.jalasenegar/files/sessions/*/session.json'
++ sleep 10
++ for i in $(seq 1 90)
++ grep -q '"t":'
++ adb shell 'cat /sdcard/Android/data/ir.jalasenegar/files/sessions/*/session.json'
++ sleep 10
++ for i in $(seq 1 90)
++ grep -q '"t":'
++ adb shell 'cat /sdcard/Android/data/ir.jalasenegar/files/sessions/*/session.json'
++ sleep 10
++ for i in $(seq 1 90)
++ adb shell 'cat /sdcard/Android/data/ir.jalasenegar/files/sessions/*/session.json'
++ grep -q '"t":'
++ sleep 10
++ for i in $(seq 1 90)
++ adb shell 'cat /sdcard/Android/data/ir.jalasenegar/files/sessions/*/session.json'
++ grep -q '"t":'
++ sleep 10
++ for i in $(seq 1 90)
++ adb shell 'cat /sdcard/Android/data/ir.jalasenegar/files/sessions/*/session.json'
++ grep -q '"t":'
++ sleep 10
++ for i in $(seq 1 90)
++ grep -q '"t":'
++ adb shell 'cat /sdcard/Android/data/ir.jalasenegar/files/sessions/*/session.json'
++ sleep 10
++ for i in $(seq 1 90)
++ adb shell 'cat /sdcard/Android/data/ir.jalasenegar/files/sessions/*/session.json'
++ grep -q '"t":'
++ sleep 10
++ for i in $(seq 1 90)
++ adb shell 'cat /sdcard/Android/data/ir.jalasenegar/files/sessions/*/session.json'
++ grep -q '"t":'
++ break
++ sleep 5
++ adb exec-out screencap -p
++ dump
++ adb shell uiautomator dump /sdcard/ui.xml
++ adb pull /sdcard/ui.xml /tmp/smoke/ui.xml
++ cp /tmp/smoke/ui.xml /tmp/smoke/ui-session.xml
++ adb shell input swipe 160 550 160 120 400
++ sleep 1
++ adb exec-out screencap -p
++ tapre '^.?\[۰۰:'
++ dump
++ adb shell uiautomator dump /sdcard/ui.xml
++ adb pull /sdcard/ui.xml /tmp/smoke/ui.xml
+++ python3 - '^.?\[۰۰:'
++ local 'B=160 259'
++ '[' -n '160 259' ']'
++ adb shell input tap 160 259
++ echo 'tap '\''^.?\[۰۰:'\'' -> 160 259'
+tap '^.?\[۰۰:' -> 160 259
++ sleep 2
++ adb exec-out screencap -p
++ tapre rbDecision
++ dump
++ adb shell uiautomator dump /sdcard/ui.xml
++ adb pull /sdcard/ui.xml /tmp/smoke/ui.xml
+++ python3 - rbDecision
++ local 'B=247 454'
++ '[' -n '247 454' ']'
++ adb shell input tap 247 454
++ echo 'tap '\''rbDecision'\'' -> 247 454'
+tap 'rbDecision' -> 247 454
++ tapre '^ذخیره$'
++ dump
++ adb shell uiautomator dump /sdcard/ui.xml
++ adb pull /sdcard/ui.xml /tmp/smoke/ui.xml
+++ python3 - '^ذخیره$'
++ local 'B=260 554'
++ '[' -n '260 554' ']'
++ adb shell input tap 260 554
++ echo 'tap '\''^ذخیره$'\'' -> 260 554'
+tap '^ذخیره$' -> 260 554
++ sleep 2
++ adb exec-out screencap -p
++ for k in 1 2 3
++ adb shell input swipe 160 150 160 600 300
++ for k in 1 2 3
++ adb shell input swipe 160 150 160 600 300
++ for k in 1 2 3
++ adb shell input swipe 160 150 160 600 300
++ sleep 1
++ tapre btnMinutes
++ dump
++ adb shell uiautomator dump /sdcard/ui.xml
++ adb pull /sdcard/ui.xml /tmp/smoke/ui.xml
+++ python3 - btnMinutes
++ local 'B=160 200'
++ '[' -n '160 200' ']'
++ adb shell input tap 160 200
++ echo 'tap '\''btnMinutes'\'' -> 160 200'
+tap 'btnMinutes' -> 160 200
++ sleep 2
++ tapre '^بله، بساز$'
++ dump
++ adb shell uiautomator dump /sdcard/ui.xml
++ adb pull /sdcard/ui.xml /tmp/smoke/ui.xml
+++ python3 - '^بله، بساز$'
++ local B=
++ '[' -n '' ']'
++ echo 'tap '\''^بله، بساز$'\'' -> '
+tap '^بله، بساز$' -> 
++ sleep 3
++ adb exec-out screencap -p
++ mkdir -p /tmp/smoke/session
++ adb shell 'ls -l /sdcard/Android/data/ir.jalasenegar/files/sessions/*'
++ adb pull /sdcard/Android/data/ir.jalasenegar/files/sessions /tmp/smoke/session/
++ adb logcat -d
++ adb logcat -d -b crash
++ exit 0

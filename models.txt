@@ -1,0 +1,6 @@
+total 1056776
+-rw-r--r-- 1 shell ext_data_rw   5992913 2026-10-26 04:50 segmentation.onnx
+-rw-r--r-- 1 shell ext_data_rw  39593761 2026-10-26 04:50 speaker-embedding.onnx
+-rw-r--r-- 1 shell ext_data_rw 361070805 2026-10-26 04:50 whisper-decoder.onnx
+-rw-r--r-- 1 shell ext_data_rw 674622347 2026-10-26 04:50 whisper-encoder.onnx
+-rw-r--r-- 1 shell ext_data_rw    816730 2026-10-26 04:50 whisper-tokens.txt
