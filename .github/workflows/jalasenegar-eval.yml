@@ -1,0 +1,66 @@
+# Measures Jalasenegar transcription accuracy on real Persian speech (FLEURS fa_ir) for
+# several Whisper models and pipeline variants. Results go to the jalasenegar-eval-results branch.
+name: Jalasenegar eval
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths: [ 'jalasenegar-eval/**', '.github/workflows/jalasenegar-eval.yml' ]
+permissions:
+  contents: write
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    env:
+      M: https://github.com/mehdimrahmani/kalila-videos/releases/download/jalasenegar-models-v1
+      R: https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: jalasenegar-eval }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Free disk
+        run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL; df -h /
+      - run: pip install -q sherpa-onnx soundfile numpy huggingface_hub
+      - name: Data (FLEURS fa_ir test)
+        run: |
+          mkdir -p w/fleurs
+          python - <<'PY'
+          from huggingface_hub import hf_hub_download
+          import tarfile, shutil
+          tsv = hf_hub_download('google/fleurs', 'data/fa_ir/test.tsv', repo_type='dataset')
+          shutil.copy(tsv, 'w/fleurs/test.tsv')
+          tgz = hf_hub_download('google/fleurs', 'data/fa_ir/audio/test.tar.gz', repo_type='dataset')
+          tarfile.open(tgz).extractall('w/fleurs')
+          PY
+          ls w/fleurs; ls w/fleurs/test | head -3; ls w/fleurs/test | wc -l
+      - name: Models
+        run: |
+          set -e
+          mkdir -p w/models/a-fa-vhdm
+          curl -sSfL -o w/models/a-fa-vhdm/enc.onnx $M/whisper-encoder.onnx
+          curl -sSfL -o w/models/a-fa-vhdm/dec.onnx $M/whisper-decoder.onnx
+          curl -sSfL -o w/models/a-fa-vhdm/tok.txt  $M/whisper-tokens.txt
+          curl -sSfL -o w/seg.onnx $M/segmentation.onnx
+          curl -sSfL -o w/emb.onnx $M/speaker-embedding.onnx
+          for k in turbo medium; do
+            curl -sSfL -o /tmp/$k.tar.bz2 $R/sherpa-onnx-whisper-$k.tar.bz2
+            tar xjf /tmp/$k.tar.bz2 -C /tmp; rm /tmp/$k.tar.bz2
+            mkdir -p w/models/b-$k
+            mv /tmp/sherpa-onnx-whisper-$k/$k-encoder.int8.onnx w/models/b-$k/enc.onnx
+            mv /tmp/sherpa-onnx-whisper-$k/$k-decoder.int8.onnx w/models/b-$k/dec.onnx
+            mv /tmp/sherpa-onnx-whisper-$k/$k-tokens.txt w/models/b-$k/tok.txt
+            rm -rf /tmp/sherpa-onnx-whisper-$k
+          done
+          du -sh w/models/*
+      - name: Evaluate
+        run: N_UTT=40 N_CONV=4 python jalasenegar-eval/eval.py w out 2>&1 | grep -v -i warn | tee out/log.txt
+      - name: Publish
+        if: always()
+        run: |
+          mkdir -p out; date > out/run.txt
+          cd out && git init -q -b jalasenegar-eval-results
+          git config user.name build-bot; git config user.email build-bot@users.noreply.github.com
+          git add -A; git commit -q -m "eval ${{ github.run_number }}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" jalasenegar-eval-results
