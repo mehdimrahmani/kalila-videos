@@ -1,0 +1,40 @@
+# Exports a small FLEURS Persian test subset (16 kHz wav + reference text) for offline decoder experiments.
+name: FLEURS fa subset
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths: [ '.github/workflows/fleurs-subset.yml' ]
+permissions:
+  contents: write
+jobs:
+  subset:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install -q huggingface_hub soundfile numpy
+      - run: sudo apt-get install -y -qq ffmpeg >/dev/null
+      - name: Export
+        run: |
+          python - <<'PY'
+          from huggingface_hub import hf_hub_download
+          import tarfile, csv, os, random, subprocess, json
+          tsv = hf_hub_download('google/fleurs', 'data/fa_ir/test.tsv', repo_type='dataset')
+          tgz = hf_hub_download('google/fleurs', 'data/fa_ir/audio/test.tar.gz', repo_type='dataset')
+          tarfile.open(tgz).extractall('raw')
+          rows = [r for r in csv.reader(open(tsv, encoding='utf-8'), delimiter='\t', quoting=csv.QUOTE_NONE)]
+          rows = [r for r in rows if os.path.exists(f'raw/test/{r[1]}')]
+          random.seed(3); random.shuffle(rows)
+          os.makedirs('out/wav', exist_ok=True); meta = []
+          for i, r in enumerate(rows[:120]):
+              subprocess.run(['ffmpeg', '-loglevel', 'error', '-i', f'raw/test/{r[1]}', '-ac', '1', '-ar', '16000', f'out/wav/{i:03d}.wav'], check=True)
+              meta.append(dict(i=i, text=r[2], gender=r[-1]))
+          json.dump(meta, open('out/meta.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
+          PY
+      - name: Publish
+        run: |
+          cd out && git init -q -b fleurs-fa-subset
+          git config user.name build-bot; git config user.email build-bot@users.noreply.github.com
+          git add -A; git commit -q -m subset
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" fleurs-fa-subset
