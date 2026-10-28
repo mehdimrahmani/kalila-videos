@@ -3,3 +3,4 @@ __pycache__/
 pipeline/ep*/still_*.png
 pipeline/ep*/audio.wav
 pipeline/ep*/render_*.mp4
+guesthouse/tts/
