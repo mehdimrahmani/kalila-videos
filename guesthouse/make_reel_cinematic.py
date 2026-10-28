@@ -372,6 +372,7 @@ def build(spec, out):
         d = max(3.6, reveal + 1.2, vlen + 1.0)
         tl.append(dict(seg=s, t0=t, d=d, v=v, tv=t + 0.5))
         t += d + GAP
+    OUTRO = max(OUTRO, 18.0 - t)                        # keep Reels at least 18 s
     DUR = round(t + OUTRO, 2)
     # --- audio
     vt = np.zeros(int(DUR * SR))
