@@ -133,7 +133,8 @@ class Scene:
         st = self.st[sy:sy + h, sx:sx + w] * (0.85 + 0.15 * math.sin(t * 2))
         img = img + st[..., None] * 0.9
         if self.kind == "dervish":
-            m, fo, hat = dervish_mask(t, top=120, scale=1.05)
+            m, fo, hat = dervish_mask(t, top=getattr(self, "dtop", 120), scale=getattr(self, "dscale", 1.05),
+                                      cx=getattr(self, "dcx", 360))
             if not hasattr(self, "diss"):
                 self.diss = fbm(h, w, self.rng, 5)
             yy = np.linspace(0, 1, h)[:, None]
