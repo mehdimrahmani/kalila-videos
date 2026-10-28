@@ -250,7 +250,7 @@ def composite(base, rgba, cx, cy, alpha=1.0):
 TTS_DIRS = [os.path.join(HERE, "..", "pipeline", "tts"), os.path.join(HERE, "tts"), "/home/claude/kalila_test/tts"]
 _KOK = None
 def narrate(text):
-    """Deep, husky male English narration (Kokoro am_onyx) at 44.1 kHz, or None if TTS unavailable."""
+    """Deep, warm male English narration (Kokoro am_onyx + am_michael blend) at 44.1 kHz, or None if TTS unavailable."""
     global _KOK
     try:
         from kokoro_onnx import Kokoro
@@ -262,18 +262,16 @@ def narrate(text):
             if os.path.exists(m) and os.path.exists(v): _KOK = Kokoro(m, v); break
         else:
             return None
-    a, r = _KOK.create(text, voice="am_onyx", speed=0.8, lang="en-us")
-    f = 0.9 * r / SR
+    style = 0.5 * _KOK.get_voice_style("am_onyx") + 0.5 * _KOK.get_voice_style("am_michael")   # warm, deep blend
+    a, r = _KOK.create(text, voice=style, speed=0.85, lang="en-us")
+    f = 0.95 * r / SR                                   # a touch deeper while resampling to 44.1 kHz
     n = int(len(a) / f); a = np.interp(np.arange(n) * f, np.arange(len(a)), a)
-    envl = np.convolve(np.abs(a), np.ones(400) / 400, "same")
-    grit = np.convolve(np.random.default_rng(1).standard_normal(len(a)), np.ones(3) / 3, "same") * envl * 0.3
-    y = np.tanh((a + grit) * 2.0) / np.tanh(2.0)
-    y = np.convolve(y, [0.6, 0.3, 0.1], "same")
-    # touch of room so it sits inside the music
-    room = np.zeros(len(y) + int(0.4 * SR)); room[:len(y)] += y
-    for dl, g in ((0.031, 0.18), (0.057, 0.12), (0.089, 0.08)):
-        k = int(dl * SR); room[k:k + len(y)] += y * g
-    return room / (np.abs(room).max() + 1e-9) * 0.9
+    from scipy.signal import butter, sosfilt
+    a = a + 0.35 * sosfilt(butter(2, 250, "low", fs=SR, output="sos"), a)      # warmth
+    a = sosfilt(butter(2, 9000, "low", fs=SR, output="sos"), a)
+    a = a / (np.abs(a).max() + 1e-9); a = np.tanh(a * 1.3) / np.tanh(1.3)      # gentle levelling, no added noise
+    a = reverb(np.r_[a, np.zeros(SR // 2)], 1.2, 0.18, 7)
+    return a / (np.abs(a).max() + 1e-9) * 0.9
 
 def reverb(x, secs=3.2, wet=0.45, seed=3):
     rng = np.random.default_rng(seed)
