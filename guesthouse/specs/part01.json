@@ -1,4 +1,30 @@
-{"header": "Shams & Rumi · Part 1", "title": "Before the Fire",
- "fa": ["مرده بدم زنده شدم، گریه بدم خنده شدم", "دولت عشق آمد و من دولت پاینده شدم"],
- "en": ["I was dead, I came alive.", "I was weeping, I became laughter.", "Love's fortune came,", "and I became fortune that lasts."],
- "source": "Divan-e Shams · Ghazal 1393", "seed": 1}
+{
+ "header": "Shams & Rumi · Part 1",
+ "title": "Before the Fire",
+ "fa": [
+  "مرده بدم زنده شدم، گریه بدم خنده شدم",
+  "دولت عشق آمد و من دولت پاینده شدم"
+ ],
+ "en": [
+  "I was dead, I came alive.",
+  "I was weeping, I became laughter.",
+  "Love's fortune came,",
+  "and I became fortune that lasts."
+ ],
+ "source": "Divan-e Shams · Ghazal 1393",
+ "seed": 1,
+ "segments": [
+  {
+   "fa": "مرده بدم زنده شدم",
+   "en": "I was dead... I came alive."
+  },
+  {
+   "fa": "گریه بدم خنده شدم",
+   "en": "I was weeping... I became laughter."
+  },
+  {
+   "fa": "دولت عشق آمد و من دولت پاینده شدم",
+   "en": "Love's fortune came, and I became fortune that lasts."
+  }
+ ]
+}
