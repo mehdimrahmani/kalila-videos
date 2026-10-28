@@ -11,7 +11,7 @@ Everything is generated locally (numpy/Pillow/Kokoro) — no network needed exce
 """
 import sys, os, json, math, wave, subprocess, tempfile
 import numpy as np
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageChops
 from scipy.ndimage import gaussian_filter, zoom as nd_zoom
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -208,6 +208,22 @@ def fit_size(txt, font, size, maxw, rtl):
     while size > 30 and text_img(txt, font, size, rtl).width > maxw: size -= 4
     return size
 
+def en_block(txt, size=52, maxw=900):
+    """English line, wrapped onto two balanced lines if it is too wide."""
+    if text_img(txt, SERIF_I, size).width <= maxw:
+        return text_img(txt, SERIF_I, size)
+    words = txt.split(); best = None
+    for i in range(1, len(words)):
+        a, b = " ".join(words[:i]), " ".join(words[i:])
+        sc = max(text_img(a, SERIF_I, size).width, text_img(b, SERIF_I, size).width) - (400 if a.endswith(",") else 0)
+        if best is None or sc < best[0]: best = (sc, a, b)
+    ims = [text_img(x, SERIF_I, size) for x in best[1:]]
+    out = Image.new("L", (max(i.width for i in ims), ims[0].height + ims[1].height - 62), 0)
+    for k, im in enumerate(ims):
+        lay = Image.new("L", out.size, 0); lay.paste(im, ((out.width - im.width) // 2, k * (ims[0].height - 62)))
+        out = ImageChops.lighter(out, lay)
+    return out
+
 def persian_progressive(line, size=96, maxw=980):
     """List of RGBA arrays: the line revealed word by word (right-anchored, same baseline)."""
     words = line.split()
@@ -309,7 +325,8 @@ def music(dur, seed, voice_track):
     ney = np.zeros(N); deg = [0, 1.5, 3, 5, 7, 8, 10, 12]
     pos = 1.0
     while pos < dur - 3:
-        for n in rng.choice([[7, 5, 3, 1.5, 0], [0, 1.5, 3, 1.5, 0], [12, 10, 8, 7], [3, 5, 7, 5, 3]]):
+        PHR = [[7, 5, 3, 1.5, 0], [0, 1.5, 3, 1.5, 0], [12, 10, 8, 7], [3, 5, 7, 5, 3]]
+        for n in PHR[rng.integers(len(PHR))]:
             dn = rng.choice([0.5, 0.7, 0.9]); f = D * 2 * 2 ** (n / 12)
             n0, n1 = int(pos * SR), min(N, int((pos + dn + 0.2) * SR)); tt = np.arange(n1 - n0) / SR
             vib = 1 + 0.006 * np.sin(2 * np.pi * 5 * tt) * np.minimum(1, tt / 0.3)
@@ -380,8 +397,7 @@ def build(spec, out):
     # --- text assets
     for e in tl:
         e["fa_imgs"] = persian_progressive(e["seg"]["fa"]) if e["seg"].get("fa") else []
-        e["en_img"] = glow_rgba(text_img(e["seg"]["en"], SERIF_I, fit_size(e["seg"]["en"], SERIF_I, 50, 900, False)),
-                                (240, 232, 215), (255, 220, 160), 6, 0.35) if e["seg"].get("en") else None
+        e["en_img"] = glow_rgba(en_block(e["seg"]["en"]), (240, 232, 215), (255, 220, 160), 6, 0.35) if e["seg"].get("en") else None
     title = glow_rgba(text_img(spec.get("title", ""), SERIF_I, 76), (255, 245, 225), (255, 210, 140), 12, 0.8) if spec.get("title") else None
     header = glow_rgba(text_img(spec.get("header", "").upper(), SERIF, 36), GOLD, GOLD, 5, 0.3)
     src = glow_rgba(text_img(spec.get("source", ""), SERIF, 34), GOLD, GOLD, 5, 0.3)
@@ -429,7 +445,7 @@ def build(spec, out):
                 if ki > 0: composite(frame, imgs[ki - 1], W / 2, H * 0.775, out_a * (1 - frac))
                 composite(frame, imgs[ki], W / 2, H * 0.775, out_a * (frac if k < len(imgs) else 1))
             if e["en_img"] is not None:
-                composite(frame, e["en_img"], W / 2, H * 0.845 + 12 * (1 - ease((tt - e["tv"]) / 0.8)),
+                composite(frame, e["en_img"], W / 2, H * 0.85 + 12 * (1 - ease((tt - e["tv"]) / 0.8)),
                           out_a * ease((tt - e["tv"]) / 0.8))
         a_end = ease((tt - (DUR - OUTRO)) / 0.8)
         if a_end > 0:
