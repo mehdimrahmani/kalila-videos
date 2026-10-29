@@ -2,7 +2,7 @@
 
 Channel: "Kalila & Dimna - Persian Fables for Kids" (YouTube channel UCpEqwTLTqdfDcLyocjlf1bA, connected in Metricool brand 7510338).
 Audience: children 4-10 and parents. Simple English. Made for Kids = Yes.
-Release: every Saturday 21:30 Asia/Tehran (09:00 US Eastern in summer time).
+Release: every Saturday 21:30 Asia/Tehran (13:00 US Eastern, 18:00 UK in winter).
 
 ## Format (every episode)
 - 0:00 Hosts open (15-20 s): Kalila (wise, calm, older; voice am_michael 0.92) and Dimna (clever, playful; voice am_puck 1.0) under their tree. Dimna teases the story with a question.
