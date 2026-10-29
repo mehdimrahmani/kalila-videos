@@ -11,44 +11,120 @@
       "n": 1,
       "title": "The Lion and the Hare",
       "video": "ep01/ep01.mp4",
-      "scheduled": "2026-10-31T16:30:00+03:30",
+      "scheduled": "2026-10-31T21:30:00+03:30",
       "metricool_uuid": "-7529138903036966637"
     },
     {
       "n": 2,
       "title": "The Monkey and the Tortoise",
       "video": "ep02/ep02.mp4",
-      "scheduled": "2026-11-07T16:30:00+03:30",
+      "scheduled": "2026-11-07T21:30:00+03:30",
       "metricool_uuid": "3075612165973885282"
     }
   ],
   "next_episode": 3,
-  "schedule_rule": "Each weekly run builds episode `next_episode` and schedules it for the Saturday 13-14 days ahead, 16:30 Asia/Tehran.",
+  "schedule_rule": "Each weekly run builds episode `next_episode` and schedules it for the Saturday 13-14 days ahead, 21:30 Asia/Tehran (US afternoon / UK evening). One Short every day at 21:30.",
   "shorts": [
     {
       "file": "shorts/short01_meet.mp4",
       "scheduled": "2026-10-27T16:30:00+03:30",
-      "metricool_uuid": "-1657991749581648980"
+      "metricool_uuid": "-1657991749581648980",
+      "source": {
+        "episode": "ep00",
+        "start": 1.5,
+        "dur": 23.0
+      }
     },
     {
-      "file": "shorts/short02_hare_idea.mp4",
-      "scheduled": "2026-10-29T16:30:00+03:30",
-      "metricool_uuid": "5304387586209366946"
+      "file": "shorts/short02_hare_idea_v2.mp4",
+      "scheduled": "2026-10-29T21:30:00+03:30",
+      "metricool_uuid": "5304387586209366946",
+      "source": {
+        "episode": "ep01",
+        "start": 89.0,
+        "dur": 33.8
+      }
     },
     {
-      "file": "shorts/short03_well.mp4",
-      "scheduled": "2026-11-03T16:30:00+03:30",
-      "metricool_uuid": "7449785397363688129"
+      "file": "shorts/short06_lion_king.mp4",
+      "scheduled": "2026-10-30T21:30:00+03:30",
+      "metricool_uuid": "-609007749554355995",
+      "source": {
+        "episode": "ep01",
+        "start": 31.5,
+        "dur": 22.0
+      }
     },
     {
-      "file": "shorts/short04_monkey_ride.mp4",
-      "scheduled": "2026-11-05T16:30:00+03:30",
-      "metricool_uuid": "1246397637691133069"
+      "file": "shorts/short07_animals_plan.mp4",
+      "scheduled": "2026-11-01T21:30:00+03:30",
+      "metricool_uuid": "-5279845113968440690",
+      "source": {
+        "episode": "ep01",
+        "start": 53.8,
+        "dur": 28.7
+      }
     },
     {
-      "file": "shorts/short05_monkey_trick.mp4",
-      "scheduled": "2026-11-10T16:30:00+03:30",
-      "metricool_uuid": "-331876290136356387"
+      "file": "shorts/short08_new_friends.mp4",
+      "scheduled": "2026-11-02T21:30:00+03:30",
+      "metricool_uuid": "-1759126394599683831",
+      "source": {
+        "episode": "ep02",
+        "start": 36.8,
+        "dur": 29.2
+      }
+    },
+    {
+      "file": "shorts/short03_well_v2.mp4",
+      "scheduled": "2026-11-03T21:30:00+03:30",
+      "metricool_uuid": "7449785397363688129",
+      "source": {
+        "episode": "ep01",
+        "start": 131.5,
+        "dur": 21.5
+      }
+    },
+    {
+      "file": "shorts/short09_forest_free.mp4",
+      "scheduled": "2026-11-04T21:30:00+03:30",
+      "metricool_uuid": "-5869161544099346510",
+      "source": {
+        "episode": "ep01",
+        "start": 151.5,
+        "dur": 21.5
+      }
+    },
+    {
+      "file": "shorts/short04_monkey_ride_v2.mp4",
+      "scheduled": "2026-11-05T21:30:00+03:30",
+      "metricool_uuid": "1246397637691133069",
+      "source": {
+        "episode": "ep02",
+        "start": 98.5,
+        "dur": 35.0
+      }
+    },
+    {
+      "file": "shorts/short10_mrs_tortoise.mp4",
+      "scheduled": "2026-11-06T21:30:00+03:30",
+      "metricool_uuid": "-4584082649522551158",
+      "source": {
+        "episode": "ep02",
+        "start": 67.0,
+        "dur": 30.0
+      }
+    },
+    {
+      "file": "shorts/short05_monkey_trick_v2.mp4",
+      "scheduled": "2026-11-10T21:30:00+03:30",
+      "metricool_uuid": "-331876290136356387",
+      "source": {
+        "episode": "ep02",
+        "start": 133.0,
+        "dur": 34.6
+      }
     }
-  ]
+  ],
+  "shorts_note": "Since 29 Oct 2026: Shorts v2 (pipeline/make_short.py: near-full-screen, burned-in captions, hook on screen). Never reuse a source range already listed here."
 }
