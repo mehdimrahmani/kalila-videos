@@ -419,3 +419,198 @@ def fig_tree(p, M, x, base, rng):
     p.poly(M, [(x + 196, base - 208), (x + 222, base - 230), (x + 226, base - 224), (x + 204, base - 203)], "#6b4226", w=2)
     p.poly(M @ T(x + 226, base - 232) @ R(30), [(0, -9), (6, -3), (9, 4), (0, 9), (-9, 4), (-6, -3)], "#74a456",
            outline="#3e6533", w=1)
+
+# ------------------------------------------------------------------ meadow friends (Episode 3+)
+BIRDS = {
+    # Ring-Dove: cream with a golden ring (the leader)
+    "ringdove": dict(body="#efe6d6", dark="#c2ae8e", breast="#fbf4e8", head="#e9dcc6", wing="#d9c7a6",
+                     tip="#9c8466", beak="#d98a6a", foot="#e98a7a", ring=True, blen=12, crest=False),
+    "dove_grey": dict(body="#c9cbd6", dark="#8d90a8", breast="#ece6ee", head="#b7bccd", wing="#aeb2c6",
+                      tip="#6e7290", beak="#d98a6a", foot="#e98a7a", ring=False, blen=11, crest=False),
+    "dove_white": dict(body="#f4f1ea", dark="#c9c3b6", breast="#fffdf8", head="#f0ece2", wing="#e3ddd0",
+                       tip="#a69e8e", beak="#e09a7a", foot="#e98a7a", ring=False, blen=11, crest=False),
+    "dove_brown": dict(body="#d8b99a", dark="#a8825e", breast="#f3e2cf", head="#cfae8c", wing="#c39c76",
+                       tip="#7e5e40", beak="#d98a6a", foot="#e98a7a", ring=False, blen=11, crest=False),
+    "dove_blue": dict(body="#b9cbd9", dark="#7f98ad", breast="#e6eef4", head="#a9bfd0", wing="#9fb6c9",
+                      tip="#5d7890", beak="#d98a6a", foot="#e98a7a", ring=False, blen=11, crest=False),
+    "crow": dict(body="#33364a", dark="#1f2130", breast="#474b63", head="#3a3d52", wing="#2a2c3e",
+                 tip="#15161f", beak="#6b6b6b", foot="#5a5a5a", ring=False, blen=20, crest=True),
+}
+
+WING = [(6, 2), (4, -26), (-2, -50), (-10, -70), (-18, -72), (-20, -62), (-28, -60), (-28, -48),
+        (-34, -42), (-30, -26), (-20, -8), (-10, 4)]
+
+def draw_bird(p, M, kind, po):
+    """dove / crow cut-out, facing right, origin at the feet.
+    po: t, mouth, blink, look, fly (0/1), flap (radians), head (deg), peck (0..1 head down), hop"""
+    c = BIRDS[kind]; t = po['t']; fly = po.get('fly', 0)
+    Mb = M @ T(0, -po.get('hop', 0))
+    flap = po.get('flap', 0)
+    br = 1 + 0.03 * math.sin(t * 3 + len(kind))
+    Mu = Mb @ T(0, -16) @ R(-8 * fly + po.get('tilt', 0)) @ S(1, br) @ T(0, 16)
+    # far wing (flying only)
+    if fly:
+        Mw = Mu @ T(4, -42) @ R(-5 - 55 * (1 - math.sin(flap)))
+        p.poly(Mw, WING, c['dark'])
+    # legs
+    if not fly:
+        for jx in (-5, 7):
+            p.line(Mb, [(jx, -16), (jx - 1, -1)], OUT, 4.5); p.line(Mb, [(jx, -16), (jx - 1, -1)], c['foot'], 2.5)
+            p.line(Mb, [(jx - 7, 0), (jx + 6, 0)], OUT, 4.5); p.line(Mb, [(jx - 7, 0), (jx + 6, 0)], c['foot'], 2.5)
+    else:
+        p.line(Mu, [(-6, -18), (-22, -12)], OUT, 4.5); p.line(Mu, [(-6, -18), (-22, -12)], c['foot'], 2.5)
+    # tail
+    p.poly(Mu, [(-20, -36), (-56, -46), (-60, -38), (-58, -28), (-20, -24)], c['wing'])
+    p.line(Mu, [(-28, -34), (-56, -40)], c['tip'], 1.5); p.line(Mu, [(-28, -30), (-57, -32)], c['tip'], 1.5)
+    # neck + body
+    p.poly(Mu, [(6, -46), (22, -60), (32, -44), (22, -26)], c['body'])
+    p.poly(Mu, ell(0, -32, 30, 19, 40), c['body'])
+    p.poly(Mu, [(8, -44), (20, -58), (30, -44), (20, -30)], c['body'], outline=None)
+    p.poly(Mu, ell(10, -26, 18, 11, 28), c['breast'], outline=None)
+    Mh = Mu @ T(20, -50) @ R(po.get('head', 0) + 50 * po.get('peck', 0))
+    if kind.startswith("dove"):
+        p.poly(Mu, [(14, -52), (24, -50), (28, -40), (20, -42)], "#8fb8ac", outline=None)   # shiny neck
+    m = po.get('mouth', 0)
+    bl = c['blen']
+    p.poly(Mh, [(10, -4), (10 + bl, 0), (10, 3)], c['beak'], w=1.5)                          # upper beak
+    p.poly(Mh, [(10, 2), (8 + bl * 0.85, 3 + 7 * m), (10, 6 + 2 * m)], c['beak'], w=1.5)    # lower beak
+    p.poly(Mh, ell(0, -2, 15, 14, 32), c['head'])
+    if c['crest']:
+        p.poly(Mh, [(-10, -11), (-20, -18), (-16, -8)], c['head'], w=1.5)
+    if c['ring']:                                    # the golden ring (collar) under her chin
+        rp = ell(-1, 9, 15, 6, 14, 10, 170)
+        p.line(Mh, rp, OUT, 9); p.line(Mh, rp, "#f2c14e", 5.5)
+        for q in rp[2::4]:
+            p.poly(Mh, khatam(q[0], q[1], 2.4), "#c8423a", outline=None)
+    p.poly(Mh, [(10, -4), (10 + bl, 0), (10, 2)], c['beak'], w=1.5)
+    p.poly(Mh, ell(10 + bl * 0.15, -2.5, 1.2, 1, 6), OUT, outline=None)                      # nostril
+    blk = po.get('blink', 0); ey = max(0.12, 1 - blk); lx = po.get('look', 0)
+    p.poly(Mh, ell(3, -4, 6.5, 7 * ey, 18), "white", w=1.4)
+    if ey > 0.3:
+        p.poly(Mh, ell(4.5 + 1.6 * lx, -3.5, 3.6, 4.2 * ey, 14), JD, outline=None)
+        p.poly(Mh, ell(5.8 + 1.6 * lx, -5.5, 1.3, 1.3, 8), "white", outline=None)
+    if kind == "crow":
+        p.line(Mh, [(-4, -12), (9, -10 + 2 * po.get('sly', 0))], "#9aa0b8", 2)
+    else:
+        p.poly(Mh, ell(7, 5, 3.2, 2, 10), "#f0a8a0", outline=None)                              # blush
+    # near wing
+    if fly:
+        Mw = Mu @ T(-2, -38) @ R(-15 - 60 * (1 - math.sin(flap)))
+        p.poly(Mw, WING, c['wing'])
+        for k in range(3):
+            p.line(Mw, [(-8 - 6 * k, -18 - 10 * k), (-22 - 5 * k, -44 - 8 * k)], c['tip'], 1.4)
+    else:
+        Mw = Mu @ T(4, -40) @ R(po.get('wing', 0))
+        p.poly(Mw, [(0, 0), (-26, -4), (-46, 4), (-28, 14), (2, 10)], c['wing'])
+        p.line(Mw, [(-20, 4), (-40, 5)], c['tip'], 1.4); p.line(Mw, [(-16, 8), (-34, 9)], c['tip'], 1.4)
+
+MO = dict(fur="#9a8b7a", dark="#6e6152", belly="#efe4d4", ear="#eaa6a6", vest="#b0342c", trim="#e2b64a")
+
+def draw_mouse(p, M, po):
+    """Zirak the mouse, standing on his hind legs, facing right, origin at the feet.
+    po: t, mouth, blink, look, head (deg), arm (deg), chew (0..1), hop, head_only (peek from a hole)"""
+    t = po['t']; m = po.get('mouth', 0)
+    Mb = M @ T(0, -po.get('hop', 0))
+    br = 1 + 0.03 * math.sin(t * 3.1)
+    chew = po.get('chew', 0)
+    if not po.get('head_only'):
+        # tail
+        pts = []; x, y = -14.0, -10.0; ang = math.radians(170)
+        for i in range(12):
+            ang += 0.12 * math.sin(t * 2 + i * 0.4) - 0.09
+            x += 6 * math.cos(ang); y += 6.5 * math.sin(ang); pts.append((x, y))
+        p.line(Mb, [(-12, -10)] + pts, OUT, 6); p.line(Mb, [(-12, -10)] + pts, MO['ear'], 3)
+        # far arm
+        Ma2 = Mb @ T(4, -50) @ R(po.get('arm2', -20) + 20 * chew * math.sin(t * 18))
+        p.poly(Ma2, [(-3, 0), (3, 0), (3, 22), (-3, 22)], MO['dark']); p.poly(Ma2, ell(0, 24, 4.5, 4, 10), MO['ear'])
+        # feet
+        p.poly(Mb, ell(-6, -2, 11, 4.5, 16), MO['ear']); p.poly(Mb, ell(12, -2, 12, 4.5, 16), MO['ear'])
+        Mu = Mb @ T(0, -4) @ S(1, br)
+        p.poly(Mu, ell(0, -30, 20, 30, 32), MO['fur'])
+        p.poly(Mu, ell(6, -26, 12, 20, 24), MO['belly'], outline=None)
+        # little Persian vest
+        p.poly(Mu, ell(1, -32, 19, 21, 28), MO['vest'], w=2)
+        p.poly(Mu, [(8, -52), (16, -50), (18, -16), (8, -14)], MO['belly'], outline=None)
+        p.line(Mu, [(8, -52), (8, -14)], MO['trim'], 2.2); p.line(Mu, [(16, -50), (18, -16)], MO['trim'], 2.2)
+        p.poly(Mu, khatam(-6, -32, 4), MO['trim'], outline=None)
+        Mh = Mu @ T(6, -62) @ R(po.get('head', 0) + 3 * math.sin(t * 1.6) + 8 * chew * math.sin(t * 16))
+    else:
+        Mh = Mb @ T(6, -14) @ R(po.get('head', 0) + 3 * math.sin(t * 1.6))
+    # head
+    p.poly(Mh, ell(-6, -26, 13, 14, 24), MO['dark'])                                   # far ear
+    p.poly(Mh, ell(-6, -26, 8, 9, 16), MO['ear'], outline=None)
+    p.poly(Mh, [(-14, -6), (-10, -18), (6, -20), (30, -6), (32, -2), (8, 8), (-10, 6)], MO['fur'])
+    p.poly(Mh, ell(32, -4, 4.5, 4, 12), "#e07a8a", w=1.2)                              # nose
+    if m > 0.08:
+        p.poly(Mh, ell(22, 4, 4 + m, 1 + 4 * m, 12), "#7a1c14", w=1.2)
+    else:
+        p.line(Mh, [(18, 3), (22, 5), (26, 3)], JD, 1.4)
+    p.poly(Mh, [(20, 4), (24, 4), (24, 9), (20, 9)], "white", w=1)                    # buck teeth
+    p.line(Mh, [(22, 4), (22, 9)], OUT, 0.8)
+    for dy, ang in ((-2, -8), (2, 4), (5, 14)):
+        p.line(Mh, [(26, dy), (46, dy + ang * 0.6)], "#5e5244", 1.0)
+    blk = po.get('blink', 0); ey = max(0.12, 1 - blk); lx = po.get('look', 0)
+    p.poly(Mh, ell(10, -8, 7, 7.5 * ey, 18), "white", w=1.3)
+    if ey > 0.3:
+        p.poly(Mh, ell(11.5 + 1.5 * lx, -7.5, 4, 4.6 * ey, 14), JD, outline=None)
+        p.poly(Mh, ell(13 + 1.5 * lx, -10, 1.4, 1.4, 8), "white", outline=None)
+    p.poly(Mh, ell(20, -1, 3.5, 2.2, 10), "#f0a8a0", outline=None)
+    Me = Mh @ T(-12, -16) @ R(-10 + 6 * math.sin(t * 2.2))                               # near ear
+    p.poly(Me, ell(0, -12, 15, 16, 28), MO['fur'])
+    p.poly(Me, ell(1, -12, 9.5, 10.5, 20), MO['ear'], outline=None)
+    if not po.get('head_only'):
+        Ma = Mb @ T(10, -48) @ R(po.get('arm', -30) + 20 * chew * math.sin(t * 18 + 1))
+        p.poly(Ma, [(-3.5, 0), (3.5, 0), (3, 24), (-3, 24)], MO['fur']); p.poly(Ma, ell(0, 26, 5, 4.5, 10), MO['ear'])
+
+HU = dict(skin="#e8b98f", coat="#7d8a3e", coat2="#5f6b2c", sash="#e2b64a", trou="#4a3a2a", hat="#7a5634",
+          hat2="#5a3d22", shoe="#efe4cc", must="#3a2216")
+
+def draw_hunter(p, M, po):
+    """a grumpy-but-harmless hunter in a felt hat, facing right, origin at the feet (~255 px tall).
+    po: t, mouth, blink, look, walk, amp, arm (near arm deg, 0 = down, -90 = forward), arm2, head (deg),
+        lean (deg), crouch (0..1), sit (0..1 tired), brow (0 calm .. 1 cross)"""
+    t = po['t']; ph = po.get('walk', 0); amp = po.get('amp', 0); m = po.get('mouth', 0)
+    cr = po.get('crouch', 0)
+    Mb = M @ T(0, -po.get('hop', 0))
+    br = 1 + 0.015 * math.sin(t * 2.2)
+    L = 98 - 46 * cr
+    def leg(sgn, col):
+        Ml = Mb @ T(0, -6 - L) @ R(amp * 26 * math.sin(ph) * sgn)
+        p.poly(Ml, [(-11, 0), (11, 0), (9, L), (-9, L)], col)
+        p.poly(Ml, [(-10, L - 6), (14, L - 6), (26, L), (22, L + 8), (-11, L + 8)], HU['shoe'], w=2)
+    leg(1, "#3a2c1e")
+    Mu = Mb @ T(0, 46 * cr) @ T(0, -100) @ R(po.get('lean', 0)) @ S(1, br) @ T(0, 100)
+    Ma2 = Mu @ T(-6, -186) @ R(po.get('arm2', 10) + 3 * math.sin(t * 1.5))
+    p.poly(Ma2, [(-9, 0), (9, 0), (7, 70), (-7, 70)], HU['coat2']); p.poly(Ma2, ell(0, 76, 9, 9, 14), HU['skin'])
+    leg(-1, HU['trou'])
+    # coat (qaba) with a golden sash
+    p.poly(Mu, [(-30, -196), (30, -196), (44, -78), (-42, -78)], HU['coat'])
+    p.poly(Mu, [(4, -196), (14, -196), (22, -78), (10, -78)], HU['coat2'], outline=None)
+    p.poly(Mu, [(-36, -128), (38, -128), (40, -112), (-38, -112)], HU['sash'], w=2)
+    p.poly(Mu, [(-34, -116), (-46, -92), (-36, -90), (-28, -112)], HU['sash'], w=1.5)
+    # head
+    Mh = Mu @ T(4, -222) @ R(po.get('head', 0) + 2 * math.sin(t * 1.3) + 4 * m * math.sin(t * 8))
+    p.poly(Mh, [(-10, 18), (10, 18), (10, 32), (-10, 32)], HU['skin'])                       # neck
+    p.poly(Mh, ell(0, 0, 27, 29, 36), HU['skin'])
+    p.poly(Mh, ell(-20, 2, 7, 9, 14), HU['skin'])                                            # ear
+    p.poly(Mh, ell(27, 4, 9, 8, 16), "#e2a57c", w=2)                                         # big round nose
+    if m > 0.08:
+        p.poly(Mh, ell(12, 20, 8 + 2 * m, 2 + 7 * m, 16), "#7a1c14", w=1.5)
+    else:
+        p.line(Mh, [(4, 20), (12, 22), (20, 20)], JD, 1.6)
+    p.poly(Mh, [(4, 10), (14, 8), (26, 10), (36, 16), (30, 18), (20, 14), (12, 16), (2, 18), (-6, 14)], HU['must'], w=1.5)
+    p.poly(Mh, ell(-6, 12, 4, 2.6, 10), "#e8968a", outline=None)                             # cheek
+    blk = po.get('blink', 0); ey = max(0.12, 1 - blk); lx = po.get('look', 0)
+    p.poly(Mh, ell(12, -6, 7, 8 * ey, 18), "white", w=1.4)
+    if ey > 0.3:
+        p.poly(Mh, ell(13.5 + 1.8 * lx, -5.5, 3.8, 4.6 * ey, 14), JD, outline=None)
+        p.poly(Mh, ell(14.8 + 1.8 * lx, -7.8, 1.3, 1.3, 8), "white", outline=None)
+    bw = po.get('brow', 0.5)
+    p.line(Mh, [(4, -16 + 3 * bw), (20, -17 - 3 * bw)], HU['must'], 3)
+    # felt hat (kolah namadi)
+    p.poly(Mh, ell(-4, -20, 25, 46, 30, 180, 360) + [(21, -16), (-29, -16)], HU['hat'])
+    p.line(Mh, [(-14, -50), (-6, -60), (4, -52)], HU['hat2'], 1.6)
+    p.poly(Mh, [(-31, -22), (27, -22), (29, -12), (-32, -12)], HU['hat2'], w=2)
+    # near arm (in front)
+    Ma = Mu @ T(6, -186) @ R(po.get('arm', 6) + 3 * math.sin(t * 1.8))
+    p.poly(Ma, [(-10, 0), (10, 0), (8, 72), (-8, 72)], HU['coat']); p.poly(Ma, ell(0, 78, 10, 10, 14), HU['skin'])
