@@ -1,10 +1,12 @@
 [
  {
   "n": 1,
-  "title": "The Vizier on the Gallows: The Fall of Hasanak",
+  "title": "Folio 1: The Vizier on the Gallows",
   "description": "Ghazni, a thousand years ago. Sultan Mahmud is dead, his son Masud takes the throne, and the old vizier Hasanak is about to pay for one careless sentence. Beyhaqi, a young secretary at court, saw it all, and wrote it down years later in one of the most famous passages of Persian prose. A story about pride, revenge, a mother's dignity, and a historian who refused to lie.",
   "pubDate": "Sun, 01 Nov 2026 08:12:21 +0000",
-  "duration": 451.395918,
-  "bytes": 7222933
+  "duration": 578.45551,
+  "bytes": 9255875,
+  "volume": 1,
+  "source": "Tarikh-e Beyhaqi, the account of Hasanak's execution (Balkh, 422 AH / 1032 CE)"
  }
 ]
