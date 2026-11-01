@@ -169,7 +169,118 @@ class Scene:
             d = (xx - w * 0.8) * math.cos(1.1 + ang) + (yy - h * 0.15) * math.sin(1.1 + ang)
             img += np.exp(-np.abs(d) / 45)[..., None] * np.array([255, 200, 130]) * 0.55
             img += np.exp(-(((xx - w * 0.8) / 200) ** 2 + ((yy - h * 0.12) / 200) ** 2))[..., None] * np.array([255, 225, 180]) * 0.9
+        elif self.kind in NEW_KINDS:
+            img = NEW_KINDS[self.kind](self, t, dur)
         return np.clip(img, 0, 255)
+
+# ---------------------------------------------------------------- extra themes (Mehdi, 1 Nov 2026: vary the look)
+def _paper_tex(rng, h=1280, w=720):
+    base = np.ones((h, w, 3)) * np.array([226, 211, 178])
+    base += gaussian_filter(rng.standard_normal((h, w)), 1.0)[..., None] * 6
+    base += gaussian_filter(rng.standard_normal((h, w)), 80)[..., None] * 700 * np.array([1.0, 0.9, 0.6])
+    yy, xx = np.mgrid[0:h, 0:w]
+    base *= np.clip(1 - 0.32 * (((xx - w / 2) / (w * 0.62)) ** 2 + ((yy - h / 2) / (h * 0.62)) ** 2), 0, 1)[..., None]
+    im = Image.fromarray(np.clip(base, 0, 255).astype(np.uint8)); d = ImageDraw.Draw(im)
+    ink = (110, 70, 45)
+    d.rectangle([34, 34, w - 34, h - 34], outline=ink, width=5); d.rectangle([48, 48, w - 48, h - 48], outline=ink, width=2)
+    for x in range(64, w - 60, 26):
+        d.polygon([(x, 66), (x + 8, 58), (x + 16, 66), (x + 8, 74)], fill=ink)
+        d.polygon([(x, h - 66), (x + 8, h - 74), (x + 16, h - 66), (x + 8, h - 58)], fill=ink)
+    # faint red seal watermark (8-point khatam) in the upper half
+    c = (w / 2, h * 0.30); pts = []
+    for k in range(16):
+        r = 190 if k % 2 == 0 else 120; a = math.radians(k * 22.5 - 90)
+        pts.append((c[0] + r * math.cos(a), c[1] + r * math.sin(a)))
+    seal = Image.new("L", (w, h), 0); ImageDraw.Draw(seal).polygon(pts, outline=255, width=6)
+    ImageDraw.Draw(seal).ellipse([c[0] - 70, c[1] - 70, c[0] + 70, c[1] + 70], outline=255, width=4)
+    sm = gaussian_filter(np.asarray(seal, float) / 255, 1.2) * (gaussian_filter(rng.standard_normal((h, w)), 1.5) < 0.6)
+    arr = np.asarray(im, float); arr = arr * (1 - sm[..., None] * 0.55) + np.array([140, 40, 32]) * sm[..., None] * 0.55
+    return arr
+
+def k_paper(self, t, dur):
+    if not hasattr(self, "tex"): self.tex = _paper_tex(self.rng)
+    return crop_zoom(self.tex, 1.0 + 0.04 * t / dur, 0, 0)
+
+def k_candle(self, t, dur):
+    h, w = 1280, 720
+    if not hasattr(self, "room"):
+        yy, xx = np.mgrid[0:h, 0:w]; self.yy, self.xx = yy, xx
+        wall = fbm(h, w, self.rng, 4)[..., None] * np.array([40, 26, 16]) + np.array([14, 9, 6])
+        self.room = wall
+    cx, cy = w / 2 + 6 * math.sin(t * 0.7), h * 0.40
+    fl = 0.85 + 0.1 * math.sin(t * 9.1) + 0.05 * math.sin(t * 23.0 + 1)
+    r2 = ((self.xx - cx) / 300) ** 2 + ((self.yy - cy) / 330) ** 2
+    img = self.room * (0.35 + 1.4 * fl * np.exp(-r2))[..., None]
+    img += np.exp(-r2 * 6)[..., None] * np.array([255, 170, 80]) * 0.35 * fl
+    # candle body + flame
+    body = ((np.abs(self.xx - w / 2) < 34) & (self.yy > cy + 40) & (self.yy < cy + 230)).astype(float)
+    img = img * (1 - body[..., None]) + body[..., None] * np.array([235, 222, 196]) * (0.55 + 0.45 * np.exp(-((self.yy - cy - 40) / 160) ** 2))[..., None]
+    sway = 4 * math.sin(t * 3.3)
+    fx = (self.xx - cx - sway * (cy - self.yy + 40) / 60) / 16; fy = (self.yy - (cy - 5)) / 46
+    flame = np.exp(-(fx ** 2 + np.where(fy > 0, fy * 2.2, fy) ** 2)) * fl
+    img += flame[..., None] * np.array([255, 205, 120]) * 1.6 + gaussian_filter(flame, 18)[..., None] * np.array([255, 150, 60]) * 1.2
+    return img
+
+def k_reeds(self, t, dur):
+    h, w = 1280, 720
+    if not hasattr(self, "sky"):
+        yy = np.linspace(0, 1, h)[:, None, None]
+        top, mid, low = np.array([36, 28, 74.]), np.array([180, 100, 92.]), np.array([246, 178, 118.])
+        sky = np.where(yy < 0.42, top + (mid - top) * (yy / 0.42), mid + (low - mid) * np.clip((yy - 0.42) / 0.22, 0, 1))
+        self.sky = np.broadcast_to(sky, (h, w, 3)).copy()
+        xs = np.sort(np.concatenate([self.rng.uniform(0, w * 0.32, 18), self.rng.uniform(w * 0.68, w, 18)]))
+        self.reeds = [(x, self.rng.uniform(0.6, 1.25)) for x in xs]        # two clumps, open water in the middle
+    img = self.sky.copy()
+    yy, xx = np.mgrid[0:h, 0:w]
+    img += np.exp(-(((xx - w * 0.5) / 34) ** 2 + ((yy - h * 0.24) / 34) ** 2))[..., None] * np.array([255, 245, 220])   # moon
+    wl = int(h * 0.64)
+    water = yy > wl
+    depth = np.clip((yy - wl) / (h - wl), 0, 1)[..., None]
+    img = np.where(water[..., None], img * (0.4 - 0.25 * depth) + np.array([22, 18, 40.]) * (0.6 + 0.25 * depth), img)
+    band = water & (yy < wl + 90) & (np.abs(xx - w * 0.5) < 50 - (yy - wl) * 0.3)
+    img[band & (np.sin(yy * 0.9 + t * 3) > 0.3)] += 70                    # moonlight on the water, just below the horizon
+    lay = Image.new("L", (w, h), 0); d = ImageDraw.Draw(lay)
+    for x0, s_ in self.reeds:
+        y0 = wl + 6; tip = y0 - 360 * s_
+        sw = 16 * s_ * math.sin(t * 1.1 + x0 * 0.05)
+        d.line([(x0, y0), (x0 + sw * 0.5, (y0 + tip) / 2), (x0 + sw, tip)], fill=255, width=max(2, int(4 * s_)))
+        d.ellipse([x0 + sw - 5, tip - 22, x0 + sw + 5, tip + 6], fill=255)
+    m = np.asarray(lay, float)[..., None] / 255
+    return img * (1 - m) + np.array([16, 11, 20]) * m
+
+def k_dome(self, t, dur):
+    h, w = 1280, 720
+    if not hasattr(self, "sky2"):
+        yy = np.linspace(0, 1, h)[:, None, None]
+        sky = np.array([30, 40, 90.]) + (np.array([235, 150, 90.]) - np.array([30, 40, 90.])) * np.clip(yy / 0.62, 0, 1) ** 1.4
+        self.sky2 = np.broadcast_to(sky, (h, w, 3)).copy()
+        self.birds = [(self.rng.uniform(0, w), self.rng.uniform(0.12, 0.35) * h, self.rng.uniform(20, 45)) for _ in range(9)]
+    img = self.sky2.copy()
+    lay = Image.new("L", (w, h), 0); d = ImageDraw.Draw(lay)
+    base_y = h * 0.66; cx = w * 0.42
+    d.rectangle([0, base_y, w, h], fill=255)                                           # city / ground
+    d.rectangle([cx - 70, base_y - 150, cx + 70, base_y], fill=255)                   # drum
+    d.polygon([(cx - 78, base_y - 150), (cx, base_y - 390), (cx + 78, base_y - 150)], fill=255)   # fluted conical dome (Konya)
+    d.rectangle([w * 0.78, base_y - 330, w * 0.78 + 22, base_y], fill=255)             # minaret
+    d.polygon([(w * 0.78 - 6, base_y - 330), (w * 0.78 + 11, base_y - 400), (w * 0.78 + 28, base_y - 330)], fill=255)
+    d.rectangle([cx - 230, base_y - 70, cx + 260, base_y], fill=255)
+    for i in range(5): d.ellipse([cx - 220 + i * 100, base_y - 120, cx - 140 + i * 100, base_y - 40], fill=255)   # small domes
+    for bx, by, sp in self.birds:
+        x = (bx + sp * t) % (w + 40) - 20; y = by + 6 * math.sin(t * 2 + bx)
+        d.line([(x - 10, y), (x, y + 5), (x + 10, y)], fill=255, width=2)
+    m = np.asarray(lay, float)[..., None] / 255
+    dome_tint = np.array([20, 70, 60.])                                                # turquoise-black silhouette
+    return img * (1 - m) + dome_tint * m
+
+NEW_KINDS = {"paper": k_paper, "candle": k_candle, "reeds": k_reeds, "dome": k_dome}
+THEMES = {   # theme -> (scene kinds cycled per segment, text style)
+    "cosmic": (["dervish", "warp", "sun", "dervish", "warp", "dervish"], "light"),
+    "paper":  (["paper"], "ink"),
+    "candle": (["candle"], "light"),
+    "reeds":  (["reeds"], "light"),
+    "dome":   (["dome", "reeds"], "light"),
+}
+INK = (52, 32, 22)
 
 def crop_zoom(arr, z, rot=0, pan=0.0):
     h, w = arr.shape[:2]
@@ -225,7 +336,7 @@ def en_block(txt, size=52, maxw=900):
         out = ImageChops.lighter(out, lay)
     return out
 
-def persian_progressive(line, size=96, maxw=980):
+def persian_progressive(line, size=96, maxw=980, style="light"):
     """List of RGBA arrays: the line revealed word by word (right-anchored, same baseline)."""
     words = line.split()
     size = fit_size(line, NASTA, size, maxw, True)
@@ -235,7 +346,7 @@ def persian_progressive(line, size=96, maxw=980):
         part = text_img(" ".join(words[:k]), NASTA, size, True)
         canvas = Image.new("L", full.size, 0)
         canvas.paste(part, (full.width - part.width, full.height - part.height - (full.height - part.height) // 2))
-        outs.append(glow_rgba(canvas))
+        outs.append(glow_rgba(canvas) if style == "light" else glow_rgba(canvas, INK, INK, 1, 0.05))
     return outs
 
 def composite(base, rgba, cx, cy, alpha=1.0):
@@ -387,7 +498,7 @@ def build(spec, out):
         w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR)
         w.writeframes((np.clip(st, -1, 1) * 32767).astype(np.int16).tobytes())
     # --- scenes: intro + one per segment, cycling kinds/palettes
-    kinds = ["dervish", "warp", "sun", "dervish", "warp", "dervish"]
+    theme = spec.get("theme", "cosmic"); kinds, style = THEMES.get(theme, THEMES["cosmic"])
     scenes = []
     for i in range(len(tl)):
         scenes.append(Scene(rng, kinds[i % len(kinds)], PALETTES[(i + 1 + spec.get("seed", 1)) % len(PALETTES)]))
@@ -396,13 +507,19 @@ def build(spec, out):
     dust = Dust(rng)
     # --- text assets
     for e in tl:
-        e["fa_imgs"] = persian_progressive(e["seg"]["fa"]) if e["seg"].get("fa") else []
-        e["en_img"] = glow_rgba(en_block(e["seg"]["en"]), (240, 232, 215), (255, 220, 160), 6, 0.35) if e["seg"].get("en") else None
+        e["fa_imgs"] = persian_progressive(e["seg"]["fa"], style=style) if e["seg"].get("fa") else []
+        e["en_img"] = (glow_rgba(en_block(e["seg"]["en"]), (240, 232, 215), (255, 220, 160), 6, 0.35) if style == "light"
+                       else glow_rgba(en_block(e["seg"]["en"]), (70, 45, 30), (70, 45, 30), 1, 0.05)) if e["seg"].get("en") else None
     title = glow_rgba(text_img(spec.get("title", ""), SERIF_I, 50), (255, 245, 225), (255, 210, 140), 8, 0.6) if spec.get("title") else None
     header = glow_rgba(text_img(spec.get("header", "").upper(), SERIF, 30), GOLD, GOLD, 4, 0.3)
     src = glow_rgba(text_img(spec.get("source", ""), SERIF, 34), GOLD, GOLD, 5, 0.3)
-    handle = glow_rgba(text_img("@theguesthouse.poetry", SERIF, 34), (235, 228, 210), (235, 228, 210), 4, 0.2)
-    sig = glow_rgba(text_img("Mowlana Jalal ad-Din Rumi", SERIF_I, 38), (235, 228, 210), (255, 220, 160), 6, 0.3)
+    lc = (235, 228, 210) if style == "light" else INK
+    handle = glow_rgba(text_img("@theguesthouse.poetry", SERIF, 34), lc, lc, 4 if style == "light" else 1, 0.2 if style == "light" else 0.05)
+    sig = glow_rgba(text_img("Mowlana Jalal ad-Din Rumi", SERIF_I, 38), lc, (255, 220, 160) if style == "light" else lc, 6 if style == "light" else 1, 0.3 if style == "light" else 0.05)
+    if style == "ink":
+        title = glow_rgba(text_img(spec.get("title", ""), SERIF_I, 50), INK, INK, 1, 0.05) if spec.get("title") else None
+        header = glow_rgba(text_img(spec.get("header", "").upper(), SERIF, 30), (128, 30, 26), (128, 30, 26), 1, 0.05)
+        src = glow_rgba(text_img(spec.get("source", ""), SERIF, 34), (128, 30, 26), (128, 30, 26), 1, 0.05)
 
     ff = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
                            "-r", str(FPS), "-i", "-", "-i", wav, "-c:v", "libx264", "-crf", "19", "-preset", "medium",
@@ -417,13 +534,14 @@ def build(spec, out):
             a = (tt - starts[si]) / XF
             prev = scenes[si - 1].frame(tt - starts[si - 1], ends[si - 1] - starts[si - 1] + XF)
             img = prev * (1 - a) + img * a + 60 * math.sin(math.pi * a)
-        img = img + dust.draw(tt)[..., None] * np.array([1.0, 0.9, 0.75])
+        if style == "light": img = img + dust.draw(tt)[..., None] * np.array([1.0, 0.9, 0.75])
         frame = np.asarray(Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)).resize((W, H), Image.BICUBIC), float)
         # vignette + lower darkening for legibility
         if fi == 0:
             yy, xx = np.mgrid[0:H, 0:W]
             vig = 1 - 0.55 * (((xx - W / 2) / (W * 0.75)) ** 2 + ((yy - H / 2) / (H * 0.75)) ** 2)
-            vig *= 1 - 0.5 * np.exp(-((yy - H * 0.81) / 230) ** 2)
+            vig *= 1 - (0.5 if style == "light" else 0.0) * np.exp(-((yy - H * 0.81) / 230) ** 2)
+            if style == "ink": vig = np.clip(vig, 0.75, 1)
             vig = np.clip(vig, 0.15, 1)[..., None]
         frame *= vig
         # text
