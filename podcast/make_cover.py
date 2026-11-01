@@ -1,31 +1,33 @@
 #!/usr/bin/env python3
-"""3000x3000 podcast cover: night-sky nebula, gold frame, Nastaliq 'تاریخ بیهقی', English title."""
+"""3000x3000 cover in the nostalgic style chosen by Mehdi (1 Nov 2026): aged paper + the red seal (logo variant A)
++ English title in dark ink."""
 import os, sys, numpy as np
-from PIL import Image, ImageDraw, ImageFont
-HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.path.join(HERE, "..", "guesthouse"))
+from PIL import Image, ImageDraw
+from scipy.ndimage import gaussian_filter
+HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "guesthouse"))
+import make_logo as L
 import make_reel_cinematic as R
 S = 3000
-rng = np.random.default_rng(7)
-neb = R.nebula(rng, ((10, 12, 30), (60, 40, 25), (230, 180, 110)), 1000, 1000)
-st = R.stars(rng, 1000, 1000, 700)
-img = np.clip(neb * 0.8 + st[..., None] * 0.9, 0, 255)
-im = Image.fromarray(img.astype(np.uint8)).resize((S, S), Image.BICUBIC)
-arr = np.asarray(im, float)
+rng = np.random.default_rng(3)
+base = np.ones((S, S, 3)) * np.array([226, 211, 178])
+base += gaussian_filter(rng.standard_normal((S, S)), 1.5)[..., None] * 7
+base += gaussian_filter(rng.standard_normal((S, S)), 220)[..., None] * 2600 * np.array([1.0, 0.9, 0.6])
 yy, xx = np.mgrid[0:S, 0:S]
-arr *= np.clip(1 - 0.6 * (((xx - S / 2) / (S * 0.75)) ** 2 + ((yy - S / 2) / (S * 0.75)) ** 2), 0.2, 1)[..., None]
-arr *= np.clip(1 - 0.55 * np.exp(-((yy - S * 0.62) / 700) ** 2), 0, 1)[..., None]
-base = arr.copy()
-def put(rgba, cy):
-    R.composite(base, rgba, S / 2, cy)
-fa = R.glow_rgba(R.text_img("تاریخ بیهقی", R.NASTA, 440, rtl=True), (250, 236, 205), (255, 205, 120), 30, 0.9)
-put(fa, S * 0.43)
-put(R.glow_rgba(R.text_img("THE HONEST HISTORIAN", R.SERIF, 190), R.GOLD, R.GOLD, 10, 0.4), S * 0.66)
-put(R.glow_rgba(R.text_img("Stories from Beyhaqi", R.SERIF_I, 150), (240, 230, 210), (255, 220, 160), 10, 0.4), S * 0.74)
-put(R.glow_rgba(R.text_img("with Mehdi Rahmani", R.SERIF, 100), (220, 210, 190), (220, 210, 190), 6, 0.2), S * 0.86)
-out = Image.fromarray(np.clip(base, 0, 255).astype(np.uint8))
+base *= np.clip(1 - 0.3 * (((xx - S / 2) / (S * 0.62)) ** 2 + ((yy - S / 2) / (S * 0.62)) ** 2), 0, 1)[..., None]
+img = Image.fromarray(np.clip(base, 0, 255).astype(np.uint8))
+mask = L.ink_mask(L.variant_a)                                   # 1000x1000 worn-ink seal mask
+mask = np.asarray(Image.fromarray((mask * 255).astype(np.uint8)).rotate(-2.0, resample=Image.BICUBIC)
+                  .resize((2000, 2000), Image.LANCZOS), float) / 255
+arr0 = np.asarray(img, float).copy()
+reg = arr0[180:2180, 500:2500]
+arr0[180:2180, 500:2500] = reg * (1 - mask[..., None] * 0.92) + np.array([128, 30, 26]) * mask[..., None] * 0.92
+img = Image.fromarray(np.clip(arr0, 0, 255).astype(np.uint8))
+arr = np.asarray(img, float).copy()
+ink = (48, 30, 22)
+for txt, font, size, y in (("THE HONEST HISTORIAN", R.SERIF, 170, 2300), ("Stories from Beyhaqi", R.SERIF_I, 140, 2510),
+                           ("with Mehdi Rahmani", R.SERIF, 95, 2700)):
+    R.composite(arr, R.glow_rgba(R.text_img(txt, font, size), ink, ink, 1, 0.05), S / 2, y)
+out = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8))
 d = ImageDraw.Draw(out)
-for inset, w in ((90, 14), (130, 5)):
-    d.rectangle([inset, inset, S - inset, S - inset], outline=R.GOLD, width=w)
-os.makedirs(os.path.join(HERE, "..", "docs", "podcast"), exist_ok=True)
-p = os.path.join(HERE, "..", "docs", "podcast", "cover.jpg")
-out.save(p, quality=88); print(p, os.path.getsize(p))
+d.rectangle([70, 70, S - 70, S - 70], outline=ink, width=10); d.rectangle([105, 105, S - 105, S - 105], outline=ink, width=3)
+p = os.path.join(HERE, "..", "docs", "podcast", "cover.jpg"); out.save(p, quality=88); print(p)
