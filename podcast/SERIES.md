@@ -1,0 +1,25 @@
+# The Honest Historian: Stories from Beyhaqi — series plan
+
+Weekly English podcast retelling stories from **Tarikh-e Beyhaqi** (Abolfazl Beyhaqi, 11th c., public domain), host **Mehdi Rahmani**, narrated with an AI rendering of his voice (Kokoro am_onyx → FreeVC with `podcast/voice/mehdi_freevc24_se.npy`). Published on GitHub Pages: feed `https://mehdimrahmani.github.io/kalila-videos/podcast/feed.xml` (Spotify/Apple read this feed).
+
+## Format (keep it)
+- 9–14 minutes (≈1200–1800 words). Warm, clear storytelling for English-speaking adults who know nothing about Persian history; explain names and places briefly.
+- Open: "Welcome to The Honest Historian. I'm Mehdi Rahmani." + a 1–2 sentence hook.
+- Sections separated by `---` (longer pause). One famous line quoted in Persian transliteration, then in English.
+- Close: one-line lesson in Beyhaqi's spirit, teaser for next week, "follow the show", and ALWAYS the disclosure: "This episode was retold from the Persian original of the History of Beyhaqi, and narrated with an AI rendering of my own voice."
+- Accuracy rules: only what Beyhaqi (or solid scholarship about him) says. Use hedges ("Beyhaqi tells us", "it is said") where sources are thin. Never invent dialogue presented as quotation; paraphrase instead. When unsure of a detail, leave it out. Verify each episode's key facts with WebSearch (Encyclopaedia Iranica, Britannica, Wikipedia) before writing.
+- Never copy modern copyrighted translations (e.g. Bosworth's translation); retell in our own words.
+
+## Episode order
+1. ✅ The Vizier on the Gallows: The Fall of Hasanak (published)
+2. Masud: from rebel prince to Sultan — the succession struggle with his brother Muhammad after Mahmud's death (1030)
+3. The Brother in the Fortress — what happened to Amir Muhammad
+4. Afshin and Bu Dulaf — the story Beyhaqi tells from the Abbasid court: how the judge Ahmad ibn Abi Duwad saved a man's life
+5. Bu Nasr Moshkan — Beyhaqi's teacher, master of the royal chancery, and how a secretary survives at a dangerous court
+6. The Sultan and the Lion — Masud's famous hunting episode and what it says about him
+7. Altuntash of Khwarazm — loyalty, suspicion and a dying general
+8. The Seljuqs Arrive — nomads at the edge of the empire
+9. Dandanqan, 1040 — the battle that broke the Ghaznavids in Khorasan
+10. The Fall of Masud — flight to India and the end (1040–41)
+11. Who was Beyhaqi? — the historian himself: his life, his lost volumes, his method ("I write what I saw")
+After 11: propose the next season to Mehdi (e.g. more Beyhaqi anecdotes, Siyasatnama of Nizam al-Mulk, Qabusnama).

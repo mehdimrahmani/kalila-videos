@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:podcast="https://podcastindex.org/namespace/1.0">
+  <channel>
+    <title>The Honest Historian: Stories from Beyhaqi</title>
+    <link>https://mehdimrahmani.github.io/kalila-videos/podcast/</link>
+    <atom:link href="https://mehdimrahmani.github.io/kalila-videos/podcast/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>en</language>
+    <copyright>Mehdi Rahmani</copyright>
+    <description>A thousand years ago, a court secretary in Ghazni named Abolfazl Beyhaqi wrote down what he saw — kings, viziers, plots and courage — and promised to tell only the truth. Each week, Mehdi Rahmani retells one of his stories in English, straight from the Persian original. Narrated with an AI rendering of Mehdi&#x27;s own voice.</description>
+    <itunes:summary>A thousand years ago, a court secretary in Ghazni named Abolfazl Beyhaqi wrote down what he saw — kings, viziers, plots and courage — and promised to tell only the truth. Each week, Mehdi Rahmani retells one of his stories in English, straight from the Persian original. Narrated with an AI rendering of Mehdi&#x27;s own voice.</itunes:summary>
+    <itunes:author>Mehdi Rahmani</itunes:author>
+    <itunes:owner><itunes:name>Mehdi Rahmani</itunes:name><itunes:email>mehdimrahmani@yahoo.com</itunes:email></itunes:owner>
+    <itunes:image href="https://mehdimrahmani.github.io/kalila-videos/podcast/cover.jpg"/>
+    <image><url>https://mehdimrahmani.github.io/kalila-videos/podcast/cover.jpg</url><title>The Honest Historian: Stories from Beyhaqi</title><link>https://mehdimrahmani.github.io/kalila-videos/podcast/</link></image>
+    <itunes:category text="History"/>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <lastBuildDate>Sun, 01 Nov 2026 08:12:21 +0000</lastBuildDate>
+    <item>
+      <title>The Vizier on the Gallows: The Fall of Hasanak</title>
+      <description>Ghazni, a thousand years ago. Sultan Mahmud is dead, his son Masud takes the throne, and the old vizier Hasanak is about to pay for one careless sentence. Beyhaqi, a young secretary at court, saw it all, and wrote it down years later in one of the most famous passages of Persian prose. A story about pride, revenge, a mother&#x27;s dignity, and a historian who refused to lie.</description>
+      <itunes:summary>Ghazni, a thousand years ago. Sultan Mahmud is dead, his son Masud takes the throne, and the old vizier Hasanak is about to pay for one careless sentence. Beyhaqi, a young secretary at court, saw it all, and wrote it down years later in one of the most famous passages of Persian prose. A story about pride, revenge, a mother&#x27;s dignity, and a historian who refused to lie.</itunes:summary>
+      <enclosure url="https://mehdimrahmani.github.io/kalila-videos/podcast/episodes/ep01.mp3" length="7222933" type="audio/mpeg"/>
+      <guid isPermaLink="false">honest-historian-ep01</guid>
+      <pubDate>Sun, 01 Nov 2026 08:12:21 +0000</pubDate>
+      <itunes:duration>00:07:31</itunes:duration>
+      <itunes:episode>1</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+  </channel>
+</rss>
