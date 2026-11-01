@@ -363,7 +363,7 @@ def build(spec, out):
     rng = np.random.default_rng(spec.get("seed", 1))
     segs = segments_of(spec)
     # --- timeline
-    INTRO, GAP, OUTRO = 2.6, 0.5, 3.2
+    INTRO, GAP, OUTRO = 0.15, 0.5, 3.2                 # hook: verse + dervish from the very first frame
     t = INTRO; tl = []
     voices = []
     for s in segs:
@@ -371,7 +371,7 @@ def build(spec, out):
         vlen = len(v) / SR if v is not None else 0
         reveal = 0.45 * max(1, len(s["fa"].split()))
         d = max(3.6, reveal + 1.2, vlen + 1.0)
-        tl.append(dict(seg=s, t0=t, d=d, v=v, tv=t + 0.5))
+        tl.append(dict(seg=s, t0=t, d=d, v=v, tv=t + 0.35))
         t += d + GAP
     OUTRO = max(OUTRO, 18.0 - t)                        # keep Reels at least 18 s
     DUR = round(t + OUTRO, 2)
@@ -388,18 +388,18 @@ def build(spec, out):
         w.writeframes((np.clip(st, -1, 1) * 32767).astype(np.int16).tobytes())
     # --- scenes: intro + one per segment, cycling kinds/palettes
     kinds = ["dervish", "warp", "sun", "dervish", "warp", "dervish"]
-    scenes = [Scene(rng, "plain", PALETTES[0])]
+    scenes = []
     for i in range(len(tl)):
         scenes.append(Scene(rng, kinds[i % len(kinds)], PALETTES[(i + 1 + spec.get("seed", 1)) % len(PALETTES)]))
-    starts = [0.0] + [e["t0"] - 0.4 for e in tl]
+    starts = [0.0] + [e["t0"] - 0.4 for e in tl[1:]]
     ends = starts[1:] + [DUR]
     dust = Dust(rng)
     # --- text assets
     for e in tl:
         e["fa_imgs"] = persian_progressive(e["seg"]["fa"]) if e["seg"].get("fa") else []
         e["en_img"] = glow_rgba(en_block(e["seg"]["en"]), (240, 232, 215), (255, 220, 160), 6, 0.35) if e["seg"].get("en") else None
-    title = glow_rgba(text_img(spec.get("title", ""), SERIF_I, 76), (255, 245, 225), (255, 210, 140), 12, 0.8) if spec.get("title") else None
-    header = glow_rgba(text_img(spec.get("header", "").upper(), SERIF, 36), GOLD, GOLD, 5, 0.3)
+    title = glow_rgba(text_img(spec.get("title", ""), SERIF_I, 50), (255, 245, 225), (255, 210, 140), 8, 0.6) if spec.get("title") else None
+    header = glow_rgba(text_img(spec.get("header", "").upper(), SERIF, 30), GOLD, GOLD, 4, 0.3)
     src = glow_rgba(text_img(spec.get("source", ""), SERIF, 34), GOLD, GOLD, 5, 0.3)
     handle = glow_rgba(text_img("@theguesthouse.poetry", SERIF, 34), (235, 228, 210), (235, 228, 210), 4, 0.2)
     sig = glow_rgba(text_img("Mowlana Jalal ad-Din Rumi", SERIF_I, 38), (235, 228, 210), (255, 220, 160), 6, 0.3)
@@ -429,9 +429,10 @@ def build(spec, out):
         # text
         ease = lambda x: max(0.0, min(1.0, x)) ** 2 * (3 - 2 * max(0.0, min(1.0, x)))
         if title is not None:
-            a = ease((tt - 0.4) / 0.8) * ease((INTRO + 0.2 - tt) / 0.6)
+            t_hide = tl[0]["t0"] + tl[0]["d"] + 0.6 if tl else 3.0     # small label at the top during the first line
+            a = ease(tt / 0.3) * ease((t_hide - tt) / 0.6)
             if a > 0:
-                composite(frame, header, W / 2, H * 0.40, a); composite(frame, title, W / 2, H * 0.46, a)
+                composite(frame, header, W / 2, H * 0.075, a); composite(frame, title, W / 2, H * 0.11, a)
         for e in tl:
             t0, d = e["t0"], e["d"]
             if tt < t0 or tt > t0 + d + 0.6: continue
@@ -451,7 +452,7 @@ def build(spec, out):
         if a_end > 0:
             composite(frame, sig, W / 2, H * 0.62, a_end); composite(frame, src, W / 2, H * 0.66, a_end)
         composite(frame, handle, W / 2, H * 0.935, ease(tt / 1.0) * 0.85)
-        fade = min(1.0, tt / 0.7, (DUR - tt) / 0.9)
+        fade = min(1.0, 0.35 + tt / 0.25, (DUR - tt) / 0.9)
         frame *= max(0.0, fade)
         ff.stdin.write(np.clip(frame, 0, 255).astype(np.uint8).tobytes())
     ff.stdin.close(); ff.wait()
