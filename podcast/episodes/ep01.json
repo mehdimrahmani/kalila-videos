@@ -1,10 +1,10 @@
 {
  "n": 1,
- "title": "The Vizier on the Gallows: The Fall of Hasanak",
+ "title": "Folio 1: The Vizier on the Gallows",
  "description": "Ghazni, a thousand years ago. Sultan Mahmud is dead, his son Masud takes the throne, and the old vizier Hasanak is about to pay for one careless sentence. Beyhaqi, a young secretary at court, saw it all, and wrote it down years later in one of the most famous passages of Persian prose. A story about pride, revenge, a mother's dignity, and a historian who refused to lie.",
  "source": "Tarikh-e Beyhaqi, the account of Hasanak's execution (Balkh, 422 AH / 1032 CE)",
  "paragraphs": [
-  "Welcome to The Honest Historian. I'm Mehdi Rahmani. Every week, I open a book that was written nearly a thousand years ago, in Persian, by a man who made his readers a promise. He promised to write only what he had seen with his own eyes, or heard from people he trusted. His name was Abolfazl Beyhaqi, and today, I want to tell you the story that made him famous.",
+  "Welcome to The Honest Historian. I'm Mehdi Rahmani, and this is Folio One. Every week, I open a book that was written nearly a thousand years ago, in Persian, by a man who made his readers a promise. He promised to write only what he had seen with his own eyes, or heard from people he trusted. His name was Abolfazl Beyhaqi, and today, I want to tell you the story that made him famous.",
   "It is the story of a vizier named Hasanak. A powerful man, a proud man, and, in the end, a man standing alone on a gallows in the city of Balkh.",
   "---",
   "Let me take you to the beginning of the eleventh century. In the east of the Persian world, in what is today Afghanistan, there was a great empire ruled from the city of Ghazni. Its king was Sultan Mahmud of Ghazni, one of the most famous rulers of his age. His armies marched as far as India. Poets filled his court. And next to him, managing the endless business of the empire, stood his vizier, his chief minister: Hasanak.",
@@ -38,5 +38,6 @@
   "---",
   "Next week, we'll stay at the court of Ghazni and meet the new Sultan, Masud himself: a brave, impulsive, complicated king, and the long road that took him from rebel prince to ruler of an empire.",
   "If you enjoyed this story, follow the show so you don't miss the next one, and share it with someone who loves history. I'm Mehdi Rahmani. This episode was retold from the Persian original of the History of Beyhaqi, and narrated with an AI rendering of my own voice. Thank you for listening."
- ]
+ ],
+ "cold_open": "Balkh, the year one thousand and thirty two. A gallows stands outside the city. The man they bring to it was, not long ago, the most powerful minister in the empire. And when it was over, he was left alone, just as alone as he had come from his mother's womb."
 }
