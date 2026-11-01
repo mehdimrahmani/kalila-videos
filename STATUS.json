@@ -20,9 +20,16 @@
       "video": "ep02/ep02.mp4",
       "scheduled": "2026-11-07T21:30:00+03:30",
       "metricool_uuid": "3075612165973885282"
+    },
+    {
+      "n": 3,
+      "title": "The Ring-Dove and the Hunter's Net",
+      "video": "ep03/ep03.mp4",
+      "scheduled": "2026-11-14T21:30:00+03:30",
+      "metricool_uuid": "-4395985631639483585"
     }
   ],
-  "next_episode": 3,
+  "next_episode": 4,
   "schedule_rule": "Each weekly run builds episode `next_episode` and schedules it for the Saturday 13-14 days ahead, 21:30 Asia/Tehran (US afternoon / UK evening). One Short every day at 21:30.",
   "shorts": [
     {
@@ -123,6 +130,26 @@
         "episode": "ep02",
         "start": 133.0,
         "dur": 34.6
+      }
+    },
+    {
+      "file": "shorts/short11_doves_trap.mp4",
+      "scheduled": "2026-11-12T21:30:00+03:30",
+      "metricool_uuid": "3285448880164192619",
+      "source": {
+        "episode": "ep03",
+        "start": 45.0,
+        "dur": 30.6
+      }
+    },
+    {
+      "file": "shorts/short12_fly_together.mp4",
+      "scheduled": "2026-11-17T21:30:00+03:30",
+      "metricool_uuid": "-3723381481804706358",
+      "source": {
+        "episode": "ep03",
+        "start": 75.8,
+        "dur": 27.8
       }
     }
   ],
