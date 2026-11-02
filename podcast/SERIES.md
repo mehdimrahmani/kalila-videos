@@ -2,6 +2,8 @@
 
 Weekly English podcast retelling stories from **Tarikh-e Beyhaqi** (Abolfazl Beyhaqi, 11th c., public domain), host **Mehdi Rahmani**, narrated with an AI rendering of his voice (Kokoro am_onyx → FreeVC with `podcast/voice/mehdi_freevc24_se.npy`). Published on GitHub Pages: feed `https://mehdimrahmani.github.io/kalila-videos/podcast/feed.xml` (Spotify/Apple read this feed).
 
+Listed on (2 Nov 2026): Spotify https://open.spotify.com/show/18Hf8IqDkOBNni2WW3sdoX · Pocket Casts https://pca.st/j14izvo8 · Podcast Index (submitted). Not yet: Apple Podcasts.
+
 ## Identity (Mehdi, 1 Nov 2026 — modelled on his earlier podcast Gazette)
 - Beyhaqi's history was written in some thirty volumes ("mujallad"), so: seasons are **Volumes**, episodes are **Folios**. Titles: "Folio N: <title>". Say "this is Folio <N in words>" in the welcome.
 - Sound: a **cold open** (one striking line from the story, in the JSON field "cold_open", 2–4 sentences, read over night wind), then the theme swell, then narration over a soft continuous Shur-mode music bed (never dead silence), a 14-second musical interlude at every "---", outro swell. All handled by make_podcast.py.
