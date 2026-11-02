@@ -8,6 +8,7 @@ usage:
   python3 ops/yt.py analytics 28            # last N days: views, watch time, subs, retention, countries, traffic
   python3 ops/yt.py caption VIDEO_ID LANG FILE.srt [NAME]   # upload a caption track
   python3 ops/yt.py channel UC...           # public stats of any channel (competitors)
+  python3 ops/yt.py upload FILE.mp4 META.json   # META: {"title","description","tags":[],"privacy":"public","categoryId":"27","madeForKids":false}
 """
 import os, sys, json, datetime, urllib.request, urllib.parse, uuid
 
@@ -75,6 +76,28 @@ def caption(vid, lang, path, name=""):
     return call("https://www.googleapis.com/upload/youtube/v3/captions", {"part": "snippet", "uploadType": "multipart"},
                 body, {"Content-Type": f"multipart/related; boundary={b}"}, "POST")
 
+def upload(path, meta_path):
+    m = json.load(open(meta_path))
+    body = json.dumps({"snippet": {"title": m["title"][:100], "description": m.get("description", ""),
+                                   "tags": m.get("tags", []), "categoryId": m.get("categoryId", "27"),
+                                   "defaultLanguage": m.get("language", "en"), "defaultAudioLanguage": m.get("language", "en")},
+                       "status": {"privacyStatus": m.get("privacy", "public"), "selfDeclaredMadeForKids": m.get("madeForKids", False),
+                                  "containsSyntheticMedia": m.get("synthetic", True)}}).encode()
+    global TOK
+    TOK = TOK or token()
+    size = os.path.getsize(path)
+    req = urllib.request.Request("https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status",
+                                 data=body, method="POST", headers={"Authorization": "Bearer " + TOK,
+                                 "Content-Type": "application/json; charset=UTF-8", "X-Upload-Content-Type": "video/mp4",
+                                 "X-Upload-Content-Length": str(size)})
+    loc = urllib.request.urlopen(req).headers["Location"]
+    req = urllib.request.Request(loc, data=open(path, "rb").read(), method="PUT",
+                                 headers={"Authorization": "Bearer " + TOK, "Content-Type": "video/mp4"})
+    try:
+        return json.load(urllib.request.urlopen(req, timeout=600))
+    except urllib.error.HTTPError as e:
+        sys.exit(f"HTTP {e.code}: {e.read().decode()[:800]}")
+
 def channel(cid):
     k = "forHandle" if cid.startswith("@") else "id"
     return call(API + "channels", {"part": "snippet,statistics", k: cid})
@@ -82,5 +105,5 @@ def channel(cid):
 if __name__ == "__main__":
     a = sys.argv[1:] or ["me"]
     out = {"me": lambda: me(), "videos": lambda: videos(), "analytics": lambda: analytics(int(a[1]) if len(a) > 1 else 28),
-           "caption": lambda: caption(*a[1:5]), "channel": lambda: channel(a[1])}[a[0]]()
+           "caption": lambda: caption(*a[1:5]), "channel": lambda: channel(a[1]), "upload": lambda: upload(a[1], a[2])}[a[0]]()
     print(json.dumps(out, ensure_ascii=False, indent=1))
