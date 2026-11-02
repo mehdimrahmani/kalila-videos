@@ -8,6 +8,8 @@ usage:
   python3 ops/yt.py analytics 28            # last N days: views, watch time, subs, retention, countries, traffic
   python3 ops/yt.py caption VIDEO_ID LANG FILE.srt [NAME]   # upload a caption track
   python3 ops/yt.py channel UC...           # public stats of any channel (competitors)
+  python3 ops/yt.py playlist-create "Title" "Description"   # -> playlist id (public)
+  python3 ops/yt.py playlist-add PLAYLIST_ID VIDEO_ID
   python3 ops/yt.py upload FILE.mp4 META.json   # META: {"title","description","tags":[],"privacy":"public","categoryId":"27","madeForKids":false}
 """
 import os, sys, json, datetime, urllib.request, urllib.parse, uuid
@@ -98,6 +100,15 @@ def upload(path, meta_path):
     except urllib.error.HTTPError as e:
         sys.exit(f"HTTP {e.code}: {e.read().decode()[:800]}")
 
+def playlist_create(title, desc=""):
+    b = json.dumps({"snippet": {"title": title, "description": desc, "defaultLanguage": "en"},
+                    "status": {"privacyStatus": "public"}}).encode()
+    return call(API + "playlists", {"part": "snippet,status"}, b, {"Content-Type": "application/json"}, "POST")
+
+def playlist_add(pid, vid):
+    b = json.dumps({"snippet": {"playlistId": pid, "resourceId": {"kind": "youtube#video", "videoId": vid}}}).encode()
+    return call(API + "playlistItems", {"part": "snippet"}, b, {"Content-Type": "application/json"}, "POST")
+
 def channel(cid):
     k = "forHandle" if cid.startswith("@") else "id"
     return call(API + "channels", {"part": "snippet,statistics", k: cid})
@@ -105,5 +116,7 @@ def channel(cid):
 if __name__ == "__main__":
     a = sys.argv[1:] or ["me"]
     out = {"me": lambda: me(), "videos": lambda: videos(), "analytics": lambda: analytics(int(a[1]) if len(a) > 1 else 28),
-           "caption": lambda: caption(*a[1:5]), "channel": lambda: channel(a[1]), "upload": lambda: upload(a[1], a[2])}[a[0]]()
+           "caption": lambda: caption(*a[1:5]), "channel": lambda: channel(a[1]), "upload": lambda: upload(a[1], a[2]),
+           "playlist-create": lambda: playlist_create(a[1], a[2] if len(a) > 2 else ""),
+           "playlist-add": lambda: playlist_add(a[1], a[2])}[a[0]]()
     print(json.dumps(out, ensure_ascii=False, indent=1))

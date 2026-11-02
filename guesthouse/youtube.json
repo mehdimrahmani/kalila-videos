@@ -1,5 +1,24 @@
-{"channel": "UCEz1T3TPlG_b0yjNt4356kg",
+{
+ "channel": "UCEz1T3TPlG_b0yjNt4356kg",
  "handle": "@theguesthouse.poetry",
  "uploaded": [
-  {"reel": "guesthouse/reels/part01.mp4", "video_id": "PK05UHUlnxI", "date": "2026-11-02", "title": "I was dead, I came alive — Rumi in the original Persian #Shorts"}
- ]}
+  {
+   "reel": "guesthouse/reels/part01.mp4",
+   "video_id": "PK05UHUlnxI",
+   "date": "2026-11-02",
+   "title": "I was dead, I came alive — Rumi in the original Persian #Shorts"
+  }
+ ],
+ "playlists": {
+  "rumi": "PLSmxCUtqVSqU",
+  "beyhaqi": "PLPa6UJbzvUIM"
+ },
+ "podcast": [
+  {
+   "ep": 1,
+   "full": "8EpUE3obTLg",
+   "short": "CkPl3uta8BM",
+   "date": "2026-11-02"
+  }
+ ]
+}
