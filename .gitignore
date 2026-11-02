@@ -6,3 +6,4 @@ pipeline/ep*/render_*.mp4
 guesthouse/tts/
 podcast/models/
 podcast/work/
+podcast/video/*.mp4
