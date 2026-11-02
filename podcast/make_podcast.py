@@ -120,22 +120,25 @@ def render(ep):
     v = Voice()
     sil = lambda s: np.zeros(int(s * SR), np.float32)
     lay = []                                  # (start_sec, audio) voice clips
+    timeline = []                             # (start, end, text, section) for video captions/chapters
+    section = 0
     marks = []                                # (start, end, kind) for the music envelope
     t = 0.8
     if ep.get("cold_open"):
         for c in chunks(ep["cold_open"]):
-            y = v.say(c); lay.append((t, y)); t += len(y) / SR + 0.35
+            y = v.say(c); lay.append((t, y)); timeline.append((t, t + len(y) / SR, c, -1)); t += len(y) / SR + 0.35
         marks.append((0.0, t + 0.6, "cold"))
         t += 1.0
     t_theme = t; t += 9.0                     # theme swell, then voice enters over its tail
     marks.append((t_theme, t, "theme"))
     for i, par in enumerate(ep["paragraphs"]):
         if par.strip() == "---":
-            marks.append((t + 0.4, t + 14.0, "interlude")); t += 14.5; continue
+            marks.append((t + 0.4, t + 14.0, "interlude")); t += 14.5; section += 1; continue
         for c in chunks(par):
-            y = v.say(c); lay.append((t, y)); t += len(y) / SR + 0.28
+            y = v.say(c); lay.append((t, y)); timeline.append((t, t + len(y) / SR, c, section)); t += len(y) / SR + 0.28
         t += 0.5
         print(f"  paragraph {i + 1}/{len(ep['paragraphs'])}", flush=True)
+    json.dump({"timeline": timeline, "total": t + 12.5}, open(os.path.join(HERE, "episodes", f"ep{ep['n']:02d}.timing.json"), "w"), indent=0)
     t_out = t; t += 12.0
     marks.append((t_out, t, "outro"))
     total = t + 0.5
