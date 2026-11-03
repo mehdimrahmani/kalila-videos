@@ -6,3 +6,7 @@ line by line, source line, @theguesthouse.poetry, with a synthesized ney melody 
 Reels are committed to `guesthouse/reels/partNN.mp4` and scheduled in Metricool (brand 7510338) as
 Instagram type REEL with media = the raw.githubusercontent.com URL, so nothing needs Mehdi's internet.
 Specs (verse text) live in `guesthouse/specs/`. Font: Vazirmatn (OFL, see fonts/Vazirmatn-OFL.txt).
+
+YouTube Shorts (The Guest House channel): `yt_endcard.py REEL SPEC OUT` makes a YouTube-only copy with a
+"Part N+1 is coming / Subscribe to follow the story" card over the last 3 s (the Instagram Reel is unchanged).
+Every Short is added to the "Rumi & Shams" playlist (youtube.json → playlists.rumi).
