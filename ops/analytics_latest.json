@@ -1,0 +1,201 @@
+{
+ "generated": "2026-11-03",
+ "window_days": 28,
+ "note": "YouTube Analytics lags ~2-3 days; the newest Shorts are not yet counted",
+ "totals": {
+  "views": 88,
+  "watch_minutes": 43,
+  "avg_view_duration_s": 30,
+  "avg_view_pct": 28.9,
+  "subs_gained": 10,
+  "subs_lost": 6
+ },
+ "videos": [
+  {
+   "id": "tg_EJxcVnjE",
+   "title": "What is Kalila & Dimna? | کلیله و دمنه چیست؟ | Persian Fables for Kids",
+   "type": "long",
+   "views": 72,
+   "watch_minutes": 37,
+   "avg_view_duration_s": 31,
+   "avg_view_pct": 32.0,
+   "subs_gained": 9
+  },
+  {
+   "id": "8R58drPtZd4",
+   "title": "The Lion and the Hare | شیر و خرگوش | Kalila & Dimna Ep 1",
+   "type": "long",
+   "views": 7,
+   "watch_minutes": 4,
+   "avg_view_duration_s": 39,
+   "avg_view_pct": 22.4,
+   "subs_gained": 0
+  },
+  {
+   "id": "vanhzpGc364",
+   "title": "Meet Kalila & Dimna! | کلیله و دمنه #Shorts",
+   "type": "short",
+   "views": 3,
+   "watch_minutes": 0,
+   "avg_view_duration_s": 19,
+   "avg_view_pct": 80.8,
+   "subs_gained": 0
+  },
+  {
+   "id": "EZ6N8BKQBVw",
+   "title": "August 4, 2022",
+   "type": "long",
+   "views": 2,
+   "watch_minutes": 0,
+   "avg_view_duration_s": 13,
+   "avg_view_pct": 6.6,
+   "subs_gained": 0
+  },
+  {
+   "id": "aDwEEyRZCus",
+   "title": "Who is the king of this forest? | شیر و خرگوش #Shorts",
+   "type": "short",
+   "views": 1,
+   "watch_minutes": 0,
+   "avg_view_duration_s": 0,
+   "avg_view_pct": 0,
+   "subs_gained": 0
+  },
+  {
+   "id": "m9p0ciKwiFg",
+   "title": "Can a tiny hare trick a lion? | شیر و خرگوش #Shorts",
+   "type": "short",
+   "views": 1,
+   "watch_minutes": 0,
+   "avg_view_duration_s": 9,
+   "avg_view_pct": 26.8,
+   "subs_gained": 0
+  },
+  {
+   "id": "_xRem419wRI",
+   "title": "August 4, 2022",
+   "type": "long",
+   "views": 1,
+   "watch_minutes": 0,
+   "avg_view_duration_s": 9,
+   "avg_view_pct": 14.9,
+   "subs_gained": 0
+  },
+  {
+   "id": "yNSFQSPF_j8",
+   "title": "April 6, 2019",
+   "type": "long",
+   "views": 1,
+   "watch_minutes": 0,
+   "avg_view_duration_s": 3,
+   "avg_view_pct": 1.9,
+   "subs_gained": 0
+  }
+ ],
+ "lifetime_public_views_recent_uploads": [
+  {
+   "id": "RcUMbw7x_uE",
+   "title": "The lion and his reflection | شیر و خرگوش #Shorts",
+   "published": "2026-11-03",
+   "views": 0
+  },
+  {
+   "id": "Op4k8PlZSd4",
+   "title": "Can a monkey and a tortoise be friends? | بوزینه و باخه #Shorts",
+   "published": "2026-11-02",
+   "views": 0
+  },
+  {
+   "id": "kNcxrtBB_Rw",
+   "title": "What would YOU do if a lion ruled? | شیر و خرگوش #Shorts",
+   "published": "2026-11-01",
+   "views": 0
+  },
+  {
+   "id": "8R58drPtZd4",
+   "title": "The Lion and the Hare | شیر و خرگوش | Kalila & Dimna Ep 1",
+   "published": "2026-10-31",
+   "views": 12
+  },
+  {
+   "id": "aDwEEyRZCus",
+   "title": "Who is the king of this forest? | شیر و خرگوش #Shorts",
+   "published": "2026-10-30",
+   "views": 1
+  },
+  {
+   "id": "m9p0ciKwiFg",
+   "title": "Can a tiny hare trick a lion? | شیر و خرگوش #Shorts",
+   "published": "2026-10-29",
+   "views": 1
+  },
+  {
+   "id": "vanhzpGc364",
+   "title": "Meet Kalila & Dimna! | کلیله و دمنه #Shorts",
+   "published": "2026-10-27",
+   "views": 3
+  },
+  {
+   "id": "tg_EJxcVnjE",
+   "title": "What is Kalila & Dimna? | کلیله و دمنه چیست؟ | Persian Fables for Kids",
+   "published": "2026-10-25",
+   "views": 72
+  }
+ ],
+ "top_countries": [
+  {
+   "country": "IR",
+   "views": 13,
+   "estimatedMinutesWatched": 6
+  }
+ ],
+ "traffic_sources": [
+  {
+   "insightTrafficSourceType": "EXT_URL",
+   "views": 39,
+   "estimatedMinutesWatched": 19
+  },
+  {
+   "insightTrafficSourceType": "NO_LINK_OTHER",
+   "views": 21,
+   "estimatedMinutesWatched": 10
+  },
+  {
+   "insightTrafficSourceType": "YT_CHANNEL",
+   "views": 16,
+   "estimatedMinutesWatched": 7
+  },
+  {
+   "insightTrafficSourceType": "YT_OTHER_PAGE",
+   "views": 8,
+   "estimatedMinutesWatched": 2
+  },
+  {
+   "insightTrafficSourceType": "SUBSCRIBER",
+   "views": 2,
+   "estimatedMinutesWatched": 1
+  },
+  {
+   "insightTrafficSourceType": "YT_SEARCH",
+   "views": 1,
+   "estimatedMinutesWatched": 0
+  },
+  {
+   "insightTrafficSourceType": "PLAYLIST",
+   "views": 1,
+   "estimatedMinutesWatched": 1
+  }
+ ],
+ "shorts_vs_long": {
+  "videoOnDemand": {
+   "views": 82,
+   "watch_minutes": 42,
+   "avg_view_duration_s": 31
+  },
+  "shorts": {
+   "views": 6,
+   "watch_minutes": 0,
+   "avg_view_duration_s": 14
+  }
+ }
+}
