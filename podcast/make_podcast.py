@@ -138,6 +138,7 @@ def render(ep):
             y = v.say(c); lay.append((t, y)); timeline.append((t, t + len(y) / SR, c, section)); t += len(y) / SR + 0.28
         t += 0.5
         print(f"  paragraph {i + 1}/{len(ep['paragraphs'])}", flush=True)
+    del v; import gc; gc.collect()             # free TTS/VC models before mixing (avoids OOM on 8 GB machines)
     json.dump({"timeline": timeline, "total": t + 12.5}, open(os.path.join(HERE, "episodes", f"ep{ep['n']:02d}.timing.json"), "w"), indent=0)
     t_out = t; t += 12.0
     marks.append((t_out, t, "outro"))

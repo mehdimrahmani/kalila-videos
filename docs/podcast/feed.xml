@@ -15,7 +15,19 @@
     <itunes:category text="History"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sun, 01 Nov 2026 11:42:43 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 21:29:58 +0000</lastBuildDate>
+    <item>
+      <title>Folio 2: Two Brothers, One Throne</title>
+      <description>In the spring of 1030, the great Sultan Mahmud of Ghazni dies, and his empire is left to the wrong son. His elder son Masud is far away in Isfahan, and his younger son Muhammad is already on the throne. Over six tense months, letters fly, armies change sides, and a kingmaker learns the price of making kings. Beyhaqi, who knew these men, tells us how it really went.</description>
+      <itunes:summary>In the spring of 1030, the great Sultan Mahmud of Ghazni dies, and his empire is left to the wrong son. His elder son Masud is far away in Isfahan, and his younger son Muhammad is already on the throne. Over six tense months, letters fly, armies change sides, and a kingmaker learns the price of making kings. Beyhaqi, who knew these men, tells us how it really went.</itunes:summary>
+      <enclosure url="https://mehdimrahmani.github.io/kalila-videos/podcast/episodes/ep02.mp3" length="11281722" type="audio/mpeg"/>
+      <guid isPermaLink="false">honest-historian-ep02</guid>
+      <pubDate>Tue, 03 Nov 2026 21:29:58 +0000</pubDate>
+      <itunes:duration>00:11:45</itunes:duration>
+      <itunes:episode>2</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Folio 1: The Vizier on the Gallows</title>
       <description>Ghazni, a thousand years ago. Sultan Mahmud is dead, his son Masud takes the throne, and the old vizier Hasanak is about to pay for one careless sentence. Beyhaqi, a young secretary at court, saw it all, and wrote it down years later in one of the most famous passages of Persian prose. A story about pride, revenge, a mother&#x27;s dignity, and a historian who refused to lie.</description>
