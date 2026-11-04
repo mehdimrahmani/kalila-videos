@@ -225,8 +225,12 @@ def build(n):
             "categoryId": "27", "privacy": "public", "madeForKids": False, "synthetic": True, "language": "en"}
     json.dump(meta, open(os.path.join(OUT, f"ep{n:02d}.youtube.json"), "w"), ensure_ascii=False, indent=1)
     if cold:
-        hook = ep.get("cold_open", "").split(".")[0][:70]
-        ms = dict(meta, title=f"{hook}… | {folio} — The Honest Historian #Shorts"[:100],
+        suffix = f"… | {folio} — The Honest Historian #Shorts"
+        hook = ep.get("cold_open", "").split(".")[0].rstrip(",;: ")
+        room = min(70, 100 - len(suffix))
+        if len(hook) > room:  # cut on a word boundary so the suffix (and #Shorts) always fits
+            hook = hook[:room].rsplit(" ", 1)[0].rstrip(",;: ")
+        ms = dict(meta, title=f"{hook}{suffix}",
                   description=f"{ep['cold_open']}\n\nThe full story: {ep['title']} — on our channel and on every podcast app.\n"
                               "https://mehdimrahmani.github.io/kalila-videos/podcast/\n\nNarrated with an AI rendering of "
                               "Mehdi Rahmani's voice.\n\n#History #PersianHistory #Beyhaqi #Shorts")
