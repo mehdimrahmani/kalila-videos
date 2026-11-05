@@ -1,0 +1,58 @@
+{
+ "id": "lf01",
+ "title": "Rumi for a Restless Heart",
+ "subtitle": "Five Persian Sufi poems with English translation",
+ "fa_title": "مولانا برای دلی بی‌قرار",
+ "seed": 11,
+ "intro": ["Five short poems by Rumi, from the original Persian.", "For a restless heart. Stay with each one for a moment."],
+ "poems": [
+  {"name": "The Reed", "source": "Masnavi · Book I, lines 1–2",
+   "lines": [
+    {"fa": "بشنو این نی چون شکایت می‌کند", "en": "Listen to this reed, how it complains,"},
+    {"fa": "از جدایی‌ها حکایت می‌کند", "en": "telling the tale of separations."},
+    {"fa": "کز نیستان تا مرا ببریده‌اند", "en": "Ever since they cut me from the reed bed,"},
+    {"fa": "در نفیرم مرد و زن نالیده‌اند", "en": "men and women have wept at my cry."}],
+   "tafsir": ["These are the first lines of the Masnavi, Rumi's great poem.",
+              "A reed flute is cut from the reed bed where it grew.",
+              "Every note it plays is a cry of longing to go back.",
+              "Rumi says we are like that reed.",
+              "So the restlessness you feel may be a kind of homesickness."]},
+  {"name": "The Root", "source": "Masnavi · Book I, line 4",
+   "lines": [
+    {"fa": "هر کسی کو دور ماند از اصل خویش", "en": "Whoever is left far from their source"},
+    {"fa": "باز جوید روزگار وصل خویش", "en": "seeks again the days of union."}],
+   "tafsir": ["This comes a few lines later, in the same song of the reed.",
+              "Whoever is cut off from their source keeps looking for the way back.",
+              "For Rumi, that source is the origin of the soul itself.",
+              "So our searching is not a flaw.",
+              "It is the soul remembering where it came from."]},
+  {"name": "The Sea", "source": "Divan-e Shams",
+   "lines": [
+    {"fa": "ما ز بالاییم و بالا می‌رویم", "en": "We are from above, and above we go."},
+    {"fa": "ما ز دریاییم و دریا می‌رویم", "en": "We are from the sea, and to the sea we go."}],
+   "tafsir": ["Here the image is a drop of water and the ocean.",
+              "We came from something vast, and we are returning to it.",
+              "Rumi says it without fear. Almost with joy.",
+              "In his poetry, going home is not an ending.",
+              "It is the drop remembering it was always the sea."]},
+  {"name": "Alive", "source": "Divan-e Shams · Ghazal 1393",
+   "lines": [
+    {"fa": "مرده بدم زنده شدم، گریه بدم خنده شدم", "en": "I was dead, I came alive. I was weeping, I became laughter."},
+    {"fa": "دولت عشق آمد و من دولت پاینده شدم", "en": "Love's fortune came, and I became fortune that lasts."}],
+   "tafsir": ["Rumi was already a respected scholar when he met Shams of Tabriz.",
+              "And still he says: I was dead.",
+              "Look at the last line. He does not say love's fortune came to me.",
+              "He says: I became that fortune.",
+              "Love did not give him something new to own. It changed who he was."]},
+  {"name": "Surrender", "source": "Divan-e Shams",
+   "lines": [
+    {"fa": "آمده‌ام که سر نهم", "en": "I have come to lay down my head,"},
+    {"fa": "عشق تو را به سر برم", "en": "and to carry your love to the very end."}],
+   "tafsir": ["This is the opening of one of Rumi's best-loved ghazals.",
+              "To lay down one's head means to give oneself completely.",
+              "One reading hears it spoken to God. Another, to Shams.",
+              "Either way, the restless heart finds rest",
+              "only when it stops holding back."]}
+ ],
+ "outro": ["Thank you for listening.", "Every week we share real verses of Rumi, translated honestly from the Persian.", "Subscribe to The Guest House."]
+}

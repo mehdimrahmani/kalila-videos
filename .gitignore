@@ -7,3 +7,6 @@ guesthouse/tts/
 podcast/models/
 podcast/work/
 podcast/video/*.mp4
+longform/remotion/node_modules/
+longform/remotion/out/
+longform/remotion/public/*/audio.wav
