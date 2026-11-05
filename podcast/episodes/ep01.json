@@ -50,5 +50,15 @@
   "A mother's answer",
   "The honest historian",
   "Next week"
+ ],
+ "extra_shorts": [
+  {
+   "from": "When the news was brought to her",
+   "hook": "His mother's answer is still quoted a thousand years later"
+  },
+  {
+   "from": "And then Beyhaqi writes one of the most famous lines",
+   "hook": "The most famous line in Persian prose"
+  }
  ]
 }

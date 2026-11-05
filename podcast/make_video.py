@@ -3,6 +3,10 @@
 
   python3 podcast/make_video.py N            -> podcast/video/epNN.mp4        (1920x1080, full episode)
                                                podcast/video/epNN_short.mp4  (1080x1920, cold-open Short)
+                                               podcast/video/epNN_short2.mp4, _short3 ... (extra Shorts, below)
+  python3 podcast/make_video.py N --shorts-only   -> only the Shorts (skip the long full-episode render)
+Extra Shorts: episode JSON "extra_shorts": [{"from": "<words that begin the moment>", "hook": "<title hook>"}];
+each runs from the spoken chunk containing those words for up to ~50 s, within the same section.
                                                podcast/video/epNN.youtube.json (title, description with chapters, tags)
 
 Look: aged paper + the red seal (same identity as the cover), the folio title, the current chapter, a red-ink
@@ -178,38 +182,52 @@ def build(n):
     os.makedirs(OUT, exist_ok=True); tmp = tempfile.mkdtemp()
     chaps = sections(ep, tl, real)
 
-    # ---- full episode, 1920x1080
+    # ---- full episode, 1920x1080 (skipped with --shorts-only)
     bg = os.path.join(tmp, "bg.png"); wide_bg(ep, bg)
-    ass = os.path.join(tmp, "cap.ass")
-    write_ass(ass, cues(tl, 84), chaps, real, 1920, 1080, cap=46, ol=0, ml=200, mr=200, mv=92,
-              chs=38, cml=860, cmr=110, cmv=640)
     out = os.path.join(OUT, f"ep{n:02d}.mp4")
-    fc = (f"[1:a]showwaves=s=1000x120:mode=cline:rate=24:colors=0x801E1A:scale=sqrt,format=rgba,"
-          f"colorkey=0x000000:0.1:0.0[w];[0:v][w]overlay=790:760[v1];[v1]subtitles='{ass}'[v]")
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-loop", "1", "-framerate", "24", "-i", bg, "-i", mp3,
-                    "-filter_complex", fc, "-map", "[v]", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast",
-                    "-tune", "stillimage", "-crf", "24", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k",
-                    "-shortest", "-movflags", "+faststart", out], check=True)
+    if not SHORTS_ONLY:
+        ass = os.path.join(tmp, "cap.ass")
+        write_ass(ass, cues(tl, 84), chaps, real, 1920, 1080, cap=46, ol=0, ml=200, mr=200, mv=92,
+                  chs=38, cml=860, cmr=110, cmv=640)
+        fc = (f"[1:a]showwaves=s=1000x120:mode=cline:rate=24:colors=0x801E1A:scale=sqrt,format=rgba,"
+              f"colorkey=0x000000:0.1:0.0[w];[0:v][w]overlay=790:760[v1];[v1]subtitles='{ass}'[v]")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-loop", "1", "-framerate", "24", "-i", bg, "-i", mp3,
+                        "-filter_complex", fc, "-map", "[v]", "-map", "1:a", "-c:v", "libx264", "-preset", "veryfast",
+                        "-tune", "stillimage", "-crf", "24", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k",
+                        "-shortest", "-movflags", "+faststart", out], check=True)
 
-    # ---- cold-open Short, 1080x1920
-    cold = [x for x in tl if x[3] == -1]
-    if cold:
-        end = min(58.0, cold[-1][1] + 7.0); e0 = end - 3.2
-        bg2 = os.path.join(tmp, "bg2.png"); tall_bg(ep, bg2)
-        endp = os.path.join(tmp, "end.png"); end_card(ep, endp)
-        ass2 = os.path.join(tmp, "cap2.ass")
-        write_ass(ass2, [c for c in cues(cold, 44) if c[0] < e0], [], end, 1080, 1920, cap=66, ol=0, ml=90, mr=90,
+    # ---- Shorts, 1080x1920: the cold open, plus any "extra_shorts" moments in the episode JSON
+    bg2 = os.path.join(tmp, "bg2.png"); tall_bg(ep, bg2)
+    endp = os.path.join(tmp, "end.png"); end_card(ep, endp)
+    def short(t0, chunks, name):
+        end = min(58.0, chunks[-1][1] - t0 + 4.0); e0 = end - 3.2
+        rel = [(x0 - t0, x1 - t0, c, sc) for x0, x1, c, sc in chunks]
+        ass2 = os.path.join(tmp, name + ".ass")
+        write_ass(ass2, [c for c in cues(rel, 44) if 0 <= c[0] < e0], [], end, 1080, 1920, cap=66, ol=0, ml=90, mr=90,
                   mv=330, chs=10, cml=0, cmr=0, cmv=0)
-        sh = os.path.join(OUT, f"ep{n:02d}_short.mp4")
         fc2 = (f"[1:a]showwaves=s=860x140:mode=cline:rate=24:colors=0x801E1A:scale=sqrt,format=rgba,"
                f"colorkey=0x000000:0.1:0.0[w];[0:v][w]overlay=110:1000[v1];[v1]subtitles='{ass2}'[v2];"
                f"[2:v]format=rgba,fade=t=in:st={e0}:d=0.6:alpha=1[e];[v2][e]overlay=0:0:enable='gte(t,{e0})'[v3];"
-               f"[v3]fade=t=in:st=0:d=0.3[v];[1:a]afade=t=out:st={end - 1.2}:d=1.2[a]")
+               f"[v3]fade=t=in:st=0:d=0.3[v];[1:a]afade=t=in:st=0:d=0.3,afade=t=out:st={end - 1.2}:d=1.2[a]")
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-loop", "1", "-framerate", "24", "-t", str(end), "-i", bg2,
-                        "-t", str(end), "-i", mp3, "-loop", "1", "-framerate", "24", "-t", str(end), "-i", endp,
+                        "-ss", str(t0), "-t", str(end), "-i", mp3, "-loop", "1", "-framerate", "24", "-t", str(end), "-i", endp,
                         "-filter_complex", fc2, "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "veryfast",
                         "-crf", "22", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-t", str(end),
-                        "-movflags", "+faststart", sh], check=True)
+                        "-movflags", "+faststart", os.path.join(OUT, name + ".mp4")], check=True)
+    cold = [x for x in tl if x[3] == -1]
+    if cold:
+        short(0.0, cold, f"ep{n:02d}_short")
+    extras = []
+    for i, xs in enumerate(ep.get("extra_shorts", []), 2):
+        idx = next((j for j, x in enumerate(tl) if xs["from"].lower() in x[2].lower()), None)
+        if idx is None:
+            print("extra short: text not found:", xs["from"]); continue
+        chunks = [tl[idx]]
+        for x in tl[idx + 1:]:
+            if x[1] - tl[idx][0] > 52 or x[3] != tl[idx][3]: break
+            chunks.append(x)
+        short(max(0.0, tl[idx][0] - 0.3), chunks, f"ep{n:02d}_short{i}")
+        extras.append((i, xs, " ".join(c[2] for c in chunks)))
 
     # ---- YouTube metadata
     folio = ep["title"].split(":")[0]
@@ -235,7 +253,15 @@ def build(n):
                               "https://mehdimrahmani.github.io/kalila-videos/podcast/\n\nNarrated with an AI rendering of "
                               "Mehdi Rahmani's voice.\n\n#History #PersianHistory #Beyhaqi #Shorts")
         json.dump(ms, open(os.path.join(OUT, f"ep{n:02d}_short.youtube.json"), "w"), ensure_ascii=False, indent=1)
+    for i, xs, said in extras:
+        suffix = f" | {folio} — The Honest Historian #Shorts"
+        ms = dict(meta, title=(xs["hook"][:100 - len(suffix)] + suffix),
+                  description=f"{said}\n\nThe full story: {ep['title']} — on our channel and on every podcast app.\n"
+                              "https://mehdimrahmani.github.io/kalila-videos/podcast/\n\nNarrated with an AI rendering of "
+                              "Mehdi Rahmani's voice.\n\n#History #PersianHistory #Beyhaqi #Shorts")
+        json.dump(ms, open(os.path.join(OUT, f"ep{n:02d}_short{i}.youtube.json"), "w"), ensure_ascii=False, indent=1)
     print(out, round(real, 1), "s;", len(chaps), "chapters")
 
+SHORTS_ONLY = "--shorts-only" in sys.argv
 if __name__ == "__main__":
     build(int(sys.argv[1]))
