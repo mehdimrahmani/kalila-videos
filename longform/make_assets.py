@@ -19,4 +19,8 @@ rgba = np.zeros((H, W, 4), np.float32)
 rgba[..., :3] = np.array(M.LAPIS, np.float32) * l[..., None] * (1 - g[..., None]) + gcol * g[..., None]
 rgba[..., 3] = np.clip(l * 0.92 + g, 0, 1) * 255
 Image.fromarray(np.clip(rgba, 0, 255).astype(np.uint8), "RGBA").save(os.path.join(OUT, "border.png"))
+import shutil
+for fn in ("FreeSerif.ttf", "FreeSerifItalic.ttf"):   # system fonts (fonts-freefont): copied, not committed
+    shutil.copy(os.path.join("/usr/share/fonts/truetype/freefont", fn), OUT)
+shutil.copy(os.path.join(HERE, "..", "guesthouse", "fonts", "NotoNastaliqUrdu-Regular.woff2"), OUT)
 print("ok")

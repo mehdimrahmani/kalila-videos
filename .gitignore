@@ -10,3 +10,4 @@ podcast/video/*.mp4
 longform/remotion/node_modules/
 longform/remotion/out/
 longform/remotion/public/*/audio.wav
+longform/remotion/public/common/FreeSerif*.ttf
