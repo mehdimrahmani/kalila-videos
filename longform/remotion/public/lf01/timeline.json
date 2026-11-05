@@ -1,0 +1,462 @@
+{
+ "id": "lf01",
+ "duration": 314.201,
+ "fps": 30,
+ "events": [
+  {
+   "kind": "title",
+   "t0": 0.0,
+   "t1": 12.935,
+   "text": "Rumi for a Restless Heart",
+   "sub": "Five Persian Sufi poems with English translation",
+   "fa": "مولانا برای دلی بی‌قرار"
+  },
+  {
+   "kind": "intro",
+   "t0": 2.0,
+   "t1": 7.081,
+   "text": "Five short poems by Rumi, from the original Persian."
+  },
+  {
+   "kind": "intro",
+   "t0": 7.681,
+   "t1": 12.335,
+   "text": "For a restless heart. Stay with each one for a moment."
+  },
+  {
+   "kind": "chapter",
+   "t0": 14.435,
+   "t1": 18.435,
+   "n": 1,
+   "name": "The Reed",
+   "source": "Masnavi · Book I, lines 1–2"
+  },
+  {
+   "kind": "line",
+   "t0": 18.935,
+   "t1": 26.214,
+   "en_t0": 21.535,
+   "fa": "بشنو این نی چون شکایت می‌کند",
+   "en": "Listen to this reed, how it complains,",
+   "poem": 0,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 26.214,
+   "t1": 33.043,
+   "en_t0": 28.814,
+   "fa": "از جدایی‌ها حکایت می‌کند",
+   "en": "telling the tale of separations.",
+   "poem": 0,
+   "k": 1
+  },
+  {
+   "kind": "line",
+   "t0": 33.043,
+   "t1": 40.255,
+   "en_t0": 35.643,
+   "fa": "کز نیستان تا مرا ببریده‌اند",
+   "en": "Ever since they cut me from the reed bed,",
+   "poem": 0,
+   "k": 2
+  },
+  {
+   "kind": "line",
+   "t0": 40.255,
+   "t1": 47.399,
+   "en_t0": 42.855,
+   "fa": "در نفیرم مرد و زن نالیده‌اند",
+   "en": "men and women have wept at my cry.",
+   "poem": 0,
+   "k": 3
+  },
+  {
+   "kind": "tafsir",
+   "t0": 48.599,
+   "t1": 54.061,
+   "text": "These are the first lines of the Masnavi, Rumi's great poem.",
+   "poem": 0,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 54.511,
+   "t1": 58.806,
+   "text": "A reed flute is cut from the reed bed where it grew.",
+   "poem": 0,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 59.256,
+   "t1": 64.113,
+   "text": "Every note it plays is a cry of longing to go back.",
+   "poem": 0,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 64.563,
+   "t1": 67.847,
+   "text": "Rumi says we are like that reed.",
+   "poem": 0,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 68.297,
+   "t1": 73.244,
+   "text": "So the restlessness you feel may be a kind of homesickness.",
+   "poem": 0,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 74.294,
+   "t1": 81.294,
+   "fa": [
+    "بشنو این نی چون شکایت می‌کند",
+    "از جدایی‌ها حکایت می‌کند",
+    "کز نیستان تا مرا ببریده‌اند",
+    "در نفیرم مرد و زن نالیده‌اند"
+   ],
+   "source": "Masnavi · Book I, lines 1–2"
+  },
+  {
+   "kind": "chapter",
+   "t0": 81.794,
+   "t1": 85.794,
+   "n": 2,
+   "name": "The Root",
+   "source": "Masnavi · Book I, line 4"
+  },
+  {
+   "kind": "line",
+   "t0": 86.294,
+   "t1": 93.213,
+   "en_t0": 88.894,
+   "fa": "هر کسی کو دور ماند از اصل خویش",
+   "en": "Whoever is left far from their source",
+   "poem": 1,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 93.213,
+   "t1": 100.132,
+   "en_t0": 95.813,
+   "fa": "باز جوید روزگار وصل خویش",
+   "en": "seeks again the days of union.",
+   "poem": 1,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 101.332,
+   "t1": 106.481,
+   "text": "This comes a few lines later, in the same song of the reed.",
+   "poem": 1,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 106.931,
+   "t1": 111.742,
+   "text": "Whoever is cut off from their source keeps looking for the way back.",
+   "poem": 1,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 112.192,
+   "t1": 117.296,
+   "text": "For Rumi, that source is the origin of the soul itself.",
+   "poem": 1,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 117.746,
+   "t1": 121.188,
+   "text": "So our searching is not a flaw.",
+   "poem": 1,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 121.638,
+   "t1": 125.708,
+   "text": "It is the soul remembering where it came from.",
+   "poem": 1,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 126.758,
+   "t1": 133.758,
+   "fa": [
+    "هر کسی کو دور ماند از اصل خویش",
+    "باز جوید روزگار وصل خویش"
+   ],
+   "source": "Masnavi · Book I, line 4"
+  },
+  {
+   "kind": "chapter",
+   "t0": 134.258,
+   "t1": 138.258,
+   "n": 3,
+   "name": "The Sea",
+   "source": "Divan-e Shams"
+  },
+  {
+   "kind": "line",
+   "t0": 138.758,
+   "t1": 145.812,
+   "en_t0": 141.358,
+   "fa": "ما ز بالاییم و بالا می‌رویم",
+   "en": "We are from above, and above we go.",
+   "poem": 2,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 145.812,
+   "t1": 153.27,
+   "en_t0": 148.412,
+   "fa": "ما ز دریاییم و دریا می‌رویم",
+   "en": "We are from the sea, and to the sea we go.",
+   "poem": 2,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 154.47,
+   "t1": 159.125,
+   "text": "Here the image is a drop of water and the ocean.",
+   "poem": 2,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 159.575,
+   "t1": 164.229,
+   "text": "We came from something vast, and we are returning to it.",
+   "poem": 2,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 164.679,
+   "t1": 169.176,
+   "text": "Rumi says it without fear. Almost with joy.",
+   "poem": 2,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 169.626,
+   "t1": 173.944,
+   "text": "In his poetry, going home is not an ending.",
+   "poem": 2,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 174.394,
+   "t1": 178.801,
+   "text": "It is the drop remembering it was always the sea.",
+   "poem": 2,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 179.851,
+   "t1": 186.851,
+   "fa": [
+    "ما ز بالاییم و بالا می‌رویم",
+    "ما ز دریاییم و دریا می‌رویم"
+   ],
+   "source": "Divan-e Shams"
+  },
+  {
+   "kind": "chapter",
+   "t0": 187.351,
+   "t1": 191.351,
+   "n": 4,
+   "name": "Alive",
+   "source": "Divan-e Shams · Ghazal 1393"
+  },
+  {
+   "kind": "line",
+   "t0": 191.851,
+   "t1": 200.926,
+   "en_t0": 194.451,
+   "fa": "مرده بدم زنده شدم، گریه بدم خنده شدم",
+   "en": "I was dead, I came alive. I was weeping, I became laughter.",
+   "poem": 3,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 200.926,
+   "t1": 209.193,
+   "en_t0": 203.526,
+   "fa": "دولت عشق آمد و من دولت پاینده شدم",
+   "en": "Love's fortune came, and I became fortune that lasts.",
+   "poem": 3,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 210.393,
+   "t1": 216.282,
+   "text": "Rumi was already a respected scholar when he met Shams of Tabriz.",
+   "poem": 3,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 216.732,
+   "t1": 220.062,
+   "text": "And still he says: I was dead.",
+   "poem": 3,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 220.512,
+   "t1": 225.817,
+   "text": "Look at the last line. He does not say love's fortune came to me.",
+   "poem": 3,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 226.267,
+   "t1": 229.799,
+   "text": "He says: I became that fortune.",
+   "poem": 3,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 230.249,
+   "t1": 235.959,
+   "text": "Love did not give him something new to own. It changed who he was.",
+   "poem": 3,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 237.009,
+   "t1": 244.009,
+   "fa": [
+    "مرده بدم زنده شدم، گریه بدم خنده شدم",
+    "دولت عشق آمد و من دولت پاینده شدم"
+   ],
+   "source": "Divan-e Shams · Ghazal 1393"
+  },
+  {
+   "kind": "chapter",
+   "t0": 244.509,
+   "t1": 248.509,
+   "n": 5,
+   "name": "Surrender",
+   "source": "Divan-e Shams"
+  },
+  {
+   "kind": "line",
+   "t0": 249.009,
+   "t1": 255.726,
+   "en_t0": 251.609,
+   "fa": "آمده‌ام که سر نهم",
+   "en": "I have come to lay down my head,",
+   "poem": 4,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 255.726,
+   "t1": 262.847,
+   "en_t0": 258.326,
+   "fa": "عشق تو را به سر برم",
+   "en": "and to carry your love to the very end.",
+   "poem": 4,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 264.047,
+   "t1": 269.151,
+   "text": "This is the opening of one of Rumi's best-loved ghazals.",
+   "poem": 4,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 269.601,
+   "t1": 274.457,
+   "text": "To lay down one's head means to give oneself completely.",
+   "poem": 4,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 274.907,
+   "t1": 280.19,
+   "text": "One reading hears it spoken to God. Another, to Shams.",
+   "poem": 4,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 280.64,
+   "t1": 284.419,
+   "text": "Either way, the restless heart finds rest",
+   "poem": 4,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 284.869,
+   "t1": 288.266,
+   "text": "only when it stops holding back.",
+   "poem": 4,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 289.316,
+   "t1": 296.316,
+   "fa": [
+    "آمده‌ام که سر نهم",
+    "عشق تو را به سر برم"
+   ],
+   "source": "Divan-e Shams"
+  },
+  {
+   "kind": "outro",
+   "t0": 296.816,
+   "t1": 299.539,
+   "text": "Thank you for listening."
+  },
+  {
+   "kind": "outro",
+   "t0": 300.039,
+   "t1": 307.074,
+   "text": "Every week we share real verses of Rumi, translated honestly from the Persian."
+  },
+  {
+   "kind": "outro",
+   "t0": 307.574,
+   "t1": 310.701,
+   "text": "Subscribe to The Guest House."
+  },
+  {
+   "kind": "end",
+   "t0": 296.816,
+   "t1": 314.201
+  }
+ ]
+}

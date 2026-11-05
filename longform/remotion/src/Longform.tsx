@@ -185,7 +185,7 @@ export const Longform: React.FC<{id: string; timeline: any}> = ({id, timeline}) 
         {breaths.map((b, i) => (
           <AbsoluteFill key={i} style={{justifyContent: 'center', alignItems: 'center', paddingTop: 170, opacity: vis(t, b.t0, b.t1, 1.0, 1.0)}}>
             {b.fa.map((s: string, k: number) => <Fa key={k} text={s} t={t} t0={b.t0 + k * 0.6} size={b.fa.length > 2 ? 64 : 80} color={INK} />)}
-            <div style={{height: 10}} /><En text={b.source} size={32} />
+            <div style={{height: 34}} /><En text={b.source} size={32} />
           </AbsoluteFill>
         ))}
 
