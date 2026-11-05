@@ -1,0 +1,22 @@
+{
+ "header": "Shams & Rumi · Part 3",
+ "title": "The Meeting",
+ "theme": "dome",
+ "source": "Divan-e Shams · Rubaiyat",
+ "seed": 3,
+ "hook": "Konya, 1244. A wandering stranger met the city's most respected scholar.",
+ "segments": [
+  {"fa": "زاهد بودم ترانه‌گویم کردی", "en": "I was an ascetic; you made me a singer of songs."},
+  {"fa": "سجاده‌نشین باوقاری بودم", "en": "I was a dignified man of the prayer rug."},
+  {"fa": "بازیچه‌ی کودکان کویم کردی", "en": "You made me a plaything for the children of the street."}
+ ],
+ "tafsir": [
+  "Old biographers tell the story of that first meeting in different ways.",
+  "In one, Shams stops Rumi in the street with a single hard question.",
+  "Whatever happened that day, they all agree: Rumi was never the same.",
+  "The serious scholar on his prayer rug became a poet who sang.",
+  "And listen to his tone. He is not complaining. He is smiling at himself.",
+  "Sometimes one meeting turns a whole life into a song."
+ ],
+ "outro": {"say": "Part four. Why did Rumi's students turn against Shams? Follow The Guest House.", "title": "Part 4 · Why did his students turn against Shams?"}
+}

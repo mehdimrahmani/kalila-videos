@@ -1,0 +1,20 @@
+{
+ "header": "Shams & Rumi · Part 1",
+ "source": "Divan-e Shams · Ghazal 1393",
+ "seed": 1,
+ "hook": "Rumi was the most respected scholar in Konya. Then one day, he wrote this.",
+ "segments": [
+  {"fa": "مرده بدم زنده شدم", "en": "I was dead... I came alive."},
+  {"fa": "گریه بدم خنده شدم", "en": "I was weeping... I became laughter."},
+  {"fa": "دولت عشق آمد و من دولت پاینده شدم", "en": "Love's fortune came, and I became fortune that lasts."}
+ ],
+ "tafsir": [
+  "What does he mean?",
+  "Before Shams, Rumi had books, students, and honour. And still he says: I was dead.",
+  "Love was not one more thing he learned. It woke him up.",
+  "Now look at the last line. He does not say love's fortune came to me.",
+  "He says: I became that fortune.",
+  "Love did not give him something. It changed who he was."
+ ],
+ "outro": {"say": "Part two. Who was Shams of Tabriz? Follow The Guest House.", "title": "Part 2 · Who was Shams of Tabriz?"}
+}
