@@ -10,6 +10,7 @@ usage:
   python3 ops/yt.py channel UC...           # public stats of any channel (competitors)
   python3 ops/yt.py playlist-create "Title" "Description"   # -> playlist id (public)
   python3 ops/yt.py playlist-add PLAYLIST_ID VIDEO_ID
+  python3 ops/yt.py thumbnail VIDEO_ID FILE.jpg   # custom thumbnail (needs a verified channel)
   python3 ops/yt.py upload FILE.mp4 META.json   # META: {"title","description","tags":[],"privacy":"public","categoryId":"27","madeForKids":false}
 """
 import os, sys, json, datetime, urllib.request, urllib.parse, uuid
@@ -109,6 +110,11 @@ def playlist_add(pid, vid):
     b = json.dumps({"snippet": {"playlistId": pid, "resourceId": {"kind": "youtube#video", "videoId": vid}}}).encode()
     return call(API + "playlistItems", {"part": "snippet"}, b, {"Content-Type": "application/json"}, "POST")
 
+def thumbnail(vid, path):
+    ct = "image/png" if path.endswith(".png") else "image/jpeg"
+    return call("https://www.googleapis.com/upload/youtube/v3/thumbnails/set", {"videoId": vid}, open(path, "rb").read(),
+                {"Content-Type": ct}, "POST")
+
 def channel(cid):
     k = "forHandle" if cid.startswith("@") else "id"
     return call(API + "channels", {"part": "snippet,statistics", k: cid})
@@ -118,5 +124,6 @@ if __name__ == "__main__":
     out = {"me": lambda: me(), "videos": lambda: videos(), "analytics": lambda: analytics(int(a[1]) if len(a) > 1 else 28),
            "caption": lambda: caption(*a[1:5]), "channel": lambda: channel(a[1]), "upload": lambda: upload(a[1], a[2]),
            "playlist-create": lambda: playlist_create(a[1], a[2] if len(a) > 2 else ""),
-           "playlist-add": lambda: playlist_add(a[1], a[2])}[a[0]]()
+           "playlist-add": lambda: playlist_add(a[1], a[2]),
+           "thumbnail": lambda: thumbnail(a[1], a[2])}[a[0]]()
     print(json.dumps(out, ensure_ascii=False, indent=1))

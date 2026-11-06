@@ -23,7 +23,8 @@
  ],
  "playlists": {
   "rumi": "PLSmxCUtqVSqU",
-  "beyhaqi": "PLPa6UJbzvUIM"
+  "beyhaqi": "PLPa6UJbzvUIM",
+  "longform": "PLF0davgKos4Y"
  },
  "podcast": [
   {
@@ -41,6 +42,21 @@
    "full": "ScvoC-kPcP4",
    "short": "j1saU12zndk",
    "date": "2026-11-04"
+  }
+ ],
+ "longform": [
+  {
+   "id": "lf01",
+   "video": "pr0SxT7g2Rc",
+   "date": "2026-11-06",
+   "title": "Rumi for a Restless Heart",
+   "poems": [
+    "Masnavi I 1-2 (reed)",
+    "Masnavi I 4 (root)",
+    "Ma ze balaim (sea)",
+    "Ghazal 1393 morde bodam",
+    "Amade-am ke sar naham"
+   ]
   }
  ]
 }
