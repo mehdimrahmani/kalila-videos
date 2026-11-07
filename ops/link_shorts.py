@@ -39,7 +39,7 @@ def main(dry=False):
     shorts = [v for v in vids if secs(v["contentDetails"]["duration"]) <= 180]
     folio = {}
     for v in longs:
-        m = re.match(r"Folio (\d+):", v["snippet"]["title"])
+        m = re.search(r"Folio (\d+)", v["snippet"]["title"])
         if m: folio[m.group(1)] = v["id"]
     rumi_longs = sorted([v for v in longs if "Rumi" in v["snippet"]["title"]], key=lambda v: v["_when"])
     changed = 0
