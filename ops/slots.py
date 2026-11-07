@@ -26,6 +26,7 @@ PT = dt.timezone(dt.timedelta(hours=-8))            # YouTube quota resets at mi
 HORIZON = dt.datetime(2027, 2, 13, 23, 59, tzinfo=TEH)   # ~3 months from 7 Nov 2026
 DAILY_UPLOADS = 5
 MIN_LEAD = dt.timedelta(hours=2)
+LEAD = {"podcast": dt.timedelta(hours=-10)}   # a podcast slot earlier today can still be filled: it simply goes live at once
 MON, TUE, WED, THU, FRI, SAT, SUN = range(7)
 
 # stream -> list of (weekday, "HH:MM"). Kept identical to the old weekly schedule so nothing changes for viewers.
@@ -60,7 +61,7 @@ def fmt(t): return t.strftime("%Y-%m-%d %H:%M")
 def parse(s): return dt.datetime.fromisoformat(s.replace(" ", "T")).replace(tzinfo=TEH)
 
 def slots(stream, start=None):
-    start = start or (now() + MIN_LEAD)
+    start = start or (now() + LEAD.get(stream, MIN_LEAD))
     day = start.date()
     while True:
         for wd, hm in STREAMS[stream]:
