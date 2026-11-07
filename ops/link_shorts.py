@@ -32,15 +32,16 @@ def main(dry=False):
         if not tok: break
     vids = []
     for k in range(0, len(ids), 50):
-        vids += yt.call(yt.API + "videos", {"part": "snippet,contentDetails", "id": ",".join(ids[k:k + 50])})["items"]
+        vids += yt.call(yt.API + "videos", {"part": "snippet,contentDetails,status", "id": ",".join(ids[k:k + 50])})["items"]
+    for v in vids:   # when it goes (went) public: scheduled uploads carry status.publishAt
+        v["_when"] = v["status"].get("publishAt") or v["snippet"]["publishedAt"]
     longs = [v for v in vids if secs(v["contentDetails"]["duration"]) > 180]
     shorts = [v for v in vids if secs(v["contentDetails"]["duration"]) <= 180]
     folio = {}
     for v in longs:
         m = re.match(r"Folio (\d+):", v["snippet"]["title"])
         if m: folio[m.group(1)] = v["id"]
-    rumi_long = sorted([v for v in longs if "Rumi" in v["snippet"]["title"]], key=lambda v: v["snippet"]["publishedAt"])
-    rumi_long = rumi_long[-1]["id"] if rumi_long else None
+    rumi_longs = sorted([v for v in longs if "Rumi" in v["snippet"]["title"]], key=lambda v: v["_when"])
     changed = 0
     for v in shorts:
         sn = v["snippet"]; t = sn["title"]
@@ -48,7 +49,9 @@ def main(dry=False):
         if m and "Historian" in t:
             target, label = folio.get(m.group(1)), "Full episode (Folio %s)" % m.group(1)
         elif "Rumi" in t:
-            target, label = rumi_long, "Full Rumi reading"
+            # the newest long Rumi reading that is public by the time this Short goes public (else the oldest)
+            ok = [x for x in rumi_longs if x["_when"] <= v["_when"]] or rumi_longs[:1]
+            target, label = (ok[-1]["id"] if ok else None), "Full Rumi reading"
         else:
             continue
         if not target: continue

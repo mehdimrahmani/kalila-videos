@@ -7,6 +7,7 @@ Pipeline: episode script (podcast/episodes/epNN.json) -> Kokoro TTS (am_onyx, En
 -> docs/podcast/episodes.json -> docs/podcast/feed.xml (+ index.html). Served by GitHub Pages (main /docs).
 
 usage: python3 podcast/make_podcast.py podcast/episodes/ep01.json      # render + publish one episode
+       (with "release": "YYYY-MM-DD HH:MM" Tehran time in the episode JSON it is queued and goes live then)
        python3 podcast/make_podcast.py --feed                           # rebuild feed/index only
 Model files (downloaded automatically from GitHub releases if missing, git-ignored):
   podcast/models/freevc24/{model.pth,config.json}   coqui-ai/TTS v0.13.0_models freevc24 (MIT)
@@ -184,9 +185,16 @@ def duration(path):
     return float(r.stdout.strip())
 
 # ------------------------------------------------------------------ feed
+def released(e, now=None):
+    """Episodes can be queued ahead with a future pubDate (the 3-month buffer); they stay out of the feed and the
+    site until that time. .github/workflows/podcast-release.yml rebuilds the feed daily, so they go live on time
+    without anyone (or Claude) being online."""
+    now = now or datetime.datetime.now(datetime.timezone.utc)
+    return email.utils.parsedate_to_datetime(e["pubDate"]) <= now
+
 def build_feed():
     eps = json.load(open(os.path.join(PUB, "episodes.json"), encoding="utf-8")) if os.path.exists(os.path.join(PUB, "episodes.json")) else []
-    eps = sorted(eps, key=lambda e: e["n"], reverse=True)
+    eps = sorted([e for e in eps if released(e)], key=lambda e: e["n"], reverse=True)
     now = email.utils.format_datetime(datetime.datetime.now(datetime.timezone.utc))
     x = html.escape
     items = []
@@ -285,6 +293,10 @@ def publish(ep, mp3):
     eps = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else []
     eps = [e for e in eps if e["n"] != ep["n"]]
     pub = ep.get("pubDate") or email.utils.format_datetime(datetime.datetime.now(datetime.timezone.utc))
+    if ep.get("release"):        # "YYYY-MM-DD HH:MM" Asia/Tehran (UTC+03:30): queue the episode for that time
+        d = datetime.datetime.fromisoformat(ep["release"].replace(" ", "T")).replace(
+            tzinfo=datetime.timezone(datetime.timedelta(hours=3, minutes=30)))
+        pub = email.utils.format_datetime(d.astimezone(datetime.timezone.utc))
     eps.append({"n": ep["n"], "title": ep["title"], "description": ep["description"], "pubDate": pub,
                 "duration": duration(mp3), "bytes": os.path.getsize(mp3),
                 "volume": ep.get("volume", 1), "source": ep.get("source", "")})

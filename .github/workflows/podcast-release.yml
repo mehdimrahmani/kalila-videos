@@ -1,0 +1,34 @@
+# Releases queued podcast episodes on time (3-month buffer): episodes in docs/podcast/episodes.json with a future
+# pubDate stay hidden; this job rebuilds feed.xml + index.html daily and publishes whatever has come due.
+# Runs on GitHub's servers, so it works even when neither Mehdi nor Claude is online.
+name: Podcast release
+on:
+  schedule:
+    - cron: '13 7 * * *'      # daily 07:13 UTC = 10:43 Tehran (episodes are queued for Sunday 11:13)
+    - cron: '13 8 * * 0'      # Sunday 08:13 UTC = 11:43 Tehran, right after the Sunday release time
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install -q numpy
+      - name: Rebuild feed, commit only if an episode came due
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          before=$(grep -c "<item>" docs/podcast/feed.xml || true)
+          python3 podcast/make_podcast.py --feed
+          after=$(grep -c "<item>" docs/podcast/feed.xml || true)
+          if [ "$before" = "$after" ]; then git checkout -- docs/podcast; echo "nothing new ($after episodes)"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/podcast/feed.xml docs/podcast/index.html
+          git commit -m "Podcast: release queued episode(s)"
+          git push
+          gh api -X POST repos/${{ github.repository }}/pages/builds || true

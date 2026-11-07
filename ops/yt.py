@@ -10,6 +10,7 @@ usage:
   python3 ops/yt.py channel UC...           # public stats of any channel (competitors)
   python3 ops/yt.py playlist-create "Title" "Description"   # -> playlist id (public)
   python3 ops/yt.py playlist-add PLAYLIST_ID VIDEO_ID
+  python3 ops/yt.py scheduled                     # videos waiting for their publishAt time
   python3 ops/yt.py thumbnail VIDEO_ID FILE.jpg   # custom thumbnail (needs a verified channel)
   python3 ops/yt.py upload FILE.mp4 META.json   # META: {"title","description","tags":[],"privacy":"public","categoryId":"27","madeForKids":false}
 """
@@ -79,13 +80,31 @@ def caption(vid, lang, path, name=""):
     return call("https://www.googleapis.com/upload/youtube/v3/captions", {"part": "snippet", "uploadType": "multipart"},
                 body, {"Content-Type": f"multipart/related; boundary={b}"}, "POST")
 
+def publish_at_utc(s):
+    """'2026-11-20 21:30' (Asia/Tehran, UTC+03:30, no DST since 2022) or an ISO string with offset -> RFC3339 UTC."""
+    import datetime as dt
+    s = s.strip()
+    if "T" in s and (s.endswith("Z") or "+" in s[10:] or "-" in s[10:]):
+        d = dt.datetime.fromisoformat(s.replace("Z", "+00:00"))
+    else:
+        d = dt.datetime.fromisoformat(s.replace(" ", "T")).replace(tzinfo=dt.timezone(dt.timedelta(hours=3, minutes=30)))
+    u = d.astimezone(dt.timezone.utc)
+    if u <= dt.datetime.now(dt.timezone.utc) + dt.timedelta(minutes=20):
+        sys.exit(f"publishAt {s} is not at least 20 minutes in the future")
+    return u.strftime("%Y-%m-%dT%H:%M:%SZ")
+
 def upload(path, meta_path):
+    """META keys: title, description, tags, categoryId, privacy, madeForKids, synthetic, language,
+    publishAt (optional: 'YYYY-MM-DD HH:MM' Tehran time -> uploaded private, YouTube makes it public at that time)."""
     m = json.load(open(meta_path))
+    st = {"privacyStatus": m.get("privacy", "public"), "selfDeclaredMadeForKids": m.get("madeForKids", False),
+          "containsSyntheticMedia": m.get("synthetic", True)}
+    if m.get("publishAt"):
+        st["privacyStatus"] = "private"; st["publishAt"] = publish_at_utc(m["publishAt"])
     body = json.dumps({"snippet": {"title": m["title"][:100], "description": m.get("description", ""),
                                    "tags": m.get("tags", []), "categoryId": m.get("categoryId", "27"),
                                    "defaultLanguage": m.get("language", "en"), "defaultAudioLanguage": m.get("language", "en")},
-                       "status": {"privacyStatus": m.get("privacy", "public"), "selfDeclaredMadeForKids": m.get("madeForKids", False),
-                                  "containsSyntheticMedia": m.get("synthetic", True)}}).encode()
+                       "status": st}).encode()
     global TOK
     TOK = TOK or token()
     size = os.path.getsize(path)
@@ -115,6 +134,22 @@ def thumbnail(vid, path):
     return call("https://www.googleapis.com/upload/youtube/v3/thumbnails/set", {"videoId": vid}, open(path, "rb").read(),
                 {"Content-Type": ct}, "POST")
 
+def scheduled():
+    """Videos of this channel waiting for their publishAt time (id, publishAt UTC, title)."""
+    up = me()["contentDetails"]["relatedPlaylists"]["uploads"]; ids, tok = [], None
+    while True:
+        p = {"part": "contentDetails", "playlistId": up, "maxResults": 50}
+        if tok: p["pageToken"] = tok
+        r = call(API + "playlistItems", p); ids += [i["contentDetails"]["videoId"] for i in r["items"]]
+        tok = r.get("nextPageToken")
+        if not tok: break
+    out = []
+    for k in range(0, len(ids), 50):
+        for v in call(API + "videos", {"part": "snippet,status", "id": ",".join(ids[k:k + 50])})["items"]:
+            if v["status"].get("publishAt"):
+                out.append({"id": v["id"], "publishAt": v["status"]["publishAt"], "title": v["snippet"]["title"]})
+    return sorted(out, key=lambda x: x["publishAt"])
+
 def channel(cid):
     k = "forHandle" if cid.startswith("@") else "id"
     return call(API + "channels", {"part": "snippet,statistics", k: cid})
@@ -125,5 +160,6 @@ if __name__ == "__main__":
            "caption": lambda: caption(*a[1:5]), "channel": lambda: channel(a[1]), "upload": lambda: upload(a[1], a[2]),
            "playlist-create": lambda: playlist_create(a[1], a[2] if len(a) > 2 else ""),
            "playlist-add": lambda: playlist_add(a[1], a[2]),
-           "thumbnail": lambda: thumbnail(a[1], a[2])}[a[0]]()
+           "thumbnail": lambda: thumbnail(a[1], a[2]),
+           "scheduled": lambda: scheduled()}[a[0]]()
     print(json.dumps(out, ensure_ascii=False, indent=1))
