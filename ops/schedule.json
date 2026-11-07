@@ -37,6 +37,13 @@
   },
   {
    "stream": "kd_short",
+   "at": "2026-11-08 21:30",
+   "id": "Iy5Hjrrx9GM",
+   "note": "short13_ride_question.mp4 (ep02 0.8+30.6)",
+   "recorded": "2026-11-07 20:42"
+  },
+  {
+   "stream": "kd_short",
    "at": "2026-11-10 21:30",
    "id": "-331876290136356387",
    "note": "Metricool",
@@ -57,5 +64,11 @@
    "recorded": "2026-11-07 20:35"
   }
  ],
- "uploads": []
+ "uploads": [
+  {
+   "day": "2026-11-07",
+   "stream": "kd_short",
+   "id": "Iy5Hjrrx9GM"
+  }
+ ]
 }
