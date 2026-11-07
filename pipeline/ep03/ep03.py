@@ -626,6 +626,12 @@ def friends_frame(t):
             p.poly(M, khatam(0, 0, 10), "#f2c14e", outline="#b9802a", w=1)
     return fr
 
+# Look pass (pipeline/look.py). Scenes listed in NO_PUSH keep a still camera: titles, end card, and any scene that
+# must flow continuously into the next one (a push-in would jump at the cut).
+from look import Look
+LOOK = Look(W, H)
+NO_PUSH = {"title", "end"}
+
 def render(i):
     t = i / FPS
     name, lt, sd = tl.scene_at(t)
@@ -635,6 +641,7 @@ def render(i):
     else: fr = globals()[name + "_frame"](t)
     fr.alpha_composite(A['border'])
     img = fr.convert('RGB').resize((W, H), Image.LANCZOS)
+    img = LOOK(img, lt, sd, move=name not in NO_PUSH)   # picture-book look: paper, grade, bloom, slow push-in
     f = min(clamp(lt / 0.35), clamp((sd - lt) / 0.35))
     if name == "tree_open": f = min(clamp(lt / 0.7), clamp((sd - lt) / 0.35))
     if name == "end": f = min(clamp(lt / 0.35), clamp((sd - lt) / 0.8))
