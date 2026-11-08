@@ -27,9 +27,21 @@
    "video": "ep03/ep03.mp4",
    "scheduled": "2026-11-14T21:30:00+03:30",
    "metricool_uuid": "-4395985631639483585"
+  },
+  {
+   "n": 4,
+   "title": "The Crow and the Snake",
+   "video": "ep04/ep04.mp4",
+   "scheduled": "2026-11-21T21:30:00+03:30",
+   "youtube_id": "imTJ8CU_jOI",
+   "via": "youtube-api publishAt",
+   "captions": [
+    "en",
+    "fa"
+   ]
   }
  ],
- "next_episode": 4,
+ "next_episode": 5,
  "schedule_rule": "Each weekly run builds episode `next_episode` and schedules it for the Saturday 13-14 days ahead, 21:30 Asia/Tehran (US afternoon / UK evening). One Short every day at 21:30.",
  "shorts": [
   {
