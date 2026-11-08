@@ -7,6 +7,7 @@ usage: make_short.py SRC.mp4 START DUR "Hook question?" "Story name" OUT.mp4 [SR
     over a blurred copy of itself (no empty bars)
   - captions come from the episode's .en.srt (default: SRC with .en.srt), shifted to the clip;
     speaker names ("DIMNA:") are dropped
+  - env KD_SHORT_CX=0.37 moves the crop centre when the action is off-centre (default 0.5)
   - last 2.5 s: "Full story on our channel"
 """
 import sys, os, re, subprocess, tempfile
@@ -30,7 +31,7 @@ def srt_cues(path):
         a, b = [x.strip() for x in lines[1].split("-->")]
         tt = lambda x: int(x[:2]) * 3600 + int(x[3:5]) * 60 + float(x[6:].replace(",", "."))
         text = " ".join(lines[2:]).strip()
-        text = re.sub(r"^[A-Z][A-Z .']{1,20}:\s*", "", text)        # drop "OLD TORTOISE: "
+        text = re.sub(r"^[A-Z][A-Z .'-]{1,20}:\s*", "", text)        # drop "OLD TORTOISE: "
         out.append((tt(a), tt(b), text))
     return out
 
@@ -120,9 +121,12 @@ def main():
     overlay_png(hook, story, ov); end_png(en)
     ass_file(srt_cues(srt) if os.path.exists(srt) else [], st, du, ass)
     fo = du - 0.5; e0 = max(0.0, du - 2.5)
+    # KD_SHORT_CX (0..1): horizontal centre of the action in the episode frame (default 0.5 = middle)
+    cx = float(os.environ.get("KD_SHORT_CX", "0.5"))
+    xo = int(max(0, min(FG_W - W, cx * FG_W - W / 2)))
     fc = (f"[0:v]split[a][b];"
           f"[a]scale=-2:{H},crop={W}:{H},boxblur=28:2,eq=brightness=-0.18:saturation=0.8[bg];"
-          f"[b]scale={FG_W}:{FG_H},crop={W}:{FG_H}[fg];"
+          f"[b]scale={FG_W}:{FG_H},crop={W}:{FG_H}:{xo}:0[fg];"
           f"[bg][fg]overlay=0:{FG_Y}[v1];[v1][1:v]overlay=0:0[v2];"
           f"[v2]subtitles='{ass}'[v3];"
           f"[2:v]format=rgba,fade=t=in:st={e0}:d=0.4:alpha=1[endo];[v3][endo]overlay=0:0:enable='gte(t,{e0})'[v4];"

@@ -162,6 +162,17 @@
    "scheduled": "2026-11-08T21:30:00+03:30",
    "youtube_id": "Iy5Hjrrx9GM",
    "via": "youtube-api publishAt"
+  },
+  {
+   "file": "shorts/short14_free_me_last.mp4",
+   "source": {
+    "episode": "ep03",
+    "start": 134.9,
+    "dur": 21.6
+   },
+   "scheduled": "2026-11-15T21:30:00+03:30",
+   "youtube_id": "o_93oxPj9cA",
+   "via": "youtube-api publishAt"
   }
  ],
  "shorts_note": "Since 29 Oct 2026: Shorts v2 (pipeline/make_short.py: near-full-screen, burned-in captions, hook on screen). Never reuse a source range already listed here."
