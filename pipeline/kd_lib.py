@@ -564,11 +564,16 @@ def draw_mouse(p, M, po):
 
 HU = dict(skin="#e8b98f", coat="#7d8a3e", coat2="#5f6b2c", sash="#e2b64a", trou="#4a3a2a", hat="#7a5634",
           hat2="#5a3d22", shoe="#efe4cc", must="#3a2216")
+HU_DEFAULT = HU
+# palace guard (Episode 4): same puppet, blue qaba, red sash and hat; po['pal'] = GUARD
+GUARD = dict(HU, coat="#2f5f9e", coat2="#244a7c", sash="#c8423a", trou="#3a2c1e", hat="#c8423a", hat2="#8e2a22",
+             must="#2a1a10")
 
 def draw_hunter(p, M, po):
     """a grumpy-but-harmless hunter in a felt hat, facing right, origin at the feet (~255 px tall).
     po: t, mouth, blink, look, walk, amp, arm (near arm deg, 0 = down, -90 = forward), arm2, head (deg),
         lean (deg), crouch (0..1), sit (0..1 tired), brow (0 calm .. 1 cross)"""
+    HU = po.get('pal', HU_DEFAULT)
     t = po['t']; ph = po.get('walk', 0); amp = po.get('amp', 0); m = po.get('mouth', 0)
     cr = po.get('crouch', 0)
     Mb = M @ T(0, -po.get('hop', 0))
@@ -613,4 +618,93 @@ def draw_hunter(p, M, po):
     p.poly(Mh, [(-31, -22), (27, -22), (29, -12), (-32, -12)], HU['hat2'], w=2)
     # near arm (in front)
     Ma = Mu @ T(6, -186) @ R(po.get('arm', 6) + 3 * math.sin(t * 1.8))
-    p.poly(Ma, [(-10, 0), (10, 0), (8, 72), (-8, 72)], HU['coat']); p.poly(Ma, ell(0, 78, 10, 10, 14), HU['skin'])
+    p.poly(Ma, [(-10, 0), (10, 0), (8, 72), (-8, 72)], HU['coat'])
+    if po.get('stick') is not None:                  # a long wooden staff held in the near hand
+        Ms = Ma @ T(0, 78) @ R(po['stick'])
+        p.line(Ms, [(0, -70), (0, 120)], OUT, 8); p.line(Ms, [(0, -70), (0, 120)], "#9c6a3a", 4.5)
+    p.poly(Ma, ell(0, 78, 10, 10, 14), HU['skin'])
+
+
+# ------------------------------------------------------------------ the crow family and the snake (Episode 4)
+BIRDS["crow_mom"] = dict(BIRDS["crow"], body="#3c3f58", breast="#5a5f7c", head="#44486a", crest=False, blen=17)
+BIRDS["crow_baby"] = dict(BIRDS["crow"], body="#55596f", dark="#3a3d50", breast="#7d8196", head="#5d6178",
+                          wing="#474a5e", beak="#e7b54a", crest=False, blen=12)
+JACKALS["wise"] = dict(body="#a9a49a", dark="#77726a", belly="#ece8de", ear="#d9a3a0", scale=1.08,
+                       tail_tip="#f4f1ea", brow=0.2, lid=0.45)
+
+SN = dict(body="#7aa23e", dark="#4f7425", belly="#e9d77a", spot="#4d6e22", tongue="#d0343a")
+
+def snake_points(x, y, ang, length, t, amp=10, wl=70, speed=6, n=34, curl=0.0):
+    """centreline of a slithering snake: head at (x, y) heading `ang` degrees (0 = right, -90 = up);
+    the body trails behind with a travelling wave. curl bends the body (deg per segment)."""
+    pts = []; a = math.radians(ang + 180); px, py = x, y; step = length / n
+    for i in range(n + 1):
+        u = i * step
+        w = amp * math.sin(u / wl * 2 * math.pi - t * speed) * min(1, u / 60)
+        nx, ny = -math.sin(a), math.cos(a)
+        pts.append((px + nx * w, py + ny * w))
+        px += step * math.cos(a); py += step * math.sin(a); a += math.radians(curl)
+    return pts
+
+def draw_snake(p, V, pts, po):
+    """cartoon snake (grumpy, not scary). pts: centreline, head first (screen units, already placed).
+    po: t, mouth, blink, look, width, brow (0 calm .. 1 cross), scared (0..1 big eyes), tongue (0..1)"""
+    t = po['t']; wmax = po.get('width', 15); P = np.asarray(pts, float); n = len(P)
+    if n < 3: return
+    d = np.gradient(P, axis=0); d /= (np.linalg.norm(d, axis=1)[:, None] + 1e-9)
+    nrm = np.stack([-d[:, 1], d[:, 0]], 1)
+    u = np.linspace(0, 1, n)
+    wid = wmax * np.where(u < 0.12, 0.72 + 0.28 * u / 0.12, 1.0) * np.clip((1 - u) / 0.55, 0.08, 1) ** 0.8
+    L = P + nrm * wid[:, None]; Rr = P - nrm * wid[:, None]
+    p.poly(V, [tuple(q) for q in L] + [tuple(q) for q in Rr[::-1]], SN['body'], w=2.5)
+    B = P - nrm * (wid * 0.45)[:, None]
+    if n > 7: p.line(V, [tuple(q) for q in B[2:-3]], SN['belly'], 3.2)
+    for i in range(4, n - 4, 3):
+        p.poly(V, ell(P[i][0] + nrm[i][0] * wid[i] * 0.2, P[i][1] + nrm[i][1] * wid[i] * 0.2,
+                      wid[i] * 0.42, wid[i] * 0.42, 4), SN['spot'], outline=None)
+    # head, oriented along the first segment; kept upright (top of head up)
+    hx, hy = P[0]; dx, dy = P[0] - P[2]
+    ang = math.degrees(math.atan2(dy, dx)); flip = -1 if abs(ang) > 90 else 1
+    sc = wmax / 15
+    Mh = V @ T(hx, hy) @ R(ang) @ S(sc, sc * flip) @ R(po.get('head', 0) * flip)
+    m = po.get('mouth', 0)
+    tg = po.get('tongue', 0.5 + 0.5 * math.sin(t * 9))
+    if tg > 0.3:
+        L2 = 18 + 14 * tg
+        p.line(Mh, [(24, 6), (24 + L2, 6), (30 + L2, 1)], SN['tongue'], 2.2)
+        p.line(Mh, [(24 + L2, 6), (30 + L2, 11)], SN['tongue'], 2.2)
+    p.poly(Mh @ T(4, 6) @ R(14 * m), [(-10, -2), (24, 0), (22, 8), (-6, 8)], SN['belly'])       # lower jaw
+    if m > 0.1:
+        p.poly(Mh, [(4, 4), (26, 2), (4 + 22 * math.cos(math.radians(14 * m)), 6 + 22 * math.sin(math.radians(14 * m)))],
+               "#7a1c14", outline=None)
+    p.poly(Mh, ell(6, -4, 24, 14, 32), SN['body'])
+    p.poly(Mh, ell(26, -6, 2, 1.4, 6), OUT, outline=None)                                    # nostril
+    sca = po.get('scared', 0); blk = po.get('blink', 0); ey = max(0.12, 1 - blk); lx = po.get('look', 0.4)
+    er = 7 + 3 * sca
+    p.poly(Mh, ell(10, -14, er, er * ey, 18), "#fff8d8", w=1.5)
+    if ey > 0.3:
+        p.poly(Mh, ell(11.5 + 1.8 * lx, -13.5, 2.6 + 1.2 * sca, 5.2 * ey, 14), JD, outline=None)
+        p.poly(Mh, ell(12.5 + 1.8 * lx, -16, 1.2, 1.2, 8), "white", outline=None)
+    bw = po.get('brow', 0.6) * (1 - sca)
+    p.line(Mh, [(2, -22 + 4 * sca - 2 * bw), (18, -22 + 3 * bw - 2 * sca)], SN['dark'], 3)
+
+NK = dict(gold="#f2c14e", gold2="#b9802a", ruby="#c8423a", sky="#3d6db5")
+
+def draw_necklace(p, M, t=0.0, hang=0.0):
+    """golden necklace with gems; origin at its middle. hang 0 = lying in a loop, 1 = hanging from a beak (origin = top)"""
+    if hang < 0.5:
+        pts = ell(0, 0, 30, 12, 22)
+    else:
+        pts = [(18 * math.sin(a) * (1 - 0.3 * abs(math.cos(a))), 10 + 34 * (1 - math.cos(a)) / 2 + 3 * math.sin(t * 6))
+               for a in np.linspace(-math.pi, math.pi, 22)]
+    p.line(M, pts + [pts[0]], NK['gold2'], 4.4); p.line(M, pts + [pts[0]], NK['gold'], 2.4)
+    for k, q in enumerate(pts[::3]):
+        p.poly(M, ell(q[0], q[1], 3.6, 3.6, 10), [NK['ruby'], NK['sky']][k % 2], outline=NK['gold2'], w=1)
+    lo = max(pts, key=lambda q: q[1])
+    p.poly(M, khatam(lo[0], lo[1] + 5, 8, t * 20), NK['ruby'], outline=NK['gold2'], w=1.4)
+    s = 0.5 + 0.5 * math.sin(t * 5)
+    if s > 0.6:                                                     # sparkle
+        q = pts[5]
+        for a in range(4):
+            r = math.radians(a * 90 + 45)
+            p.line(M, [(q[0], q[1]), (q[0] + 11 * s * math.cos(r), q[1] + 11 * s * math.sin(r))], "#fffbe6", 2)
