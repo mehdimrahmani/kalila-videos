@@ -1,0 +1,21 @@
+{
+ "header": "Rumi · Divan-e Shams",
+ "title": "I Long for a Human Being",
+ "theme": "reeds",
+ "source": "Divan-e Shams · Ghazal 441",
+ "seed": 103,
+ "hook": "An old man walked through town in daylight, holding a lamp. What was he looking for?",
+ "segments": [
+  {"fa": "دی شیخ با چراغ همی گشت گرد شهر", "en": "Yesterday the sheikh went round the town with a lamp,"},
+  {"fa": "کز دیو و دد ملولم و انسانم آرزوست", "en": "saying: I am tired of demons and beasts. I long for a human being."},
+  {"fa": "گفت آنک یافت می‌نشود آنم آرزوست", "en": "He said: the one who cannot be found, that is the one I long for."}
+ ],
+ "tafsir": [
+  "People told him: we have searched. Such a person cannot be found.",
+  "And he answered with the last line.",
+  "Rumi is not talking about crowds. He means a true human being, awake and kind.",
+  "For Rumi, that search ended in Konya, the day he met Shams.",
+  "Maybe the lamp is still in our hands."
+ ],
+ "outro": {"say": "This is the longing behind our serial, Shams and Rumi. Follow The Guest House.", "title": "Shams & Rumi · the serial on our page"}
+}

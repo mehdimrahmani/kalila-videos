@@ -1,0 +1,22 @@
+{
+ "header": "Shams & Rumi · Part 4",
+ "title": "Seclusion",
+ "theme": "candle",
+ "source": "Divan-e Shams · Ghazal 2219",
+ "seed": 4,
+ "hook": "After they met, Rumi closed his door. His students waited outside for weeks.",
+ "segments": [
+  {"fa": "من غلام قمرم، غیر قمر هیچ مگو", "en": "I am the moon's servant. Speak of nothing but the moon."},
+  {"fa": "پیش من جز سخن شمع و شکر هیچ مگو", "en": "Before me, speak only of candles and of sugar."},
+  {"fa": "سخن رنج مگو، جز سخن گنج مگو", "en": "Do not speak of sorrow. Speak only of treasure."}
+ ],
+ "tafsir": [
+  "The old biographers say Rumi and Shams sat together in seclusion for weeks, some say months.",
+  "Rumi stopped teaching. His students lost their master.",
+  "And they blamed the stranger from Tabriz.",
+  "In this ghazal, the moon is the beloved, and the candle and sugar are his light and sweetness.",
+  "Rumi is saying: talk to me only of what I love.",
+  "To his students, that sounded like he had left them. To him, it was coming home."
+ ],
+ "outro": {"say": "Part five. Why did Shams leave Konya? Follow The Guest House.", "title": "Part 5 · Why did Shams leave Konya?"}
+}
