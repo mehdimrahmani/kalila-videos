@@ -15,7 +15,19 @@
     <itunes:category text="History"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Tue, 03 Nov 2026 21:29:58 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 08:09:36 +0000</lastBuildDate>
+    <item>
+      <title>Folio 3: The Blind King Who Ruled Twice</title>
+      <description>A Sultan who reigned for five months is locked in a fortress by his own brother, and the world forgets him. Ten years later, a mutinous army drags him out and crowns him again. This is the strange fate of Amir Muhammad, son of Mahmud of Ghazni, and of the brother who took his throne.</description>
+      <itunes:summary>A Sultan who reigned for five months is locked in a fortress by his own brother, and the world forgets him. Ten years later, a mutinous army drags him out and crowns him again. This is the strange fate of Amir Muhammad, son of Mahmud of Ghazni, and of the brother who took his throne.</itunes:summary>
+      <enclosure url="https://mehdimrahmani.github.io/kalila-videos/podcast/episodes/ep03.mp3" length="10849976" type="audio/mpeg"/>
+      <guid isPermaLink="false">honest-historian-ep03</guid>
+      <pubDate>Sun, 08 Nov 2026 07:43:00 +0000</pubDate>
+      <itunes:duration>00:11:18</itunes:duration>
+      <itunes:episode>3</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Folio 2: Two Brothers, One Throne</title>
       <description>In the spring of 1030, the great Sultan Mahmud of Ghazni dies, and his empire is left to the wrong son. His elder son Masud is far away in Isfahan, and his younger son Muhammad is already on the throne. Over six tense months, letters fly, armies change sides, and a kingmaker learns the price of making kings. Beyhaqi, who knew these men, tells us how it really went.</description>
