@@ -8,6 +8,20 @@
    "recorded": "2026-11-08 11:47"
   },
   {
+   "stream": "gh_pod_full",
+   "at": "2026-11-08 16:37",
+   "id": "flOu1PUkFgc",
+   "note": "ep03 full (public at upload)",
+   "recorded": "2026-11-08 16:50"
+  },
+  {
+   "stream": "gh_pod_short",
+   "at": "2026-11-08 16:47",
+   "id": "prS9KEb_w1c",
+   "note": "ep03 cold-open Short (public at upload)",
+   "recorded": "2026-11-08 17:17"
+  },
+  {
    "stream": "ig_part_reel",
    "at": "2026-11-07 20:30",
    "id": "-6158414459344239530",
@@ -112,6 +126,16 @@
    "day": "2026-11-08",
    "stream": "kd_episode",
    "id": "imTJ8CU_jOI"
+  },
+  {
+   "day": "2026-11-08",
+   "stream": "gh_pod_full",
+   "id": "flOu1PUkFgc"
+  },
+  {
+   "day": "2026-11-08",
+   "stream": "gh_pod_short",
+   "id": "prS9KEb_w1c"
   }
  ]
 }

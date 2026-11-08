@@ -1,82 +1,95 @@
 {
- "channel": "UCEz1T3TPlG_b0yjNt4356kg",
- "handle": "@theguesthouse.poetry",
- "uploaded": [
-  {
-   "reel": "guesthouse/reels/part01.mp4",
-   "video_id": "PK05UHUlnxI",
-   "date": "2026-11-02",
-   "title": "I was dead, I came alive — Rumi in the original Persian #Shorts"
+  "channel": "UCEz1T3TPlG_b0yjNt4356kg",
+  "handle": "@theguesthouse.poetry",
+  "uploaded": [
+    {
+      "reel": "guesthouse/reels/part01.mp4",
+      "video_id": "PK05UHUlnxI",
+      "date": "2026-11-02",
+      "title": "I was dead, I came alive — Rumi in the original Persian #Shorts"
+    },
+    {
+      "reel": "guesthouse/reels/part02.mp4",
+      "video_id": "coABkZFTaHM",
+      "date": "2026-11-03",
+      "title": "At the mention of Shams, the sun hid its head — Rumi in the original Persian #Shorts"
+    },
+    {
+      "reel": "guesthouse/reels/part03.mp4",
+      "video_id": "9PiTqPINbfY",
+      "date": "2026-11-05",
+      "title": "I was an ascetic; you made me a singer of songs — Rumi in the original Persian #Shorts"
+    }
+  ],
+  "playlists": {
+    "rumi": "PLSmxCUtqVSqU",
+    "beyhaqi": "PLPa6UJbzvUIM",
+    "longform": "PLF0davgKos4Y"
   },
-  {
-   "reel": "guesthouse/reels/part02.mp4",
-   "video_id": "coABkZFTaHM",
-   "date": "2026-11-03",
-   "title": "At the mention of Shams, the sun hid its head — Rumi in the original Persian #Shorts"
-  },
-  {
-   "reel": "guesthouse/reels/part03.mp4",
-   "video_id": "9PiTqPINbfY",
-   "date": "2026-11-05",
-   "title": "I was an ascetic; you made me a singer of songs — Rumi in the original Persian #Shorts"
-  }
- ],
- "playlists": {
-  "rumi": "PLSmxCUtqVSqU",
-  "beyhaqi": "PLPa6UJbzvUIM",
-  "longform": "PLF0davgKos4Y"
- },
- "podcast": [
-  {
-   "ep": 1,
-   "full": "8EpUE3obTLg",
-   "short": "CkPl3uta8BM",
-   "date": "2026-11-02",
-   "extra_shorts": [
-    "GC5KC2Ue5XA",
-    "S6RFgxq5UdA"
-   ]
-  },
-  {
-   "ep": 2,
-   "full": "ScvoC-kPcP4",
-   "short": "j1saU12zndk",
-   "date": "2026-11-04",
-   "extra_shorts": [
-    "IBd8d-7IKHs",
-    "8liI-IogeOQ"
-   ]
-  }
- ],
- "longform": [
-  {
-   "id": "lf01",
-   "video": "pr0SxT7g2Rc",
-   "date": "2026-11-06",
-   "title": "Rumi for a Restless Heart",
-   "poems": [
-    "Masnavi I 1-2 (reed)",
-    "Masnavi I 4 (root)",
-    "Ma ze balaim (sea)",
-    "Ghazal 1393 morde bodam",
-    "Amade-am ke sar naham"
-   ]
-  },
-  {
-   "id": "lf02",
-   "video": "hLHpLaRzgjA",
-   "date": "2026-11-13",
-   "title": "Rumi's Guest House | 8 Persian Sufi Poems on Sorrow, Joy and Every Feeling (English Translation)",
-   "poems": [
-    "Masnavi V §155 b1-2 (guest house)",
-    "Masnavi V §155 b3",
-    "Masnavi V §157 b3-4 (sorrow sweeps)",
-    "Masnavi V §157 b5-6 (yellow leaves)",
-    "Masnavi V §157 b22-23 (cloud)",
-    "Masnavi V §5 b17-18 (cloud weeps)",
-    "Masnavi III §179 b40 (qabz/bast)",
-    "Masnavi I §40 b14-15 (sorrow at command)"
-   ]
-  }
- ]
+  "podcast": [
+    {
+      "ep": 1,
+      "full": "8EpUE3obTLg",
+      "short": "CkPl3uta8BM",
+      "date": "2026-11-02",
+      "extra_shorts": [
+        "GC5KC2Ue5XA",
+        "S6RFgxq5UdA"
+      ]
+    },
+    {
+      "ep": 2,
+      "full": "ScvoC-kPcP4",
+      "short": "j1saU12zndk",
+      "date": "2026-11-04",
+      "extra_shorts": [
+        "IBd8d-7IKHs",
+        "8liI-IogeOQ"
+      ]
+    },
+    {
+      "ep": 3,
+      "full": "flOu1PUkFgc",
+      "short": "prS9KEb_w1c",
+      "date": "2026-11-08",
+      "extra_shorts": [],
+      "slots": {
+        "full": "2026-11-08 16:37",
+        "short": "2026-11-08 16:47",
+        "short2": "2026-11-10 16:37",
+        "short3": "2026-11-12 16:37"
+      }
+    }
+  ],
+  "longform": [
+    {
+      "id": "lf01",
+      "video": "pr0SxT7g2Rc",
+      "date": "2026-11-06",
+      "title": "Rumi for a Restless Heart",
+      "poems": [
+        "Masnavi I 1-2 (reed)",
+        "Masnavi I 4 (root)",
+        "Ma ze balaim (sea)",
+        "Ghazal 1393 morde bodam",
+        "Amade-am ke sar naham"
+      ]
+    },
+    {
+      "id": "lf02",
+      "video": "hLHpLaRzgjA",
+      "date": "2026-11-13",
+      "title": "Rumi's Guest House | 8 Persian Sufi Poems on Sorrow, Joy and Every Feeling (English Translation)",
+      "poems": [
+        "Masnavi V §155 b1-2 (guest house)",
+        "Masnavi V §155 b3",
+        "Masnavi V §157 b3-4 (sorrow sweeps)",
+        "Masnavi V §157 b5-6 (yellow leaves)",
+        "Masnavi V §157 b22-23 (cloud)",
+        "Masnavi V §5 b17-18 (cloud weeps)",
+        "Masnavi III §179 b40 (qabz/bast)",
+        "Masnavi I §40 b14-15 (sorrow at command)"
+      ]
+    }
+  ]
 }
