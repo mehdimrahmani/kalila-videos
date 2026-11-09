@@ -21,7 +21,7 @@ Listed on (2 Nov 2026): Spotify https://open.spotify.com/show/18Hf8IqDkOBNni2WW3
 1. ✅ Folio 1: The Vizier on the Gallows — the fall of Hasanak (published)
 2. ✅ Folio 2: Two Brothers, One Throne — Masud's succession struggle with his brother Muhammad after Mahmud's death (1030) (published)
 3. ✅ Folio 3: The Blind King Who Ruled Twice — what happened to Amir Muhammad (queued for 2026-11-08, live at once)
-4. Afshin and Bu Dulaf — the story Beyhaqi tells from the Abbasid court: how the judge Ahmad ibn Abi Duwad saved a man's life
+4. ✅ Folio 4: The Judge Who Lied to Save a Life — Afshin and Bu Dulaf, the story Beyhaqi tells from the Abbasid court: how the judge Ahmad ibn Abi Duwad saved a man's life (queued for 2026-11-15)
 5. Bu Nasr Moshkan — Beyhaqi's teacher, master of the royal chancery, and how a secretary survives at a dangerous court
 6. The Sultan and the Lion — Masud's famous hunting episode and what it says about him
 7. Altuntash of Khwarazm — loyalty, suspicion and a dying general
