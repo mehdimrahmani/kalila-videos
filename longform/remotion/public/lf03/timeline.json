@@ -1,0 +1,790 @@
+{
+ "id": "lf03",
+ "duration": 631.302,
+ "fps": 30,
+ "events": [
+  {
+   "kind": "title",
+   "t0": 0.0,
+   "t1": 24.186,
+   "text": "Rumi on Patience: Waiting, Trust and the Water of Life",
+   "sub": "Eight Persian Sufi poems with English translation",
+   "fa": "مولانا و صبر"
+  },
+  {
+   "kind": "intro",
+   "t0": 2.0,
+   "t1": 6.856,
+   "text": "Patience is one of the oldest words in the Sufi path."
+  },
+  {
+   "kind": "intro",
+   "t0": 7.456,
+   "t1": 15.951,
+   "text": "For Rumi it is not a grey, dutiful waiting. It is a quiet trust that something is ripening out of sight."
+  },
+  {
+   "kind": "intro",
+   "t0": 16.551,
+   "t1": 23.586,
+   "text": "Here are eight passages from his Masnavi and his Divan-e Shams about how to wait."
+  },
+  {
+   "kind": "chapter",
+   "t0": 25.686,
+   "t1": 29.686,
+   "n": 1,
+   "name": "Patience Draws Mercy",
+   "source": "Masnavi · Book III, §122, couplets 16–17"
+  },
+  {
+   "kind": "line",
+   "t0": 30.186,
+   "t1": 37.442,
+   "en_t0": 32.786,
+   "fa": "صبر و خاموشی جذوب رحمتست",
+   "en": "Patience and silence draw mercy in;",
+   "poem": 0,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 37.442,
+   "t1": 45.978,
+   "en_t0": 40.042,
+   "fa": "وین نشان جستن نشان علتست",
+   "en": "and this demanding of signs is itself a sign of sickness.",
+   "poem": 0,
+   "k": 1
+  },
+  {
+   "kind": "line",
+   "t0": 45.978,
+   "t1": 53.661,
+   "en_t0": 48.578,
+   "fa": "انصتوا بپذیر تا بر جان تو",
+   "en": "Accept the command \"Be silent,\" so that upon your soul",
+   "poem": 0,
+   "k": 2
+  },
+  {
+   "kind": "line",
+   "t0": 53.661,
+   "t1": 61.635,
+   "en_t0": 56.261,
+   "fa": "آید از جانان جزای انصتوا",
+   "en": "the reward of that silence may come from the Beloved.",
+   "poem": 0,
+   "k": 3
+  },
+  {
+   "kind": "tafsir",
+   "t0": 62.835,
+   "t1": 69.466,
+   "text": "In this part of the Masnavi, people keep asking the prophets for miracles and proofs.",
+   "poem": 0,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 69.916,
+   "t1": 76.838,
+   "text": "Rumi answers that patience and silence are what actually draw mercy toward us.",
+   "poem": 0,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 77.288,
+   "t1": 83.717,
+   "text": "\"Be silent\" is a phrase from the Quran: when the Word is recited, listen.",
+   "poem": 0,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 84.167,
+   "t1": 90.662,
+   "text": "When we stop demanding signs and simply listen, something can finally reach us.",
+   "poem": 0,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 91.112,
+   "t1": 95.385,
+   "text": "Patience, here, begins as a kind of listening.",
+   "poem": 0,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 96.435,
+   "t1": 103.435,
+   "fa": [
+    "صبر و خاموشی جذوب رحمتست",
+    "وین نشان جستن نشان علتست",
+    "انصتوا بپذیر تا بر جان تو",
+    "آید از جانان جزای انصتوا"
+   ],
+   "source": "Masnavi · Book III, §122, couplets 16–17"
+  },
+  {
+   "kind": "chapter",
+   "t0": 103.935,
+   "t1": 107.935,
+   "n": 2,
+   "name": "The Winter Garden",
+   "source": "Divan-e Shams · Ghazal 390"
+  },
+  {
+   "kind": "line",
+   "t0": 108.435,
+   "t1": 116.881,
+   "en_t0": 111.035,
+   "fa": "تا نگویی در زمستان باغ را مستی نماند",
+   "en": "Do not say that in winter the garden has lost its joy;",
+   "poem": 1,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 116.881,
+   "t1": 125.193,
+   "en_t0": 119.481,
+   "fa": "مدتی پنهان شدست از دیده مکار مست",
+   "en": "for a while, the drunken one has hidden from the cunning eye.",
+   "poem": 1,
+   "k": 1
+  },
+  {
+   "kind": "line",
+   "t0": 125.193,
+   "t1": 133.325,
+   "en_t0": 127.793,
+   "fa": "بیخهای آن درختان می نهانی میخورند",
+   "en": "The roots of those trees are drinking wine in secret.",
+   "poem": 1,
+   "k": 2
+  },
+  {
+   "kind": "line",
+   "t0": 133.325,
+   "t1": 141.749,
+   "en_t0": 135.925,
+   "fa": "روزکی دو صبر میکن تا شود بیدار مست",
+   "en": "Be patient a day or two, until the drunken one awakes.",
+   "poem": 1,
+   "k": 3
+  },
+  {
+   "kind": "tafsir",
+   "t0": 142.949,
+   "t1": 149.781,
+   "text": "This ghazal is full of drunkenness, Rumi's image for joy and life in God.",
+   "poem": 1,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 150.231,
+   "t1": 155.627,
+   "text": "In winter the garden looks dead. Nothing seems to be happening.",
+   "poem": 1,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 156.077,
+   "t1": 161.495,
+   "text": "But Rumi says the roots are drinking in secret, under the ground.",
+   "poem": 1,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 161.945,
+   "t1": 168.553,
+   "text": "Many of our hardest seasons are like that: the work is happening where we cannot see it.",
+   "poem": 1,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 169.003,
+   "t1": 172.714,
+   "text": "Wait a little. Spring is only asleep.",
+   "poem": 1,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 173.764,
+   "t1": 180.764,
+   "fa": [
+    "تا نگویی در زمستان باغ را مستی نماند",
+    "مدتی پنهان شدست از دیده مکار مست",
+    "بیخهای آن درختان می نهانی میخورند",
+    "روزکی دو صبر میکن تا شود بیدار مست"
+   ],
+   "source": "Divan-e Shams · Ghazal 390"
+  },
+  {
+   "kind": "chapter",
+   "t0": 181.264,
+   "t1": 185.264,
+   "n": 3,
+   "name": "The Water of Life",
+   "source": "Divan-e Shams · Ghazal 550, couplets 1 and 5"
+  },
+  {
+   "kind": "line",
+   "t0": 185.764,
+   "t1": 194.457,
+   "en_t0": 188.364,
+   "fa": "پنبه ز گوش دور کن بانگ نجات میرسد",
+   "en": "Take the cotton from your ears: the call of rescue is coming.",
+   "poem": 2,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 194.457,
+   "t1": 203.42,
+   "en_t0": 197.057,
+   "fa": "آب سیاه درمرو کآب حیات میرسد",
+   "en": "Do not walk into the black water, for the water of life is coming.",
+   "poem": 2,
+   "k": 1
+  },
+  {
+   "kind": "line",
+   "t0": 203.42,
+   "t1": 212.136,
+   "en_t0": 206.02,
+   "fa": "در ظلمات ابتلا صبر کن و مکن ابا",
+   "en": "In the darkness of trial, be patient, and do not refuse;",
+   "poem": 2,
+   "k": 2
+  },
+  {
+   "kind": "line",
+   "t0": 212.136,
+   "t1": 220.133,
+   "en_t0": 214.736,
+   "fa": "کآب حیات خضر را در ظلمات میرسد",
+   "en": "for Khidr found the water of life in the darkness.",
+   "poem": 2,
+   "k": 3
+  },
+  {
+   "kind": "tafsir",
+   "t0": 221.333,
+   "t1": 228.233,
+   "text": "In Persian legend, Khidr is the green wanderer who found the spring of eternal life.",
+   "poem": 2,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 228.683,
+   "t1": 234.685,
+   "text": "And he found it in the Land of Darkness, a place no one wanted to enter.",
+   "poem": 2,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 235.135,
+   "t1": 240.643,
+   "text": "Rumi takes that story and hands it to anyone who is suffering.",
+   "poem": 2,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 241.093,
+   "t1": 245.882,
+   "text": "Do not run from the dark, he says. Do not give up in it.",
+   "poem": 2,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 246.332,
+   "t1": 250.335,
+   "text": "The water of life is found exactly there.",
+   "poem": 2,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 251.385,
+   "t1": 258.385,
+   "fa": [
+    "پنبه ز گوش دور کن بانگ نجات میرسد",
+    "آب سیاه درمرو کآب حیات میرسد",
+    "در ظلمات ابتلا صبر کن و مکن ابا",
+    "کآب حیات خضر را در ظلمات میرسد"
+   ],
+   "source": "Divan-e Shams · Ghazal 550, couplets 1 and 5"
+  },
+  {
+   "kind": "chapter",
+   "t0": 258.885,
+   "t1": 262.885,
+   "n": 4,
+   "name": "The Snake and the Thorns",
+   "source": "Divan-e Shams · Ghazal 20, couplets 8–9"
+  },
+  {
+   "kind": "line",
+   "t0": 263.385,
+   "t1": 272.101,
+   "en_t0": 265.985,
+   "fa": "بی صبر بود و بیحیل خود را بکشت او از عجل",
+   "en": "It had no patience and no skill; it killed itself in haste.",
+   "poem": 3,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 272.101,
+   "t1": 281.737,
+   "en_t0": 274.701,
+   "fa": "گر صبر کردی یک زمان رستی از او آن بدلقا",
+   "en": "Had it been patient for one moment, that ugly creature would have left it alone.",
+   "poem": 3,
+   "k": 1
+  },
+  {
+   "kind": "line",
+   "t0": 281.737,
+   "t1": 291.127,
+   "en_t0": 284.337,
+   "fa": "بر خارپشت هر بلا خود را مزن تو هم هلا",
+   "en": "Beware: do not throw yourself, too, against the hedgehog of every trouble.",
+   "poem": 3,
+   "k": 2
+  },
+  {
+   "kind": "line",
+   "t0": 291.127,
+   "t1": 301.1,
+   "en_t0": 293.727,
+   "fa": "ساکن نشین وین ورد خوان «جاء القضا ضاق الفضا»",
+   "en": "Sit still, and repeat this: \"When fate arrives, the wide world grows narrow.\"",
+   "poem": 3,
+   "k": 3
+  },
+  {
+   "kind": "tafsir",
+   "t0": 302.3,
+   "t1": 308.549,
+   "text": "Just before these lines, Rumi tells of a foolish snake that meets a hedgehog.",
+   "poem": 3,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 308.999,
+   "t1": 316.258,
+   "text": "It strikes again and again at the thorns, until it is pierced all over by its own attacks.",
+   "poem": 3,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 316.708,
+   "t1": 322.732,
+   "text": "If it had only been still for a moment, the hedgehog would have gone on its way.",
+   "poem": 3,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 323.182,
+   "t1": 328.78,
+   "text": "How often do we wound ourselves by fighting a trouble that would have passed?",
+   "poem": 3,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 329.23,
+   "t1": 334.737,
+   "text": "Rumi's advice is simple: sit still, and let the moment pass.",
+   "poem": 3,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 335.787,
+   "t1": 342.787,
+   "fa": [
+    "بی صبر بود و بیحیل خود را بکشت او از عجل",
+    "گر صبر کردی یک زمان رستی از او آن بدلقا",
+    "بر خارپشت هر بلا خود را مزن تو هم هلا",
+    "ساکن نشین وین ورد خوان «جاء القضا ضاق الفضا»"
+   ],
+   "source": "Divan-e Shams · Ghazal 20, couplets 8–9"
+  },
+  {
+   "kind": "chapter",
+   "t0": 343.287,
+   "t1": 347.287,
+   "n": 5,
+   "name": "Companion of the Patient",
+   "source": "Divan-e Shams · Ghazal 20, couplet 10"
+  },
+  {
+   "kind": "line",
+   "t0": 347.787,
+   "t1": 356.84,
+   "en_t0": 350.387,
+   "fa": "فرمود رب العالمین با صابرانم همنشین",
+   "en": "The Lord of the worlds has said: I sit with those who are patient.",
+   "poem": 4,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 356.84,
+   "t1": 365.511,
+   "en_t0": 359.44,
+   "fa": "ای همنشین صابران «افرغ علینا صبرنا»",
+   "en": "O Companion of the patient, \"pour out patience upon us.\"",
+   "poem": 4,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 366.711,
+   "t1": 370.692,
+   "text": "Both halves of this line echo the Quran.",
+   "poem": 4,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 371.142,
+   "t1": 377.862,
+   "text": "God is with the patient, it says; and the prayer: our Lord, pour patience upon us.",
+   "poem": 4,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 378.312,
+   "t1": 384.583,
+   "text": "Notice what Rumi does. He does not tell us to produce patience by force.",
+   "poem": 4,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 385.033,
+   "t1": 389.934,
+   "text": "He asks for it, the way a dry field asks for rain.",
+   "poem": 4,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 390.384,
+   "t1": 397.801,
+   "text": "Patience, for him, is a gift we can pray for, and a companionship we are never alone in.",
+   "poem": 4,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 398.851,
+   "t1": 405.851,
+   "fa": [
+    "فرمود رب العالمین با صابرانم همنشین",
+    "ای همنشین صابران «افرغ علینا صبرنا»"
+   ],
+   "source": "Divan-e Shams · Ghazal 20, couplet 10"
+  },
+  {
+   "kind": "chapter",
+   "t0": 406.351,
+   "t1": 410.351,
+   "n": 6,
+   "name": "Seeing the End",
+   "source": "Divan-e Shams · Ghazal 462"
+  },
+  {
+   "kind": "line",
+   "t0": 410.851,
+   "t1": 419.05,
+   "en_t0": 413.451,
+   "fa": "عقل اگر قاضیست کو خط و منشور او",
+   "en": "If reason is a judge, where is its writ, its decree?",
+   "poem": 5,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 419.05,
+   "t1": 428.193,
+   "en_t0": 421.65,
+   "fa": "دیدن پایان کار صبر و وقار و وفاست",
+   "en": "To see how things end, that takes patience, dignity and faithfulness.",
+   "poem": 5,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 429.393,
+   "t1": 435.103,
+   "text": "The clever mind likes to judge quickly. It wants a verdict today.",
+   "poem": 5,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 435.553,
+   "t1": 439.062,
+   "text": "Rumi asks: by what authority?",
+   "poem": 5,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 439.512,
+   "t1": 446.569,
+   "text": "Only someone who waits, calmly and faithfully, gets to see how the story really ends.",
+   "poem": 5,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 447.019,
+   "t1": 453.065,
+   "text": "Much of what looked like failure turns out, later, to be the turning of the road.",
+   "poem": 5,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 453.515,
+   "t1": 458.866,
+   "text": "Patience is the only seat from which the whole story can be seen.",
+   "poem": 5,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 459.916,
+   "t1": 466.916,
+   "fa": [
+    "عقل اگر قاضیست کو خط و منشور او",
+    "دیدن پایان کار صبر و وقار و وفاست"
+   ],
+   "source": "Divan-e Shams · Ghazal 462"
+  },
+  {
+   "kind": "chapter",
+   "t0": 467.416,
+   "t1": 471.416,
+   "n": 7,
+   "name": "The Friend of Patience",
+   "source": "Divan-e Shams · Ghazal 568"
+  },
+  {
+   "kind": "line",
+   "t0": 471.916,
+   "t1": 481.642,
+   "en_t0": 474.516,
+   "fa": "کسی کو یار صبر آمد سوار ماه و ابر آمد",
+   "en": "Whoever takes patience as a friend comes riding on the moon and the clouds.",
+   "poem": 6,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 481.642,
+   "t1": 490.65,
+   "en_t0": 484.242,
+   "fa": "مکن باور که ابر تر گدای ناودان باشد",
+   "en": "Do not believe that the rain-heavy cloud is a beggar at the gutter.",
+   "poem": 6,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 491.85,
+   "t1": 497.088,
+   "text": "Here patience is not weakness. It is a kind of royalty.",
+   "poem": 6,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 497.538,
+   "t1": 502.327,
+   "text": "The one who befriends it rides on the moon and the clouds.",
+   "poem": 6,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 502.777,
+   "t1": 509.722,
+   "text": "And the cloud full of rain does not beg from the gutter. The gutter lives from the cloud.",
+   "poem": 6,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 510.172,
+   "t1": 516.039,
+   "text": "The patient heart is like that cloud: full, and not in need of crumbs.",
+   "poem": 6,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 516.489,
+   "t1": 520.268,
+   "text": "Waiting, done well, is a form of strength.",
+   "poem": 6,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 521.318,
+   "t1": 528.318,
+   "fa": [
+    "کسی کو یار صبر آمد سوار ماه و ابر آمد",
+    "مکن باور که ابر تر گدای ناودان باشد"
+   ],
+   "source": "Divan-e Shams · Ghazal 568"
+  },
+  {
+   "kind": "chapter",
+   "t0": 528.818,
+   "t1": 532.818,
+   "n": 8,
+   "name": "No Patience Without You",
+   "source": "Divan-e Shams · Ghazal 227, couplets 1–2"
+  },
+  {
+   "kind": "line",
+   "t0": 533.318,
+   "t1": 542.056,
+   "en_t0": 535.918,
+   "fa": "به جان پاک تو ای معدن سخا و وفا",
+   "en": "By your pure soul, O mine of generosity and faithfulness,",
+   "poem": 7,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 542.056,
+   "t1": 550.098,
+   "en_t0": 544.656,
+   "fa": "که صبر نیست مرا بیتو ای عزیز بیا",
+   "en": "I have no patience without you. Beloved, come.",
+   "poem": 7,
+   "k": 1
+  },
+  {
+   "kind": "line",
+   "t0": 550.098,
+   "t1": 559.42,
+   "en_t0": 552.698,
+   "fa": "چه جای صبر که گر کوه قاف بود این صبر",
+   "en": "What room is there for patience? Even if this patience were Mount Qaf,",
+   "poem": 7,
+   "k": 2
+  },
+  {
+   "kind": "line",
+   "t0": 559.42,
+   "t1": 568.046,
+   "en_t0": 562.02,
+   "fa": "ز آفتاب جدایی چو برف گشت فنا",
+   "en": "under the sun of separation it melted away like snow.",
+   "poem": 7,
+   "k": 3
+  },
+  {
+   "kind": "tafsir",
+   "t0": 569.246,
+   "t1": 573.833,
+   "text": "And to end, Rumi turns everything upside down.",
+   "poem": 7,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 574.283,
+   "t1": 581.947,
+   "text": "Mount Qaf is the mountain at the edge of the world in Persian legend, the biggest thing imaginable.",
+   "poem": 7,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 582.397,
+   "t1": 588.466,
+   "text": "Even a patience that large melts like snow in the heat of separation.",
+   "poem": 7,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 588.916,
+   "t1": 595.973,
+   "text": "This is the honest side of patience: sometimes love simply cannot wait, and says so.",
+   "poem": 7,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 596.423,
+   "t1": 603.211,
+   "text": "Rumi lets us be patient, and lets us cry out \"come\". Both are part of the path.",
+   "poem": 7,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 604.261,
+   "t1": 611.261,
+   "fa": [
+    "به جان پاک تو ای معدن سخا و وفا",
+    "که صبر نیست مرا بیتو ای عزیز بیا",
+    "چه جای صبر که گر کوه قاف بود این صبر",
+    "ز آفتاب جدایی چو برف گشت فنا"
+   ],
+   "source": "Divan-e Shams · Ghazal 227, couplets 1–2"
+  },
+  {
+   "kind": "outro",
+   "t0": 611.761,
+   "t1": 615.315,
+   "text": "Thank you for waiting with these verses."
+  },
+  {
+   "kind": "outro",
+   "t0": 615.815,
+   "t1": 623.052,
+   "text": "Every week we share real passages of Rumi, translated honestly from the Persian."
+  },
+  {
+   "kind": "outro",
+   "t0": 623.552,
+   "t1": 627.802,
+   "text": "If they spoke to you, subscribe to The Guest House."
+  },
+  {
+   "kind": "end",
+   "t0": 611.761,
+   "t1": 631.302
+  }
+ ]
+}
