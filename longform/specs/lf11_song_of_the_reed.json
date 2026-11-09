@@ -1,0 +1,205 @@
+{
+ "id": "lf11",
+ "title": "The Song of the Reed: The Opening of Rumi's Masnavi",
+ "subtitle": "Eight Persian Sufi poems with English translation",
+ "fa_title": "نی‌نامه",
+ "yt_title": "The Song of the Reed | Rumi's Masnavi Opening in Persian with English Translation",
+ "seed": 113,
+ "intro": [
+  "The Masnavi, Rumi's great poem, opens with a reed flute crying for the reed bed it was cut from.",
+  "Persians call these lines the Ney-nameh, the Book of the Reed. Many know them by heart.",
+  "Here are eight passages from that opening song, with a few words on each."
+ ],
+ "poems": [
+  {
+   "name": "Every Gathering",
+   "source": "Masnavi · Book I, §1, couplets 5–6",
+   "lines": [
+    {
+     "fa": "من به هر جمعیتی نالان شدم",
+     "en": "In every gathering I cried my lament;"
+    },
+    {
+     "fa": "جفت بدحالان و خوشحالان شدم",
+     "en": "I kept company with the unhappy and the happy."
+    },
+    {
+     "fa": "هر کسی از ظن خود شد یار من",
+     "en": "Each became my friend from their own guess;"
+    },
+    {
+     "fa": "از درون من نجست اسرار من",
+     "en": "none sought out the secrets within me."
+    }
+   ],
+   "tafsir": [
+    "The reed plays at weddings and at funerals, for the sad and for the glad.",
+    "Everyone loves its music. Everyone hears in it what they already feel.",
+    "But almost no one asks what the reed itself is crying about.",
+    "Many people know this loneliness: to be liked, and not known."
+   ]
+  },
+  {
+   "name": "Not Far From My Cry",
+   "source": "Masnavi · Book I, §1, couplet 7",
+   "lines": [
+    {
+     "fa": "سر من از ناله من دور نیست",
+     "en": "My secret is not far from my lament,"
+    },
+    {
+     "fa": "لیک چشم و گوش را آن نور نیست",
+     "en": "but eye and ear do not have that light."
+    }
+   ],
+   "tafsir": [
+    "The reed's secret is right there in its sound.",
+    "It is not hidden. We simply do not have the light to see it.",
+    "Ordinary eyes and ears hear only notes.",
+    "Another kind of seeing is needed: the eye of the heart."
+   ]
+  },
+  {
+   "name": "This Cry Is Fire",
+   "source": "Masnavi · Book I, §1, couplets 9–10",
+   "lines": [
+    {
+     "fa": "آتش است این بانگ نای و نیست باد",
+     "en": "This cry of the reed is fire, not wind;"
+    },
+    {
+     "fa": "هر که این آتش ندارد نیست باد",
+     "en": "whoever does not have this fire, may they be nothing."
+    },
+    {
+     "fa": "آتش عشق است کاندر نی فتاد",
+     "en": "It is the fire of love that fell into the reed;"
+    },
+    {
+     "fa": "جوشش عشق است کاندر می فتاد",
+     "en": "it is the ferment of love that fell into the wine."
+    }
+   ],
+   "tafsir": [
+    "A flute is played with breath, with wind.",
+    "Rumi says: no, this sound is fire.",
+    "The same love that makes the reed cry makes the wine ferment.",
+    "Without that fire, he says, a life is hardly a life."
+   ]
+  },
+  {
+   "name": "Poison and Antidote",
+   "source": "Masnavi · Book I, §1, couplets 11–12",
+   "lines": [
+    {
+     "fa": "نی حریف هر که از یاری برید",
+     "en": "The reed is the companion of all who are cut off from a friend;"
+    },
+    {
+     "fa": "پرده‌هایش پرده‌های ما درید",
+     "en": "its melodies tore open our veils."
+    },
+    {
+     "fa": "همچو نی زهری و تریاقی که دید",
+     "en": "Who has seen a poison and an antidote like the reed?"
+    },
+    {
+     "fa": "همچو نی دمساز و مشتاقی که دید",
+     "en": "Who has seen a companion and a lover like the reed?"
+    }
+   ],
+   "tafsir": [
+    "In Persian, the same word, parde, means a musical mode and a veil.",
+    "So the reed's melodies tear the veils that cover our hearts.",
+    "Its music wounds and heals at the same time.",
+    "Anyone separated from someone they love has found a friend in this sound."
+   ]
+  },
+  {
+   "name": "The Road Full of Blood",
+   "source": "Masnavi · Book I, §1, couplet 13",
+   "lines": [
+    {
+     "fa": "نی حدیث راه پرخون می‌کند",
+     "en": "The reed tells of the road full of blood;"
+    },
+    {
+     "fa": "قصه‌های عشق مجنون می‌کند",
+     "en": "it tells the stories of Majnun's love."
+    }
+   ],
+   "tafsir": [
+    "Majnun is the great lover of Persian and Arabic legend, driven mad by his love for Layla.",
+    "His road was hard, full of wounds.",
+    "The reed sings that story.",
+    "Love, in Rumi, is never a comfortable road. But it is the one worth taking."
+   ]
+  },
+  {
+   "name": "The Fish and the Water",
+   "source": "Masnavi · Book I, §1, couplet 17",
+   "lines": [
+    {
+     "fa": "هر که جز ماهی ز آبش سیر شد",
+     "en": "Everyone but the fish grows tired of water;"
+    },
+    {
+     "fa": "هر که بی‌روزیست روزش دیر شد",
+     "en": "for whoever lacks their daily bread, the day grows long."
+    }
+   ],
+   "tafsir": [
+    "A fish never has enough water. It lives in it.",
+    "Rumi says the true lover is like that with love.",
+    "Others grow bored, and for them the days drag on.",
+    "The one who has found their element does not count the hours."
+   ]
+  },
+  {
+   "name": "When the Rose Is Gone",
+   "source": "Masnavi · Book I, §1, couplet 29",
+   "lines": [
+    {
+     "fa": "چون که گل رفت و گلستان درگذشت",
+     "en": "When the rose is gone and the garden has faded,"
+    },
+    {
+     "fa": "نشنوی زآن پس ز بلبل سرگذشت",
+     "en": "you will hear no more the nightingale's story."
+    }
+   ],
+   "tafsir": [
+    "The nightingale sings because of the rose.",
+    "Take away the rose, and the song stops.",
+    "Rumi is speaking of himself, and of Shams, who was his rose.",
+    "Our deepest songs need someone to sing to."
+   ]
+  },
+  {
+   "name": "All Is the Beloved",
+   "source": "Masnavi · Book I, §1, couplet 30",
+   "lines": [
+    {
+     "fa": "جمله معشوق است و عاشق پرده‌ای",
+     "en": "All is the Beloved; the lover is only a veil."
+    },
+    {
+     "fa": "زنده معشوق است و عاشق مرده‌ای",
+     "en": "The Beloved is the living one; the lover is a dead thing."
+    }
+   ],
+   "tafsir": [
+    "Here the song of the reed reaches its deepest point.",
+    "In the end, Rumi says, there is only the Beloved.",
+    "The lover is a curtain, and all the life is on the other side.",
+    "This is the secret the reed has been crying about all along."
+   ]
+  }
+ ],
+ "outro": [
+  "Thank you for staying with these verses.",
+  "Every week we share real passages of Rumi, translated honestly from the Persian.",
+  "If they spoke to you, subscribe to The Guest House."
+ ],
+ "verified": "Persian checked word-for-word on ganjoor.net, 9 Nov 2026"
+}

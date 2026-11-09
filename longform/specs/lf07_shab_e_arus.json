@@ -1,0 +1,221 @@
+{
+ "id": "lf07",
+ "title": "Death as a Wedding — Rumi's Shab-e Arus",
+ "subtitle": "Eight Persian Sufi poems with English translation",
+ "fa_title": "شب عرس مولانا",
+ "yt_title": "Death as a Wedding — Rumi's Shab-e Arus | 8 Persian Sufi Poems (English Translation)",
+ "seed": 71,
+ "intro": [
+  "Rumi died in Konya on the seventeenth of December, 1273.",
+  "His followers do not call that night a funeral. They call it Shab-e Arus: the wedding night, the night the soul meets its Beloved.",
+  "Here are eight passages in which Rumi speaks of death without fear."
+ ],
+ "poems": [
+  {
+   "name": "On the Day of My Death",
+   "source": "Divan-e Shams · Ghazal 911, couplet 1",
+   "lines": [
+    {
+     "fa": "به روز مرگ چو تابوت من روان باشد",
+     "en": "On the day of my death, when my coffin is moving,"
+    },
+    {
+     "fa": "گمان مبر که مرا درد این جهان باشد",
+     "en": "do not imagine that I feel pain for this world."
+    }
+   ],
+   "tafsir": [
+    "This is perhaps Rumi's most famous poem about his own death.",
+    "He imagines his coffin carried through the streets.",
+    "And he turns to the mourners: do not think I am sad to leave.",
+    "For him, the coffin is not a prison. It is a carriage to a wedding."
+   ]
+  },
+  {
+   "name": "The Human Seed",
+   "source": "Divan-e Shams · Ghazal 911, couplet 7",
+   "lines": [
+    {
+     "fa": "کدام دانه فرورفت در زمین که نرست",
+     "en": "Which seed ever went down into the earth and did not grow?"
+    },
+    {
+     "fa": "چرا به دانهٔ انسانت این گمان باشد",
+     "en": "Why do you have this doubt about the human seed?"
+    }
+   ],
+   "tafsir": [
+    "From the same ghazal comes this simple, powerful question.",
+    "Every farmer buries seeds and waits for them to rise.",
+    "No one weeps over a planted seed.",
+    "Rumi asks: why should a human being be the only seed that does not grow?"
+   ]
+  },
+  {
+   "name": "Die in This Love",
+   "source": "Divan-e Shams · Ghazal 636, couplets 1 and 4",
+   "lines": [
+    {
+     "fa": "بمیرید بمیرید در این عشق بمیرید",
+     "en": "Die, die, die in this love;"
+    },
+    {
+     "fa": "در این عشق چو مردید همه روح پذیرید",
+     "en": "when you have died in this love, you will all receive spirit."
+    },
+    {
+     "fa": "یکی تیشه بگیرید پی حفره زندان",
+     "en": "Take up an axe and dig through the prison wall;"
+    },
+    {
+     "fa": "چو زندان بشکستید همه شاه و امیرید",
+     "en": "when you have broken the prison, you are all kings and princes."
+    }
+   ],
+   "tafsir": [
+    "Rumi is not praising physical death here.",
+    "He means the death of the small, frightened self, the one that keeps us in prison.",
+    "Die to that, he says, and you receive spirit.",
+    "The Sufis called it dying before you die. What is broken is only the prison."
+   ]
+  },
+  {
+   "name": "Come to My Grave With a Drum",
+   "source": "Divan-e Shams · Ghazal 683, couplets 1 and 4",
+   "lines": [
+    {
+     "fa": "ز خاک من اگر گندم برآید",
+     "en": "If wheat grows from my dust,"
+    },
+    {
+     "fa": "از آن گر نان پزی مستی فزاید",
+     "en": "and you bake bread from it, drunkenness will grow."
+    },
+    {
+     "fa": "میا بی‌دف به گور من برادر",
+     "en": "Do not come to my grave without a drum, brother;"
+    },
+    {
+     "fa": "که در بزم خدا غمگین نشاید",
+     "en": "sadness is not fitting at God's feast."
+    }
+   ],
+   "tafsir": [
+    "Rumi imagines wheat growing from his grave, and the bread still full of his love.",
+    "Then he gives instructions for visitors: bring a daf, the frame drum.",
+    "To this day, on Shab-e Arus, his tomb in Konya is filled with music and turning.",
+    "His followers took him at his word."
+   ]
+  },
+  {
+   "name": "Time to Leave",
+   "source": "Divan-e Shams · Ghazal 1789, couplets 1–2",
+   "lines": [
+    {
+     "fa": "ای عاشقان ای عاشقان هنگام کوچ است از جهان",
+     "en": "O lovers, O lovers, it is time to leave the world;"
+    },
+    {
+     "fa": "در گوش جانم می‌رسد طبل رحیل از آسمان",
+     "en": "the drum of departure reaches the ear of my soul from the sky."
+    },
+    {
+     "fa": "نک ساربان برخاسته قطارها آراسته",
+     "en": "Look, the camel driver has risen and lined up the camels;"
+    },
+    {
+     "fa": "از ما حلالی خواسته چه خفته‌اید ای کاروان",
+     "en": "he has asked our pardon. Why are you sleeping, O caravan?"
+    }
+   ],
+   "tafsir": [
+    "Life here is a caravan, resting for a night on a long road.",
+    "Before dawn the drum sounds and the camel driver gets ready.",
+    "Travellers would ask each other's forgiveness before setting out.",
+    "Rumi wakes us gently: the journey is starting. Wake up, and travel well."
+   ]
+  },
+  {
+   "name": "That Is Our City",
+   "source": "Divan-e Shams · Ghazal 463, couplets 2 and 11",
+   "lines": [
+    {
+     "fa": "ما به فلک بوده‌ایم یار ملک بوده‌ایم",
+     "en": "We were in the heavens; we were companions of angels."
+    },
+    {
+     "fa": "باز همان جا رویم جمله که آن شهر ماست",
+     "en": "We will all go back there, for that is our city."
+    },
+    {
+     "fa": "آمد موج الست کشتی قالب ببست",
+     "en": "The wave of 'Am I not your Lord?' came and built the ship of the body;"
+    },
+    {
+     "fa": "باز چو کشتی شکست نوبت وصل و لقاست",
+     "en": "and when the ship breaks again, it is the hour of union and meeting."
+    }
+   ],
+   "tafsir": [
+    "In the Quran, before creation, God asks the souls: am I not your Lord? And they answer: yes.",
+    "Rumi calls that moment a wave, and says it built the ship of our bodies.",
+    "One day the ship will break.",
+    "But for him that is not a shipwreck. It is the hour when the soul finally meets the one it answered."
+   ]
+  },
+  {
+   "name": "The Spring Inside Death",
+   "source": "Divan-e Shams · Ghazal 2400, couplet 11",
+   "lines": [
+    {
+     "fa": "در عین مرگ چشمه آب حیات دید",
+     "en": "In the very heart of death he saw the spring of the water of life,"
+    },
+    {
+     "fa": "آن چشمه‌ای که مایه دیدار آمده",
+     "en": "the spring from which the meeting with the Beloved flows."
+    }
+   ],
+   "tafsir": [
+    "The water of life, in Persian legend, is found in the Land of Darkness.",
+    "Rumi places it inside death itself.",
+    "Where we expect only an ending, the one who sees clearly finds a spring.",
+    "And that spring is the source of seeing the Beloved face to face."
+   ]
+  },
+  {
+   "name": "Do Not Count Him Dead",
+   "source": "Divan-e Shams · Ghazal 1007, couplets 1 and 6",
+   "lines": [
+    {
+     "fa": "گفت کسی خواجه سنایی بمرد",
+     "en": "Someone said: Master Sanai has died."
+    },
+    {
+     "fa": "مرگ چنین خواجه نه کاریست خرد",
+     "en": "The death of such a master is no small thing."
+    },
+    {
+     "fa": "شد همگی جان مثل آفتاب",
+     "en": "He became all soul, like the sun;"
+    },
+    {
+     "fa": "جان شده را مرده نباید شمرد",
+     "en": "one who has become soul must not be counted dead."
+    }
+   ],
+   "tafsir": [
+    "Sanai was a great Sufi poet who lived before Rumi, and whom Rumi loved.",
+    "When news of a death arrives, this is how Rumi answers it.",
+    "Sanai did not disappear. He became entirely soul, like sunlight.",
+    "On this Shab-e Arus, we could say the same of Rumi himself. Thank you for remembering him with us."
+   ]
+  }
+ ],
+ "outro": [
+  "Thank you for spending Rumi's wedding night with us.",
+  "Every week we share real passages of Rumi, translated honestly from the Persian.",
+  "If they spoke to you, subscribe to The Guest House."
+ ],
+ "verified": "Persian checked word-for-word on ganjoor.net, 9 Nov 2026"
+}

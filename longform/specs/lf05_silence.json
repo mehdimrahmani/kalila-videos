@@ -1,0 +1,189 @@
+{
+ "id": "lf05",
+ "title": "Rumi on Silence: The Lesson of the Quiet Ones",
+ "subtitle": "Eight Persian Sufi poems with English translation",
+ "fa_title": "مولانا و خاموشی",
+ "yt_title": "Rumi on Silence | 8 Persian Sufi Poems with English Translation",
+ "seed": 53,
+ "intro": [
+  "Rumi wrote more than sixty thousand lines of poetry, and he kept telling himself to be quiet.",
+  "Many of his ghazals end with one word: khamush. Silence.",
+  "Here are eight passages about the wisdom that lives beyond words."
+ ],
+ "poems": [
+  {
+   "name": "The Lesson of the Silent",
+   "source": "Divan-e Shams · Ghazal 351, couplet 9",
+   "lines": [
+    {
+     "fa": "چه قبله کرده‌ای این گفت و گو را",
+     "en": "Why have you made all this talk your direction of prayer?"
+    },
+    {
+     "fa": "طلب کن درس خاموشان کدام است",
+     "en": "Go and find out: what is the lesson of the silent ones?"
+    }
+   ],
+   "tafsir": [
+    "A qibla is the direction you face when you pray.",
+    "Rumi asks: why have you turned toward talking, as if it were sacred?",
+    "There is a school where the silent ones teach.",
+    "Their lesson cannot be explained. It can only be learned by becoming quiet."
+   ]
+  },
+  {
+   "name": "The Reed Without Its Companion",
+   "source": "Masnavi · Book I, §1, couplets 27–28",
+   "lines": [
+    {
+     "fa": "با لب دمساز خود گر جفتمی",
+     "en": "If I were joined to the lips of my true companion,"
+    },
+    {
+     "fa": "همچو نی من گفتنی‌ها گفتمی",
+     "en": "I too, like the reed, would say all that can be said."
+    },
+    {
+     "fa": "هر که او از همزبانی شد جدا",
+     "en": "Whoever is parted from one who speaks their language"
+    },
+    {
+     "fa": "بی‌زبان شد گر چه دارد صد نوا",
+     "en": "becomes tongueless, though they have a hundred songs."
+    }
+   ],
+   "tafsir": [
+    "A reed flute only sings when it touches the lips of the one who plays it.",
+    "Rumi says he is like that.",
+    "Some silences are not empty. They are the silence of someone who has no one to speak to.",
+    "When we find the person who speaks our language, the songs come back."
+   ]
+  },
+  {
+   "name": "The Raw and the Ripe",
+   "source": "Masnavi · Book I, §1, couplet 18",
+   "lines": [
+    {
+     "fa": "در نیابد حال پخته هیچ خام",
+     "en": "The raw cannot grasp the state of the ripe;"
+    },
+    {
+     "fa": "پس سخن کوتاه باید والسلام",
+     "en": "so the words must be brief. Farewell."
+    }
+   ],
+   "tafsir": [
+    "Rumi often divides people into the raw and the cooked, the unripe and the ripe.",
+    "Some things can only be understood by living them.",
+    "Explaining them to someone who has not lived them is like describing a taste.",
+    "So he stops. Not out of pride, but out of honesty."
+   ]
+  },
+  {
+   "name": "Sew My Mouth",
+   "source": "Divan-e Shams · Ghazal 1137, couplet 9",
+   "lines": [
+    {
+     "fa": "به سوزنی که دهان‌ها بدوخت در رمضان",
+     "en": "With the needle that sewed mouths shut in Ramadan,"
+    },
+    {
+     "fa": "بیا بدوز دهانم که سیرم از گفتار",
+     "en": "come, sew my mouth, for I am full of talking."
+    }
+   ],
+   "tafsir": [
+    "During Ramadan, mouths close to food and drink from dawn to dusk.",
+    "Rumi asks for a different fast: a fast from words.",
+    "He says he is full, the way one is full after too much bread.",
+    "Sometimes the soul needs to stop speaking the way the body needs to stop eating."
+   ]
+  },
+  {
+   "name": "Be Silent Like the Fish",
+   "source": "Divan-e Shams · Ghazal 1305, couplet 19",
+   "lines": [
+    {
+     "fa": "بس کن و چون ماهیان باش خموش اندر آب",
+     "en": "Enough. Be silent, like the fish in the water,"
+    },
+    {
+     "fa": "تا نه چو تابه شود بر سر نارم طواف",
+     "en": "so that my circling does not end like a pan's, turning over the fire."
+    }
+   ],
+   "tafsir": [
+    "Fish live in water, and they live in silence.",
+    "In this ghazal Rumi has been circling the beloved, like pilgrims circling the Kaaba.",
+    "He warns himself: too many words, and the circling turns into frying over a fire.",
+    "Stay in the water. Stay quiet. That is where life is."
+   ]
+  },
+  {
+   "name": "Leave the Tongue",
+   "source": "Divan-e Shams · Ghazal 2131, couplet 16",
+   "lines": [
+    {
+     "fa": "ای ناطقه بر بام و در تا کی روی در خانه پر",
+     "en": "O speaking soul, how long will you wander over roof and door? Fly into the house."
+    },
+    {
+     "fa": "نطق زبان را ترک کن بی‌چانه شو بی‌چانه شو",
+     "en": "Leave the speech of the tongue. Be without a jaw, be without a jaw."
+    }
+   ],
+   "tafsir": [
+    "The speaking part of us is restless. It runs over rooftops and knocks on doors.",
+    "Rumi tells it to fly inside, into the house of the heart.",
+    "His image is almost funny: become jawless.",
+    "There is a way of knowing that does not need the mouth at all."
+   ]
+  },
+  {
+   "name": "When You Know Yourself",
+   "source": "Divan-e Shams · Ghazal 2400, couplet 14",
+   "lines": [
+    {
+     "fa": "ای دل ز خود چو باخبری رو خموش کن",
+     "en": "O heart, since you know yourself, go and be silent;"
+    },
+    {
+     "fa": "چون بی‌خبر مباش به اخبار آمده",
+     "en": "do not be like the unknowing, who arrive full of news."
+    }
+   ],
+   "tafsir": [
+    "Those who know little often have the most to say.",
+    "Rumi tells his heart: you have tasted something. Now be quiet about it.",
+    "Real knowledge of the self tends to make people gentler and quieter.",
+    "The news-bringers are loud. The ones who know are still."
+   ]
+  },
+  {
+   "name": "It Is Enough",
+   "source": "Divan-e Shams · Ghazal 3000, couplet 11",
+   "lines": [
+    {
+     "fa": "بیهوده چند گویی خاموش کن بس است",
+     "en": "How long will you talk in vain? Be silent. It is enough."
+    },
+    {
+     "fa": "فرمان گفت نیست همان گیر که الکنی",
+     "en": "There is no command to speak. Imagine you were a stammerer."
+    }
+   ],
+   "tafsir": [
+    "Rumi often closes a poem by scolding himself like this.",
+    "No one ordered him to speak. He could simply stop.",
+    "Imagine, he says, that you could not get the words out at all.",
+    "And so we end where he would want us to end: in silence."
+   ]
+  }
+ ],
+ "outro": [
+  "Thank you for staying with these verses.",
+  "Every week we share real passages of Rumi, translated honestly from the Persian.",
+  "If they spoke to you, subscribe to The Guest House."
+ ],
+ "verified": "Persian checked word-for-word on ganjoor.net, 9 Nov 2026"
+}

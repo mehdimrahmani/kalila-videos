@@ -1,0 +1,197 @@
+{
+ "id": "lf08",
+ "title": "Rumi for the Longest Night: Hope in Winter",
+ "subtitle": "Eight Persian Sufi poems with English translation",
+ "fa_title": "مولانا برای شب یلدا",
+ "yt_title": "Rumi on Hope in Winter | 8 Persian Sufi Poems for Yalda Night (English Translation)",
+ "seed": 83,
+ "intro": [
+  "This week Iranians celebrated Yalda, the longest night of the year, waiting together for the light to return.",
+  "Rumi wrote often about winter, hidden spring, and dry earth waiting for rain.",
+  "Here are eight passages of hope for dark seasons."
+ ],
+ "poems": [
+  {
+   "name": "Spring Is Hidden",
+   "source": "Divan-e Shams · Ghazal 2400, couplet 8",
+   "lines": [
+    {
+     "fa": "پنهان بود بهار ولی در اثر نگر",
+     "en": "Spring is hidden, but look at what it does:"
+    },
+    {
+     "fa": "زو باغ زنده گشته و در کار آمده",
+     "en": "through it the garden has come alive and gone to work."
+    }
+   ],
+   "tafsir": [
+    "We cannot see spring itself. We only see what it does.",
+    "Rumi says the same of grace, and of the Beloved.",
+    "Look for the signs: a garden waking, a heart softening.",
+    "What is hidden is not absent."
+   ]
+  },
+  {
+   "name": "Though Autumn Was Cruel",
+   "source": "Divan-e Shams · Ghazal 1000, couplets 1 and 9",
+   "lines": [
+    {
+     "fa": "آنچ گل سرخ قبا می‌کند",
+     "en": "What the red-robed rose is doing,"
+    },
+    {
+     "fa": "دانم من کان ز کجا می‌کند",
+     "en": "I know where it comes from."
+    },
+    {
+     "fa": "گرچه خزان کرد جفاها بسی",
+     "en": "Though autumn did many cruelties,"
+    },
+    {
+     "fa": "بین که بهاران چه وفا می‌کند",
+     "en": "see how faithful the spring is."
+    }
+   ],
+   "tafsir": [
+    "Autumn strips the trees, and winter seems to win.",
+    "But the rose comes back, and Rumi knows its source.",
+    "Spring keeps its promise. It always has.",
+    "After a cruel season, faithfulness returns."
+   ]
+  },
+  {
+   "name": "You Are My Sky",
+   "source": "Divan-e Shams · Ghazal 3048, couplets 1–2",
+   "lines": [
+    {
+     "fa": "تو آسمان منی من زمین به حیرانی",
+     "en": "You are my sky, and I am the earth, astonished"
+    },
+    {
+     "fa": "که دم به دم ز دل من چه چیز رویانی",
+     "en": "at what you make grow from my heart, moment by moment."
+    },
+    {
+     "fa": "زمین خشک لبم من ببار آب کرم",
+     "en": "I am dry-lipped earth: rain down the water of generosity;"
+    },
+    {
+     "fa": "زمین ز آب تو یابد گل و گلستانی",
+     "en": "from your water the earth finds roses, and a rose garden."
+    }
+   ],
+   "tafsir": [
+    "Here the lover is the earth and the Beloved is the sky.",
+    "Earth cannot make itself bloom. It can only wait, and ask for rain.",
+    "Rumi asks without shame: I am dry. Rain on me.",
+    "Asking for help is not weakness. It is how gardens begin."
+   ]
+  },
+  {
+   "name": "What Was Planted",
+   "source": "Divan-e Shams · Ghazal 3048, couplet 3",
+   "lines": [
+    {
+     "fa": "زمین چه داند کاندر دلش چه کاشته‌ای",
+     "en": "What does the earth know of what you have planted in its heart?"
+    },
+    {
+     "fa": "ز توست حامله و حمل او تو می‌دانی",
+     "en": "It is pregnant by you, and only you know what it carries."
+    }
+   ],
+   "tafsir": [
+    "In winter the field looks empty.",
+    "But seeds are already inside it, and the earth itself does not know what they are.",
+    "Many of us are like that in a dark season.",
+    "Something has been planted in us that we cannot yet see. Wait for it."
+   ]
+  },
+  {
+   "name": "A Thirsty Field",
+   "source": "Divan-e Shams · Ghazal 91, couplet 9",
+   "lines": [
+    {
+     "fa": "ماییم چو کشت ای جان سرسبز در این میدان",
+     "en": "We are like a field, dear soul, green in this open plain,"
+    },
+    {
+     "fa": "تشنه شده و جویان باران سحابی را",
+     "en": "grown thirsty, seeking the rain of the clouds."
+    }
+   ],
+   "tafsir": [
+    "Even a green field gets thirsty.",
+    "Rumi does not pretend that faith removes need.",
+    "We stay green by staying open to the rain.",
+    "Thirst is not the end of hope. It is the shape hope takes while waiting."
+   ]
+  },
+  {
+   "name": "I Have Come Back",
+   "source": "Divan-e Shams · Ghazal 1375, couplet 1",
+   "lines": [
+    {
+     "fa": "باز آمدم چون عید نو تا قفل زندان بشکنم",
+     "en": "I have come back like a new festival, to break the lock of the prison,"
+    },
+    {
+     "fa": "وین چرخ مردم‌خوار را چنگال و دندان بشکنم",
+     "en": "and to break the claws and teeth of this man-eating wheel of fate."
+    }
+   ],
+   "tafsir": [
+    "This is the voice of new life returning, like Nowruz after winter.",
+    "Fate is pictured as a wheel with claws and teeth, grinding people down.",
+    "And something comes back, strong enough to break it.",
+    "Hope in Rumi is not soft. It has a hammer."
+   ]
+  },
+  {
+   "name": "Created Again",
+   "source": "Divan-e Shams · Ghazal 1508, couplet 5",
+   "lines": [
+    {
+     "fa": "چه گویم مرده بودم بی‌تو مطلق",
+     "en": "What can I say? Without you I was utterly dead;"
+    },
+    {
+     "fa": "خدا از نو دگربار آفریدم",
+     "en": "God created me again, anew."
+    }
+   ],
+   "tafsir": [
+    "Rumi does not soften it: I was dead.",
+    "And then, without any effort of his own, he was made again.",
+    "Many people who have come through a long winter of the soul know this feeling.",
+    "We do not always rescue ourselves. Sometimes we are simply created again."
+   ]
+  },
+  {
+   "name": "Do Not Grieve",
+   "source": "Divan-e Shams · Ghazal 1420, couplet 1",
+   "lines": [
+    {
+     "fa": "اگر شد سود و سرمایه چه غمگینی چو من هستم",
+     "en": "If profit and capital are gone, why grieve, when I am here?"
+    },
+    {
+     "fa": "برآور سر ز جود من که لاتأسوا نمودستم",
+     "en": "Lift your head through my generosity, for I have told you: Do not grieve."
+    }
+   ],
+   "tafsir": [
+    "Here the voice is the Beloved's, speaking to someone who has lost everything.",
+    "Do not grieve, it says, quoting the Quran.",
+    "What you lost was capital. What remains is the giver of all capital.",
+    "On the longest night, that is the hope: the light was never truly gone."
+   ]
+  }
+ ],
+ "outro": [
+  "Thank you for keeping watch with us through the long night.",
+  "Every week we share real passages of Rumi, translated honestly from the Persian.",
+  "If they spoke to you, subscribe to The Guest House."
+ ],
+ "verified": "Persian checked word-for-word on ganjoor.net, 9 Nov 2026"
+}
