@@ -708,3 +708,163 @@ def draw_necklace(p, M, t=0.0, hang=0.0):
         for a in range(4):
             r = math.radians(a * 90 + 45)
             p.line(M, [(q[0], q[1]), (q[0] + 11 * s * math.cos(r), q[1] + 11 * s * math.sin(r))], "#fffbe6", 2)
+
+
+# ------------------------------------------------------------------ the heron, the crab and the fish (Episode 5)
+HR = dict(body="#c9d0d8", dark="#7d8796", breast="#f1f2f0", wing="#a9b3c0", tip="#4e5668", beak="#e2b64a",
+          beak2="#b9802a", leg="#c9a24a", plume="#3a3f52", neck="#dfe3e6")
+
+def draw_heron(p, M, po):
+    """old grey heron, facing right, origin at the feet (standing) / body centre-bottom (flying).
+    po: t, mouth, blink, look, head (deg), neck (0 tucked .. 1 tall), fly (0/1), flap (rad), sly (0..1 sneaky brow),
+        sad (0..1), hop, lean (deg). Returns dict(head=Mh, back=Mback) for attaching things (fish in the beak, a rider)."""
+    t = po['t']; fly = po.get('fly', 0); c = HR
+    Mb = M @ T(0, -po.get('hop', 0))
+    br = 1 + 0.02 * math.sin(t * 2.6)
+    if not fly:
+        # legs (thin, with knees) and toes
+        for jx, ph in ((-8, 0.0), (8, 1.0)):
+            kx = jx + 4 + 2 * math.sin(t * 1.3 + ph)
+            for col, w in ((OUT, 6), (c['leg'], 3.6)):
+                p.line(Mb, [(jx, 0), (kx, -62), (jx - 2, -118)], col, w)
+                p.line(Mb, [(jx - 14, 0), (jx + 16, 0)], col, w); p.line(Mb, [(jx, 0), (jx - 6, 6)], col, w)
+        Mu = Mb @ T(0, -128) @ R(po.get('lean', 0) - 12)
+    else:
+        Mu = Mb @ R(po.get('lean', 0) - 4)
+        for col, w in ((OUT, 6), (c['leg'], 3.6)):
+            p.line(Mu, [(-40, -6), (-120, 4)], col, w); p.line(Mu, [(-34, -2), (-116, 12)], col, w)
+        Mw = Mu @ T(4, -24) @ R(-10 - 60 * (1 - math.sin(po.get('flap', 0))))
+        p.poly(Mw, [(20, 0), (10, -50), (-20, -110), (-60, -130), (-70, -112), (-50, -60), (-30, -10)], c['dark'])
+    Mu = Mu @ S(1, br)
+    # tail
+    p.poly(Mu, [(-44, -18), (-92, 4), (-88, 14), (-40, 4)], c['dark'])
+    # body
+    p.poly(Mu, ell(0, -14, 56, 30, 40), c['body'])
+    p.poly(Mu, ell(16, -4, 34, 16, 30, 0, 180) + [(-18, -4)], c['breast'], outline=None)
+    # neck: an S-curve; neck=1 tall, 0 tucked
+    nk = po.get('neck', 1.0); sad = po.get('sad', 0)
+    if fly:
+        pts = [(36, -26), (62, -40), (74, -52), (96, -52)]
+    else:
+        pts = [(34, -30), (52 + 6 * nk, -58 - 20 * nk), (34 + 4 * nk, -90 - 34 * nk + 26 * sad), (52, -110 - 50 * nk + 40 * sad)]
+    for col, w in ((OUT, 19), (c['neck'], 14)):
+        p.line(Mu, pts, col, w)
+    p.line(Mu, [(q[0] + 4, q[1] + 2) for q in pts[1:3]], "#b7c0ca", 2)
+    hx, hy = pts[-1]
+    Mh = Mu @ T(hx, hy) @ R(po.get('head', 0) + 18 * sad)
+    m = po.get('mouth', 0)
+    # long beak (lower part opens)
+    p.poly(Mh @ T(8, 2) @ R(10 * m), [(0, 0), (60, 1), (0, 6)], c['beak2'], w=1.8)
+    p.poly(Mh, ell(0, -2, 17, 14, 30), c['neck'])
+    p.poly(Mh, [(10, -6), (74, 0), (10, 4)], c['beak'], w=1.8)
+    # plume (two long black feathers at the back of the head)
+    for k, a in enumerate((0, 10)):
+        sw = 4 * math.sin(t * 2 + k)
+        p.line(Mh, [(-8, -10), (-30, -14 + a * 0.4 + sw * 0.3), (-48, -10 + a + sw)], OUT, 4.6)
+        p.line(Mh, [(-8, -10), (-30, -14 + a * 0.4 + sw * 0.3), (-48, -10 + a + sw)], c['plume'], 2.6)
+    p.line(Mh, [(-6, -8), (8, -4)], c['plume'], 3)                                 # black eye stripe
+    blk = po.get('blink', 0); ey = max(0.12, 1 - blk); lx = po.get('look', 0)
+    p.poly(Mh, ell(4, -6, 5.5, 5.5 * ey, 16), "#fff4c8", w=1.4)
+    if ey > 0.3:
+        p.poly(Mh, ell(5.2 + 1.5 * lx, -5.6, 2.8, 3.2 * ey, 12), JD, outline=None)
+        p.poly(Mh, ell(6.2 + 1.5 * lx, -7.2, 1, 1, 6), "white", outline=None)
+    sly = po.get('sly', 0)
+    p.line(Mh, [(-2, -13 + 2 * sly - 2 * sad), (11, -12 - 3 * sly + 3 * sad)], c['plume'], 2.4)   # brow
+    # near wing
+    if fly:
+        Mw = Mu @ T(0, -24) @ R(-20 - 62 * (1 - math.sin(po.get('flap', 0))))
+        p.poly(Mw, [(20, 0), (10, -54), (-18, -118), (-58, -142), (-72, -122), (-52, -64), (-30, -8)], c['wing'])
+        for k in range(4):
+            p.line(Mw, [(-10 - 10 * k, -40 - 18 * k), (-26 - 12 * k, -86 - 14 * k)], c['tip'], 1.6)
+    else:
+        Mw = Mu @ T(18, -26) @ R(po.get('wing', 0))
+        p.poly(Mw, [(0, 0), (-40, -6), (-74, 12), (-50, 22), (-6, 16)], c['wing'])
+        for k in range(3):
+            p.line(Mw, [(-30 - 12 * k, 4 + 3 * k), (-56 - 8 * k, 14 + 2 * k)], c['tip'], 1.5)
+    return dict(head=Mh, back=Mu @ T(40, -34) if fly else Mu @ T(30, -36))
+
+CR = dict(shell="#d9573a", dark="#9e3324", light="#f08a5a", belly="#f4c69a", spot="#f2b07a")
+
+def draw_crab(p, M, po):
+    """little crab, front view, origin at the bottom centre (about 120 wide at scale 1).
+    po: t, mouth, blink, look, walk (phase), amp, arm (0 down .. 1 up), claw (0 closed .. 1 open), snap, brow, hop, happy"""
+    t = po['t']; ph = po.get('walk', 0); amp = po.get('amp', 0); c = CR
+    Mb = M @ T(0, -po.get('hop', 0))
+    # legs, 3 per side
+    for s_ in (-1, 1):
+        for k in range(3):
+            wob = 5 * math.sin(ph + k * 2.1 + (s_ > 0) * 1.0) * amp
+            x0, y0 = s_ * (22 + 6 * k), -18 + 3 * k
+            kx, ky = s_ * (44 + 10 * k), -30 + 6 * k + wob
+            fx, fy = s_ * (52 + 12 * k), 0 - abs(wob) * 0.6
+            for col, w in ((OUT, 6.4), (c['dark'], 3.8)):
+                p.line(Mb, [(x0, y0), (kx, ky), (fx, fy)], col, w)
+    # arms + claws
+    arm = po.get('arm', 0.3); cl = po.get('claw', 0.3)
+    if po.get('snap'): cl = 0.5 + 0.5 * math.sin(t * 22)
+    for s_ in (-1, 1):
+        Ma = Mb @ T(s_ * 28, -30) @ S(s_, 1) @ R(-20 - 70 * arm + 6 * math.sin(t * 2 + s_))
+        for col, w in ((OUT, 8), (c['shell'], 5)):
+            p.line(Ma, [(0, 0), (22, -4), (34, -16)], col, w)
+        Mc = Ma @ T(36, -20) @ R(-30)
+        p.poly(Mc @ R(30 * cl), [(0, 4), (34, 6), (30, 12), (2, 12)], c['dark'], w=2)          # moving finger
+        p.poly(Mc, ell(12, -2, 20, 13, 24), c['shell'], w=2.2)
+        p.poly(Mc, [(20, -6), (40, -2), (24, 4)], c['shell'], w=2)
+        p.poly(Mc, ell(8, -6, 6, 3, 10), c['spot'], outline=None)
+    # eye stalks
+    blk = po.get('blink', 0); ey = max(0.12, 1 - blk); lx = po.get('look', 0)
+    for s_ in (-1, 1):
+        sw = 2 * math.sin(t * 2.4 + s_)
+        for col, w in ((OUT, 6), (c['shell'], 3.4)):
+            p.line(Mb, [(s_ * 10, -40), (s_ * 13 + sw, -64)], col, w)
+        ex, eyy = s_ * 13 + sw, -70
+        p.poly(Mb, ell(ex, eyy, 8, 8 * ey, 16), "white", w=1.6)
+        if ey > 0.3:
+            p.poly(Mb, ell(ex + 2.4 * lx, eyy + 0.5, 4, 4.4 * ey, 12), JD, outline=None)
+            p.poly(Mb, ell(ex + 2.4 * lx + 1.3, eyy - 1.6, 1.3, 1.3, 6), "white", outline=None)
+        bw = po.get('brow', 0)
+        p.line(Mb, [(ex - 7 * s_, eyy - 10.5 + 3 * bw), (ex + 6 * s_, eyy - 10.5 - 1 * bw)], c['dark'], 2.6)
+    # body (shell)
+    p.poly(Mb, ell(0, -26, 40, 22, 40), c['shell'], w=2.8)
+    p.poly(Mb, ell(0, -34, 30, 9, 30, 180, 360), c['light'], outline=None)
+    for q in ((-18, -34), (16, -36), (0, -42)):
+        p.poly(Mb, ell(q[0], q[1], 3.4, 2.4, 10), c['spot'], outline=None)
+    # face
+    m = po.get('mouth', 0)
+    if m > 0.08 or po.get('happy'):
+        p.poly(Mb, ell(0, -18, 7 + 2 * m, 2 + 6 * max(m, 0.3 * bool(po.get('happy'))), 16, 0, 180) + [(-7, -18)], "#7a1c14", w=1.5)
+    else:
+        p.line(Mb, [(-6, -19), (0, -16), (6, -19)], JD, 1.8)
+    for s_ in (-1, 1):
+        p.poly(Mb, ell(s_ * 18, -20, 4.2, 2.6, 10), "#f6a08a", outline=None)
+
+FISH = [dict(body="#f2a03a", fin="#d9572a", belly="#fbe0a6"), dict(body="#5fa6c9", fin="#2f6db0", belly="#d9eef6"),
+        dict(body="#e2b64a", fin="#c8423a", belly="#fff1c4"), dict(body="#d96f9a", fin="#9e3a68", belly="#f8d6e2"),
+        dict(body="#8fc06a", fin="#4f7a3a", belly="#e4f2c8")]
+
+def draw_fish(p, M, po, col=0):
+    """little fish, facing right, origin at its centre (about 56 long at scale 1).
+    po: t, mouth, blink, look, wag (speed), scared, happy"""
+    t = po['t']; c = FISH[col % len(FISH)]
+    wag = math.sin(t * po.get('wag', 8) + col) * 14
+    Mt = M @ T(-20, 0) @ R(wag)
+    p.poly(Mt, [(2, 0), (-18, -14), (-14, 0), (-18, 14)], c['fin'], w=2)
+    p.poly(M, [(-4, -12), (6, -22), (12, -11)], c['fin'], w=1.8)
+    p.poly(M, ell(2, 0, 24, 14, 30), c['body'], w=2.2)
+    p.poly(M, ell(6, 5, 15, 6, 20, 0, 180) + [(-9, 5)], c['belly'], outline=None)
+    for k in range(2):
+        p.line(M, [(-6 + 7 * k, -9), (-9 + 7 * k, 0), (-6 + 7 * k, 9)], c['fin'], 1.4)
+    p.poly(M @ T(-2, 6) @ R(20 * math.sin(t * 6 + col)), [(0, 0), (-8, -4), (-8, 4)], c['fin'], w=1.2)
+    blk = po.get('blink', 0); ey = max(0.12, 1 - blk); lx = po.get('look', 0.5)
+    er = 5.6 + 2.4 * po.get('scared', 0)
+    p.poly(M, ell(13, -3, er, er * ey, 16), "white", w=1.4)
+    if ey > 0.3:
+        p.poly(M, ell(14 + 1.4 * lx, -2.6, 2.8, 3.2 * ey, 12), JD, outline=None)
+        p.poly(M, ell(15 + 1.4 * lx, -4.2, 1, 1, 6), "white", outline=None)
+    m = po.get('mouth', 0)
+    if m > 0.1 or po.get('scared', 0) > 0.5:
+        p.poly(M, ell(24, 4, 2.5 + 2 * m, 2 + 3 * m, 10), "#7a1c14", w=1.2)
+    elif po.get('happy'):
+        p.line(M, [(19, 3), (22, 6), (25, 4)], JD, 1.5)
+    else:
+        p.line(M, [(20, 4), (25, 4)], JD, 1.5)
