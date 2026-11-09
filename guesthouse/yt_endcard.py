@@ -33,12 +33,24 @@ def card(line1, line2, path):
     glow = im.filter(ImageFilter.GaussianBlur(10)); glow.putalpha(glow.getchannel("A").point(lambda a: a * 0.5))
     out = Image.alpha_composite(glow, im); out.save(path)
 
+def light_outro(reel, dur):
+    """True if the Reel's final frames are light (parchment design): the white line 1 would be unreadable
+    and would collide with the Reel's own outro text, so only the subscribe pill is drawn."""
+    fr = os.path.join(tempfile.mkdtemp(), "f.png")
+    subprocess.check_call(["ffmpeg", "-v", "error", "-y", "-ss", f"{max(0, dur - 1.0):.2f}", "-i", reel,
+                           "-frames:v", "1", fr])
+    im = Image.open(fr).convert("L"); w, h = im.size
+    band = im.crop((int(w * .15), int(h * .69), int(w * .85), int(h * .74)))
+    return sum(band.getdata()) / (band.size[0] * band.size[1]) > 140
+
 def main(reel, spec_path, out):
     spec = json.load(open(spec_path, encoding="utf-8"))
     m = re.search(r"Part\s+(\d+)", spec.get("header", ""))
     line1 = f"Part {int(m.group(1)) + 1} is coming" if m else "The story of Shams & Rumi"
     dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration",
                                          "-of", "csv=p=0", reel]).decode())
+    if light_outro(reel, dur):   # parchment-style Reels: their own outro text sits where line 1 would go
+        line1 = ""
     png = os.path.join(tempfile.mkdtemp(), "cta.png"); card(line1, "Subscribe to follow the story", png)
     t0 = max(0.0, dur - 3.0)
     flt = (f"[1:v]format=rgba,fade=t=in:st={t0:.2f}:d=0.6:alpha=1[c];"
