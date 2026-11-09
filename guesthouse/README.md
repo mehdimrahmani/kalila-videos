@@ -10,3 +10,7 @@ Specs (verse text) live in `guesthouse/specs/`. Font: Vazirmatn (OFL, see fonts/
 YouTube Shorts (The Guest House channel): `yt_endcard.py REEL SPEC OUT` makes a YouTube-only copy with a
 "Part N+1 is coming / Subscribe to follow the story" card over the last 3 s (the Instagram Reel is unchanged).
 Every Short is added to the "Rumi & Shams" playlist (youtube.json → playlists.rumi).
+
+Long-form → Shorts (stream gh_lf_short, Mon/Wed/Fri 20:47 Tehran): `lf_short.py LF_SPEC POEM_INDEX OUTDIR VIDEO_ID`
+cuts ONE poem of a long-form Rumi video into a Short in the same navy reel style, with a "Watch the full reading"
+pill at the end and the full-video link on top of the description. Used poems: youtube.json → "lf_shorts".

@@ -40,6 +40,7 @@ STREAMS = {
     "gh_pod_full":    [(SUN, "16:37")],
     "gh_pod_short":   [(SUN, "16:47"), (TUE, "16:37"), (THU, "16:37")],
     "gh_rumi_short":  [(SAT, "20:47"), (TUE, "20:47")],   # the Instagram Part Reel / echo Reel of the same day
+    "gh_lf_short":    [(MON, "20:47"), (WED, "20:47"), (FRI, "20:47")],   # one poem of a long-form Rumi video (guesthouse/lf_short.py), links to it (Mehdi 9 Nov 2026: Rumi Shorts first)
     # Podcast feed (GitHub Actions releases it)
     "podcast":        [(SUN, "11:13")],
     # Instagram via Metricool (autoPublish)
