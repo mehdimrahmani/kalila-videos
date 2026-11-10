@@ -22,6 +22,13 @@
    "recorded": "2026-11-08 16:50"
   },
   {
+   "stream": "gh_pod_full",
+   "at": "2026-11-15 16:37",
+   "id": "u_SvYB1NbwI",
+   "note": "ep04 full",
+   "recorded": "2026-11-10 16:55"
+  },
+  {
    "stream": "gh_pod_short",
    "at": "2026-11-08 16:47",
    "id": "prS9KEb_w1c",
@@ -224,6 +231,11 @@
    "day": "2026-11-09",
    "stream": "gh_rumi_short",
    "id": "vH0y4Z2xTRM"
+  },
+  {
+   "day": "2026-11-10",
+   "stream": "gh_pod_full",
+   "id": "u_SvYB1NbwI"
   }
  ]
 }
