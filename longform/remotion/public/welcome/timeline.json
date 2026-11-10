@@ -1,0 +1,104 @@
+{
+ "id": "welcome",
+ "duration": 73.9,
+ "fps": 30,
+ "events": [
+  {
+   "kind": "title",
+   "t0": 0.0,
+   "t1": 19.313,
+   "text": "Welcome to The Guest House",
+   "sub": "Rumi, Shams and the stories of old Persia, from the original Persian",
+   "fa": "مهمان‌خانه"
+  },
+  {
+   "kind": "intro",
+   "t0": 2.0,
+   "t1": 4.948,
+   "text": "Welcome to The Guest House."
+  },
+  {
+   "kind": "intro",
+   "t0": 5.548,
+   "t1": 13.166,
+   "text": "Here we read Rumi, Shams, and the great storytellers of old Persia, from the original Persian."
+  },
+  {
+   "kind": "intro",
+   "t0": 13.766,
+   "t1": 18.713,
+   "text": "Real verses, honest translations, and what they mean."
+  },
+  {
+   "kind": "chapter",
+   "t0": 20.813,
+   "t1": 24.813,
+   "n": 1,
+   "name": "The Guest House",
+   "source": "Masnavi · Book V"
+  },
+  {
+   "kind": "line",
+   "t0": 25.313,
+   "t1": 32.524,
+   "en_t0": 27.913,
+   "fa": "هست مهمان‌خانه این تن ای جوان",
+   "en": "This body is a guest house, young friend:",
+   "poem": 0,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 32.524,
+   "t1": 39.78,
+   "en_t0": 35.124,
+   "fa": "هر صباحی ضیف نو آید دوان",
+   "en": "every morning a new guest comes running.",
+   "poem": 0,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 40.98,
+   "t1": 45.342,
+   "text": "This is the passage that gave our channel its name.",
+   "poem": 0,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 45.792,
+   "t1": 50.761,
+   "text": "Whatever arrives in you today is a guest. And guests leave.",
+   "poem": 0,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 51.811,
+   "t1": 58.811,
+   "fa": [
+    "هست مهمان‌خانه این تن ای جوان",
+    "هر صباحی ضیف نو آید دوان"
+   ],
+   "source": "Masnavi · Book V"
+  },
+  {
+   "kind": "outro",
+   "t0": 59.311,
+   "t1": 67.109,
+   "text": "Every week: new verses of Rumi, and true stories from Beyhaqi's thousand year old history."
+  },
+  {
+   "kind": "outro",
+   "t0": 67.609,
+   "t1": 70.4,
+   "text": "Subscribe, and come in."
+  },
+  {
+   "kind": "end",
+   "t0": 59.311,
+   "t1": 73.9
+  }
+ ]
+}

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""YouTube-only copy of a Guest House Reel with a subscribe call-to-action over the outro.
+"""YouTube-only copy of a Guest House Reel with a subscribe call-to-action over the outro,
+plus a small "Subscribe for more Rumi" pill for ~4 s in the middle (over the @handle line).
 The Instagram Reel itself is never changed: the output goes to a separate (temp) file.
 
 usage: python3 guesthouse/yt_endcard.py REEL.mp4 SPEC.json OUT.mp4
@@ -33,6 +34,23 @@ def card(line1, line2, path):
     glow = im.filter(ImageFilter.GaussianBlur(10)); glow.putalpha(glow.getchannel("A").point(lambda a: a * 0.5))
     out = Image.alpha_composite(glow, im); out.save(path)
 
+def mid_pill(text, path):
+    """Small opaque lapis pill shown for a few seconds in the middle of a Short, over the @handle line
+    (many viewers swipe away before the end card; Mehdi 10 Nov 2026)."""
+    W, H = 1080, 120
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    f = ImageFont.truetype(SERIF, 40); w = d.textlength(text, font=f); pw, ph = w + 130, 84
+    x0, y0 = (W - pw) / 2, (H - ph) / 2
+    d.rounded_rectangle([x0, y0, x0 + pw, y0 + ph], radius=42, fill=(26, 48, 104, 255), outline=GOLD + (255,), width=3)
+    cx, cy = x0 + 48, y0 + ph / 2
+    d.rounded_rectangle([cx - 21, cy - 15, cx + 21, cy + 15], radius=8, fill=(204, 32, 32, 255))
+    d.polygon([(cx - 6, cy - 9), (cx - 6, cy + 9), (cx + 10, cy)], fill=(255, 255, 255, 255))
+    d.text((x0 + 84, y0 + 19), text, font=f, fill=(250, 236, 200, 255))
+    im.save(path)
+
+def mid_window(dur):
+    a = max(6.0, dur * 0.42); return a, min(a + 4.5, dur - 4.0)
+
 def light_outro(reel, dur):
     """True if the Reel's final frames are light (parchment design): the white line 1 would be unreadable
     and would collide with the Reel's own outro text, so only the subscribe pill is drawn."""
@@ -53,9 +71,14 @@ def main(reel, spec_path, out):
         line1 = ""
     png = os.path.join(tempfile.mkdtemp(), "cta.png"); card(line1, "Subscribe to follow the story", png)
     t0 = max(0.0, dur - 3.0)
+    mid = os.path.join(tempfile.mkdtemp(), "mid.png"); mid_pill("Subscribe for more Rumi", mid)
+    a, b = mid_window(dur)
     flt = (f"[1:v]format=rgba,fade=t=in:st={t0:.2f}:d=0.6:alpha=1[c];"
-           f"[0:v][c]overlay=0:H*0.69:enable='gte(t,{t0:.2f})'[v]")
+           f"[2:v]format=rgba,fade=t=in:st={a:.2f}:d=0.5:alpha=1,fade=t=out:st={b - 0.5:.2f}:d=0.5:alpha=1[m];"
+           f"[0:v][m]overlay=0:H*0.906-60:enable='between(t,{a:.2f},{b:.2f})'[v0];"
+           f"[v0][c]overlay=0:H*0.69:enable='gte(t,{t0:.2f})'[v]")
     subprocess.check_call(["ffmpeg", "-v", "error", "-y", "-i", reel, "-loop", "1", "-t", f"{dur:.2f}", "-i", png,
+                           "-loop", "1", "-t", f"{dur:.2f}", "-i", mid,
                            "-filter_complex", flt, "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-crf", "19",
                            "-preset", "medium", "-pix_fmt", "yuv420p", "-c:a", "copy", "-movflags", "+faststart", out])
     print(out, round(dur, 2), line1)

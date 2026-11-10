@@ -5,7 +5,10 @@
                                                podcast/video/epNN_short.mp4  (1080x1920, cold-open Short)
                                                podcast/video/epNN_short2.mp4, _short3 ... (extra Shorts, below)
   python3 podcast/make_video.py N --shorts-only   -> only the Shorts (skip the long full-episode render)
-Extra Shorts: episode JSON "extra_shorts": [{"from": "<words that begin the moment>", "hook": "<title hook>"}];
+Extra Shorts: episode JSON "extra_shorts": [{"from": "<words that begin the moment>", "hook": "<title hook>",
+"until": "<optional: words where it must STOP, just before the resolution>", "question": "<optional: the
+unanswered question shown on the end card, e.g. 'What did the judge do next?'>"}] (cliffhanger Shorts send viewers
+to the full episode);
 each runs from the spoken chunk containing those words for up to ~50 s, within the same section.
                                                podcast/video/epNN.youtube.json (title, description with chapters, tags)
 
@@ -137,14 +140,23 @@ def tall_bg(ep, path):
     text(a, "Stories from Beyhaqi", R.SERIF_I, 42, 540, 830)
     frame(a, W, H, 30).save(path)
 
-def end_card(ep, path, W=1080, H=1920):
+def end_card(ep, path, W=1080, H=1920, question=None):
+    """Last 3 s of a Short. With a cliffhanger `question` ("What did the judge do next?") the card asks it and
+    points to the full episode; either way it asks for the subscription (Mehdi 10 Nov 2026)."""
     from PIL import ImageDraw
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); a = np.zeros((H, W, 4))
     im = Image.fromarray(np.clip(paper(W, H, 9), 0, 255).astype(np.uint8)).convert("RGBA")
     arr = np.asarray(im.convert("RGB"), float).copy(); seal(arr, 540, 560, 600)
-    text(arr, "Hear the full story", R.SERIF, 64, 540, 1060)
-    text(arr, ep["title"].split(":")[0], R.SERIF, 52, 540, 1150, RED)
-    text(arr, "on our channel and podcast", R.SERIF_I, 46, 540, 1230)
+    y = 1040
+    if question:
+        for ln in textwrap.wrap(question, 30)[:2]:
+            text(arr, ln, R.SERIF, 60, 540, y); y += 78
+        y += 10; text(arr, "The full story: " + ep["title"].split(":")[0], R.SERIF, 50, 540, y, RED); y += 76
+    else:
+        text(arr, "Hear the full story", R.SERIF, 64, 540, y); y += 90
+        text(arr, ep["title"].split(":")[0], R.SERIF, 52, 540, y, RED); y += 80
+    text(arr, "on our channel and podcast", R.SERIF_I, 44, 540, y); y += 110
+    text(arr, "Subscribe · The Guest House", R.SERIF, 50, 540, y, RED)
     frame(arr, W, H, 30).save(path)
 
 # ------------------------------------------------------------------ subtitles
@@ -199,7 +211,7 @@ def build(n):
     # ---- Shorts, 1080x1920: the cold open, plus any "extra_shorts" moments in the episode JSON
     bg2 = os.path.join(tmp, "bg2.png"); tall_bg(ep, bg2)
     endp = os.path.join(tmp, "end.png"); end_card(ep, endp)
-    def short(t0, chunks, name):
+    def short(t0, chunks, name, endp=endp):
         end = min(58.0, chunks[-1][1] - t0 + 4.0); e0 = end - 3.2
         rel = [(x0 - t0, x1 - t0, c, sc) for x0, x1, c, sc in chunks]
         ass2 = os.path.join(tmp, name + ".ass")
@@ -223,10 +235,16 @@ def build(n):
         if idx is None:
             print("extra short: text not found:", xs["from"]); continue
         chunks = [tl[idx]]
-        for x in tl[idx + 1:]:
-            if x[1] - tl[idx][0] > 52 or x[3] != tl[idx][3]: break
-            chunks.append(x)
-        short(max(0.0, tl[idx][0] - 0.3), chunks, f"ep{n:02d}_short{i}")
+        stop = xs.get("until", "").lower()            # cliffhanger: stop after the chunk containing these words
+        if not (stop and stop in tl[idx][2].lower()):
+            for x in tl[idx + 1:]:
+                if x[1] - tl[idx][0] > 52 or x[3] != tl[idx][3]: break
+                chunks.append(x)
+                if stop and stop in x[2].lower(): break
+        ec = endp
+        if xs.get("question"):
+            ec = os.path.join(tmp, f"end{i}.png"); end_card(ep, ec, question=xs["question"])
+        short(max(0.0, tl[idx][0] - 0.3), chunks, f"ep{n:02d}_short{i}", ec)
         extras.append((i, xs, " ".join(c[2] for c in chunks)))
 
     # ---- YouTube metadata

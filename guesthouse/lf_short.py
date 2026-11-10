@@ -29,10 +29,15 @@ def main(spec_path, idx, outdir, video_id=None):
     png = os.path.join(tempfile.mkdtemp(), "cta.png")
     yt_endcard.card("", "Watch the full reading", png)   # pill only, placed over the @handle line
     t0 = max(0.0, dur - 3.0)
+    mid = os.path.join(tempfile.mkdtemp(), "mid.png"); yt_endcard.mid_pill("Subscribe for more Rumi", mid)
+    a, b = yt_endcard.mid_window(dur)       # a subscribe pill for ~4 s mid-way, over the @handle line
     flt = (f"[1:v]format=rgba,fade=t=in:st={t0:.2f}:d=0.6:alpha=1[c];"
-           f"[0:v]drawbox=x=120:y=1585:w=840:h=75:color=0x1B2140:t=fill:enable='gte(t,{t0:.2f})'[b];"
+           f"[2:v]format=rgba,fade=t=in:st={a:.2f}:d=0.5:alpha=1,fade=t=out:st={b - 0.5:.2f}:d=0.5:alpha=1[m];"
+           f"[0:v][m]overlay=0:1562:enable='between(t,{a:.2f},{b:.2f})'[v0];"
+           f"[v0]drawbox=x=120:y=1585:w=840:h=75:color=0x1B2140:t=fill:enable='gte(t,{t0:.2f})'[b];"
            f"[b][c]overlay=0:1422:enable='gte(t,{t0:.2f})'[v]")
     subprocess.check_call(["ffmpeg", "-v", "error", "-y", "-i", raw, "-loop", "1", "-t", f"{dur:.2f}", "-i", png,
+                           "-loop", "1", "-t", f"{dur:.2f}", "-i", mid,
                            "-filter_complex", flt, "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-crf", "19",
                            "-pix_fmt", "yuv420p", "-c:a", "copy", "-movflags", "+faststart", base + ".mp4"])
     os.remove(raw)

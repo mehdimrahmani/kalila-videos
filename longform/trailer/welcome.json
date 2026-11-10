@@ -1,0 +1,31 @@
+{
+ "id": "welcome",
+ "title": "Welcome to The Guest House",
+ "subtitle": "Rumi, Shams and the stories of old Persia, from the original Persian",
+ "fa_title": "مهمان‌خانه",
+ "yt_title": "Welcome to The Guest House | Rumi from the Original Persian",
+ "seed": 77,
+ "intro": [
+  "Welcome to The Guest House.",
+  "Here we read Rumi, Shams, and the great storytellers of old Persia, from the original Persian.",
+  "Real verses, honest translations, and what they mean."
+ ],
+ "poems": [
+  {
+   "name": "The Guest House",
+   "source": "Masnavi · Book V",
+   "lines": [
+    {"fa": "هست مهمان‌خانه این تن ای جوان", "en": "This body is a guest house, young friend:"},
+    {"fa": "هر صباحی ضیف نو آید دوان", "en": "every morning a new guest comes running."}
+   ],
+   "tafsir": [
+    "This is the passage that gave our channel its name.",
+    "Whatever arrives in you today is a guest. And guests leave."
+   ]
+  }
+ ],
+ "outro": [
+  "Every week: new verses of Rumi, and true stories from Beyhaqi's thousand year old history.",
+  "Subscribe, and come in."
+ ]
+}
