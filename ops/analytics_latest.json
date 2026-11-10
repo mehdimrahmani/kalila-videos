@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-03",
+ "generated": "2026-11-10",
  "window_days": 28,
  "note": "YouTube Analytics lags ~2-3 days; the newest Shorts are not yet counted",
  "totals": {
-  "views": 88,
-  "watch_minutes": 43,
-  "avg_view_duration_s": 30,
-  "avg_view_pct": 28.9,
+  "views": 119,
+  "watch_minutes": 49,
+  "avg_view_duration_s": 27,
+  "avg_view_pct": 25.7,
   "subs_gained": 10,
   "subs_lost": 6
  },
@@ -15,30 +15,70 @@
    "id": "tg_EJxcVnjE",
    "title": "What is Kalila & Dimna? | کلیله و دمنه چیست؟ | Persian Fables for Kids",
    "type": "long",
-   "views": 72,
-   "watch_minutes": 37,
+   "views": 75,
+   "watch_minutes": 39,
    "avg_view_duration_s": 31,
-   "avg_view_pct": 32.0,
+   "avg_view_pct": 32.3,
    "subs_gained": 9
   },
   {
    "id": "8R58drPtZd4",
    "title": "The Lion and the Hare | شیر و خرگوش | Kalila & Dimna Ep 1",
    "type": "long",
-   "views": 7,
-   "watch_minutes": 4,
-   "avg_view_duration_s": 39,
-   "avg_view_pct": 22.4,
+   "views": 16,
+   "watch_minutes": 7,
+   "avg_view_duration_s": 26,
+   "avg_view_pct": 15.2,
    "subs_gained": 0
   },
   {
    "id": "vanhzpGc364",
    "title": "Meet Kalila & Dimna! | کلیله و دمنه #Shorts",
    "type": "short",
-   "views": 3,
+   "views": 4,
    "watch_minutes": 0,
    "avg_view_duration_s": 19,
    "avg_view_pct": 80.8,
+   "subs_gained": 0
+  },
+  {
+   "id": "UBo_ItwMkfE",
+   "title": "Who saved the whole forest? | شیر و خرگوش #Shorts",
+   "type": "short",
+   "views": 4,
+   "watch_minutes": 0,
+   "avg_view_duration_s": 6,
+   "avg_view_pct": 31.4,
+   "subs_gained": 0
+  },
+  {
+   "id": "Op4k8PlZSd4",
+   "title": "Can a monkey and a tortoise be friends? | بوزینه و باخه #Shorts",
+   "type": "short",
+   "views": 3,
+   "watch_minutes": 0,
+   "avg_view_duration_s": 0,
+   "avg_view_pct": 0,
+   "subs_gained": 0
+  },
+  {
+   "id": "kNcxrtBB_Rw",
+   "title": "What would YOU do if a lion ruled? | شیر و خرگوش #Shorts",
+   "type": "short",
+   "views": 3,
+   "watch_minutes": 0,
+   "avg_view_duration_s": 0,
+   "avg_view_pct": 0,
+   "subs_gained": 0
+  },
+  {
+   "id": "aDwEEyRZCus",
+   "title": "Who is the king of this forest? | شیر و خرگوش #Shorts",
+   "type": "short",
+   "views": 2,
+   "watch_minutes": 0,
+   "avg_view_duration_s": 6,
+   "avg_view_pct": 27.6,
    "subs_gained": 0
   },
   {
@@ -52,23 +92,43 @@
    "subs_gained": 0
   },
   {
-   "id": "aDwEEyRZCus",
-   "title": "Who is the king of this forest? | شیر و خرگوش #Shorts",
+   "id": "vpgnthvL6E0",
+   "title": "Would YOU trust this tortoise? | بوزینه و باخه #Shorts",
    "type": "short",
-   "views": 1,
+   "views": 2,
    "watch_minutes": 0,
-   "avg_view_duration_s": 0,
-   "avg_view_pct": 0,
+   "avg_view_duration_s": 22,
+   "avg_view_pct": 61.2,
+   "subs_gained": 0
+  },
+  {
+   "id": "e2TSGTDbST4",
+   "title": "The Monkey and the Tortoise | بوزینه و باخه | Kalila & Dimna Ep 2",
+   "type": "long",
+   "views": 2,
+   "watch_minutes": 0,
+   "avg_view_duration_s": 7,
+   "avg_view_pct": 3.5,
    "subs_gained": 0
   },
   {
    "id": "m9p0ciKwiFg",
    "title": "Can a tiny hare trick a lion? | شیر و خرگوش #Shorts",
    "type": "short",
-   "views": 1,
+   "views": 2,
    "watch_minutes": 0,
    "avg_view_duration_s": 9,
    "avg_view_pct": 26.8,
+   "subs_gained": 0
+  },
+  {
+   "id": "RcUMbw7x_uE",
+   "title": "The lion and his reflection | شیر و خرگوش #Shorts",
+   "type": "short",
+   "views": 2,
+   "watch_minutes": 0,
+   "avg_view_duration_s": 8,
+   "avg_view_pct": 40.0,
    "subs_gained": 0
   },
   {
@@ -90,56 +150,102 @@
    "avg_view_duration_s": 3,
    "avg_view_pct": 1.9,
    "subs_gained": 0
+  },
+  {
+   "id": "ZvTwgfOb9Tc",
+   "title": "Why is Mrs. Tortoise so angry? | بوزینه و باخه #Shorts",
+   "type": "short",
+   "views": 0,
+   "watch_minutes": 0,
+   "avg_view_duration_s": 0,
+   "avg_view_pct": 0,
+   "subs_gained": 0
   }
  ],
  "lifetime_public_views_recent_uploads": [
   {
+   "id": "6cggqIL9CtE",
+   "title": "The monkey's clever trick! | بوزینه و باخه #Shorts",
+   "published": "2026-11-10",
+   "views": 0
+  },
+  {
+   "id": "Iy5Hjrrx9GM",
+   "title": "Would you ride on your friend's back? | بوزینه و باخه #Shorts",
+   "published": "2026-11-08",
+   "views": 0
+  },
+  {
+   "id": "e2TSGTDbST4",
+   "title": "The Monkey and the Tortoise | بوزینه و باخه | Kalila & Dimna Ep 2",
+   "published": "2026-11-07",
+   "views": 5
+  },
+  {
+   "id": "ZvTwgfOb9Tc",
+   "title": "Why is Mrs. Tortoise so angry? | بوزینه و باخه #Shorts",
+   "published": "2026-11-06",
+   "views": 0
+  },
+  {
+   "id": "vpgnthvL6E0",
+   "title": "Would YOU trust this tortoise? | بوزینه و باخه #Shorts",
+   "published": "2026-11-05",
+   "views": 2
+  },
+  {
+   "id": "UBo_ItwMkfE",
+   "title": "Who saved the whole forest? | شیر و خرگوش #Shorts",
+   "published": "2026-11-04",
+   "views": 8
+  },
+  {
    "id": "RcUMbw7x_uE",
    "title": "The lion and his reflection | شیر و خرگوش #Shorts",
    "published": "2026-11-03",
-   "views": 0
+   "views": 2
   },
   {
    "id": "Op4k8PlZSd4",
    "title": "Can a monkey and a tortoise be friends? | بوزینه و باخه #Shorts",
    "published": "2026-11-02",
-   "views": 0
+   "views": 3
   },
   {
    "id": "kNcxrtBB_Rw",
    "title": "What would YOU do if a lion ruled? | شیر و خرگوش #Shorts",
    "published": "2026-11-01",
-   "views": 0
+   "views": 3
   },
   {
    "id": "8R58drPtZd4",
    "title": "The Lion and the Hare | شیر و خرگوش | Kalila & Dimna Ep 1",
    "published": "2026-10-31",
-   "views": 12
+   "views": 16
   },
   {
    "id": "aDwEEyRZCus",
    "title": "Who is the king of this forest? | شیر و خرگوش #Shorts",
    "published": "2026-10-30",
-   "views": 1
+   "views": 2
   },
   {
    "id": "m9p0ciKwiFg",
    "title": "Can a tiny hare trick a lion? | شیر و خرگوش #Shorts",
    "published": "2026-10-29",
-   "views": 1
+   "views": 2
   },
   {
    "id": "vanhzpGc364",
    "title": "Meet Kalila & Dimna! | کلیله و دمنه #Shorts",
    "published": "2026-10-27",
-   "views": 3
+   "views": 4
   },
   {
    "id": "tg_EJxcVnjE",
    "title": "What is Kalila & Dimna? | کلیله و دمنه چیست؟ | Persian Fables for Kids",
    "published": "2026-10-25",
-   "views": 72
+   "views": 75
   }
  ],
  "top_countries": [
@@ -152,18 +258,18 @@
  "traffic_sources": [
   {
    "insightTrafficSourceType": "EXT_URL",
-   "views": 39,
-   "estimatedMinutesWatched": 19
-  },
-  {
-   "insightTrafficSourceType": "NO_LINK_OTHER",
-   "views": 21,
-   "estimatedMinutesWatched": 10
+   "views": 43,
+   "estimatedMinutesWatched": 20
   },
   {
    "insightTrafficSourceType": "YT_CHANNEL",
-   "views": 16,
-   "estimatedMinutesWatched": 7
+   "views": 37,
+   "estimatedMinutesWatched": 9
+  },
+  {
+   "insightTrafficSourceType": "NO_LINK_OTHER",
+   "views": 22,
+   "estimatedMinutesWatched": 11
   },
   {
    "insightTrafficSourceType": "YT_OTHER_PAGE",
@@ -172,30 +278,35 @@
   },
   {
    "insightTrafficSourceType": "SUBSCRIBER",
-   "views": 2,
+   "views": 4,
    "estimatedMinutesWatched": 1
   },
   {
    "insightTrafficSourceType": "YT_SEARCH",
-   "views": 1,
-   "estimatedMinutesWatched": 0
+   "views": 3,
+   "estimatedMinutesWatched": 1
   },
   {
    "insightTrafficSourceType": "PLAYLIST",
    "views": 1,
    "estimatedMinutesWatched": 1
+  },
+  {
+   "insightTrafficSourceType": "NOTIFICATION",
+   "views": 1,
+   "estimatedMinutesWatched": 0
   }
  ],
  "shorts_vs_long": {
   "videoOnDemand": {
-   "views": 82,
-   "watch_minutes": 42,
-   "avg_view_duration_s": 31
+   "views": 96,
+   "watch_minutes": 47,
+   "avg_view_duration_s": 29
   },
   "shorts": {
-   "views": 6,
-   "watch_minutes": 0,
-   "avg_view_duration_s": 14
+   "views": 23,
+   "watch_minutes": 2,
+   "avg_view_duration_s": 11
   }
  }
 }
