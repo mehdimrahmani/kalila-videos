@@ -45,6 +45,7 @@ def main(dry=False):
     changed = 0
     for v in shorts:
         sn = v["snippet"]; t = sn["title"]
+        if t.startswith("Welcome to The Guest House"): continue      # the channel trailer is not a Short
         m = re.search(r"Folio (\d+)", t)
         if m and "Historian" in t:
             target, label = folio.get(m.group(1)), "Full episode (Folio %s)" % m.group(1)
