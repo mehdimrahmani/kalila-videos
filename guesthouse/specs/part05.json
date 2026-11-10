@@ -1,0 +1,22 @@
+{
+ "header": "Shams & Rumi · Part 5",
+ "title": "The First Farewell",
+ "theme": "cosmic",
+ "source": "Divan-e Shams · Ghazal 2054",
+ "seed": 5,
+ "hook": "One day, Shams was gone from Konya. And Rumi, the scholar, became a poet of grief.",
+ "segments": [
+  {"fa": "بشنیده‌ام که عزم سفر می‌کنی مکن", "en": "I have heard you mean to travel. Do not."},
+  {"fa": "مهر حریف و یار دگر می‌کنی مکن", "en": "You give your love to another friend. Do not."},
+  {"fa": "تو در جهان غریبی غربت چه می‌کنی", "en": "You are a stranger in this world. Why choose exile?"}
+ ],
+ "tafsir": [
+  "The jealousy in Konya grew into open hostility.",
+  "After little more than a year, Shams left the city without a word.",
+  "Rumi was shattered. He turned to music, to whirling, and to poetry.",
+  "This ghazal begs a beloved not to leave.",
+  "We cannot say it was written that day. But it carries that grief.",
+  "When word came that Shams was in Damascus, Rumi sent his son, Sultan Walad, to bring him home."
+ ],
+ "outro": {"say": "Part six. Shams returns. And then he vanishes for good. Follow The Guest House.", "title": "Part 6 · The return, and the final disappearance"}
+}

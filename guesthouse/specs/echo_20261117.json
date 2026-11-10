@@ -1,0 +1,20 @@
+{
+ "header": "Rumi · Divan-e Shams",
+ "title": "Without You",
+ "theme": "paper",
+ "source": "Divan-e Shams · Ghazal 553",
+ "seed": 104,
+ "hook": "Rumi wrote one line that Iranians still sing, nearly eight hundred years later.",
+ "segments": [
+  {"fa": "بی‌همگان به سر شود، بی‌تو به سر نمی‌شود", "en": "Without everyone else, life goes on. Without you, it does not."},
+  {"fa": "داغ تو دارد این دلم، جای دگر نمی‌شود", "en": "My heart bears your brand. It can belong nowhere else."}
+ ],
+ "tafsir": [
+  "The word dagh means a brand, the mark burned on what belongs to someone.",
+  "Rumi says his heart is marked. It cannot be given elsewhere.",
+  "Who is this you? For Rumi, the divine Beloved, glimpsed through Shams.",
+  "This week in our serial, Shams leaves Konya.",
+  "This is what that absence sounds like."
+ ],
+ "outro": {"say": "Shams and Rumi, the serial, is on our page. Follow The Guest House.", "title": "Shams & Rumi · the serial on our page"}
+}
