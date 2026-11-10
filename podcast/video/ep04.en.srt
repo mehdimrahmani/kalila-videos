@@ -1,0 +1,766 @@
+1
+00:00:00,800 --> 00:00:05,980
+Midnight, in the city of the caliphs. A man
+sits on the executioner's mat, his eyes
+
+2
+00:00:05,980 --> 00:00:11,221
+bound, a drawn sword beside him. Across the
+city, an old judge wakes from his sleep,
+
+3
+00:00:11,221 --> 00:00:13,780
+and cannot say why his heart is so heavy.
+
+4
+00:00:24,130 --> 00:00:29,008
+Welcome to The Honest Historian. I'm Mehdi
+Rahmani, and this is Folio Four. Imagine
+
+5
+00:00:29,008 --> 00:00:33,768
+a man sitting on a leather mat, his eyes bound
+with a cloth. Beside him stands an
+
+6
+00:00:33,768 --> 00:00:38,528
+executioner with a drawn sword. And somewhere
+in the dark streets of the city, an
+
+7
+00:00:38,528 --> 00:00:42,230
+old judge is riding as fast as he can, without
+knowing yet why.
+
+8
+00:00:43,010 --> 00:00:47,648
+Today, we leave the court of Ghazni for a
+while. We go back two hundred years, to
+
+9
+00:00:47,648 --> 00:00:51,770
+the court of the caliphs, for a story that
+Beyhaqi thought worth saving.
+
+10
+00:01:07,050 --> 00:01:11,885
+First, a word about where this story sits. In
+the pages of Beyhaqi just before the
+
+11
+00:01:11,885 --> 00:01:16,662
+hanging of Hasanak, the vizier we met in Folio
+One, Beyhaqi stops his own account
+
+12
+00:01:16,662 --> 00:01:21,438
+and tells a tale from the distant past. He
+says he did not invent it. He heard it
+
+13
+00:01:21,438 --> 00:01:23,030
+through a chain of tellers.
+
+14
+00:01:23,310 --> 00:01:29,125
+A man named Ismail ibn Shihab said that he
+heard it from the judge himself, Ahmad
+
+15
+00:01:29,125 --> 00:01:30,130
+ibn Abi Duwad.
+
+16
+00:01:30,910 --> 00:01:35,983
+So the voice we will hear, in my retelling, is
+the voice of that judge, speaking of
+
+17
+00:01:35,983 --> 00:01:37,450
+a night he never forgot.
+
+18
+00:01:38,230 --> 00:01:43,062
+Why does Beyhaqi tell it? He says so plainly
+near the end. He writes these stories
+
+19
+00:01:43,062 --> 00:01:45,950
+so that his readers may gain something from
+them.
+
+20
+00:02:01,230 --> 00:02:03,790
+Let me introduce the three men.
+
+21
+00:02:04,570 --> 00:02:09,149
+The first is the caliph, al-Mutasim. He was
+the ruler of the Abbasid empire, which
+
+22
+00:02:09,149 --> 00:02:13,784
+stretched from North Africa to Central Asia.
+He reigned from the year eight hundred
+
+23
+00:02:13,784 --> 00:02:18,251
+and thirty three to eight hundred and forty
+two. In those years his court sat at
+
+24
+00:02:18,251 --> 00:02:21,490
+Samarra, a new city on the Tigris River, north
+of Baghdad.
+
+25
+00:02:22,270 --> 00:02:27,234
+The second is Afshin. That was a title, not a
+name. It was the old title of the
+
+26
+00:02:27,234 --> 00:02:32,512
+princes of Ushrusana, a mountain land in
+Central Asia, near today's Tajikistan. This
+
+27
+00:02:32,512 --> 00:02:37,350
+Afshin, whose own name was Khaydar, had become
+the caliph's greatest general.
+
+28
+00:02:37,630 --> 00:02:42,736
+He had just won a long and bitter war against
+a rebel named Babak, in the mountains
+
+29
+00:02:42,736 --> 00:02:47,781
+of Azerbaijan. And so, Beyhaqi tells us, the
+caliph honored him above everyone. He
+
+30
+00:02:47,781 --> 00:02:49,750
+was proud, powerful, and feared.
+
+31
+00:02:50,530 --> 00:02:55,844
+The third is Bu Dulaf, whose full name was al-
+Qasim ibn Isa al-Ijli. He was an Arab
+
+32
+00:02:55,844 --> 00:03:01,157
+nobleman, a commander, a governor in western
+Iran, and a famous patron of poets. He
+
+33
+00:03:01,157 --> 00:03:03,590
+had served the caliphs for many years.
+
+34
+00:03:04,370 --> 00:03:09,589
+And between Afshin and Bu Dulaf, there was
+hatred. Beyhaqi calls it enmity and
+
+35
+00:03:09,589 --> 00:03:11,530
+rivalry of the fiercest kind.
+
+36
+00:03:26,810 --> 00:03:31,325
+Then there is the fourth man, the one who
+tells the story. Ahmad ibn Abi Duwad was
+
+37
+00:03:31,325 --> 00:03:35,566
+the chief judge of the empire. Beyhaqi tells
+us he was more powerful than any
+
+38
+00:03:35,566 --> 00:03:39,861
+vizier, and that he served three caliphs, one
+after another. He was an Arab, a
+
+39
+00:03:39,861 --> 00:03:43,330
+scholar, and a man whose word carried weight
+from east to west.
+
+40
+00:03:44,110 --> 00:03:48,850
+His story begins like this. One night, in the
+time of al-Mutasim, he woke up at
+
+41
+00:03:48,850 --> 00:03:53,770
+midnight. He could not sleep. A strange gloom
+had settled on his heart, and he did
+
+42
+00:03:53,770 --> 00:03:54,550
+not know why.
+
+43
+00:03:55,330 --> 00:04:00,040
+He called his servant, a man named Salama, and
+told him to saddle his mount. Salama
+
+44
+00:04:00,040 --> 00:04:04,467
+was surprised. It is the middle of the night,
+he said. And the caliph has told
+
+45
+00:04:04,467 --> 00:04:08,610
+everyone that he will not receive visitors
+tomorrow. Where are you going?
+
+46
+00:04:09,390 --> 00:04:14,113
+The judge lay down again. But he could not
+rest. So he got up, washed, dressed, and
+
+47
+00:04:14,113 --> 00:04:18,552
+rode out into the dark, not even sure where he
+was going. He turned toward the
+
+48
+00:04:18,552 --> 00:04:18,950
+palace.
+
+49
+00:04:34,230 --> 00:04:38,827
+At the palace gate, the chamberlain told him
+it was far too early. The caliph was
+
+50
+00:04:38,827 --> 00:04:43,594
+alone, and wished to be left alone. But the
+judge insisted, and the chamberlain went
+
+51
+00:04:43,594 --> 00:04:47,510
+in. He came back with a surprise. Come in, he
+said. You are expected.
+
+52
+00:04:48,290 --> 00:04:52,692
+The judge found al-Mutasim sitting alone, deep
+in thought. And the caliph said
+
+53
+00:04:52,692 --> 00:04:57,320
+something that the judge remembered all his
+life. Why are you so late, he asked. I
+
+54
+00:04:57,320 --> 00:04:59,690
+have been waiting for you for a long time.
+
+55
+00:05:00,470 --> 00:05:05,049
+Then the caliph explained. For months, Afshin
+had begged him to hand Bu Dulaf over
+
+56
+00:05:05,049 --> 00:05:09,684
+to him, to take his wealth and to put him to
+death. Again and again, the caliph had
+
+57
+00:05:09,684 --> 00:05:14,375
+refused. Bu Dulaf was a loyal servant with a
+long record. But the night before, worn
+
+58
+00:05:14,375 --> 00:05:17,390
+down by Afshin's pleading, the caliph had made
+a slip.
+
+59
+00:05:17,670 --> 00:05:22,418
+He had given in. Worse, he had bound himself
+with solemn oaths that he would not
+
+60
+00:05:22,418 --> 00:05:25,030
+take Bu Dulaf back, and would not interfere.
+
+61
+00:05:25,810 --> 00:05:30,390
+And now, the caliph said, as soon as day
+comes, Afshin will kill him.
+
+62
+00:05:31,170 --> 00:05:35,603
+The caliph could not break his oath. But
+perhaps someone else could ask. Go to
+
+63
+00:05:35,603 --> 00:05:39,410
+Afshin, he told the judge. Plead with him.
+Save the man if you can.
+
+64
+00:05:54,690 --> 00:05:59,397
+The judge rode as if his life depended on it.
+In his haste, his cloak slipped from
+
+65
+00:05:59,397 --> 00:06:04,218
+his shoulders and fell in the road, and he did
+not even notice. He sent riders ahead
+
+66
+00:06:04,218 --> 00:06:07,490
+to Bu Dulaf's house, afraid that he was
+already too late.
+
+67
+00:06:08,270 --> 00:06:12,959
+When he reached Afshin's house, the servants
+ran to meet him, as they always did,
+
+68
+00:06:12,959 --> 00:06:17,590
+for he was a great man. He told his own men to
+wait at the door, and he went in.
+
+69
+00:06:18,370 --> 00:06:22,905
+Here is what he saw. At the far end of the
+courtyard sat Afshin. In front of him, a
+
+70
+00:06:22,905 --> 00:06:27,386
+leather mat was spread on the ground. In that
+world, this was the mat on which men
+
+71
+00:06:27,386 --> 00:06:31,975
+were executed, so that the blood would not
+stain the floor. On the mat sat Bu Dulaf,
+
+72
+00:06:31,975 --> 00:06:35,090
+in nothing but his trousers, his eyes bound
+with a cloth.
+
+73
+00:06:35,370 --> 00:06:40,410
+Beside him stood the executioner, with his
+sword drawn, waiting for one word.
+
+74
+00:06:55,690 --> 00:07:00,210
+Now comes the battle of this story. And it is
+not fought with swords.
+
+75
+00:07:00,990 --> 00:07:05,612
+Whenever the judge visited, Afshin would rise
+and bow so low that his head came to
+
+76
+00:07:05,612 --> 00:07:10,346
+the judge's chest. This time, he did not move.
+His face turned yellow, then red. The
+
+77
+00:07:10,346 --> 00:07:14,010
+veins stood out on his neck. He would not even
+look at his guest.
+
+78
+00:07:14,790 --> 00:07:19,895
+The judge did not take offense. He kissed
+Afshin, and sat down beside him. And then
+
+79
+00:07:19,895 --> 00:07:24,630
+he began to talk. Anything, to keep Afshin's
+mind away from one word: strike.
+
+80
+00:07:24,910 --> 00:07:29,331
+He even praised the Persians and the peoples
+of the east above his own people, the
+
+81
+00:07:29,331 --> 00:07:33,483
+Arabs, because he knew this would please
+Afshin, who was proud of his ancient
+
+82
+00:07:33,483 --> 00:07:38,012
+princely line. Later he confessed, with some
+shame, that this was a sin. But he said
+
+83
+00:07:38,012 --> 00:07:40,870
+he did it to keep a man alive for a few more
+minutes.
+
+84
+00:07:41,650 --> 00:07:46,710
+Then he made his request. Grant me this man's
+life, he said, as a favor to me.
+
+85
+00:07:47,490 --> 00:07:52,696
+Afshin refused. The Commander of the Faithful
+has given him to me, he said, and he
+
+86
+00:07:52,696 --> 00:07:54,410
+has sworn not to interfere.
+
+87
+00:07:55,190 --> 00:07:59,802
+So the judge humbled himself. He kissed
+Afshin's head. He kissed his shoulder. He
+
+88
+00:07:59,802 --> 00:08:04,414
+kissed his hands. He bent down toward his
+knee. And Afshin, in Beyhaqi's account,
+
+89
+00:08:04,414 --> 00:08:07,830
+told him coldly that a thousand kisses would
+do him no good.
+
+90
+00:08:23,110 --> 00:08:27,170
+And here the judge made a choice that could
+have cost him everything.
+
+91
+00:08:27,950 --> 00:08:32,602
+He drew himself up and reminded Afshin who he
+was. Then he said that he carried a
+
+92
+00:08:32,602 --> 00:08:37,369
+message from the caliph himself. And the
+message, as Beyhaqi gives it, was this. Do
+
+93
+00:08:37,369 --> 00:08:41,963
+not kill al-Qasim. Do not touch him. Send him
+home at once, because your hand is
+
+94
+00:08:41,963 --> 00:08:42,710
+short of him.
+
+95
+00:08:42,990 --> 00:08:46,790
+And if you kill him, I will have you put to
+death in his place.
+
+96
+00:08:47,570 --> 00:08:52,442
+There was no such message. The caliph had said
+nothing of the kind. The judge had
+
+97
+00:08:52,442 --> 00:08:55,570
+just invented it, on the spot, in the caliph's
+name.
+
+98
+00:08:56,350 --> 00:09:01,408
+Afshin trembled. He went pale, and almost
+fainted. Is this truly the caliph's
+
+99
+00:09:01,408 --> 00:09:02,590
+message, he asked.
+
+100
+00:09:03,370 --> 00:09:07,898
+The judge did not answer with words alone. He
+called in thirty or forty respected
+
+101
+00:09:07,898 --> 00:09:12,539
+men, trusted witnesses from every quarter, and
+delivered the message again in front
+
+102
+00:09:12,539 --> 00:09:17,123
+of them. Then he turned to the man on the mat
+and asked him, are you well? Are you
+
+103
+00:09:17,123 --> 00:09:17,570
+wounded?
+
+104
+00:09:17,850 --> 00:09:23,273
+And from behind the blindfold Bu Dulaf
+answered that he was unhurt. The witnesses
+
+105
+00:09:23,273 --> 00:09:24,010
+saw it all.
+
+106
+00:09:24,790 --> 00:09:29,590
+Then the judge mounted and rode back to the
+palace, as fast as he had come.
+
+107
+00:09:44,870 --> 00:09:49,545
+He arrived sweating and out of breath. The
+caliph had a servant wipe his face, and
+
+108
+00:09:49,545 --> 00:09:53,650
+asked him what had happened. And the judge
+began to tell him everything.
+
+109
+00:09:54,430 --> 00:09:59,347
+He had just reached the part about the
+thousand kisses when the door opened, and in
+
+110
+00:09:59,347 --> 00:10:00,650
+walked Afshin himself.
+
+111
+00:10:01,430 --> 00:10:05,981
+Think about the judge's fear in that moment.
+If Afshin told the caliph about the
+
+112
+00:10:05,981 --> 00:10:10,702
+message, and the caliph denied it, then the
+judge would be shamed as a liar, and Bu
+
+113
+00:10:10,702 --> 00:10:12,010
+Dulaf would surely die.
+
+114
+00:10:12,790 --> 00:10:17,960
+Afshin spoke. Ahmad brought me a message from
+you, he said. Is it true that I may
+
+115
+00:10:17,960 --> 00:10:18,790
+not kill him?
+
+116
+00:10:19,570 --> 00:10:22,730
+And the caliph answered. It is my message.
+
+117
+00:10:23,510 --> 00:10:28,001
+Then al-Mutasim reproached his general. Bu
+Dulaf was a servant of this house, he
+
+118
+00:10:28,001 --> 00:10:32,661
+said. The better path would have been to set
+him free with honor. And then he added
+
+119
+00:10:32,661 --> 00:10:34,850
+a line that is still quoted in Persian.
+
+120
+00:10:35,630 --> 00:10:40,150
+Har kasi aan konad ke az asl o gowhar-e vey
+sazad.
+
+121
+00:10:40,930 --> 00:10:44,710
+Everyone does what befits his root and his
+nature.
+
+122
+00:10:45,490 --> 00:10:47,750
+Afshin left, defeated.
+
+123
+00:11:03,030 --> 00:11:07,888
+When they were alone, the caliph turned to the
+judge. Why, he asked, did you deliver
+
+124
+00:11:07,888 --> 00:11:09,450
+a message I never gave you?
+
+125
+00:11:10,230 --> 00:11:14,756
+The judge answered honestly. He said he could
+not bear to see a Muslim's blood
+
+126
+00:11:14,756 --> 00:11:19,456
+spilled. He would accept whatever punishment
+came. And he believed that God would
+
+127
+00:11:19,456 --> 00:11:22,590
+not hold him to account for a lie told to save
+a life.
+
+128
+00:11:23,370 --> 00:11:28,204
+And the caliph laughed. He approved of what
+the judge had done. Then he sent one of
+
+129
+00:11:28,204 --> 00:11:32,921
+his own officers, with his own horse, to bring
+Bu Dulaf with honor to the judge's
+
+130
+00:11:32,921 --> 00:11:33,270
+house.
+
+131
+00:11:34,050 --> 00:11:38,927
+When the judge came home, Bu Dulaf was waiting
+at his door. He threw himself at the
+
+132
+00:11:38,927 --> 00:11:43,804
+judge's feet. The judge raised him up,
+embraced him, and told him to thank God, and
+
+133
+00:11:43,804 --> 00:11:44,450
+the caliph.
+
+134
+00:11:59,730 --> 00:12:03,933
+Beyhaqi ends the tale simply. Anyone who reads
+this story, he writes, will
+
+135
+00:12:03,933 --> 00:12:08,704
+understand what great men these were. They
+have all passed away, and what remains of
+
+136
+00:12:08,704 --> 00:12:13,418
+them is their good name. And then, almost
+briskly, he says that he will now go back
+
+137
+00:12:13,418 --> 00:12:14,270
+to his history.
+
+138
+00:12:15,050 --> 00:12:19,813
+Beyhaqi does not tell us what happened to
+Afshin. But other historians do. Not long
+
+139
+00:12:19,813 --> 00:12:24,576
+after, the great general fell from favor. He
+was arrested, put on trial in front of
+
+140
+00:12:24,576 --> 00:12:29,224
+the court, and accused of disloyalty and of
+secretly holding to the old faiths of
+
+141
+00:12:29,224 --> 00:12:29,970
+his homeland.
+
+142
+00:12:30,250 --> 00:12:35,508
+He died in prison, in the year eight hundred
+and forty one. Fortune, once again, had
+
+143
+00:12:35,508 --> 00:12:36,510
+turned its face.
+
+144
+00:12:51,790 --> 00:12:56,592
+Why did Beyhaqi place this story here, just
+before the hanging of Hasanak? He does
+
+145
+00:12:56,592 --> 00:13:01,102
+not say directly, so I will not put words in
+his mouth. But I notice this. In
+
+146
+00:13:01,102 --> 00:13:05,846
+Hasanak's story, a man of power used his
+position to destroy an enemy, and nobody
+
+147
+00:13:05,846 --> 00:13:06,490
+stopped it.
+
+148
+00:13:06,770 --> 00:13:12,206
+In this story, a man of power used his
+position to save a life, at great risk to
+
+149
+00:13:12,206 --> 00:13:12,750
+himself.
+
+150
+00:13:13,530 --> 00:13:18,529
+Beyhaqi lived among courtiers. He knew how
+easy it was to stay silent. I think he
+
+151
+00:13:18,529 --> 00:13:22,170
+wanted his readers to see that it is never the
+only choice.
+
+152
+00:13:22,950 --> 00:13:27,963
+If there is one lesson here, it is this: a
+single brave word, at the right moment,
+
+153
+00:13:27,963 --> 00:13:30,470
+can be worth more than a thousand kisses.
+
+154
+00:13:45,750 --> 00:13:50,937
+Next week, we come back to Ghazni, to meet the
+man who taught Beyhaqi everything he
+
+155
+00:13:50,937 --> 00:13:55,750
+knew. Bu Nasr Moshkan was the master of the
+royal chancery, and he knew how a
+
+156
+00:13:55,750 --> 00:13:58,250
+secretary survives at a dangerous court.
+
+157
+00:13:59,030 --> 00:14:03,778
+If you enjoyed this story, follow the show so
+you don't miss the next one, and share
+
+158
+00:14:03,778 --> 00:14:08,414
+it with someone who loves history. I'm Mehdi
+Rahmani. This episode was retold from
+
+159
+00:14:08,414 --> 00:14:13,162
+the Persian original of the History of
+Beyhaqi, and narrated with an AI rendering of
+
+160
+00:14:13,162 --> 00:14:15,310
+my own voice. Thank you for listening.
+
