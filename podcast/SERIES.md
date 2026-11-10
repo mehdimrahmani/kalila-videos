@@ -30,3 +30,13 @@ Listed on (2 Nov 2026): Spotify https://open.spotify.com/show/18Hf8IqDkOBNni2WW3
 10. The Fall of Masud — flight to India and the end (1040–41)
 11. Who was Beyhaqi? — the historian himself: his life, his lost volumes, his method ("I write what I saw")
 After 11: propose the next season to Mehdi (e.g. more Beyhaqi anecdotes, Siyasatnama of Nizam al-Mulk, Qabusnama).
+
+## Shorts rules (10 Nov 2026 — subscribers were flat; Shorts must send people to the full episode)
+Every episode JSON carries two `extra_shorts`. Each one must be a CLIFFHANGER, not a complete mini-story:
+- `from`: exact first words of a 25–45 s passage that builds tension (a threat, a choice, a question being asked);
+- `until`: exact words of the last sentence BEFORE the resolution, so the Short stops there;
+- `question`: the unanswered question for the end card, max ~45 characters, honest (the full episode really answers it),
+  e.g. "What did the judge do next?";
+- `hook`: curiosity title (≤ 60 chars) that matches the question; no false clickbait.
+The famous Persian line with its meaning can be one of the two when the episode has one (then no `until`; question
+like "Who said it, and why?"). podcast/make_video.py shows the question and "Subscribe · The Guest House" on the end card.
