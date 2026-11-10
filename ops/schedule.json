@@ -50,6 +50,20 @@
    "recorded": "2026-11-09 19:34"
   },
   {
+   "stream": "gh_pod_short",
+   "at": "2026-11-15 16:47",
+   "id": "mAQTzisIX1s",
+   "note": "ep04 cold-open Short",
+   "recorded": "2026-11-10 16:56"
+  },
+  {
+   "stream": "gh_pod_short",
+   "at": "2026-11-17 16:37",
+   "id": "X9ifNATXa3o",
+   "note": "ep04 short2",
+   "recorded": "2026-11-10 16:56"
+  },
+  {
    "stream": "gh_rumi_short",
    "at": "2026-11-10 20:47",
    "id": "mpX-yFaiTYE",
@@ -236,6 +250,16 @@
    "day": "2026-11-10",
    "stream": "gh_pod_full",
    "id": "u_SvYB1NbwI"
+  },
+  {
+   "day": "2026-11-10",
+   "stream": "gh_pod_short",
+   "id": "mAQTzisIX1s"
+  },
+  {
+   "day": "2026-11-10",
+   "stream": "gh_pod_short",
+   "id": "X9ifNATXa3o"
   }
  ]
 }
