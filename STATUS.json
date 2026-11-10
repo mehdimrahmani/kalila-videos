@@ -39,9 +39,21 @@
     "en",
     "fa"
    ]
+  },
+  {
+   "n": 5,
+   "title": "The Heron and the Crab",
+   "video": "ep05/ep05.mp4",
+   "scheduled": "2026-11-28T21:30:00+03:30",
+   "youtube_id": "V6bqzIuJJaM",
+   "via": "youtube-api publishAt",
+   "captions": [
+    "en",
+    "fa"
+   ]
   }
  ],
- "next_episode": 5,
+ "next_episode": 6,
  "schedule_rule": "Each weekly run builds episode `next_episode` and schedules it for the Saturday 13-14 days ahead, 21:30 Asia/Tehran (US afternoon / UK evening). One Short every day at 21:30.",
  "shorts": [
   {

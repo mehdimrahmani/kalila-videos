@@ -162,6 +162,13 @@
    "recorded": "2026-11-08 12:51"
   },
   {
+   "stream": "kd_episode",
+   "at": "2026-11-28 21:30",
+   "id": "V6bqzIuJJaM",
+   "note": "ep05",
+   "recorded": "2026-11-11 02:02"
+  },
+  {
    "stream": "kd_short",
    "at": "2026-11-08 21:30",
    "id": "Iy5Hjrrx9GM",
@@ -286,6 +293,11 @@
    "day": "2026-11-10",
    "stream": "trailer",
    "id": "wn3P_gJEF7c"
+  },
+  {
+   "day": "2026-11-10",
+   "stream": "kd_episode",
+   "id": "V6bqzIuJJaM"
   }
  ]
 }
