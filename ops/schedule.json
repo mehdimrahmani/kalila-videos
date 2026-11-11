@@ -36,6 +36,13 @@
    "recorded": "2026-11-10 16:55"
   },
   {
+   "stream": "gh_pod_full",
+   "at": "2026-11-22 16:37",
+   "id": "x6vIk75qeN0",
+   "note": "ep05 full",
+   "recorded": "2026-11-11 16:54"
+  },
+  {
    "stream": "gh_pod_short",
    "at": "2026-11-08 16:47",
    "id": "prS9KEb_w1c",
@@ -76,6 +83,13 @@
    "id": "VQin1d0Vr1w",
    "note": "ep04 short3",
    "recorded": "2026-11-11 16:54"
+  },
+  {
+   "stream": "gh_pod_short",
+   "at": "2026-11-22 16:47",
+   "id": "uhsaqwoUOT0",
+   "note": "ep05 cold-open Short",
+   "recorded": "2026-11-11 16:55"
   },
   {
    "stream": "gh_rumi_short",
@@ -329,6 +343,16 @@
    "day": "2026-11-11",
    "stream": "gh_pod_short",
    "id": "VQin1d0Vr1w"
+  },
+  {
+   "day": "2026-11-11",
+   "stream": "gh_pod_full",
+   "id": "x6vIk75qeN0"
+  },
+  {
+   "day": "2026-11-11",
+   "stream": "gh_pod_short",
+   "id": "uhsaqwoUOT0"
   }
  ]
 }
