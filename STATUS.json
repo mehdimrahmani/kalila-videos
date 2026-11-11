@@ -51,6 +51,13 @@
     "en",
     "fa"
    ]
+  },
+  {
+   "n": 6,
+   "title": "The Tortoise and the Two Ducks",
+   "video": "ep06/ep06.mp4",
+   "scheduled": null,
+   "note": "rendered 11 Nov 2026 (3:10, en/fa srt, pipeline/ep06/youtube.json); not uploaded yet: YouTube upload budget was 0 that day. Upload into the next free kd_episode slot (2026-12-05 21:30), then set youtube_id/scheduled and next_episode=7."
   }
  ],
  "next_episode": 6,
