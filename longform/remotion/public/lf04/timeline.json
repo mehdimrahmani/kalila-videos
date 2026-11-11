@@ -1,0 +1,704 @@
+{
+ "id": "lf04",
+ "duration": 531.716,
+ "fps": 30,
+ "events": [
+  {
+   "kind": "title",
+   "t0": 0.0,
+   "t1": 22.906,
+   "text": "Rumi on Love: Flying Toward the Sky",
+   "sub": "Eight Persian Sufi poems with English translation",
+   "fa": "مولانا و عشق"
+  },
+  {
+   "kind": "intro",
+   "t0": 2.0,
+   "t1": 9.057,
+   "text": "For Rumi, love is not one feeling among many. It is the force that moves everything."
+  },
+  {
+   "kind": "intro",
+   "t0": 9.657,
+   "t1": 15.142,
+   "text": "It heals, it burns, it lifts the body of earth toward the sky."
+  },
+  {
+   "kind": "intro",
+   "t0": 15.742,
+   "t1": 22.306,
+   "text": "Here are eight passages from his Masnavi and his Divan-e Shams about love."
+  },
+  {
+   "kind": "chapter",
+   "t0": 24.406,
+   "t1": 28.406,
+   "n": 1,
+   "name": "Flying Toward the Sky",
+   "source": "Divan-e Shams · Ghazal 1919, couplets 1 and 4"
+  },
+  {
+   "kind": "line",
+   "t0": 28.906,
+   "t1": 35.69,
+   "en_t0": 31.506,
+   "fa": "عشق است بر آسمان پریدن",
+   "en": "Love is flying toward the sky,",
+   "poem": 0,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 35.69,
+   "t1": 43.103,
+   "en_t0": 38.29,
+   "fa": "صد پرده به هر نفس دریدن",
+   "en": "tearing a hundred veils with every breath.",
+   "poem": 0,
+   "k": 1
+  },
+  {
+   "kind": "line",
+   "t0": 43.103,
+   "t1": 50.472,
+   "en_t0": 45.703,
+   "fa": "گفتم که دلا مبارکت باد",
+   "en": "I said: O heart, may it be blessed for you,",
+   "poem": 0,
+   "k": 2
+  },
+  {
+   "kind": "line",
+   "t0": 50.472,
+   "t1": 57.369,
+   "en_t0": 53.072,
+   "fa": "در حلقه عاشقان رسیدن",
+   "en": "to have reached the circle of lovers.",
+   "poem": 0,
+   "k": 3
+  },
+  {
+   "kind": "tafsir",
+   "t0": 58.569,
+   "t1": 64.054,
+   "text": "Rumi begins with a definition, and it is not a gentle one.",
+   "poem": 0,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 64.504,
+   "t1": 70.955,
+   "text": "Love is flight. And every breath tears another veil between us and what is real.",
+   "poem": 0,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 71.405,
+   "t1": 77.721,
+   "text": "Then he turns to his own heart and congratulates it, as if it had arrived home.",
+   "poem": 0,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 78.171,
+   "t1": 84.622,
+   "text": "To join the circle of lovers, for him, is the best news a heart can receive.",
+   "poem": 0,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 85.672,
+   "t1": 92.672,
+   "fa": [
+    "عشق است بر آسمان پریدن",
+    "صد پرده به هر نفس دریدن",
+    "گفتم که دلا مبارکت باد",
+    "در حلقه عاشقان رسیدن"
+   ],
+   "source": "Divan-e Shams · Ghazal 1919, couplets 1 and 4"
+  },
+  {
+   "kind": "chapter",
+   "t0": 93.172,
+   "t1": 97.172,
+   "n": 2,
+   "name": "Love the Healer",
+   "source": "Masnavi · Book I, §1, couplets 23–24"
+  },
+  {
+   "kind": "line",
+   "t0": 97.672,
+   "t1": 105.197,
+   "en_t0": 100.272,
+   "fa": "شاد باش ای عشق خوش‌سودای ما",
+   "en": "Be joyful, O Love, our sweet madness,",
+   "poem": 1,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 105.197,
+   "t1": 112.027,
+   "en_t0": 107.797,
+   "fa": "ای طبیب جمله علت‌های ما",
+   "en": "O physician of all our ills,",
+   "poem": 1,
+   "k": 1
+  },
+  {
+   "kind": "line",
+   "t0": 112.027,
+   "t1": 119.193,
+   "en_t0": 114.627,
+   "fa": "ای دوای نخوت و ناموس ما",
+   "en": "O cure for our pride and our vanity,",
+   "poem": 1,
+   "k": 2
+  },
+  {
+   "kind": "line",
+   "t0": 119.193,
+   "t1": 126.18,
+   "en_t0": 121.793,
+   "fa": "ای تو افلاطون و جالینوس ما",
+   "en": "you are our Plato and our Galen.",
+   "poem": 1,
+   "k": 3
+  },
+  {
+   "kind": "tafsir",
+   "t0": 127.38,
+   "t1": 132.147,
+   "text": "These lines come from the opening song of the Masnavi.",
+   "poem": 1,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 132.597,
+   "t1": 139.272,
+   "text": "Plato stands for wisdom, and Galen was the great physician of the ancient world.",
+   "poem": 1,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 139.722,
+   "t1": 144.96,
+   "text": "Rumi says love is both: the philosopher and the doctor.",
+   "poem": 1,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 145.41,
+   "t1": 152.714,
+   "text": "And the illness it treats first is pride. Love is the one medicine for the swollen self.",
+   "poem": 1,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 153.764,
+   "t1": 160.764,
+   "fa": [
+    "شاد باش ای عشق خوش‌سودای ما",
+    "ای طبیب جمله علت‌های ما",
+    "ای دوای نخوت و ناموس ما",
+    "ای تو افلاطون و جالینوس ما"
+   ],
+   "source": "Masnavi · Book I, §1, couplets 23–24"
+  },
+  {
+   "kind": "chapter",
+   "t0": 161.264,
+   "t1": 165.264,
+   "n": 3,
+   "name": "The Mountain Danced",
+   "source": "Masnavi · Book I, §1, couplet 25"
+  },
+  {
+   "kind": "line",
+   "t0": 165.764,
+   "t1": 173.672,
+   "en_t0": 168.364,
+   "fa": "جسم خاک از عشق بر افلاک شد",
+   "en": "Through love, this body of earth rose to the heavens;",
+   "poem": 2,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 173.672,
+   "t1": 181.04,
+   "en_t0": 176.272,
+   "fa": "کوه در رقص آمد و چالاک شد",
+   "en": "the mountain began to dance and grew light.",
+   "poem": 2,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 182.24,
+   "t1": 187.838,
+   "text": "The mountain here is Mount Sinai, where Moses asked to see God.",
+   "poem": 2,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 188.288,
+   "t1": 193.616,
+   "text": "In the Quran, the mountain crumbles when God's light touches it.",
+   "poem": 2,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 194.066,
+   "t1": 197.754,
+   "text": "Rumi reads that moment as a dance.",
+   "poem": 2,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 198.204,
+   "t1": 204.296,
+   "text": "Even something as heavy as a mountain becomes light when love reaches it.",
+   "poem": 2,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 205.346,
+   "t1": 212.346,
+   "fa": [
+    "جسم خاک از عشق بر افلاک شد",
+    "کوه در رقص آمد و چالاک شد"
+   ],
+   "source": "Masnavi · Book I, §1, couplet 25"
+  },
+  {
+   "kind": "chapter",
+   "t0": 212.846,
+   "t1": 216.846,
+   "n": 4,
+   "name": "The Call of Love",
+   "source": "Divan-e Shams · Ghazal 463, couplet 1"
+  },
+  {
+   "kind": "line",
+   "t0": 217.346,
+   "t1": 225.837,
+   "en_t0": 219.946,
+   "fa": "هر نفس آواز عشق می‌رسد از چپ و راست",
+   "en": "With every breath, the voice of love comes from left and right.",
+   "poem": 3,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 225.837,
+   "t1": 233.79,
+   "en_t0": 228.437,
+   "fa": "ما به فلک می‌رویم عزم تماشا که راست",
+   "en": "We are going to the sky. Who wants to come and see?",
+   "poem": 3,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 234.99,
+   "t1": 239.217,
+   "text": "This is one of Rumi's most joyful openings.",
+   "poem": 3,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 239.667,
+   "t1": 246.208,
+   "text": "Love is not far away. Its voice arrives from every side, all the time.",
+   "poem": 3,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 246.658,
+   "t1": 253.94,
+   "text": "And the answer is an invitation, almost playful: we are leaving for the sky. Who is coming?",
+   "poem": 3,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 254.39,
+   "t1": 258.999,
+   "text": "Love, for Rumi, always wants company on the road.",
+   "poem": 3,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 260.049,
+   "t1": 267.049,
+   "fa": [
+    "هر نفس آواز عشق می‌رسد از چپ و راست",
+    "ما به فلک می‌رویم عزم تماشا که راست"
+   ],
+   "source": "Divan-e Shams · Ghazal 463, couplet 1"
+  },
+  {
+   "kind": "chapter",
+   "t0": 267.549,
+   "t1": 271.549,
+   "n": 5,
+   "name": "The King of Love",
+   "source": "Divan-e Shams · Ghazal 1620, couplets 1–2"
+  },
+  {
+   "kind": "line",
+   "t0": 272.049,
+   "t1": 280.316,
+   "en_t0": 274.649,
+   "fa": "هوسی است در سر من که سر بشر ندارم",
+   "en": "There is a longing in my head beyond anything human;",
+   "poem": 4,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 280.316,
+   "t1": 288.65,
+   "en_t0": 282.916,
+   "fa": "من از این هوس چنانم که ز خود خبر ندارم",
+   "en": "it has carried me so far that I know nothing of myself.",
+   "poem": 4,
+   "k": 1
+  },
+  {
+   "kind": "line",
+   "t0": 288.65,
+   "t1": 297.388,
+   "en_t0": 291.25,
+   "fa": "دو هزار ملک بخشد شه عشق هر زمانی",
+   "en": "The king of love gives away two thousand kingdoms every moment;",
+   "poem": 4,
+   "k": 2
+  },
+  {
+   "kind": "line",
+   "t0": 297.388,
+   "t1": 304.779,
+   "en_t0": 299.988,
+   "fa": "من از او به جز جمالش طمعی دگر ندارم",
+   "en": "from him I want nothing but his beauty.",
+   "poem": 4,
+   "k": 3
+  },
+  {
+   "kind": "tafsir",
+   "t0": 305.979,
+   "t1": 310.476,
+   "text": "Love here is a king who can give anything at all.",
+   "poem": 4,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 310.926,
+   "t1": 314.458,
+   "text": "Two thousand kingdoms, every moment.",
+   "poem": 4,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 314.908,
+   "t1": 321.089,
+   "text": "And the lover refuses all of it. He wants only to see the king's face.",
+   "poem": 4,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 321.539,
+   "t1": 327.518,
+   "text": "This is the difference between loving someone and loving what they can give you.",
+   "poem": 4,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 328.568,
+   "t1": 335.568,
+   "fa": [
+    "هوسی است در سر من که سر بشر ندارم",
+    "من از این هوس چنانم که ز خود خبر ندارم",
+    "دو هزار ملک بخشد شه عشق هر زمانی",
+    "من از او به جز جمالش طمعی دگر ندارم"
+   ],
+   "source": "Divan-e Shams · Ghazal 1620, couplets 1–2"
+  },
+  {
+   "kind": "chapter",
+   "t0": 336.068,
+   "t1": 340.068,
+   "n": 6,
+   "name": "Thorn and Rose",
+   "source": "Divan-e Shams · Ghazal 588, couplet 4"
+  },
+  {
+   "kind": "line",
+   "t0": 340.568,
+   "t1": 349.823,
+   "en_t0": 343.168,
+   "fa": "چو گلزار تو را دیدم چو خار و گل بروییدم",
+   "en": "When I saw your rose garden, I grew up like thorn and rose together;",
+   "poem": 5,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 349.823,
+   "t1": 358.921,
+   "en_t0": 352.423,
+   "fa": "چو خارم سوخت در عشقت گلم بر تو نثار آمد",
+   "en": "when my thorn burned in your love, my rose was scattered at your feet.",
+   "poem": 5,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 360.121,
+   "t1": 363.832,
+   "text": "We are all a mixture of thorn and rose.",
+   "poem": 5,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 364.282,
+   "t1": 367.858,
+   "text": "Rumi does not pretend otherwise.",
+   "poem": 5,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 368.308,
+   "t1": 375.118,
+   "text": "But in love the thorn burns away, and what is left, the rose, is offered as a gift.",
+   "poem": 5,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 375.568,
+   "t1": 382.828,
+   "text": "Love does not ask us to be perfect first. It burns what is sharp and keeps what is sweet.",
+   "poem": 5,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 383.878,
+   "t1": 390.878,
+   "fa": [
+    "چو گلزار تو را دیدم چو خار و گل بروییدم",
+    "چو خارم سوخت در عشقت گلم بر تو نثار آمد"
+   ],
+   "source": "Divan-e Shams · Ghazal 588, couplet 4"
+  },
+  {
+   "kind": "chapter",
+   "t0": 391.378,
+   "t1": 395.378,
+   "n": 7,
+   "name": "Where Is Love's Shop?",
+   "source": "Divan-e Shams · Ghazal 351, couplets 1 and 6"
+  },
+  {
+   "kind": "line",
+   "t0": 395.878,
+   "t1": 403.808,
+   "en_t0": 398.478,
+   "fa": "طبیب درد بی‌درمان کدام است",
+   "en": "Who is the physician for the pain that has no cure?",
+   "poem": 6,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 403.808,
+   "t1": 411.715,
+   "en_t0": 406.408,
+   "fa": "رفیق راه بی‌پایان کدام است",
+   "en": "Who is the companion on the road that has no end?",
+   "poem": 6,
+   "k": 1
+  },
+  {
+   "kind": "line",
+   "t0": 411.715,
+   "t1": 419.263,
+   "en_t0": 414.315,
+   "fa": "یکی جزو جهان خود بی‌مرض نیست",
+   "en": "Not one part of the world is free of sickness;",
+   "poem": 6,
+   "k": 2
+  },
+  {
+   "kind": "line",
+   "t0": 419.263,
+   "t1": 426.676,
+   "en_t0": 421.863,
+   "fa": "طبیب عشق را دکان کدام است",
+   "en": "so where is the shop of Love, the physician?",
+   "poem": 6,
+   "k": 3
+  },
+  {
+   "kind": "tafsir",
+   "t0": 427.876,
+   "t1": 431.408,
+   "text": "Rumi asks honest questions here.",
+   "poem": 6,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 431.858,
+   "t1": 436.714,
+   "text": "Some pain has no cure, and some roads have no end.",
+   "poem": 6,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 437.164,
+   "t1": 441.01,
+   "text": "Everything in the world is a little wounded.",
+   "poem": 6,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 441.46,
+   "t1": 450.336,
+   "text": "So he goes looking for love's shop, as a sick man looks for a doctor's door. The search itself is a kind of hope.",
+   "poem": 6,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 451.386,
+   "t1": 458.386,
+   "fa": [
+    "طبیب درد بی‌درمان کدام است",
+    "رفیق راه بی‌پایان کدام است",
+    "یکی جزو جهان خود بی‌مرض نیست",
+    "طبیب عشق را دکان کدام است"
+   ],
+   "source": "Divan-e Shams · Ghazal 351, couplets 1 and 6"
+  },
+  {
+   "kind": "chapter",
+   "t0": 458.886,
+   "t1": 462.886,
+   "n": 8,
+   "name": "Made of Love's Wine",
+   "source": "Divan-e Shams · Ghazal 683, couplet 9"
+  },
+  {
+   "kind": "line",
+   "t0": 463.386,
+   "t1": 472.147,
+   "en_t0": 465.986,
+   "fa": "منم مستی و اصل من می عشق",
+   "en": "I am drunkenness, and my origin is the wine of love;",
+   "poem": 7,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 472.147,
+   "t1": 479.74,
+   "en_t0": 474.747,
+   "fa": "بگو از می به جز مستی چه آید",
+   "en": "tell me, what can come from wine but drunkenness?",
+   "poem": 7,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 480.94,
+   "t1": 487.324,
+   "text": "In Sufi poetry, wine is the image of love that overwhelms the self.",
+   "poem": 7,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 487.774,
+   "t1": 491.462,
+   "text": "Rumi says he was made from that wine.",
+   "poem": 7,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 491.912,
+   "t1": 496.432,
+   "text": "So what else could he be, but intoxicated by it?",
+   "poem": 7,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 496.882,
+   "t1": 503.602,
+   "text": "It is his way of saying: love is not something I do. It is what I am made of.",
+   "poem": 7,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 504.652,
+   "t1": 511.652,
+   "fa": [
+    "منم مستی و اصل من می عشق",
+    "بگو از می به جز مستی چه آید"
+   ],
+   "source": "Divan-e Shams · Ghazal 683, couplet 9"
+  },
+  {
+   "kind": "outro",
+   "t0": 512.152,
+   "t1": 515.729,
+   "text": "Thank you for staying with these verses."
+  },
+  {
+   "kind": "outro",
+   "t0": 516.229,
+   "t1": 523.466,
+   "text": "Every week we share real passages of Rumi, translated honestly from the Persian."
+  },
+  {
+   "kind": "outro",
+   "t0": 523.966,
+   "t1": 528.216,
+   "text": "If they spoke to you, subscribe to The Guest House."
+  },
+  {
+   "kind": "end",
+   "t0": 512.152,
+   "t1": 531.716
+  }
+ ]
+}
