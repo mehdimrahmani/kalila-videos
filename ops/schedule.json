@@ -71,6 +71,13 @@
    "recorded": "2026-11-10 16:56"
   },
   {
+   "stream": "gh_pod_short",
+   "at": "2026-11-19 16:37",
+   "id": "VQin1d0Vr1w",
+   "note": "ep04 short3",
+   "recorded": "2026-11-11 16:54"
+  },
+  {
    "stream": "gh_rumi_short",
    "at": "2026-11-10 20:47",
    "id": "mpX-yFaiTYE",
@@ -317,6 +324,11 @@
    "day": "2026-11-11",
    "stream": "gh_longform",
    "id": "RXZFWe4I8C4"
+  },
+  {
+   "day": "2026-11-11",
+   "stream": "gh_pod_short",
+   "id": "VQin1d0Vr1w"
   }
  ]
 }
