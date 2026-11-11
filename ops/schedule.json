@@ -15,6 +15,13 @@
    "recorded": "2026-11-09 20:50"
   },
   {
+   "stream": "gh_longform",
+   "at": "2026-11-27 13:41",
+   "id": "RXZFWe4I8C4",
+   "note": "lf04",
+   "recorded": "2026-11-11 11:47"
+  },
+  {
    "stream": "gh_pod_full",
    "at": "2026-11-08 16:37",
    "id": "flOu1PUkFgc",
@@ -298,6 +305,11 @@
    "day": "2026-11-10",
    "stream": "kd_episode",
    "id": "V6bqzIuJJaM"
+  },
+  {
+   "day": "2026-11-11",
+   "stream": "gh_longform",
+   "id": "RXZFWe4I8C4"
   }
  ]
 }
