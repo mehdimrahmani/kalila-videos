@@ -1,0 +1,21 @@
+{
+ "header": "Rumi · Divan-e Shams",
+ "title": "Sit With the One Who Knows",
+ "theme": "candle",
+ "source": "Divan-e Shams · Ghazal 563",
+ "seed": 105,
+ "hook": "Rumi had one piece of advice about who to sit with.",
+ "segments": [
+  {"fa": "دلا نزد کسی بنشین که او از دل خبر دارد", "en": "O heart, sit near someone who knows the heart."},
+  {"fa": "به زیر آن درختی رو که او گل‌های تر دارد", "en": "Go under the tree that bears fresh flowers."},
+  {"fa": "به دکان کسی بنشین که در دکان شکر دارد", "en": "Sit at the shop of the one who has sugar."}
+ ],
+ "tafsir": [
+  "Rumi is speaking to his own heart.",
+  "In the full couplet, he warns: do not wander the perfume market like the idle.",
+  "So many stalls, so many voices. Do not drift from one to the next.",
+  "Find the one whose shop holds real sweetness, and stay.",
+  "This week in our serial, Shams comes back to Konya."
+ ],
+ "outro": {"say": "Shams and Rumi, the serial, is on our page. Follow The Guest House.", "title": "Shams & Rumi · the serial on our page"}
+}

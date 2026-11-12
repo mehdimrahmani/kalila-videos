@@ -1,2 +1,9 @@
 # Instagram run 2026-11-12 10:00:28 +0330
 - 06:30:28 setup: checkout main + pull OK
+- 06:31 setup: TTS model downloaded (onnx 325 MB, voices 28 MB); ffmpeg present; kokoro_onnx pip install started
+- 06:32 ledger: next ig_post = 2026-11-26 20:30 -> week = echo Tue 24 Nov, Part 6 card Thu 26 Nov, Part 6 Reel Sat 28 Nov
+- 06:33 verse check: candidate Part 6 = Divan Ghazal 36 "بروید ای حریفان"; echo = "دلا نزد کسی بنشین" (both unused in guesthouse/ and longform/ specs)
+- 06:38 ganjoor WebFetch FAILED: "PROVENANCE_REQUIRED. The permission request for this URL was not answered in time. The fetch tool said not to retry." (https://ganjoor.net/moulavi/shams/ghazalsh/sh36). Not retrying via curl (forbidden); trying WebSearch for verification.
+- 06:45 Metricool getScheduledPosts OK: Part 5 card 19 Nov + story, echo 17 Nov, Part 5 Reel 21 Nov present; nothing for 24-28 Nov -> Part 6 week
+- 06:47 Wikipedia/wikisource WebFetch also FAILED: "PROVENANCE_REQUIRED (source: target). The user did not answer an earlier permission request in time, so the request for this URL was not sent to them. Do not retry."
+- 06:50 DECISION: WebFetch is blocked in this unattended run; verified wording with exact-phrase WebSearch instead: Ghazal 163 c1 (ganjoor ?p=2787 title + query match) and c2 (exact-phrase -> Wikipedia "Rumi ghazal 163"); Ghazal 563 c1 (ganjoor ?p=3187 title, fa.wikisource) and c2 (exact-phrase -> quotewise/goodreads Rumi). Numbering from ganjoor post-id offset (2787->163 matches Wikipedia "Rumi ghazal 163"; 3187->563).
