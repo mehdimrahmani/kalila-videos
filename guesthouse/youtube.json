@@ -98,10 +98,13 @@
    "full": "x6vIk75qeN0",
    "short": "uhsaqwoUOT0",
    "date": "2026-11-22",
-   "extra_shorts": [],
+   "extra_shorts": [
+    "vgJjZar1uyA"
+   ],
    "slots": {
     "full": "2026-11-22 16:37",
-    "short": "2026-11-22 16:47"
+    "short": "2026-11-22 16:47",
+    "short2": "2026-11-24 16:37"
    }
   }
  ],
