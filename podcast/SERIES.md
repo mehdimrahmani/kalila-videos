@@ -23,7 +23,7 @@ Listed on (2 Nov 2026): Spotify https://open.spotify.com/show/18Hf8IqDkOBNni2WW3
 3. ✅ Folio 3: The Blind King Who Ruled Twice — what happened to Amir Muhammad (queued for 2026-11-08, live at once)
 4. ✅ Folio 4: The Judge Who Lied to Save a Life — Afshin and Bu Dulaf, the story Beyhaqi tells from the Abbasid court: how the judge Ahmad ibn Abi Duwad saved a man's life (queued for 2026-11-15)
 5. ✅ Folio 5: The Secretary Who Kept the Sultan's Secrets — Bu Nasr Moshkan, Beyhaqi's teacher, master of the royal chancery, and how a secretary survives at a dangerous court (queued for 2026-11-22)
-6. The Sultan and the Lion — Masud's famous hunting episode and what it says about him
+6. ✅ Folio 6: The Sultan and the Lion — Masud's famous hunting episode and what it says about him (queued for 2026-11-29)
 7. Altuntash of Khwarazm — loyalty, suspicion and a dying general
 8. The Seljuqs Arrive — nomads at the edge of the empire
 9. Dandanqan, 1040 — the battle that broke the Ghaznavids in Khorasan
