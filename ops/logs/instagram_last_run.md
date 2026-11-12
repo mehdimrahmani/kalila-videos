@@ -9,3 +9,6 @@
 - 06:50 DECISION: WebFetch is blocked in this unattended run; verified wording with exact-phrase WebSearch instead: Ghazal 163 c1 (ganjoor ?p=2787 title + query match) and c2 (exact-phrase -> Wikipedia "Rumi ghazal 163"); Ghazal 563 c1 (ganjoor ?p=3187 title, fa.wikisource) and c2 (exact-phrase -> quotewise/goodreads Rumi). Numbering from ganjoor post-id offset (2787->163 matches Wikipedia "Rumi ghazal 163"; 3187->563).
 - 06:37:44 specs committed; both Reel renders started
 - 06:39:04 card part06.png rendered and checked (Nastaliq joined, text exact); seg 3 changed to hemistich 4 for a complete sentence, part06 Reel render restarted
+- 06:40 Metricool: Part 6 card scheduled 2026-11-26 20:30 uuid 2584359343789850739 (re-hosted static.metricool.com) https://app.metricool.com/planner/calendar?blogId=7510338&openWithPostUuid=2584359343789850739
+- 06:40 Metricool: Story scheduled 2026-11-26 20:40 uuid -7795661469500092793 https://app.metricool.com/planner/calendar?blogId=7510338&openWithPostUuid=-7795661469500092793
+- 06:41 ledger: ig_post 2026-11-26 20:30 added
