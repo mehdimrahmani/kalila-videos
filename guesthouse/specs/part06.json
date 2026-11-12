@@ -4,7 +4,7 @@
  "theme": "dome",
  "source": "Divan-e Shams · Ghazal 163",
  "seed": 6,
- "hook": "Shams came back to Konya. Then he vanished, and no one ever found him.",
+ "hook": "Shams came back to Konya. Then he vanished, and no one found him.",
  "segments": [
   {
    "fa": "بروید ای حریفان بکشید یار ما را",
@@ -21,14 +21,13 @@
  ],
  "tafsir": [
   "Rumi sent his son, Sultan Walad, to Damascus to bring Shams home.",
-  "Sultan Walad later wrote that he walked on foot beside Shams's horse.",
-  "Many readers hear this ghazal as that call. We cannot be sure.",
-  "Konya celebrated. But the old jealousy soon came back.",
-  "Then, one day, Shams was gone. This time, for good.",
-  "Later legends say he was killed. Historians are not sure."
+  "Many hear this ghazal as that call. We cannot be sure.",
+  "Shams came back. But the old jealousy came back too.",
+  "Then one day, Shams was gone. This time, for good.",
+  "Legends say he was killed. Historians are not sure."
  ],
  "outro": {
-  "say": "Part seven. Rumi goes looking for him in Damascus. What does he find? Follow The Guest House.",
+  "say": "Part seven. Rumi searches Damascus. What does he find? Follow The Guest House.",
   "title": "Part 7 · Rumi searches, and finds Shams within"
  }
 }

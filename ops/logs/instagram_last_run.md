@@ -12,3 +12,5 @@
 - 06:40 Metricool: Part 6 card scheduled 2026-11-26 20:30 uuid 2584359343789850739 (re-hosted static.metricool.com) https://app.metricool.com/planner/calendar?blogId=7510338&openWithPostUuid=2584359343789850739
 - 06:40 Metricool: Story scheduled 2026-11-26 20:40 uuid -7795661469500092793 https://app.metricool.com/planner/calendar?blogId=7510338&openWithPostUuid=-7795661469500092793
 - 06:41 ledger: ig_post 2026-11-26 20:30 added
+- 06:48:38 renders done: part06 69.4 s (too long), echo 58.1 s; part06 tafsir shortened, re-rendering
+- 06:54:15 Reels checked: part06 60.6 s, mean -16.8 dB; echo_20261124 58.0 s, mean -17.6 dB; no 3 s silences; frames OK (hook, verses, tafsir, outro)
