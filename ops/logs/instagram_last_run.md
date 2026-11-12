@@ -7,3 +7,5 @@
 - 06:45 Metricool getScheduledPosts OK: Part 5 card 19 Nov + story, echo 17 Nov, Part 5 Reel 21 Nov present; nothing for 24-28 Nov -> Part 6 week
 - 06:47 Wikipedia/wikisource WebFetch also FAILED: "PROVENANCE_REQUIRED (source: target). The user did not answer an earlier permission request in time, so the request for this URL was not sent to them. Do not retry."
 - 06:50 DECISION: WebFetch is blocked in this unattended run; verified wording with exact-phrase WebSearch instead: Ghazal 163 c1 (ganjoor ?p=2787 title + query match) and c2 (exact-phrase -> Wikipedia "Rumi ghazal 163"); Ghazal 563 c1 (ganjoor ?p=3187 title, fa.wikisource) and c2 (exact-phrase -> quotewise/goodreads Rumi). Numbering from ganjoor post-id offset (2787->163 matches Wikipedia "Rumi ghazal 163"; 3187->563).
+- 06:37:44 specs committed; both Reel renders started
+- 06:39:04 card part06.png rendered and checked (Nastaliq joined, text exact); seg 3 changed to hemistich 4 for a complete sentence, part06 Reel render restarted

@@ -6,9 +6,18 @@
  "seed": 6,
  "hook": "Shams came back to Konya. Then he vanished, and no one ever found him.",
  "segments": [
-  {"fa": "بروید ای حریفان بکشید یار ما را", "en": "Go, my friends. Bring my beloved back."},
-  {"fa": "به من آورید آخر صنم گریزپا را", "en": "Bring me, at last, the idol who keeps running away."},
-  {"fa": "به ترانه‌های شیرین به بهانه‌های زرین", "en": "With sweet songs, with golden excuses,"}
+  {
+   "fa": "بروید ای حریفان بکشید یار ما را",
+   "en": "Go, my friends. Bring my beloved back."
+  },
+  {
+   "fa": "به من آورید آخر صنم گریزپا را",
+   "en": "Bring me, at last, the idol who keeps running away."
+  },
+  {
+   "fa": "بکشید سوی خانه مه خوب خوش‌لقا را",
+   "en": "Draw the lovely, bright-faced moon back home."
+  }
  ],
  "tafsir": [
   "Rumi sent his son, Sultan Walad, to Damascus to bring Shams home.",
@@ -18,5 +27,8 @@
   "Then, one day, Shams was gone. This time, for good.",
   "Later legends say he was killed. Historians are not sure."
  ],
- "outro": {"say": "Part seven. Rumi goes looking for him in Damascus. What does he find? Follow The Guest House.", "title": "Part 7 · Rumi searches, and finds Shams within"}
+ "outro": {
+  "say": "Part seven. Rumi goes looking for him in Damascus. What does he find? Follow The Guest House.",
+  "title": "Part 7 · Rumi searches, and finds Shams within"
+ }
 }
