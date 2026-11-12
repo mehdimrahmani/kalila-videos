@@ -29,6 +29,13 @@
    "recorded": "2026-11-11 11:47"
   },
   {
+   "stream": "gh_longform",
+   "at": "2026-12-04 13:41",
+   "id": "DPxJze67er8",
+   "note": "lf05",
+   "recorded": "2026-11-12 11:43"
+  },
+  {
    "stream": "gh_pod_full",
    "at": "2026-11-08 16:37",
    "id": "flOu1PUkFgc",
@@ -125,6 +132,13 @@
    "id": "-3200694385589858494",
    "note": "echo_20261117.mp4",
    "recorded": "2026-11-10 23:01"
+  },
+  {
+   "stream": "ig_echo_reel",
+   "at": "2026-11-24 20:30",
+   "id": "-5479903102007621251",
+   "note": "echo_20261124.mp4",
+   "recorded": "2026-11-12 10:25"
   },
   {
    "stream": "ig_part_reel",
@@ -272,13 +286,6 @@
    "id": "ep05",
    "note": "Folio 5: The Secretary Who Kept the Sultan's Secrets",
    "recorded": "2026-11-11 13:41"
-  },
-  {
-   "stream": "ig_echo_reel",
-   "at": "2026-11-24 20:30",
-   "id": "-5479903102007621251",
-   "note": "echo_20261124.mp4",
-   "recorded": "2026-11-12 10:25"
   }
  ],
  "uploads": [
@@ -386,6 +393,11 @@
    "day": "2026-11-11",
    "stream": "gh_lf_short",
    "id": "gJrjQXBPafY"
+  },
+  {
+   "day": "2026-11-12",
+   "stream": "gh_longform",
+   "id": "DPxJze67er8"
   }
  ]
 }
