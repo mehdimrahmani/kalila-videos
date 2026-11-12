@@ -14,3 +14,15 @@
 - 06:41 ledger: ig_post 2026-11-26 20:30 added
 - 06:48:38 renders done: part06 69.4 s (too long), echo 58.1 s; part06 tafsir shortened, re-rendering
 - 06:54:15 Reels checked: part06 60.6 s, mean -16.8 dB; echo_20261124 58.0 s, mean -17.6 dB; no 3 s silences; frames OK (hook, verses, tafsir, outro)
+- 06:54 Metricool: Part 6 Reel scheduled 2026-11-28 20:30 uuid -6100459285388439598 https://app.metricool.com/planner/calendar?blogId=7510338&openWithPostUuid=-6100459285388439598
+- 06:54 Metricool: echo Reel scheduled 2026-11-24 20:30 uuid -5479903102007621251 https://app.metricool.com/planner/calendar?blogId=7510338&openWithPostUuid=-5479903102007621251
+- 06:56 ledger: ig_part_reel 28 Nov (part06.mp4), ig_echo_reel 24 Nov (echo_20261124.mp4) added (negative uuid parsed as option by slots.py CLI -> fixed by editing schedule.json directly)
+
+## گزارش
+هفته‌ی ۳ تا ۷ آذر ۱۴۰۵ (۲۴ تا ۲۸ نوامبر ۲۰۲۶) پر شد — قسمت ۶ «بازگشت، و ناپدید شدن نهایی».
+- ریل اکو، سه‌شنبه ۳ آذر ۲۰:۳۰: «دلا نزد کسی بنشین که او از دل خبر دارد» (غزل ۵۶۳) — https://app.metricool.com/planner/calendar?blogId=7510338&openWithPostUuid=-5479903102007621251
+- کارت قسمت ۶، پنجشنبه ۵ آذر ۲۰:۳۰: «بروید ای حریفان بکشید یار ما را» (غزل ۱۶۳) — https://app.metricool.com/planner/calendar?blogId=7510338&openWithPostUuid=2584359343789850739
+- استوری، ۵ آذر ۲۰:۴۰ — https://app.metricool.com/planner/calendar?blogId=7510338&openWithPostUuid=-7795661469500092793
+- ریل قسمت ۶، شنبه ۷ آذر ۲۰:۳۰ — https://app.metricool.com/planner/calendar?blogId=7510338&openWithPostUuid=-6100459285388439598
+انبار: ig_post تا ۲۶ نوامبر، ig_part_reel تا ۲۸ نوامبر، ig_echo_reel تا ۲۴ نوامبر.
+مشکل: WebFetch به ganjoor/ویکی‌پدیا در اجرای خودکار مجاز نبود (PROVENANCE_REQUIRED)؛ متن ابیات با جست‌وجوی عبارت دقیق تأیید شد، نه با خواندن کامل صفحه‌ی گنجور.
