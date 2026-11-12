@@ -1,0 +1,638 @@
+{
+ "id": "lf05",
+ "duration": 486.383,
+ "fps": 30,
+ "events": [
+  {
+   "kind": "title",
+   "t0": 0.0,
+   "t1": 22.299,
+   "text": "Rumi on Silence: The Lesson of the Quiet Ones",
+   "sub": "Eight Persian Sufi poems with English translation",
+   "fa": "مولانا و خاموشی"
+  },
+  {
+   "kind": "intro",
+   "t0": 2.0,
+   "t1": 9.506,
+   "text": "Rumi wrote more than sixty thousand lines of poetry, and he kept telling himself to be quiet."
+  },
+  {
+   "kind": "intro",
+   "t0": 10.106,
+   "t1": 15.502,
+   "text": "Many of his ghazals end with one word: khamush. Silence."
+  },
+  {
+   "kind": "intro",
+   "t0": 16.102,
+   "t1": 21.699,
+   "text": "Here are eight passages about the wisdom that lives beyond words."
+  },
+  {
+   "kind": "chapter",
+   "t0": 23.799,
+   "t1": 27.799,
+   "n": 1,
+   "name": "The Lesson of the Silent",
+   "source": "Divan-e Shams · Ghazal 351, couplet 9"
+  },
+  {
+   "kind": "line",
+   "t0": 28.299,
+   "t1": 36.117,
+   "en_t0": 30.899,
+   "fa": "چه قبله کرده‌ای این گفت و گو را",
+   "en": "Why have you made all this talk your direction of prayer?",
+   "poem": 0,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 36.117,
+   "t1": 44.586,
+   "en_t0": 38.717,
+   "fa": "طلب کن درس خاموشان کدام است",
+   "en": "Go and find out: what is the lesson of the silent ones?",
+   "poem": 0,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 45.786,
+   "t1": 50.126,
+   "text": "A qibla is the direction you face when you pray.",
+   "poem": 0,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 50.576,
+   "t1": 56.128,
+   "text": "Rumi asks: why have you turned toward talking, as if it were sacred?",
+   "poem": 0,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 56.578,
+   "t1": 60.581,
+   "text": "There is a school where the silent ones teach.",
+   "poem": 0,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 61.031,
+   "t1": 67.527,
+   "text": "Their lesson cannot be explained. It can only be learned by becoming quiet.",
+   "poem": 0,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 68.577,
+   "t1": 75.577,
+   "fa": [
+    "چه قبله کرده‌ای این گفت و گو را",
+    "طلب کن درس خاموشان کدام است"
+   ],
+   "source": "Divan-e Shams · Ghazal 351, couplet 9"
+  },
+  {
+   "kind": "chapter",
+   "t0": 76.077,
+   "t1": 80.077,
+   "n": 2,
+   "name": "The Reed Without Its Companion",
+   "source": "Masnavi · Book I, §1, couplets 27–28"
+  },
+  {
+   "kind": "line",
+   "t0": 80.577,
+   "t1": 88.687,
+   "en_t0": 83.177,
+   "fa": "با لب دمساز خود گر جفتمی",
+   "en": "If I were joined to the lips of my true companion,",
+   "poem": 1,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 88.687,
+   "t1": 96.706,
+   "en_t0": 91.287,
+   "fa": "همچو نی من گفتنی‌ها گفتمی",
+   "en": "I too, like the reed, would say all that can be said.",
+   "poem": 1,
+   "k": 1
+  },
+  {
+   "kind": "line",
+   "t0": 96.706,
+   "t1": 104.389,
+   "en_t0": 99.306,
+   "fa": "هر که او از همزبانی شد جدا",
+   "en": "Whoever is parted from one who speaks their language",
+   "poem": 1,
+   "k": 2
+  },
+  {
+   "kind": "line",
+   "t0": 104.389,
+   "t1": 112.117,
+   "en_t0": 106.989,
+   "fa": "بی‌زبان شد گر چه دارد صد نوا",
+   "en": "becomes tongueless, though they have a hundred songs.",
+   "poem": 1,
+   "k": 3
+  },
+  {
+   "kind": "tafsir",
+   "t0": 113.317,
+   "t1": 119.229,
+   "text": "A reed flute only sings when it touches the lips of the one who plays it.",
+   "poem": 1,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 119.679,
+   "t1": 122.761,
+   "text": "Rumi says he is like that.",
+   "poem": 1,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 123.211,
+   "t1": 130.47,
+   "text": "Some silences are not empty. They are the silence of someone who has no one to speak to.",
+   "poem": 1,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 130.92,
+   "t1": 136.383,
+   "text": "When we find the person who speaks our language, the songs come back.",
+   "poem": 1,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 137.433,
+   "t1": 144.433,
+   "fa": [
+    "با لب دمساز خود گر جفتمی",
+    "همچو نی من گفتنی‌ها گفتمی",
+    "هر که او از همزبانی شد جدا",
+    "بی‌زبان شد گر چه دارد صد نوا"
+   ],
+   "source": "Masnavi · Book I, §1, couplets 27–28"
+  },
+  {
+   "kind": "chapter",
+   "t0": 144.933,
+   "t1": 148.933,
+   "n": 3,
+   "name": "The Raw and the Ripe",
+   "source": "Masnavi · Book I, §1, couplet 18"
+  },
+  {
+   "kind": "line",
+   "t0": 149.433,
+   "t1": 156.734,
+   "en_t0": 152.033,
+   "fa": "در نیابد حال پخته هیچ خام",
+   "en": "The raw cannot grasp the state of the ripe;",
+   "poem": 2,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 156.734,
+   "t1": 163.945,
+   "en_t0": 159.334,
+   "fa": "پس سخن کوتاه باید والسلام",
+   "en": "so the words must be brief. Farewell.",
+   "poem": 2,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 165.145,
+   "t1": 171.776,
+   "text": "Rumi often divides people into the raw and the cooked, the unripe and the ripe.",
+   "poem": 2,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 172.226,
+   "t1": 176.499,
+   "text": "Some things can only be understood by living them.",
+   "poem": 2,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 176.949,
+   "t1": 183.31,
+   "text": "Explaining them to someone who has not lived them is like describing a taste.",
+   "poem": 2,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 183.76,
+   "t1": 188.122,
+   "text": "So he stops. Not out of pride, but out of honesty.",
+   "poem": 2,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 189.172,
+   "t1": 196.172,
+   "fa": [
+    "در نیابد حال پخته هیچ خام",
+    "پس سخن کوتاه باید والسلام"
+   ],
+   "source": "Masnavi · Book I, §1, couplet 18"
+  },
+  {
+   "kind": "chapter",
+   "t0": 196.672,
+   "t1": 200.672,
+   "n": 4,
+   "name": "Sew My Mouth",
+   "source": "Divan-e Shams · Ghazal 1137, couplet 9"
+  },
+  {
+   "kind": "line",
+   "t0": 201.172,
+   "t1": 209.237,
+   "en_t0": 203.772,
+   "fa": "به سوزنی که دهان‌ها بدوخت در رمضان",
+   "en": "With the needle that sewed mouths shut in Ramadan,",
+   "poem": 3,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 209.237,
+   "t1": 216.964,
+   "en_t0": 211.837,
+   "fa": "بیا بدوز دهانم که سیرم از گفتار",
+   "en": "come, sew my mouth, for I am full of talking.",
+   "poem": 3,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 218.164,
+   "t1": 223.942,
+   "text": "During Ramadan, mouths close to food and drink from dawn to dusk.",
+   "poem": 3,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 224.392,
+   "t1": 229.338,
+   "text": "Rumi asks for a different fast: a fast from words.",
+   "poem": 3,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 229.788,
+   "t1": 234.801,
+   "text": "He says he is full, the way one is full after too much bread.",
+   "poem": 3,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 235.251,
+   "t1": 241.321,
+   "text": "Sometimes the soul needs to stop speaking the way the body needs to stop eating.",
+   "poem": 3,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 242.371,
+   "t1": 249.371,
+   "fa": [
+    "به سوزنی که دهان‌ها بدوخت در رمضان",
+    "بیا بدوز دهانم که سیرم از گفتار"
+   ],
+   "source": "Divan-e Shams · Ghazal 1137, couplet 9"
+  },
+  {
+   "kind": "chapter",
+   "t0": 249.871,
+   "t1": 253.871,
+   "n": 5,
+   "name": "Be Silent Like the Fish",
+   "source": "Divan-e Shams · Ghazal 1305, couplet 19"
+  },
+  {
+   "kind": "line",
+   "t0": 254.371,
+   "t1": 261.964,
+   "en_t0": 256.971,
+   "fa": "بس کن و چون ماهیان باش خموش اندر آب",
+   "en": "Enough. Be silent, like the fish in the water,",
+   "poem": 4,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 261.964,
+   "t1": 271.196,
+   "en_t0": 264.564,
+   "fa": "تا نه چو تابه شود بر سر نارم طواف",
+   "en": "so that my circling does not end like a pan's, turning over the fire.",
+   "poem": 4,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 272.396,
+   "t1": 276.466,
+   "text": "Fish live in water, and they live in silence.",
+   "poem": 4,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 276.916,
+   "t1": 283.637,
+   "text": "In this ghazal Rumi has been circling the beloved, like pilgrims circling the Kaaba.",
+   "poem": 4,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 284.087,
+   "t1": 290.852,
+   "text": "He warns himself: too many words, and the circling turns into frying over a fire.",
+   "poem": 4,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 291.302,
+   "t1": 296.158,
+   "text": "Stay in the water. Stay quiet. That is where life is.",
+   "poem": 4,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 297.208,
+   "t1": 304.208,
+   "fa": [
+    "بس کن و چون ماهیان باش خموش اندر آب",
+    "تا نه چو تابه شود بر سر نارم طواف"
+   ],
+   "source": "Divan-e Shams · Ghazal 1305, couplet 19"
+  },
+  {
+   "kind": "chapter",
+   "t0": 304.708,
+   "t1": 308.708,
+   "n": 6,
+   "name": "Leave the Tongue",
+   "source": "Divan-e Shams · Ghazal 2131, couplet 16"
+  },
+  {
+   "kind": "line",
+   "t0": 309.208,
+   "t1": 319.519,
+   "en_t0": 311.808,
+   "fa": "ای ناطقه بر بام و در تا کی روی در خانه پر",
+   "en": "O speaking soul, how long will you wander over roof and door? Fly into the house.",
+   "poem": 5,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 319.519,
+   "t1": 328.728,
+   "en_t0": 322.119,
+   "fa": "نطق زبان را ترک کن بی‌چانه شو بی‌چانه شو",
+   "en": "Leave the speech of the tongue. Be without a jaw, be without a jaw.",
+   "poem": 5,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 329.928,
+   "t1": 336.873,
+   "text": "The speaking part of us is restless. It runs over rooftops and knocks on doors.",
+   "poem": 5,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 337.323,
+   "t1": 342.651,
+   "text": "Rumi tells it to fly inside, into the house of the heart.",
+   "poem": 5,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 343.101,
+   "t1": 347.419,
+   "text": "His image is almost funny: become jawless.",
+   "poem": 5,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 347.869,
+   "t1": 352.748,
+   "text": "There is a way of knowing that does not need the mouth at all.",
+   "poem": 5,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 353.798,
+   "t1": 360.798,
+   "fa": [
+    "ای ناطقه بر بام و در تا کی روی در خانه پر",
+    "نطق زبان را ترک کن بی‌چانه شو بی‌چانه شو"
+   ],
+   "source": "Divan-e Shams · Ghazal 2131, couplet 16"
+  },
+  {
+   "kind": "chapter",
+   "t0": 361.298,
+   "t1": 365.298,
+   "n": 7,
+   "name": "When You Know Yourself",
+   "source": "Divan-e Shams · Ghazal 2400, couplet 14"
+  },
+  {
+   "kind": "line",
+   "t0": 365.798,
+   "t1": 373.93,
+   "en_t0": 368.398,
+   "fa": "ای دل ز خود چو باخبری رو خموش کن",
+   "en": "O heart, since you know yourself, go and be silent;",
+   "poem": 6,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 373.93,
+   "t1": 382.039,
+   "en_t0": 376.53,
+   "fa": "چون بی‌خبر مباش به اخبار آمده",
+   "en": "do not be like the unknowing, who arrive full of news.",
+   "poem": 6,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 383.239,
+   "t1": 387.512,
+   "text": "Those who know little often have the most to say.",
+   "poem": 6,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 387.962,
+   "t1": 394.009,
+   "text": "Rumi tells his heart: you have tasted something. Now be quiet about it.",
+   "poem": 6,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 394.459,
+   "t1": 400.236,
+   "text": "Real knowledge of the self tends to make people gentler and quieter.",
+   "poem": 6,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 400.686,
+   "t1": 405.407,
+   "text": "The news-bringers are loud. The ones who know are still.",
+   "poem": 6,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 406.457,
+   "t1": 413.457,
+   "fa": [
+    "ای دل ز خود چو باخبری رو خموش کن",
+    "چون بی‌خبر مباش به اخبار آمده"
+   ],
+   "source": "Divan-e Shams · Ghazal 2400, couplet 14"
+  },
+  {
+   "kind": "chapter",
+   "t0": 413.957,
+   "t1": 417.957,
+   "n": 8,
+   "name": "It Is Enough",
+   "source": "Divan-e Shams · Ghazal 3000, couplet 11"
+  },
+  {
+   "kind": "line",
+   "t0": 418.457,
+   "t1": 426.994,
+   "en_t0": 421.057,
+   "fa": "بیهوده چند گویی خاموش کن بس است",
+   "en": "How long will you talk in vain? Be silent. It is enough.",
+   "poem": 7,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 426.994,
+   "t1": 435.664,
+   "en_t0": 429.594,
+   "fa": "فرمان گفت نیست همان گیر که الکنی",
+   "en": "There is no command to speak. Imagine you were a stammerer.",
+   "poem": 7,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 436.864,
+   "t1": 442.103,
+   "text": "Rumi often closes a poem by scolding himself like this.",
+   "poem": 7,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 442.553,
+   "t1": 447.274,
+   "text": "No one ordered him to speak. He could simply stop.",
+   "poem": 7,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 447.724,
+   "t1": 452.85,
+   "text": "Imagine, he says, that you could not get the words out at all.",
+   "poem": 7,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 453.3,
+   "t1": 458.269,
+   "text": "And so we end where he would want us to end: in silence.",
+   "poem": 7,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 459.319,
+   "t1": 466.319,
+   "fa": [
+    "بیهوده چند گویی خاموش کن بس است",
+    "فرمان گفت نیست همان گیر که الکنی"
+   ],
+   "source": "Divan-e Shams · Ghazal 3000, couplet 11"
+  },
+  {
+   "kind": "outro",
+   "t0": 466.819,
+   "t1": 470.396,
+   "text": "Thank you for staying with these verses."
+  },
+  {
+   "kind": "outro",
+   "t0": 470.896,
+   "t1": 478.132,
+   "text": "Every week we share real passages of Rumi, translated honestly from the Persian."
+  },
+  {
+   "kind": "outro",
+   "t0": 478.632,
+   "t1": 482.883,
+   "text": "If they spoke to you, subscribe to The Guest House."
+  },
+  {
+   "kind": "end",
+   "t0": 466.819,
+   "t1": 486.383
+  }
+ ]
+}
