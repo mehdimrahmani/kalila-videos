@@ -1,0 +1,24 @@
+{
+ "header": "Shams & Rumi · Part 7",
+ "title": "The Search",
+ "theme": "paper",
+ "source": "Divan-e Shams · Ghazal 1493",
+ "seed": 7,
+ "hook": "Rumi crossed the mountains to Damascus, looking for one man.",
+ "segments": [
+  {"fa": "ما عاشق و سرگشته و شیدای دمشقیم", "en": "We are lovers, lost and mad for Damascus."},
+  {"fa": "جان داده و دل بسته سودای دمشقیم", "en": "We gave our soul. Our heart is bound to the longing for Damascus."}
+ ],
+ "tafsir": [
+  "Shams had vanished. Word said he might be in Damascus.",
+  "So Rumi went himself, and searched the city.",
+  "He did not find him.",
+  "His son, Sultan Walad, wrote what happened next.",
+  "Rumi stopped searching. He found Shams within himself.",
+  "From then on, he put Shams's name on his poems."
+ ],
+ "outro": {
+  "say": "Part eight. How did the Masnavi begin? Follow The Guest House.",
+  "title": "Part 8 · The Masnavi begins"
+ }
+}

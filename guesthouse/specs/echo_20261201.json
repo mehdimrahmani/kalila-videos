@@ -1,0 +1,20 @@
+{
+ "header": "Rumi · Divan-e Shams",
+ "title": "Whose House Is This?",
+ "theme": "reeds",
+ "source": "Divan-e Shams · Ghazal 332",
+ "seed": 106,
+ "hook": "Rumi asks a strange question about a house full of music.",
+ "segments": [
+  {"fa": "این خانه که پیوسته در او بانگ چغانه‌ست", "en": "This house, where the lute never stops playing,"},
+  {"fa": "از خواجه بپرسید که این خانه چه خانه‌ست", "en": "ask its master: what house is this?"}
+ ],
+ "tafsir": [
+  "The music never stops in this house.",
+  "So Rumi says: do not guess. Ask the master who lives here.",
+  "One reading: the house is the heart.",
+  "And the master is the one who lives inside it.",
+  "This week in our serial, Rumi searches far for Shams, and finds him close."
+ ],
+ "outro": {"say": "Shams and Rumi, the serial, is on our page. Follow The Guest House.", "title": "Shams & Rumi · the serial on our page"}
+}
