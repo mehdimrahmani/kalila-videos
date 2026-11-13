@@ -220,22 +220,17 @@
   "date": "2026-11-10",
   "title": "Welcome to The Guest House"
  },
- "lf_shorts": [
+ "lf_shorts": [],
+ "lf_shorts_withdrawn": [
   {
    "lf": "lf02",
    "poem": 1,
-   "video_id": "gJrjQXBPafY",
-   "date": "2026-11-13",
-   "title": "This body is a guest house: every morning a new guest comes running — Rumi #Shorts",
-   "publishAt": "2026-11-13 20:47"
+   "video_id": "gJrjQXBPafY"
   },
   {
    "lf": "lf02",
    "poem": 2,
-   "video_id": "m9D41aRRbFM",
-   "date": "2026-11-16",
-   "title": "Whatever comes into your heart is a guest. Treat it kindly — Rumi in the original Persian #Shorts",
-   "publishAt": "2026-11-16 20:47"
+   "video_id": "m9D41aRRbFM"
   }
  ]
 }

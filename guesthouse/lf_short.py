@@ -3,7 +3,7 @@
 
 usage: python3 guesthouse/lf_short.py LF_SPEC.json POEM_INDEX OUTDIR [FULL_VIDEO_ID]
   -> OUTDIR/<lfNN>_p<i>.mp4  (1080x1920, navy reel style of make_reel.py, ney + English narration,
-                               last 3 s: a "Watch the full reading" pill over the @handle line)
+                               last 3 s: a "Watch the full reading" pill in the top header band)
   -> OUTDIR/<lfNN>_p<i>.youtube.json  (draft meta: title, description with exact verses + link, tags)
 Verses come only from the long-form spec (already checked against ganjoor.net) — nothing is invented here.
 Poems already used as Shorts are listed in guesthouse/youtube.json "lf_shorts"; poems whose first Persian line
@@ -27,15 +27,19 @@ def main(spec_path, idx, outdir, video_id=None):
     dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration",
                                          "-of", "csv=p=0", raw]).decode())
     png = os.path.join(tempfile.mkdtemp(), "cta.png")
-    yt_endcard.card("", "Watch the full reading", png)   # pill only, placed over the @handle line
+    yt_endcard.card("", "Watch the full reading", png)   # pill only, placed in the top header band
     t0 = max(0.0, dur - 3.0)
     mid = os.path.join(tempfile.mkdtemp(), "mid.png"); yt_endcard.mid_pill("Subscribe for more Rumi", mid)
-    a, b = yt_endcard.mid_window(dur)       # a subscribe pill for ~4 s mid-way, over the @handle line
+    a, b = yt_endcard.mid_window(dur)       # a subscribe pill for ~4 s mid-way, in the top header band
+    # Both pills go to the TOP header band (y 200-430): YouTube's own title/channel/subscribe overlay covers the
+    # bottom ~25% of a Short, so anything drawn there is hidden (Mehdi, 13 Nov 2026). The header duplicates the
+    # title anyway, so a navy box hides it while a pill is shown.
+    box = "x=95:y=200:w=890:h=230:color=0x1B2140:t=fill"
     flt = (f"[1:v]format=rgba,fade=t=in:st={t0:.2f}:d=0.6:alpha=1[c];"
            f"[2:v]format=rgba,fade=t=in:st={a:.2f}:d=0.5:alpha=1,fade=t=out:st={b - 0.5:.2f}:d=0.5:alpha=1[m];"
-           f"[0:v][m]overlay=0:1562:enable='between(t,{a:.2f},{b:.2f})'[v0];"
-           f"[v0]drawbox=x=120:y=1585:w=840:h=75:color=0x1B2140:t=fill:enable='gte(t,{t0:.2f})'[b];"
-           f"[b][c]overlay=0:1422:enable='gte(t,{t0:.2f})'[v]")
+           f"[0:v]drawbox={box}:enable='between(t,{a:.2f},{b:.2f})+gte(t,{t0:.2f})'[v00];"
+           f"[v00][m]overlay=0:255:enable='between(t,{a:.2f},{b:.2f})'[v0];"
+           f"[v0][c]overlay=0:115:enable='gte(t,{t0:.2f})'[v]")
     subprocess.check_call(["ffmpeg", "-v", "error", "-y", "-i", raw, "-loop", "1", "-t", f"{dur:.2f}", "-i", png,
                            "-loop", "1", "-t", f"{dur:.2f}", "-i", mid,
                            "-filter_complex", flt, "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-crf", "19",

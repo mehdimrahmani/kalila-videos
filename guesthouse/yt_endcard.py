@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """YouTube-only copy of a Guest House Reel with a subscribe call-to-action over the outro,
-plus a small "Subscribe for more Rumi" pill for ~4 s in the middle (over the @handle line).
+plus a small "Subscribe for more Rumi" pill for ~4 s in the middle (in the upper half, clear of YouTube's own overlay).
 The Instagram Reel itself is never changed: the output goes to a separate (temp) file.
 
 usage: python3 guesthouse/yt_endcard.py REEL.mp4 SPEC.json OUT.mp4
@@ -35,7 +35,7 @@ def card(line1, line2, path):
     out = Image.alpha_composite(glow, im); out.save(path)
 
 def mid_pill(text, path):
-    """Small opaque lapis pill shown for a few seconds in the middle of a Short, over the @handle line
+    """Small opaque lapis pill shown for a few seconds in the middle of a Short (upper half)
     (many viewers swipe away before the end card; Mehdi 10 Nov 2026)."""
     W, H = 1080, 120
     im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
@@ -67,7 +67,8 @@ def main(reel, spec_path, out):
     line1 = f"Part {int(m.group(1)) + 1} is coming" if m else "The story of Shams & Rumi"
     dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration",
                                          "-of", "csv=p=0", reel]).decode())
-    if light_outro(reel, dur):   # parchment-style Reels: their own outro text sits where line 1 would go
+    light = light_outro(reel, dur)
+    if light:   # parchment-style Reels: their own outro text sits where line 1 would go
         line1 = ""
     png = os.path.join(tempfile.mkdtemp(), "cta.png"); card(line1, "Subscribe to follow the story", png)
     t0 = max(0.0, dur - 3.0)
@@ -75,8 +76,10 @@ def main(reel, spec_path, out):
     a, b = mid_window(dur)
     flt = (f"[1:v]format=rgba,fade=t=in:st={t0:.2f}:d=0.6:alpha=1[c];"
            f"[2:v]format=rgba,fade=t=in:st={a:.2f}:d=0.5:alpha=1,fade=t=out:st={b - 0.5:.2f}:d=0.5:alpha=1[m];"
-           f"[0:v][m]overlay=0:H*0.906-60:enable='between(t,{a:.2f},{b:.2f})'[v0];"
-           f"[v0][c]overlay=0:H*0.69:enable='gte(t,{t0:.2f})'[v]")
+           f"[0:v][m]overlay=0:{650 if light else 'H*0.40'}:enable='between(t,{a:.2f},{b:.2f})'[v0];"
+           f"[v0][c]overlay=0:{510 if light else 'H*0.36'}:enable='gte(t,{t0:.2f})'[v]")
+    # Pills sit in the upper half: YouTube's title/channel/subscribe overlay hides the bottom ~25% of a Short
+    # (Mehdi, 13 Nov 2026). Parchment Reels: between the shamsa medallion and the header label.
     subprocess.check_call(["ffmpeg", "-v", "error", "-y", "-i", reel, "-loop", "1", "-t", f"{dur:.2f}", "-i", png,
                            "-loop", "1", "-t", f"{dur:.2f}", "-i", mid,
                            "-filter_complex", flt, "-map", "[v]", "-map", "0:a", "-c:v", "libx264", "-crf", "19",
