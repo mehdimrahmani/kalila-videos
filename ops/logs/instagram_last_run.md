@@ -6,3 +6,4 @@
 - verify: Ghazal 332 c1 — "این خانه که پیوسته در او بانگ چغانه‌ست" -> ganjoor.net/?p=2956 title exact (=332); 2nd "از خواجه بپرسید که این خانه چه خانه‌ست" -> ganjoor ?p=2956. VERIFIED
 - rejected (2nd hemistich unverified): Ghazal 1077 "از کنار خویش...", Ghazal 1335 "بانگ زدم نیم شبان...", Masnavi II "ای برادر تو همان اندیشه‌ای" (wording variants)
 - 02:20Z specs part07.json (paper) + echo_20261201.json (reeds, seed 106) written
+- 02:20Z card part07.png made + inspected (Nastaliq joined, words exact, nothing cut); both Reel renders started in background
