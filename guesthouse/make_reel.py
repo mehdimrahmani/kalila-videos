@@ -75,7 +75,7 @@ def build(spec, out):
     global DUR
     voice = None
     if spec.get("voice", True) and spec.get("en"):
-        voice = narrate(spec.get("voice_text") or " ... ".join(spec["en"]))
+        voice = narrate(spec.get("voice_text") or " ... ".join(spec["en"]), style=spec.get("voice_style", "lewis"))
         if voice is not None:
             DUR = max(16.0, round(t_en + len(voice) / 44100 + 1.6, 1))
     wav = os.path.join(tmpd, "ney.wav"); ney(wav, spec.get("seed", 1), voice=voice, t_voice=t_en)
@@ -175,26 +175,37 @@ def daf(N, sr, rng):
         t0 += step; i += 1
     return out * 0.55
 
-TTS_DIRS = [os.path.join(HERE, "..", "pipeline", "tts"), "/home/claude/kalila_test/tts"]
-def narrate(text, sr=44100):
-    """Deep, slightly husky male English narration (Kokoro am_onyx), resampled to 44.1 kHz."""
+TTS_DIRS = [os.path.join(HERE, "..", "pipeline", "tts"), os.path.join(HERE, "tts"), "/home/claude/kalila_test/tts"]
+EPIC_VOICES = {   # Mehdi, 13 Nov 2026: a deep, strong, "epic" male voice; he chose these two, alternating
+    "lewis": [("bm_lewis", 1.0)],
+    "george_lewis": [("bm_george", 0.5), ("bm_lewis", 0.5)],
+}
+_KOK = None
+def narrate(text, sr=44100, style="lewis"):
+    """Deep, epic British male narration (Kokoro bm_lewis, or bm_george+bm_lewis), slightly deepened, with chest
+    warmth and a large-hall reverb, at 44.1 kHz. (The old am_onyx voice with grit/distortion was rejected.)"""
+    global _KOK
     try:
         from kokoro_onnx import Kokoro
     except ImportError:
         return None
-    for d in TTS_DIRS:
-        m, v = os.path.join(d, "kokoro-v1.0.onnx"), os.path.join(d, "voices-v1.0.bin")
-        if os.path.exists(m) and os.path.exists(v): break
-    else:
-        return None
-    a, r = Kokoro(m, v).create(text, voice="am_onyx", speed=0.82, lang="en-us")
-    f = 0.9 * r / sr                                  # pitch down ~10% while resampling
+    if _KOK is None:
+        for d in TTS_DIRS:
+            m, v = os.path.join(d, "kokoro-v1.0.onnx"), os.path.join(d, "voices-v1.0.bin")
+            if os.path.exists(m) and os.path.exists(v): _KOK = Kokoro(m, v); break
+        else:
+            return None
+    st = sum(w * _KOK.get_voice_style(n) for n, w in EPIC_VOICES.get(style, EPIC_VOICES["lewis"]))
+    a, r = _KOK.create(text, voice=st, speed=0.9, lang="en-gb")
+    from scipy.signal import butter, sosfilt
+    import make_reel_cinematic as MC
+    f = 0.97 * r / sr                                  # a touch deeper while resampling
     n = int(len(a) / f); a = np.interp(np.arange(n) * f, np.arange(len(a)), a)
-    envl = np.convolve(np.abs(a), np.ones(400) / 400, "same")
-    grit = np.convolve(np.random.default_rng(1).standard_normal(len(a)), np.ones(3) / 3, "same") * envl * 0.35
-    y = np.tanh((a + grit) * 2.2) / np.tanh(2.2)
-    y = np.convolve(y, [0.6, 0.3, 0.1], "same")
-    return y / (np.abs(y).max() + 1e-9) * 0.9
+    a = a + 0.45 * sosfilt(butter(2, 220, "low", fs=sr, output="sos"), a)      # chest
+    a = sosfilt(butter(2, 10000, "low", fs=sr, output="sos"), a)
+    a = a / (np.abs(a).max() + 1e-9); a = np.tanh(a * 1.2) / np.tanh(1.2)
+    a = MC.reverb(np.r_[a, np.zeros(sr)], 2.4, 0.28, 5)
+    return a / (np.abs(a).max() + 1e-9) * 0.9
 
 if __name__ == "__main__":
     build(json.load(open(sys.argv[1], encoding="utf-8")), sys.argv[2])

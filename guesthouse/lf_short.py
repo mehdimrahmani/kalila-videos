@@ -20,7 +20,9 @@ def main(spec_path, idx, outdir, video_id=None):
     base = os.path.join(outdir, f"{lf['id']}_p{i + 1}")
     reel = {"header": lf["title"].split(":")[0], "title": p["name"],
             "fa": [l["fa"] for l in p["lines"]], "en": [l["en"] for l in p["lines"]],
-            "source": p["source"].replace(" · ", ", "), "seed": lf.get("seed", 1) * 10 + i}
+            "source": p["source"].replace(" · ", ", "), "seed": lf.get("seed", 1) * 10 + i,
+            # voices alternate Short by Short (Mehdi, 13 Nov 2026: "4 is better, 2 is good too, alternate them")
+            "voice_style": "lewis" if (int("".join(c for c in lf["id"] if c.isdigit()) or 0) + i) % 2 == 0 else "george_lewis"}
     raw = base + "_raw.mp4"
     make_reel.build(reel, raw)
     # end card: point to the full long-form video
