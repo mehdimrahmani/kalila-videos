@@ -141,6 +141,13 @@
    "recorded": "2026-11-12 16:46"
   },
   {
+   "stream": "gh_pod_short",
+   "at": "2026-11-29 16:47",
+   "id": "qS8iCTNuIMk",
+   "note": "ep06 cold-open Short",
+   "recorded": "2026-11-13 18:39"
+  },
+  {
    "stream": "gh_rumi_short",
    "at": "2026-11-10 20:47",
    "id": "mpX-yFaiTYE",
@@ -503,6 +510,11 @@
    "day": "2026-11-13",
    "stream": "gh_lf_short",
    "id": "k09kWQYzK1I"
+  },
+  {
+   "day": "2026-11-13",
+   "stream": "gh_pod_short",
+   "id": "qS8iCTNuIMk"
   }
  ]
 }
