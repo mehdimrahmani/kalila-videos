@@ -1,0 +1,704 @@
+{
+ "id": "lf06",
+ "duration": 536.903,
+ "fps": 30,
+ "events": [
+  {
+   "kind": "title",
+   "t0": 0.0,
+   "t1": 24.051,
+   "text": "Rumi on Grief and Separation: When the Beloved Is Gone",
+   "sub": "Eight Persian Sufi poems with English translation",
+   "fa": "مولانا و غم هجران"
+  },
+  {
+   "kind": "intro",
+   "t0": 2.0,
+   "t1": 10.045,
+   "text": "Rumi knew loss. Shams of Tabriz, the friend who changed his life, disappeared and never came back."
+  },
+  {
+   "kind": "intro",
+   "t0": 10.645,
+   "t1": 15.659,
+   "text": "Many of his most moving poems were written in that absence."
+  },
+  {
+   "kind": "intro",
+   "t0": 16.259,
+   "t1": 23.451,
+   "text": "Here are eight passages about grief, separation, and the tears that make gardens grow."
+  },
+  {
+   "kind": "chapter",
+   "t0": 25.551,
+   "t1": 29.551,
+   "n": 1,
+   "name": "A Heart Torn by Separation",
+   "source": "Masnavi · Book I, §1, couplet 3"
+  },
+  {
+   "kind": "line",
+   "t0": 30.051,
+   "t1": 38.115,
+   "en_t0": 32.651,
+   "fa": "سینه خواهم شرحه‌شرحه از فراق",
+   "en": "I want a heart torn piece by piece by separation,",
+   "poem": 0,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 38.115,
+   "t1": 45.125,
+   "en_t0": 40.715,
+   "fa": "تا بگویم شرح درد اشتیاق",
+   "en": "so that I can tell the pain of longing.",
+   "poem": 0,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 46.325,
+   "t1": 51.832,
+   "text": "This is the reed flute speaking, in the opening of the Masnavi.",
+   "poem": 0,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 52.282,
+   "t1": 56.914,
+   "text": "It does not want to explain longing to just anyone.",
+   "poem": 0,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 57.364,
+   "t1": 62.984,
+   "text": "Only someone who has been torn by separation can understand it.",
+   "poem": 0,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 63.434,
+   "t1": 70.087,
+   "text": "Grief makes us able to hear other people's grief. That is one of its strange gifts.",
+   "poem": 0,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 71.137,
+   "t1": 78.137,
+   "fa": [
+    "سینه خواهم شرحه‌شرحه از فراق",
+    "تا بگویم شرح درد اشتیاق"
+   ],
+   "source": "Masnavi · Book I, §1, couplet 3"
+  },
+  {
+   "kind": "chapter",
+   "t0": 78.637,
+   "t1": 82.637,
+   "n": 2,
+   "name": "Take My Hand",
+   "source": "Divan-e Shams · Ghazal 1659, couplets 1 and 3"
+  },
+  {
+   "kind": "line",
+   "t0": 83.137,
+   "t1": 90.82,
+   "en_t0": 85.737,
+   "fa": "دست من گیر ای پسر خوش نیستم",
+   "en": "Take my hand, young friend. I am not well.",
+   "poem": 1,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 90.82,
+   "t1": 98.211,
+   "en_t0": 93.42,
+   "fa": "ای قد تو چون شجر خوش نیستم",
+   "en": "O you, tall as a tree, I am not well.",
+   "poem": 1,
+   "k": 1
+  },
+  {
+   "kind": "line",
+   "t0": 98.211,
+   "t1": 105.939,
+   "en_t0": 100.811,
+   "fa": "تا تو رفتی قوت و صبرم برفت",
+   "en": "Since you left, my strength and my patience left;",
+   "poem": 1,
+   "k": 2
+  },
+  {
+   "kind": "line",
+   "t0": 105.939,
+   "t1": 112.903,
+   "en_t0": 108.539,
+   "fa": "تا تو رفتی من دگر خوش نیستم",
+   "en": "since you left, I have not been well.",
+   "poem": 1,
+   "k": 3
+  },
+  {
+   "kind": "tafsir",
+   "t0": 114.103,
+   "t1": 118.824,
+   "text": "These are some of the simplest words Rumi ever wrote.",
+   "poem": 1,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 119.274,
+   "t1": 124.58,
+   "text": "No grand images. Only: take my hand, I am not well.",
+   "poem": 1,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 125.03,
+   "t1": 129.999,
+   "text": "Grief often speaks like this, plainly, again and again.",
+   "poem": 1,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 130.449,
+   "t1": 137.484,
+   "text": "There is no shame in saying it. Sometimes saying it is the first step toward being held.",
+   "poem": 1,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 138.534,
+   "t1": 145.534,
+   "fa": [
+    "دست من گیر ای پسر خوش نیستم",
+    "ای قد تو چون شجر خوش نیستم",
+    "تا تو رفتی قوت و صبرم برفت",
+    "تا تو رفتی من دگر خوش نیستم"
+   ],
+   "source": "Divan-e Shams · Ghazal 1659, couplets 1 and 3"
+  },
+  {
+   "kind": "chapter",
+   "t0": 146.034,
+   "t1": 150.034,
+   "n": 3,
+   "name": "Leave Me Alone",
+   "source": "Divan-e Shams · Ghazal 2039, couplets 1–2"
+  },
+  {
+   "kind": "line",
+   "t0": 150.534,
+   "t1": 158.261,
+   "en_t0": 153.134,
+   "fa": "رو سر بنه به بالین تنها مرا رها کن",
+   "en": "Go, lay your head on the pillow, and leave me alone;",
+   "poem": 2,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 158.261,
+   "t1": 166.079,
+   "en_t0": 160.861,
+   "fa": "ترک من خراب شبگرد مبتلا کن",
+   "en": "leave me, ruined, wandering the night, afflicted.",
+   "poem": 2,
+   "k": 1
+  },
+  {
+   "kind": "line",
+   "t0": 166.079,
+   "t1": 175.086,
+   "en_t0": 168.679,
+   "fa": "ماییم و موج سودا شب تا به روز تنها",
+   "en": "Here I am with the waves of longing, alone from night till day.",
+   "poem": 2,
+   "k": 2
+  },
+  {
+   "kind": "line",
+   "t0": 175.086,
+   "t1": 182.837,
+   "en_t0": 177.686,
+   "fa": "خواهی بیا ببخشا خواهی برو جفا کن",
+   "en": "Come and forgive if you wish, or go and be cruel.",
+   "poem": 2,
+   "k": 3
+  },
+  {
+   "kind": "tafsir",
+   "t0": 184.037,
+   "t1": 189.14,
+   "text": "Many believe this ghazal was written in Rumi's last days.",
+   "poem": 2,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 189.59,
+   "t1": 195.502,
+   "text": "He tells a loved one to go and sleep, and leave him with his sleeplessness.",
+   "poem": 2,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 195.952,
+   "t1": 202.133,
+   "text": "Waves of longing all night. And no demand of the beloved: come, or go.",
+   "poem": 2,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 202.583,
+   "t1": 207.911,
+   "text": "Grief can feel like this: too tired even to ask for anything.",
+   "poem": 2,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 208.961,
+   "t1": 215.961,
+   "fa": [
+    "رو سر بنه به بالین تنها مرا رها کن",
+    "ترک من خراب شبگرد مبتلا کن",
+    "ماییم و موج سودا شب تا به روز تنها",
+    "خواهی بیا ببخشا خواهی برو جفا کن"
+   ],
+   "source": "Divan-e Shams · Ghazal 2039, couplets 1–2"
+  },
+  {
+   "kind": "chapter",
+   "t0": 216.461,
+   "t1": 220.461,
+   "n": 4,
+   "name": "A Pain With No Cure",
+   "source": "Divan-e Shams · Ghazal 2039, couplets 6–7"
+  },
+  {
+   "kind": "line",
+   "t0": 220.961,
+   "t1": 228.757,
+   "en_t0": 223.561,
+   "fa": "بر شاه خوبرویان واجب وفا نباشد",
+   "en": "The king of the beautiful owes no faithfulness;",
+   "poem": 3,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 228.757,
+   "t1": 236.956,
+   "en_t0": 231.357,
+   "fa": "ای زردروی عاشق تو صبر کن وفا کن",
+   "en": "O pale-faced lover, you be patient, you be faithful.",
+   "poem": 3,
+   "k": 1
+  },
+  {
+   "kind": "line",
+   "t0": 236.956,
+   "t1": 244.594,
+   "en_t0": 239.556,
+   "fa": "دردیست غیر مردن آن را دوا نباشد",
+   "en": "There is a pain that has no cure but dying;",
+   "poem": 3,
+   "k": 2
+  },
+  {
+   "kind": "line",
+   "t0": 244.594,
+   "t1": 251.67,
+   "en_t0": 247.194,
+   "fa": "پس من چگونه گویم کاین درد را دوا کن",
+   "en": "so how can I say: cure this pain?",
+   "poem": 3,
+   "k": 3
+  },
+  {
+   "kind": "tafsir",
+   "t0": 252.87,
+   "t1": 257.412,
+   "text": "From the same ghazal, Rumi admits something hard.",
+   "poem": 3,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 257.862,
+   "t1": 263.033,
+   "text": "Some pain cannot be fixed, and he will not pretend it can.",
+   "poem": 3,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 263.483,
+   "t1": 269.126,
+   "text": "What is asked of the lover is not to be cured, but to stay faithful.",
+   "poem": 3,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 269.576,
+   "t1": 276.049,
+   "text": "There is a dignity in that. Carrying a grief faithfully is also a form of love.",
+   "poem": 3,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 277.099,
+   "t1": 284.099,
+   "fa": [
+    "بر شاه خوبرویان واجب وفا نباشد",
+    "ای زردروی عاشق تو صبر کن وفا کن",
+    "دردیست غیر مردن آن را دوا نباشد",
+    "پس من چگونه گویم کاین درد را دوا کن"
+   ],
+   "source": "Divan-e Shams · Ghazal 2039, couplets 6–7"
+  },
+  {
+   "kind": "chapter",
+   "t0": 284.599,
+   "t1": 288.599,
+   "n": 5,
+   "name": "Like a Candle",
+   "source": "Divan-e Shams · Ghazal 1760, couplets 5–6"
+  },
+  {
+   "kind": "line",
+   "t0": 289.099,
+   "t1": 295.839,
+   "en_t0": 291.699,
+   "fa": "که از آن دم که تو سفر کردی",
+   "en": "For since the moment you went away,",
+   "poem": 4,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 295.839,
+   "t1": 303.993,
+   "en_t0": 298.439,
+   "fa": "از حلاوت جدا شدیم چو موم",
+   "en": "we have been parted from sweetness, like wax from honey.",
+   "poem": 4,
+   "k": 1
+  },
+  {
+   "kind": "line",
+   "t0": 303.993,
+   "t1": 310.957,
+   "en_t0": 306.593,
+   "fa": "همه شب همچو شمع می‌سوزیم",
+   "en": "All night we burn like a candle,",
+   "poem": 4,
+   "k": 2
+  },
+  {
+   "kind": "line",
+   "t0": 310.957,
+   "t1": 318.595,
+   "en_t0": 313.557,
+   "fa": "ز آتشش جفت وز انگبین محروم",
+   "en": "joined to its fire and cut off from its honey.",
+   "poem": 4,
+   "k": 3
+  },
+  {
+   "kind": "tafsir",
+   "t0": 319.795,
+   "t1": 325.078,
+   "text": "Candles were made of beeswax, the wax that once held honey.",
+   "poem": 4,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 325.528,
+   "t1": 332.9,
+   "text": "Rumi says: since you left, I am that wax. The honey is gone. Only the burning is left.",
+   "poem": 4,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 333.35,
+   "t1": 338.947,
+   "text": "It is one of the most precise pictures of grief in Persian poetry.",
+   "poem": 4,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 339.397,
+   "t1": 345.96,
+   "text": "Yet a candle that burns also gives light. Even this pain is not useless.",
+   "poem": 4,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 347.01,
+   "t1": 354.01,
+   "fa": [
+    "که از آن دم که تو سفر کردی",
+    "از حلاوت جدا شدیم چو موم",
+    "همه شب همچو شمع می‌سوزیم",
+    "ز آتشش جفت وز انگبین محروم"
+   ],
+   "source": "Divan-e Shams · Ghazal 1760, couplets 5–6"
+  },
+  {
+   "kind": "chapter",
+   "t0": 354.51,
+   "t1": 358.51,
+   "n": 6,
+   "name": "Pearls From the Eyes",
+   "source": "Divan-e Shams · Ghazal 1620, couplet 6"
+  },
+  {
+   "kind": "line",
+   "t0": 359.01,
+   "t1": 367.794,
+   "en_t0": 361.61,
+   "fa": "ز فراق جان من گر ز دو دیده در فشاند",
+   "en": "If, from separation, my soul pours pearls from both eyes,",
+   "poem": 5,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 367.794,
+   "t1": 376.487,
+   "en_t0": 370.394,
+   "fa": "تو گمان مبر که از وی دل پرگهر ندارم",
+   "en": "do not imagine that my heart is no longer full of jewels.",
+   "poem": 5,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 377.687,
+   "t1": 382.162,
+   "text": "In Persian poetry tears are often called pearls.",
+   "poem": 5,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 382.612,
+   "t1": 388.524,
+   "text": "Rumi is weeping. But he says: do not think the weeping has emptied me.",
+   "poem": 5,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 388.974,
+   "t1": 392.281,
+   "text": "The heart that weeps is still full.",
+   "poem": 5,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 392.731,
+   "t1": 400.147,
+   "text": "Grief does not mean we have lost the treasure. It is often the sign of how much we still hold.",
+   "poem": 5,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 401.197,
+   "t1": 408.197,
+   "fa": [
+    "ز فراق جان من گر ز دو دیده در فشاند",
+    "تو گمان مبر که از وی دل پرگهر ندارم"
+   ],
+   "source": "Divan-e Shams · Ghazal 1620, couplet 6"
+  },
+  {
+   "kind": "chapter",
+   "t0": 408.697,
+   "t1": 412.697,
+   "n": 7,
+   "name": "Where Were You?",
+   "source": "Divan-e Shams · Ghazal 588, couplet 7"
+  },
+  {
+   "kind": "line",
+   "t0": 413.197,
+   "t1": 421.217,
+   "en_t0": 415.797,
+   "fa": "توی شاها و دیرینه مقام تست این سینه",
+   "en": "You are the king, and this chest has long been your home;",
+   "poem": 6,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 421.217,
+   "t1": 430.18,
+   "en_t0": 423.817,
+   "fa": "نمی‌گویی کجا بودی که جان بی‌تو نزار آمد",
+   "en": "will you not say where you were? Without you, the soul has grown thin.",
+   "poem": 6,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 431.38,
+   "t1": 436.034,
+   "text": "Here the lover speaks to someone who has finally come back.",
+   "poem": 6,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 436.484,
+   "t1": 441.34,
+   "text": "This heart was always your home, he says. Where were you?",
+   "poem": 6,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 441.79,
+   "t1": 446.085,
+   "text": "There is reproach in it, and relief, and tenderness.",
+   "poem": 6,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 446.535,
+   "t1": 452.919,
+   "text": "Grief and joy often meet at the door like this, when the absent one returns.",
+   "poem": 6,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 453.969,
+   "t1": 460.969,
+   "fa": [
+    "توی شاها و دیرینه مقام تست این سینه",
+    "نمی‌گویی کجا بودی که جان بی‌تو نزار آمد"
+   ],
+   "source": "Divan-e Shams · Ghazal 588, couplet 7"
+  },
+  {
+   "kind": "chapter",
+   "t0": 461.469,
+   "t1": 465.469,
+   "n": 8,
+   "name": "Two Springs",
+   "source": "Divan-e Shams · Ghazal 2500, couplet 10"
+  },
+  {
+   "kind": "line",
+   "t0": 465.969,
+   "t1": 475.358,
+   "en_t0": 468.569,
+   "fa": "گلستان و گل و ریحان نروید جز ز دست تو",
+   "en": "Rose gardens, roses and sweet herbs grow only from your hand;",
+   "poem": 7,
+   "k": 0
+  },
+  {
+   "kind": "line",
+   "t0": 475.358,
+   "t1": 484.119,
+   "en_t0": 477.958,
+   "fa": "دو چشمه داری ای چهره چرا پرنم نمی‌گردی",
+   "en": "you have two springs, O face: why do you not fill with tears?",
+   "poem": 7,
+   "k": 1
+  },
+  {
+   "kind": "tafsir",
+   "t0": 485.319,
+   "t1": 489.973,
+   "text": "Rumi ends this ghazal with a surprising question.",
+   "poem": 7,
+   "first": true
+  },
+  {
+   "kind": "tafsir",
+   "t0": 490.423,
+   "t1": 496.043,
+   "text": "Your two eyes are springs of water, he says. Why are they dry?",
+   "poem": 7,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 496.493,
+   "t1": 501.462,
+   "text": "For him, tears are not weakness. They water the garden.",
+   "poem": 7,
+   "first": false
+  },
+  {
+   "kind": "tafsir",
+   "t0": 501.912,
+   "t1": 508.79,
+   "text": "Let them come. What grows after grief can be more beautiful than what was there before.",
+   "poem": 7,
+   "first": false
+  },
+  {
+   "kind": "breath",
+   "t0": 509.84,
+   "t1": 516.84,
+   "fa": [
+    "گلستان و گل و ریحان نروید جز ز دست تو",
+    "دو چشمه داری ای چهره چرا پرنم نمی‌گردی"
+   ],
+   "source": "Divan-e Shams · Ghazal 2500, couplet 10"
+  },
+  {
+   "kind": "outro",
+   "t0": 517.34,
+   "t1": 520.916,
+   "text": "Thank you for staying with these verses."
+  },
+  {
+   "kind": "outro",
+   "t0": 521.416,
+   "t1": 528.653,
+   "text": "Every week we share real passages of Rumi, translated honestly from the Persian."
+  },
+  {
+   "kind": "outro",
+   "t0": 529.153,
+   "t1": 533.403,
+   "text": "If they spoke to you, subscribe to The Guest House."
+  },
+  {
+   "kind": "end",
+   "t0": 517.34,
+   "t1": 536.903
+  }
+ ]
+}
