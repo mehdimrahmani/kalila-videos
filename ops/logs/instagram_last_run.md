@@ -8,3 +8,4 @@
 - 02:20Z specs part07.json (paper) + echo_20261201.json (reeds, seed 106) written
 - 02:20Z card part07.png made + inspected (Nastaliq joined, words exact, nothing cut); both Reel renders started in background
 - 02:21Z card scheduled Thu 3 Dec 20:30 uuid -8745254916758224801 (re-hosted static.metricool.com OK); Story 20:40 uuid -6555349110557226898; ledger ig_post added (first add stored id '--', fixed by hand)
+- 02:30Z Reels rendered + checked: part07.mp4 55.8s mean -17.7dB; echo_20261201.mp4 51.1s mean -17.2dB; 1080x1920; frames hook/verses/tafsir/outro inspected OK
