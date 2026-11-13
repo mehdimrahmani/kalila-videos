@@ -11,7 +11,7 @@ an upload costs ~1,600, so at most 6 uploads per Pacific-time day; we keep 1 spa
   python3 ops/slots.py next STREAM                  # earliest free slot ("YYYY-MM-DD HH:MM" Tehran) or FULL
   python3 ops/slots.py free STREAM [N]              # the next N free slots
   python3 ops/slots.py add STREAM "YYYY-MM-DD HH:MM" ID [NOTE]   # record a filled slot (ID = video id / Metricool uuid / epNN)
-  python3 ops/slots.py budget                       # YouTube uploads still allowed today (prints a number)
+  python3 ops/slots.py budget [STREAM]              # YouTube uploads still allowed today (0 for a stream far ahead while Shorts/Kalila lag)
   python3 ops/slots.py upload-done STREAM ID        # count one YouTube upload against today's budget
 
 Times are Asia/Tehran (UTC+03:30, no DST). Ledger: ops/schedule.json (commit + push after every change;
@@ -95,9 +95,27 @@ def coverage(d, stream):
 def today_pt():
     return dt.datetime.now(PT).date().isoformat()
 
-def budget():
+# Fairness (13 Nov 2026): the podcast->YouTube task (runs ~16:37 Tehran, early in the Pacific quota day) and the
+# long-form task (~10:41) were using the shared upload budget for slots 3-4 weeks ahead while the Rumi Shorts (the
+# growth engine) and Kalila were starved. A stream already far ahead now gets nothing while a priority stream lags.
+PRIORITY = ("gh_rumi_short", "gh_lf_short", "kd_episode", "kd_short")
+AHEAD, LAGGING = dt.timedelta(days=21), dt.timedelta(days=10)
+WINDOW_STREAM = [((16, 20), (18, 45), "gh_pod_full"), ((10, 20), (11, 35), "gh_longform")]   # caller by clock
+
+def _cov(d, s):
+    c = coverage(d, s)
+    return parse(c) if c != "—" else now()
+
+def budget(stream=None):
     d = load(); used = sum(1 for u in d["uploads"] if u["day"] == today_pt())
-    return max(0, DAILY_UPLOADS - used)
+    left = max(0, DAILY_UPLOADS - used)
+    if stream is None:   # infer the calling task from the time of day (the tasks call plain `budget`)
+        hm = (now().hour, now().minute)
+        stream = next((st for a, b, st in WINDOW_STREAM if a <= hm < b), None)
+    if stream and stream not in PRIORITY and _cov(d, stream) > now() + AHEAD \
+            and any(_cov(d, p) < now() + LAGGING for p in PRIORITY):
+        return 0
+    return left
 
 if __name__ == "__main__":
     a = sys.argv[1:]
@@ -122,7 +140,7 @@ if __name__ == "__main__":
                             "recorded": fmt(now())})
         d["filled"].sort(key=lambda f: (f["stream"], f["at"])); save(d); print("ok")
     elif cmd == "budget":
-        print(budget())
+        print(budget(a[1] if len(a) > 1 else None))
     elif cmd == "upload-done":
         d = load(); d["uploads"].append({"day": today_pt(), "stream": a[1], "id": a[2]})
         d["uploads"] = [u for u in d["uploads"] if u["day"] >= (dt.date.today() - dt.timedelta(days=10)).isoformat()]
