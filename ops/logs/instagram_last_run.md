@@ -7,3 +7,4 @@
 - rejected (2nd hemistich unverified): Ghazal 1077 "از کنار خویش...", Ghazal 1335 "بانگ زدم نیم شبان...", Masnavi II "ای برادر تو همان اندیشه‌ای" (wording variants)
 - 02:20Z specs part07.json (paper) + echo_20261201.json (reeds, seed 106) written
 - 02:20Z card part07.png made + inspected (Nastaliq joined, words exact, nothing cut); both Reel renders started in background
+- 02:21Z card scheduled Thu 3 Dec 20:30 uuid -8745254916758224801 (re-hosted static.metricool.com OK); Story 20:40 uuid -6555349110557226898; ledger ig_post added (first add stored id '--', fixed by hand)
