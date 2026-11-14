@@ -2,11 +2,40 @@
  "start": "2026-11-14",
  "level_at_start": "knows the alphabet and a few words; no sentences",
  "minutes_per_day": 15,
- "lesson": 0,
+ "lesson": 1,
  "week": 1,
  "phase": 1,
- "words_known": [],
+ "words_known": [
+  {
+   "w": "hello",
+   "fa": "سلام",
+   "lesson": 1
+  },
+  {
+   "w": "name",
+   "fa": "اسم",
+   "lesson": 1
+  },
+  {
+   "w": "guest",
+   "fa": "مهمان",
+   "lesson": 1
+  },
+  {
+   "w": "house",
+   "fa": "خانه",
+   "lesson": 1
+  },
+  {
+   "w": "book",
+   "fa": "کتاب",
+   "lesson": 1
+  }
+ ],
  "words_to_repeat": [],
  "last_answered": null,
- "notes": []
+ "notes": [
+  "2026-11-14 lesson 1 (Sat): greetings, I am / My name is"
+ ],
+ "last_lesson_date": "2026-11-14"
 }
