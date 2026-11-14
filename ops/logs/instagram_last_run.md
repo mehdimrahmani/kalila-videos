@@ -8,3 +8,4 @@
 - 02:25Z specs part08.json (candle) + echo_20261208.json (cosmic, seed 107) written; both Reel renders started in background
 - 02:20Z card part08.png made + inspected (Nastaliq joined, words exact, nothing cut; source fixed to 'line 1' and Part 8 render restarted)
 - 02:21Z card scheduled Thu 10 Dec 20:30 uuid 3625898753901478018 (re-hosted static.metricool.com OK); Story 20:40 uuid 5919446224583544480; ledger ig_post added
+- 02:30Z Reels rendered + checked: part08.mp4 56.8s mean -17.1dB; echo_20261208.mp4 51.1s mean -17.9dB; 1080x1920; frames hook/verses/tafsir/outro inspected OK
