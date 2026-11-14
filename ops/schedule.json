@@ -155,6 +155,13 @@
    "recorded": "2026-11-13 18:40"
   },
   {
+   "stream": "gh_pod_short",
+   "at": "2026-12-03 16:37",
+   "id": "Fe3T2zzvq24",
+   "note": "ep06 short3",
+   "recorded": "2026-11-14 16:42"
+  },
+  {
    "stream": "gh_rumi_short",
    "at": "2026-11-10 20:47",
    "id": "mpX-yFaiTYE",
@@ -555,6 +562,11 @@
    "day": "2026-11-13",
    "stream": "gh_pod_short",
    "id": "PzeYAGMnZec"
+  },
+  {
+   "day": "2026-11-14",
+   "stream": "gh_pod_short",
+   "id": "Fe3T2zzvq24"
   }
  ]
 }
