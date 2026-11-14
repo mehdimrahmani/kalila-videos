@@ -78,6 +78,13 @@
    "recorded": "2026-11-12 16:58"
   },
   {
+   "stream": "gh_pod_full",
+   "at": "2026-12-06 16:37",
+   "id": "2eNaoKA2tos",
+   "note": "ep07 full",
+   "recorded": "2026-11-14 16:53"
+  },
+  {
    "stream": "gh_pod_short",
    "at": "2026-11-08 16:47",
    "id": "prS9KEb_w1c",
@@ -567,6 +574,11 @@
    "day": "2026-11-14",
    "stream": "gh_pod_short",
    "id": "Fe3T2zzvq24"
+  },
+  {
+   "day": "2026-11-14",
+   "stream": "gh_pod_full",
+   "id": "2eNaoKA2tos"
   }
  ]
 }
