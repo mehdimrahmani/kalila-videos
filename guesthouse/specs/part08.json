@@ -1,0 +1,24 @@
+{
+ "header": "Shams & Rumi · Part 8",
+ "title": "The Masnavi Begins",
+ "theme": "candle",
+ "source": "Masnavi · Book IV, line 1",
+ "seed": 8,
+ "hook": "After Shams, Rumi found a friend who could hold a pen.",
+ "segments": [
+  {"fa": "ای ضیاء الحق حسام الدین توی", "en": "O Ziya al-Haqq, Husam al-Din, it is you"},
+  {"fa": "که گذشت از مه به نورت مثنوی", "en": "by whose light the Masnavi has passed beyond the moon."}
+ ],
+ "tafsir": [
+  "His name was Husam al-Din Chalabi.",
+  "He asked Rumi for a long poem, like those of Sanai and Attar.",
+  "Rumi spoke the verses. Husam wrote them down, often through the night.",
+  "It grew into six books: the Masnavi.",
+  "Ziya al-Haqq means the light of the truth.",
+  "Rumi gives that light to his friend, not to himself."
+ ],
+ "outro": {
+  "say": "Part nine. What is Rumi's wedding night? Follow The Guest House.",
+  "title": "Part 9 · The wedding night"
+ }
+}

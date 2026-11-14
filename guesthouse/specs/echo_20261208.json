@@ -1,0 +1,20 @@
+{
+ "header": "Rumi · Masnavi",
+ "title": "Blood Into Milk",
+ "theme": "cosmic",
+ "source": "Masnavi · Book II, line 1",
+ "seed": 107,
+ "hook": "Rumi once stopped writing his great poem, for a long time.",
+ "segments": [
+  {"fa": "مدتی این مثنوی تأخیر شد", "en": "For a while, this Masnavi was delayed."},
+  {"fa": "مهلتی بایست تا خون شیر شد", "en": "Time was needed, for blood to turn to milk."}
+ ],
+ "tafsir": [
+  "This is the first line of the Masnavi's second book.",
+  "The poem had paused, and Rumi begins again.",
+  "The old belief was that a mother's milk is made from her blood.",
+  "One reading: pain needs time before it can feed anyone.",
+  "This week in our serial, the Masnavi begins."
+ ],
+ "outro": {"say": "Shams and Rumi, the serial, is on our page. Follow The Guest House.", "title": "Shams & Rumi · the serial on our page"}
+}
