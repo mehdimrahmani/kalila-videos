@@ -32,10 +32,13 @@
    "lesson": 1
   }
  ],
- "words_to_repeat": [],
- "last_answered": null,
+ "words_to_repeat": [
+  "guest"
+ ],
+ "last_answered": "2026-11-14",
  "notes": [
-  "2026-11-14 lesson 1 (Sat): greetings, I am / My name is"
+  "2026-11-14 lesson 1 (Sat): greetings, I am / My name is",
+  "2026-11-14 lesson 1 answers: 4/5 (mixed up guest/book); wrote 'my' lowercase at sentence start; skipped the own-sentence task"
  ],
  "last_lesson_date": "2026-11-14"
 }
