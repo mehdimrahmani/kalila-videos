@@ -8,3 +8,4 @@
 - rejected: Ghazal 911 couplets (opening already used in lf07; "جنازه‌ام..." 2nd hemistich no exact hit); Ghazal 38 (2nd hemistich no exact hit); "فرو شدن چو بدیدی..." (no ganjoor hit)
 - specs part09.json (dome, seed 9) + echo_20261215.json (paper, seed 109) written
 - 02:20Z card part09.png made + inspected (Nastaliq joined, words exact, nothing cut); both Reel renders started in background
+- 02:21Z card scheduled Thu 17 Dec 20:30 uuid -1973190130836160304 (re-hosted static.metricool.com OK); Story 20:40 uuid -1415813590310763840; ledger ig_post added (slots.py 'add' mis-parsed '--' before a negative id; fixed entry by hand)
