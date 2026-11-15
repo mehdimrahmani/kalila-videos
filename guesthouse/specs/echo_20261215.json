@@ -1,0 +1,20 @@
+{
+ "header": "Rumi · Divan-e Shams",
+ "title": "A Sudden Resurrection",
+ "theme": "paper",
+ "source": "Divan-e Shams · Ghazal 1",
+ "seed": 109,
+ "hook": "The very first ghazal of Rumi's Divan opens with a resurrection.",
+ "segments": [
+  {"fa": "ای رستخیز ناگهان وی رحمت بی‌منتها", "en": "O sudden resurrection, O mercy without end,"},
+  {"fa": "ای آتشی افروخته در بیشهٔ اندیشه‌ها", "en": "O fire set ablaze in the forest of thoughts."}
+ ],
+ "tafsir": [
+  "Rastakhiz is the Day of Resurrection, when the dead rise.",
+  "Rumi gives that name to the Beloved.",
+  "One reading: when love arrives, a dead heart stands up again.",
+  "And the fire burns through the thick forest of our worries.",
+  "This week in our serial, Rumi's death is called a wedding."
+ ],
+ "outro": {"say": "Shams and Rumi, the serial, is on our page. Follow The Guest House.", "title": "Shams & Rumi · the serial on our page"}
+}

@@ -1,0 +1,24 @@
+{
+ "header": "Shams & Rumi · Part 9",
+ "title": "The Wedding Night",
+ "theme": "dome",
+ "source": "Divan-e Shams · Ghazal 2037",
+ "seed": 9,
+ "hook": "On the night Rumi died, his friends called it a wedding.",
+ "segments": [
+  {"fa": "چون جان تو می‌ستانی چون شکر است مردن", "en": "When it is You who takes my soul, dying is sweet as sugar."},
+  {"fa": "با تو ز جان شیرین شیرین‌تر است مردن", "en": "With You, dying is sweeter than sweet life itself."}
+ ],
+ "tafsir": [
+  "Rumi died in Konya on the seventeenth of December, 1273.",
+  "In this ghazal, death is not a thief. The Beloved is the one who comes.",
+  "So dying becomes sugar, sweeter even than life.",
+  "His followers call that night Shab-e Arus, the wedding night.",
+  "It is the night the soul meets the one it longed for.",
+  "Every December, in Konya, they still keep it with music and turning."
+ ],
+ "outro": {
+  "say": "That was our serial, Shams and Rumi. Next, Rumi from the original Persian, one verse a week. Follow The Guest House.",
+  "title": "Next · Rumi, from the original Persian"
+ }
+}
