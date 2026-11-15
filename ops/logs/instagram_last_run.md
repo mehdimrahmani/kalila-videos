@@ -7,3 +7,4 @@
 - verify: Ghazal 1 — "ای رستخیز ناگهان وی رحمت بی‌منتها" -> ganjoor.net/?p=2625 (=Ghazal 1) title exact; 2nd "ای آتشی افروخته در بیشهٔ اندیشه‌ها" exact -> ganjoor ?p=2625. VERIFIED
 - rejected: Ghazal 911 couplets (opening already used in lf07; "جنازه‌ام..." 2nd hemistich no exact hit); Ghazal 38 (2nd hemistich no exact hit); "فرو شدن چو بدیدی..." (no ganjoor hit)
 - specs part09.json (dome, seed 9) + echo_20261215.json (paper, seed 109) written
+- 02:20Z card part09.png made + inspected (Nastaliq joined, words exact, nothing cut); both Reel renders started in background
