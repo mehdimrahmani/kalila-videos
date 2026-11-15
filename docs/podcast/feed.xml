@@ -15,7 +15,19 @@
     <itunes:category text="History"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
-    <lastBuildDate>Sat, 14 Nov 2026 10:05:59 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2026 14:44:45 +0000</lastBuildDate>
+    <item>
+      <title>Folio 4: The Judge Who Lied to Save a Life</title>
+      <description>A man sits blindfolded on the executioner&#x27;s mat, and the sword is already drawn. In the middle of the night, the chief judge of the Abbasid empire rides to stop it, armed with nothing but words. This is the story of Afshin, Bu Dulaf and Ahmad ibn Abi Duwad, as Beyhaqi tells it.</description>
+      <itunes:summary>A man sits blindfolded on the executioner&#x27;s mat, and the sword is already drawn. In the middle of the night, the chief judge of the Abbasid empire rides to stop it, armed with nothing but words. This is the story of Afshin, Bu Dulaf and Ahmad ibn Abi Duwad, as Beyhaqi tells it.</itunes:summary>
+      <enclosure url="https://mehdimrahmani.github.io/kalila-videos/podcast/episodes/ep04.mp3" length="13898573" type="audio/mpeg"/>
+      <guid isPermaLink="false">honest-historian-ep04</guid>
+      <pubDate>Sun, 15 Nov 2026 07:43:00 +0000</pubDate>
+      <itunes:duration>00:14:28</itunes:duration>
+      <itunes:episode>4</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>Folio 3: The Blind King Who Ruled Twice</title>
       <description>A Sultan who reigned for five months is locked in a fortress by his own brother, and the world forgets him. Ten years later, a mutinous army drags him out and crowns him again. This is the strange fate of Amir Muhammad, son of Mahmud of Ghazni, and of the brother who took his throne.</description>
